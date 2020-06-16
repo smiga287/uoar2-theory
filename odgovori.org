@@ -1,0 +1,2010 @@
+#+TITLE: Odgovori na ispitna pitanja iz UOAR2
+
+1. Napisati istinitosne tablice osnovnih logičkih veznika (NE, I, ILI)
+
+   - NE
+     | A | NE(A) |
+     | 1 |     0 |
+     | 0 |     1 |
+   - I
+     | A | B | I(A, B) |
+     | 1 | 1 |       1 |
+     | 1 | 0 |       0 |
+     | 0 | 1 |       0 |
+     | 0 | 0 |       0 |
+   - ILI
+     | A | B | ILI(A, B) |
+     | 1 | 1 |         1 |
+     | 1 | 0 |         1 |
+     | 0 | 1 |         1 |
+     | 0 | 0 |         0 |
+
+2. Napisati istinitosne tablice izvedenih logičkih veznika (NI, NILI, EILI)
+
+   - NI (NAND)
+     | A | B | NI(A, B) |
+     | 1 | 1 |        0 |
+     | 1 | 0 |        1 |
+     | 0 | 1 |        1 |
+     | 0 | 0 |        1 |
+   - NILI (NOR)
+     | A | B | NILI(A, B) |
+     | 1 | 1 |          0 |
+     | 1 | 0 |          0 |
+     | 0 | 1 |          0 |
+     | 0 | 0 |          1 |
+   - EILI (XOR)
+     | A | B | EILI(A, B) |
+     | 1 | 1 |          0 |
+     | 1 | 0 |          1 |
+     | 0 | 1 |          1 |
+     | 0 | 0 |          0 |
+
+3. Navesti bar jedan način na koji se EILI veznik može predstaviti pomoću osnovnih logičkih veznika (NE, I, ILI)
+
+   - Preko KNF-a
+     (A ili ne(B)) i (ne(A) ili B)
+
+4. Navesti osnovne zakone algebre logike
+
+    Algebra logike je uređena šestorka $(S, \cdot, +, \bar{}, 1, 0)$
+   - $S$ - neprazan skup
+   - $\cdot, +$ - binarne operacije
+   - $\bar{}$ - unarna operacija
+   - $1, 0$ - izdvojeni elementi skupa $S$
+
+    Osnovni zakoni:
+     1. Asocijativnost
+        - $(x \cdot y) \cdot z = x \cdot (y \cdot z)$
+        - $(x + y) + z = x + (y + z)$
+     2. Neutral
+        - $x \cdot 1 = x$
+        - $x + 0 = x$
+     3. Komplementarnost
+        - $x \cdot \bar{x} = 0$
+        - $x + \bar{x} = 1$
+     4. Komutativnost
+        - $x \cdot y = y \cdot x$
+        - $x + y = y + x$
+     5. Distributivnost
+        - $x \cdot (y + z) = x \cdot y + x \cdot z$
+        - $x + (y \cdot z) = (x + y) \cdot (x + z)$
+
+5. Zbog čega se algebra logike koristi kao osnova savremenih računara?
+
+   Iz razloga što je mnogo jednostavnije, stabilnije i jeftinije napraviti fizički uređaj koji ime dva diskretna stanja nego više njih. Takođe, aritmetičke operacije nad binarnim brojevima je jednostavno opisati pomoću algebre logike i samim tim implementirati pomoću logičkih kola.
+
+6. Šta znači da su dva logička izraza ekvivalentna?
+
+   Znači da su im vrednosti pri istim valuacijama promenljivih iste odnosno da za istu kombinaciju vrednosti "ulaznih" promenljivih daju isti "izlaz"
+
+7. Definisati pojmove elementarne konjunkcije i disjunktivne normalne forme (DNF). Šta je savršena elementarna konjunkcija, a šta savršena DNF?
+
+   - Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})
+   - Elementarna konjunkcija je logički izraz koji se sastoji iz konjunkcije literala (eg. $x\bar{y}z\bar{p}$)
+     - Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promeljivu (eg. $P = {x, y, z}, S = \bar{x} \cdot y \cdot z$)
+   - DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. $x\bar{y}z + \bar{x}yz + xyz)
+     - Savršena DNF se sastoji od savršenih elementarnih konjunkcija
+
+8. Definisati pojmove elementarne disjunkcije i konjunktivne normalne forme (KNF). Šta je savršena elementarna disjunkcija, a šta savršena KNF?
+
+   - Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})
+   - Elementarna disjunkcija je logički izraz koji se sastoji iz disjunkcije literala (eg. $x + \bar{y} + z\bar{p}$)
+     - Savršena elementarna disjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, \bar{x} + y + z)
+   - KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. $(x + \bar{y} + z) \cdot (\bar{x} + y + z) \cdot (x + y + z)
+     - Savršena KNF se sastoji od savršenih elementarnih konjunkcija
+
+9. Ukratko opisati postupak za svođenje logičkog izraza na DNF
+
+   1. Eleminisanje logičkih konstanti - primena veznika nad 0 i 1 sve dok se izraz ne svede na 0 ili 1 ili ostane bez konstanti
+   2. De Morganovi zakoni i dupla negacija
+   3. Distributivnost $\cdot$ prema $+$ - nakon ovog koraka dobijamo DNF
+      - Za svođenje na KNF važe prethodna dva koraka, dok je treći distributivnost $+$ prema $\cdot$
+   4. Idempotentnost, neutral, apsorpcija - primenom ovih (i drugih zakona) moguće je dodatno minimizovati DNF
+
+10. Šta je logička funkcija i koliko ima funkcija reda $n$?
+
+    Logička funkcija je svako preslikavanje $f: {0, 1}^{n} \rightarrow {0, 1}$ koja *logičke vrednosti* $(x_{1}, x_{2}, ..., x_{n})$ slika u *logičku vrednost* $y \in {0, 1}$.
+    Kardinalnost domena logičkih funkcija reda $n$ je $2^{n}$, dok je kodomena $2$, dakle, pošto se svaka funkcija iz domena može slikati u dve vrednosti u kodomenu, postoji $2^{2^{n}}$ funkcija reda $n$
+
+11. Šta je potpun sistem veznika? Navesti bar tri primera potpunih sistema logičkih veznika
+
+    Potpun sistem veznika predstavlja skup veznika pomoću kojeg je moguće predsaviti svaku logičku funkciju.
+    Primeri:
+    1. I, ILI, NE
+    2. I, NE
+    3. ILI, NE
+    4. NI (Šeferov veznik: $\uparrow$)
+    5. NILI (Pirsov/Lukašijevičev veznik: $\downarrow$)
+
+12. Izraziti NE, I i ILI veznik pomoću NI veznika
+
+    - NE(x) = NI(x, x)
+    - I(a, b) = NE(NI(a, b)) = NI(NI(a, b), NI(a, b))
+    - ILI(a, b) = NE(I(NE(a), NE(b))) = ...
+
+13. Ukratko objasniti kako se proizvoljna logička funkcija može izraziti u obliku izraza u savršenoj DNF
+
+    Čitajući tablicu logičke funkcije, ako je izlaz za neku valuaciju 1, onda na našu savršenu DNF formulu dodajemo novi konjunkt koji se sastoji iz konjunkcije literala koji za tu valuaciju daju vrednost 1.
+
+14. Šta je minimizacija logičkih izraza i zbog čega nam je značajna?
+
+    Minimizovati logički izraz znači pronaći logički ekvivalentan izraz koji sadrži najmanji mogući broj veznika.
+
+    Najčešće nam koristi pri dizajnu logičkih kola kako bismo smanjili cenu proizvodnje, ali suštinski može da služi za rešavanje mnogo šire grupe problema koji se mogu mapirati u SAT problem.
+
+15. Na primeru objasniti metod algebarskih transformacija za minimizaciju logičkih izraza.
+
+    Koristimo dva pravila:
+    1. Grupisanje:
+       $$
+       K_{1} = x \cdot K' \\
+       K_{2} = \bar{x} \cdot K' \\
+       \downarrow \\
+       K = K'(x + \bar{x}) = K' \\
+       $$
+
+    2. Udvajanje:
+       - U slučaju da imamo konjunkte $K_{1}, K_{2}$ nad kojima bismo mogli da primenimo /grupisanje/ sa $K$, onda dupliramo $K$ da bismo mogli da grupišemo sa oba
+
+    Eg. $F(x, y, z) = x\bar{y}z + \bar{x}\bar{y}z + x\bar{y}\bar{z}$
+    Možemo grupisati prvi i drugi i prvi i treći, tako da ćemo primeniti prvo /udvajanje/ pa tek onda grupisanje
+    $F(x, y, z) = x\bar{y}z + \bar{x}\bar{y}z + x\bar{y}z + x\bar{y}\bar{z}$
+    $F(x, y, z) = \bar{y}z(x + \bar{x}) + x\bar{y}(z + \bar{z})$
+    $F(x, y, z) = \bar{y}z(x + \bar{x}) + x\bar{y}(z + \bar{z})$
+    $F(x, y, z) = \bar{y}z + x\bar{y}$
+
+16. Objasniti način upotrebe Karnoovih mapa za minimizaciju logičkih izraza. Primer.
+
+    [WORK IN PROGRESS]
+
+    Karnoove mape predstavljaju grafički metod za minimizaciju logičkih izraza koji funkcioniše po principu grupisanja. Nakon što nacrtamo tabelu gde se susendna polja (susedstvo se gleda kao da je tabela zapravo površina torusa) razlikuju za jednu vrednost (Grejov kod) popunimo mesta koja u tabeli daju $1$ kao rezultat. Minimizujemo tako što prvo pokušamo da obuhvatimo sve $1$ u pravougaonik od $16$ elemenata, zatim redom $8$, $4$, $2$, $1$. Posmatramo promenljive u okviru jednog pravougaonika koje se nisu promenile i njih stavljamo u finalnu minimizovanu DNF formulu.
+
+17. Objasniti metodu Kvin-Meklaskog za minimizaciju logičkih izraza. Primer.
+
+    [WORK IN PROGRESS]
+    Metoda Kvin-Meklaskog je metoda minimiacije logičkih izraza koja je pogodna za implementaciju na računaru.
+
+    1. Na ulazu dobijamo funkciju u SDNF. Sortiramo rastuće savršene konjunkcije po broju neinvertovanih literala i izdelimo ih u klase, gde $i$-ta klasa sadrži SK koji imaju $i$ neinvertovanih literala.
+
+    2. Vršimo grupisanje elemenata iz $i$-te sa elementima iz $i + 1$-ve klase, i rezultat čuvamo za sledeću iteraciju. Grupisanje je moguće ako se elementi koji se porede razlikuju samo na jednom mestu. Ovo radimo sve dok je moguće grupisati.
+
+    3. Formiramo tabelu prostih implikanata (vidi primer). Identifikujemo /bitne proste implikante/.
+
+18. Kako se upotrebljavaju Karnoove mape u prisustvu nebitnih vrednosti? Primer.
+
+    [WORK IN PROGRESS]
+
+    Kada imamo nebitne (/don't care/) vrednost, njih možemo da tretiramo onako kako nama odgovara, odnosno ako nam omogućavaju da zaokružimo veću površinu tretiramo ih kao $1$, u suprotnom nema potrebe da ih zaokružimo.
+
+19. Kako se metod Kvin-Meklaskog koristi u prisustvu nebitnih vrednosti? Primer.
+
+    [WORK IN PROGRESS]
+
+    U prvoj fazi algoritma se nebitne vrednosti tretiraju kao $1$, odnosno učestvuju u grupisanju.
+
+    U drugoj fazi algoritma se nebitne vrednosti tretiraju kao $0$, tj. ne navode se u tabeli prostih implikanata.
+
+20. Šta je Petrikov metod i koja je njegova uloga u okviru metode Kvin-Mekalskog? Primer.
+
+    [WORK IN PROGRESS]
+    Petrikov metod je metod koji se koristi za pronalaženje najmanjeg podskupa preostalih prostih implikanata u slučaju da neka kolona ostane "nepokrivena" u metodi Kvin-Mekalskog.
+
+21. Elementarna logička kola (gejtovi) i njihove šematske oznake.
+
+    [WORK IN PROGRESS]
+
+    - Buffer
+    - 3-state buffer
+    - NOT
+    - AND
+    - OR
+    - NAND
+    - NOR
+    - XOR
+    - NXOR
+
+22. Nacrtati simbol i objasniti funkciju NMOS tranzistora.
+
+    [WORK IN PROGRESS]
+
+    NMOS tranzistor ima 3 ulaza:
+    1. Source - povezan sa *negativan* napon
+    2. Drain - povezan na *pozitivan* napon
+    3. Gate - odredjuje da li će struja proticati
+       - Ako je napon u zoni logičke nule onda je izlaz 0
+       - Ako je napon u zoni logičke jedinice onda je izlaz 1
+
+    NMOS tranzistor ima ulogu u donjoj mreži (/pulldown network/) prekidača da poveže masu (/ground/) sa izlazom da bi u slučaju *niske* voltaže na izlazu bila *0*
+
+23. Nacrtati simbol i objasniti funkciju PMOS tranzistora.
+
+    [WORK IN PROGRESS]
+
+    PMOS tranzistor ima 3 ulaza:
+    1. Source - povezan sa *pozitivan* napon
+    2. Drain - povezan na *negativan* napon
+    3. Gate - odredjuje da li će struja proticati
+       - Ako je napon u zoni logičke nule onda je izlaz 1
+       - Ako je napon u zoni logičke jedinice onda je izlaz 0
+
+    PMOS tranzistor ima ulogu u gornjoj mreži (/pullup network/) prekidača da poveže napajanje (/supply/) sa izlazom da bi u slučaju *visoke* voltaže na izlazu bila *1*
+
+24. Implementacija NE kola u CMOS-u
+
+    [WORK IN PROGRESS]
+
+    - Ako je ulaz 0 samo iz PMOS-a tranzistora će izlaziti struja koja predstavlja 1
+    - Ako je ulaz 1 samo iz NMOS-a tranzistora će izlaziti struja koja predstavlja 0
+    - Dakle, biće /upaljen/ samo tranzistor koji je potreban, čime se postiže ušteda u potrošnji i smanjuje grejanje komponenti.
+
+25. Implementacija NI i I kola u CMOS-u
+
+    [WORK IN PROGRESS]
+
+    Donja mreža se implementira rednim povezivanjem dva NMOS tranzistora čime se postiže da se 0 dobije samo kada su oba ulaza 1
+
+    Gornja mreža se implementira paralelnim povezivanjem dva PMOS tranzistora čime se postiže da se 1 dobija samo kada je barem jedan od ulaza 0 (čime se takođe osigurava da pri ulazu 1 1 pušta samo donja mreža "da radi")
+
+    I se dobija tako što se na NI nadoveže NE
+
+26. Implementacija NILI i ILI kola u CMOS-u
+
+    [WORK IN PROGRESS]
+
+    NILI se implementira po istom principu kao NI, s tim što su ovde NMOS tranzistori povezani paralelno, dok su PMOS povezani redno.
+
+    Gornja mreža se implementira rednim povezivanjem dva PMOS tranzistora čime se postiže da se 1 dobije samo kada su oba ulaza 0
+
+    Donja mreža se implementira paralelnim povezivanjem dva NMOS tranzistora čime se postiže da se 0 dobija samo kada je barem jedan od ulaza 1 (čime se takođe osigurava da pri ulazu 0 0 pušta samo gornja mreža "da radi")
+
+    ILI se dobija tako što se na NILI nadoveže NE
+
+27. Implementacija EILI kola u CMOS-u
+
+    [WORK IN PROGRESS]
+
+    Donja mreža se implementira pomoću 4 redno-paralelna NMOS tranzistora čiji ulazi su $X$ i $Y$ s leve i $\bar{X}$ i $\bar{Y}$ s desne strane čime se 0 dobija samo akko su $X$ i $Y$ isti
+
+    Gornja mreža se implementira pomoću 4 redno-paralelna PMOS tranzistora čiji ulazi su $X$ i $\bar{Y}$ s leve i $\bar{X}$ i $Y$ s desne strane čime se 1 dobijamo samo akko su $X$ i $Y$ različiti
+
+28. Propusni tranzistori i prenosne kapije. Funkcija i uloga.
+
+    Propusne tranzistore koristimo u slučaju da nam je potrebno uslovno propuštanje nekog signala. Ako koristimo samo NMOS tranzistor imaćemo problem sa propuštanjem signala 1 jer neće postojati velika razliku u naponu između /source/-a i /gate/-a. Analogno za samo PMOS i signal 0.
+
+    Da bismo to rešili, koristimo prenosne kapije koje su spoj ova dva propusna tranzistora. Često se koriste i za realizaciju bafera sa 3 stanja.
+
+29. Šta je bafer sa tri stanja i čemu služi?
+
+    Bafer sa 3 stanja je logičko kolo koje služi za pojačavanje stanja i uslovno/kontrolno propuštanje signala.
+
+30. Implementacija bafera sa tri stanja u CMOS-u.
+
+    [WORK IN PROGRESS]
+
+    Implementacija zavisi od toga šta nam je potrebno, i koje signale imamo na raspolaganju. U slučaju da nam nije potrebno pojačavanje signala neće nam trebati dvostruki inverter. Povezujemo ulazni signal, kontrolni signal i njegovu negaciju sa prenosnom kapijom čime i implementiramo bafer sa tri stanja.
+
+31. Šta je vrednost visoke impendanse i koja je njena uloga u logičkim kolima?
+
+    Vrednost visoke impendanse odgovara tipu NULL u nekim višim programskim jezicima, odnosno predstavlja odsustvo vrednosti. Označavamo je sa *Z* i koristimo je na primer u slučaju da imamo dva kola koja se povezuju na isti ulaz, kako ne bismo imali vrednosti u konfliktu, jedna od njih ima vrednost visoke impendanse.
+
+32. Šta je kombinatorno kolo?
+
+    Kombinatorno kolo je logičko kolo čije vrednosti na izlazima se mogu sračunati u bilo kom trenutku u zavisnosti od ulaznih vrednosti odnosno prethodne ulazne vrednosti ne utiču na novu izlaznu vrednost.
+
+33. Navesti najvažnije vrste osnovnih kombinatornih kola.
+
+    [WORK IN PROGRESS]
+
+    - Multipleksor (Mux)
+    - Demultipleksor (DeMux)
+
+34. Šta je multipleksor i koja mu je osnovna funkcija? Predstaviti grafičkim simbolom i tablicom multipleksor 4-1.
+
+    [WORK IN PROGRESS]
+
+    Multipleksor $2^{k}-1$ je kombinatorno kolo koje omogućava selekciju nekog od $k$ ulaza pomoću selekcionih bitova, čime faktički igra istu ulogu kao `if else` konstrukt u višim programskim jezicima.
+
+    |  S | I       |
+    | 00 | $U_{0}$ |
+    | 01 | $U_{1}$ |
+    | 10 | $U_{2}$ |
+    | 11 | $U_{3}$ |
+
+35. Nacrtati logičko kolo implementacije multipleksora 4-1.
+
+    [WORK IN PROGRESS]
+
+    - Možemo implementirati direktno
+
+    - Možemo implementirati pomoću multipleksora 2-1
+
+36. Kako se multipleksor upotrebljava za implementaciju logičkih funkcija?
+
+    Fiksiranjem jedne ili više vrednosti, jednu "veliku" funkciju dekomponujemo na dve ili više manjih koje biramo pomoću multipleksora.
+
+37. Šta je demultipleksor i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom demultipleksor 1-4.
+
+    [WORK IN PROGRESS]
+
+    Demultipleksor je kombinatorno kolo koje igra obrnutu ulogu u odnosu na multipleksor, odnosno ima $1$ ulaz koji preusmerava na $2^{k}$ izlaza u zavisnosti od vrednosti selekcionih bitova.
+
+    U nepopunjenim ćelijama tabele može biti 0 ili *Z* u zavisnosti od implementacije.
+
+    |  S | $I_{0}$ | $I_{1}$ | $I_{2}$ | $I_{3}$ |
+    | 00 | $U_{0}$ |         |         |         |
+    | 01 |         | $U_{0}$ |         |         |
+    | 10 |         |         | $U_{0}$ |         |
+    | 11 |         |         |         | $U_{0}$ |
+
+38. Nacrtati logičko kolo implementacije demultipleksora 1-4.
+
+    [WORK IN PROGRESS]
+
+    - Možemo implementirati direktno
+
+    - Možemo implementirati pomoću demultipleksora 1-2
+
+39. Šta je dekoder i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom dekoder 2-4.
+
+    [WORK IN PROGRESS]
+
+    Dekoder je kombinarno kolo koje na osnovu vrednosti binarnog broja aktivira odgovarajući signal na izlazu. Najčešće se koristi pri dekodiranju mašinskih instrukcija.
+
+    Eg. Ako pretpostavimo da imamo 16 registara, u samoj instrukciji možemo kodirati koje registre koristimo samo preko 4 bita. Dekoder služi za "prevođenje" koje registre želimo da učestvuju.
+
+    |  S | $I_{0}$ | $I_{1}$ | $I_{2}$ | $I_{3}$ |
+    | 00 |       1 |       0 |       0 |       0 |
+    | 01 |       0 |       1 |       0 |       0 |
+    | 10 |       0 |       0 |       1 |       0 |
+    | 11 |       0 |       0 |       0 |       1 |
+
+40. Nacrtati logičko kolo implementacije dekodera 2-4.
+
+    [WORK IN PROGRESS]
+
+    Praktično isto kao i demultipleksor 1-4 (direktna implementacija) s tim što je ovde binarna konjunkcija i nemamo ulaz već samo kontrolne bitove.
+
+41. Šta je koder i gde se obično koristi? Šta je koder sa prioritetom?
+
+    [WORK IN PROGRESS]
+
+    Koder je kombinatorno kolo koje $2^{k}$ ulaza mapira u $k$-bitni broj (pod pretpostavkom da je najviše jedan ulaz 1). Takođe imamo i kontrolni izlaz koji nas obaveštava u slučaju da nijedan ulaz nije 1.
+
+    Obično se koristi u keš memorijama za određivanje indeksa registra koji sadrži određenu vrednost (prisutnost vrednosti se proverava komparatorima).
+
+    Običan komparator ne može da handle-uje slučaj kada je više od jednog ulaza 1. Iz tog razloga svakom od ulaza se pridodaje težina, što omogućava da na izlazu bude ulaz sa najvišim prioritetom.
+
+42. Nacrtati logičko kolo implementacije kodera 4-2.
+
+    [WORK IN PROGRESS]
+
+    Implementacija ima smisla kad se pogleda tabela (namerno su naopačke indeksi)
+    | $U_{3}$ | $U_{2}$ | $U_{1}$ | $U_{0}$ | $I_{1}$ | $I_{0}$ |
+    |       0 |       0 |       0 |       1 |       0 |       0 |
+    |       0 |       0 |       1 |       0 |       0 |       1 |
+    |       0 |       1 |       0 |       0 |       1 |       0 |
+    |       1 |       0 |       0 |       0 |       1 |       1 |
+
+43. Nacrtati logičko kolo implementacije kodera 4-2 sa prioritetom.
+
+    [WORK IN PROGRESS]
+
+    Ne kapiram crtež moraću u nekoj knjizi to da vidim verovatno
+
+44. Šta je komparator? Navesti osnovne vrste komparatora.
+
+    Komparator je kombinatorno kolo koje služi za upoređivanje dva podatka.
+
+    Vrste:
+    - Komparatori za jednakost
+    - Komparatori za potpuno poređenje
+
+45. Nacrtati logičko kolo 4-bitnog komparatora (za poređenje na jednakost)
+
+    [WORK IN PROGRESS]
+
+    Bitovi se redom porede tako što se *XOR*-uju i na kraju povežu sa *NILI* gejtom koje će dati $1$ ako su svi ulazi $0$ i $0$ u suprotnom
+
+46. Nacrtati logičko kolo 4-bitnog komparatora za potpuno poređenje
+
+    [WORK IN PROGRESS]
+
+    Koristimo 4-bitni oduzimač čiji rezultat šaljemo na NILI koje nam govori da li su ulazi jednaki i /carry bit/ koji nam govori da li je $x$ manji od $y$, u suprotnom kad su oba $0$, $x$ je veći od $y$
+
+47. Nacrtati logičko kolo 8-bitnog pomerača (ulevo)
+
+    [WORK IN PROGRESS]
+
+    Pošto je 8-bitni pomerač, maksimalno je moguće pomeriti ga 7 puta.
+
+    Ideja je da se pomoću 8-bitnih 2-1 multipleksora u zavisnosti od kontrolnih bitova prvo proba da se pomeri za 4 pa za 2 pa za 1, čijim kombinacijama je moguće dobiti vrednosti pomeranja između 0 i 7. Pomeranje se vrši tako što se u multipleksorima ručno poveže ulaz pomeren za $2^{i}, i = 0,1,2$ bitova.
+
+48. Nacrtati istinitosnu tablicu i logičko kolo binarnog polusabirača
+
+    [WORK IN PROGRESS]
+
+    | $x$ | $y$ | $S$ | $C$ |
+    |   1 |   1 |   0 |   1 |
+    |   1 |   0 |   1 |   0 |
+    |   0 |   1 |   1 |   0 |
+    |   0 |   0 |   0 |   0 |
+
+    Iz čega se vidi da je $S$ zapravo *XOR* od $x$ i $y$, a $C$ *AND*.
+
+49. Nacrtati istinitosnu tablicu i logičko kolo binarnog sabirača
+
+    [WORK IN PROGRESS]
+
+    | $x$ | $y$ | $pc$ | $S$ | $C$ |
+    |   1 |   1 |    1 |   1 |   1 |
+    |   1 |   1 |    0 |   0 |   1 |
+    |   1 |   0 |    1 |   0 |   1 |
+    |   1 |   0 |    0 |   1 |   0 |
+    |   0 |   1 |    1 |   0 |   1 |
+    |   0 |   1 |    0 |   1 |   0 |
+    |   0 |   0 |    1 |   1 |   0 |
+    |   0 |   0 |    0 |   0 |   0 |
+
+    Možemo implementirati ili preko dva polusabirača ili direktno. Preko dva polusabirača je lakše.
+
+50. Višebitni talasasti sabirač. Kašnjenje.
+
+    Ulančavanjem manjih sabirača koji zavise od svog /prethodnika/ kako bismo dobili sabirač za veći broj bitova dolazimo u situaciju da kašnjenje raste linearno u odnosu na broj bitova. Talasasti sabirač znači da se /talasasto/ računa zbir počevši od sabirača zaduženog za najniže bitove ka višim.
+
+51. Nacrtati istinitosnu tablicu i logičko kolo binarnog poluoduzimača
+
+    [WORK IN PROGRESS]
+
+    | $x$ | $y$ | $S$ | $C$ |
+    |   1 |   1 |   0 |   0 |
+    |   1 |   0 |   1 |   0 |
+    |   0 |   1 |   1 |   1 |
+    |   0 |   0 |   0 |   0 |
+
+52. Nacrtati istinitosnu tablicu i logičko kolo binarnog oduzimača
+
+    [WORK IN PROGRESS]
+
+    | $x$ | $y$ | $pc$ | $S$ | $C$ |
+    |   1 |   1 |    1 |   1 |   1 |
+    |   1 |   1 |    0 |   0 |   0 |
+    |   1 |   0 |    1 |   0 |   0 |
+    |   1 |   0 |    0 |   1 |   0 |
+    |   0 |   1 |    1 |   0 |   1 |
+    |   0 |   1 |    0 |   1 |   1 |
+    |   0 |   0 |    1 |   1 |   1 |
+    |   0 |   0 |    0 |   0 |   0 |
+   
+53. Višebitni talasasti oduzimač. Kašnjenje.
+
+    Ulančavanjem manjih oduzimača koji zavise od svog /prethodnika/ kako bismo dobili oduzimač za veći broj bitova dolazimo u situaciju da kašnjenje raste linearno u odnosu na broj bitova. Talasasti oduzimač znači da se /talasasto/ računa razlika počevši od sabirača zaduženog za najniže bitove ka višim.
+
+54. Objasniti ukratko princip rada sabirača sa računanjem prenosa unapred.
+
+    CLA sabirači problem računanja zbira dva broja rade tako što efikasno pretprocesiraju u $O(logN)$ vremenu, $N$ - broj bitova, da li će biti prenosa na individualnom bitu i samim tim, sabiranje je moguće izvršiti paralelno nad svim bitovima čime je ukupna vremenska složenost sabiranja svedena na $O(logN)$ za razliku od $O(N)$ kod talasastog sabirača.
+
+55. Šta kod sabirača sa računanjem prenosa unapred označavaju vrednosti $P_{i}$ i $G_{i}$ i po kojim se formulama računaju?
+
+    Koristeći činjenicu da prenos na $i$-tom bitu zavisi od toga da li $i$-ti bitovi generišu prenos ili prenose prethodni prenos, dobijamo formulu:
+
+    $$C_{0} = x_{0}y_{0} + x_{0}pc + y_{0}pc = x_{0}y_{0} + (x_{0} + y_{0})pc$$
+    što možemo dodatno svesti na
+    $$C_{0} = x_{0}y_{0} + (x_{0} \oplus y_{0})pc$$
+    jer ako su $x$ i $y$ jednaki $1$ svakako će zbog prethodne disjunkcije biti validan izraz
+
+    - $G_{i}$ = x_{i}y_{i}$ - govori nam da li $i$-ti bit *generiše* prenos
+    - $P_{i}$ = x_{i} \oplus y_{i}$ - govori nam da li $i$-ti bit *propagira* prethodni prenos
+
+    Finalno, imamo /rekurentnu jednačinu:
+    $$
+    C_{i} = G_{i} + P_{i}C_{i - 1} \\
+    C_{0} = G_{0} + P_{0}pc
+    $$
+
+56. Navesti formule po kojima CLA (/Carry Look Ahead/) jedinica računa prenose $C_{i}$ kao i grupne $P$ i $G$ vrednosti.
+
+    $$
+    C_{i} = G_{i} + P_{i}C_{i - 1} \\
+    C_{0} = G_{0} + P_{0}pc \\
+    $$
+    $$ G_{G} = \sum_{i = 0}^{K}G_{i}\prod_{j = i + 1}^{K}P_{j}$$ $K$ - broj bitova
+    $$ P_{G} = \sum_{i = 0}^{K}P_{i}$$
+
+57. Navesti primer implementacije ALU jedinice.
+
+    [WORK IN PROGRESS]
+
+    Nacrtaj kolo koje prima dva 8-bitna ulaza i 3-bitni $op$ ulaz koji specificira koju operaciju treba izvrsiti. Stavi bilo kojih 8 operacija i povezi rezultate sa /mux/-om koji za selekcione bitove uzima $op$.
+
+58. Šta je programibilni niz logičkih elemenata (PLA)? Navesti primer
+
+    Programibilni niz logičkih elemenata je programibilni logički uređaj (*PLD*) koje ima programibilne AND zatim i OR gejtove.
+
+    Koristimo ih u slučaju da imamo fiksan skup "retkih"\/"raštrkanih" (eng. /sparse/) logičkih funkcija i želimo jednostavno i jeftino kolo koje će njih računati.
+
+    Primer procesa pravljenja PLA-a:
+    1. Funkcije koje želimo da računamo u PLA-u predstavimo u SDNF
+       - neka su te funkcije u SDNF:
+         1. $F_{1} = x\bar{y}\bar{z} + x\bar{y}z + xyz$
+         2. $F_{2} = \bar{x}\yz + x\bar{y}z + xyz$
+    2. Minimizujemo ih
+       - dobijamo:
+         1. $F_{1} = x\bar{y} + xz$
+         2. $F_{2} = yz + xz$
+
+    3. Koliko imamo promeljivih toliko će nam /input buffer/-a trebati (/input buffer/ nam daje njegov ulazni signal i njegovu negaciju)
+
+    4. Programibilno povezujemo AND gejtove sa izlazima /input buffer/-a u zavisnosti od konjunkta prisutnih u funkcijama
+       - Imaćemo 3 *različita* konjunkta ($x\bar{y}, xz, yz$), dakle trebaće nam 3 AND gejta
+    5. Programibilno povezujemo ILI gejtove sa AND gejtovima tako da dobijemo željene funkcije
+
+59. Kako se pomoću kombinatornih mreža implementira neizmenjiva memorija (ROM)? Primer tablice i odgovarajuće implementacije.
+
+    [WORK IN PROGRESS]
+
+    Na ulazu se dobija adresa koja se potom prosleđuje ka dekoderu koji aktivira odgovarajuće izlaze na koje su povezani ulazi disjunkcija. U zavisnosti od povezanosti izlaza dekodera i ulaza disjunkcija određujemo koje podatke ćemo čitati iz ROM memorije.
+
+    | adr |  out |
+    |  11 | 0101 |
+    |  10 | 1010 |
+    |  01 | 1100 |
+    |  00 | 0011 |
+
+60. Šta je sekvencijalno kolo? Po čemu se sekvencijalna kola razlikuju od kombinatornih kola?
+
+    Sekvencijalno kolo je logičko kolo koje daje izlaz na osnovu trenutnog ulaza i *prethodnih izlaza*.
+
+    Za razliku od sekvencijalnih, kombinatorna kola nemaju interno stanje koje se čuva u memoriji, stoga za isti ulaz uvek daju isti izlaz, što nije slučaj sa sekvencijalnim kolima.
+
+61. Nacrtati konceptualni dijagram sekvencijalnog kola i objasniti osnovni princip rada.
+
+    [WORK IN PROGRESS]
+
+    - $G$ je kombinatorno kolo koje po principu povratne sprege održava stanje $S$ ($G$ se može posmatrati kao vektorska funkcija $G: X \times S \rightarrow S$, za $X$ skup svih ulaza i $S$ skup svih stanja)
+      - $S$ se neće promeniti sve dok se $X ne promeni
+    - $F$ je kombinatorno kolo koje transformiše stanje $S$ u izlaz $Y$ ($F$ se može posmatrati kao vektorska funkcija $F: S \rightarrow Y$ za $X$ skup svih ulaza i $S$ skup svih stanja)
+
+62. Šta je nestabilnost sekvencijalnog kola, a šta nedeterminističnost? Šta je metastabilnost?
+
+    - Nestabilnost sekvencijalnog kola je pojava oscilovanja kola između različitih stanja
+    - Nederminističnost sekvencijalnog kola je pojava odlaženja u neko "nasumično" stabilno stanje u zavisnosti od fizičkih faktora
+    - Metastabilnost sekvencijalnog kola je pojava stabilizacije u nekom nevalidnom međustanju
+     
+63. Šta je funkcija (tablica) prelaska sekvencijalnog kola? Navesti primer.
+
+    To je vektorska logička funkcija koja deterministički definiše prelaz sa jednog stabilnog stanja u drugo stabilno stanje na osnovu prethodnog stanja i novog ulaza.
+
+    Funkcija prelaska za SR reze:
+    | S | R | Q | Q^{next} |
+    | 0 | 0 | 0 |        0 |
+    | 0 | 0 | 1 |        1 |
+    | 0 | 1 | - |        0 |
+    | 1 | 0 | - |        1 |
+    | 1 | 1 | - |        ? |
+
+    - `-` označava bilo koju vrednost
+    - `?` označava nedefinisanu vrednost
+     
+64. Objasniti ulogu časovnika. Na koji način časovnik omogućava sinhronizaciju sekvencijalnih kola?
+
+    Časovnik istom frekvencijom izbacuje naizmenično signale 0 i 1 što se koristi za sinhronizaciju sekvencijalnih kola. Postavljanjem frekvencije časovnika na dovoljnu tako da najsporije sekvencijalno kolo uspe da se dovede u stabilno stanje, omogućava da se vreme posmatra diskretno, što olakšava rezonovanje o sekvencijalnim kolima i omogućava jednostavnu sinhronizaciju. Svako kolo povezano na časovnik prima njegov signal, i svoje promene vrši isključivo kad signal časovnika to dozvoli.
+
+65. Objasniti razliku između sinhronih i asinhronih sekvencijalnih kola.
+
+    Sinhrona sekvencijalna kola zavise od zajedničkog signala odnosno časovnika, koji svima diktira kada je moguće izvršiti promene stanja, dok asinhrona moraju eksplicitno da naprave komplikovane međusobne veze kako bi uskladile kada je dozvoljeno kojem kolu da izvrši promene stanja.
+
+66. Elementi ciklusa časovnika. Tipovi časovnika. Frekvencija časovnika.
+    - Elementi ciklusa časovnika:
+      - *Pozitivan* deo ciklusa = vreme trajanja $1$
+      - *Negativan* deo ciklusa = vreme trajanja $0$
+    - Tipovi časovnika:
+      - Simetrični = pozitivan deo ciklusa traje isto koliko i negativan
+      - Asimetrični = različito traju pozitivan i negativan deo ciklusa
+    - Frekvencija časovnika = broj ciklusa u jednoj sekundi
+
+67. Šta je SR reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
+
+    [WORK IN PROGRESS]
+
+    SR reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
+
+    | $S$ | $R$ | $Q$ | $Q^{next}$ |
+    |   0 |   0 | 0   |          0 |
+    |   0 |   0 | 1   |          1 |
+    |   0 |   1 | -   |          0 |
+    |   1 |   0 | -   |          1 |
+    |   1 |   1 | -   |          ? |
+
+    SR reza funkcioniše tako što postavljanjem $(S, R) = (0, 1)$ resetujemo sačuvanu vrednost odnosno čuvamo $0$, analogno za $(S, R) = (1, 0)$ i $1$. Kada imamo $(S, R) = (0, 0)$, tada nam izlaz ostaje zapamćena vrednost. Problem sa SR rezom je što kolo ne može da bude stabilno pri ulazu $(S, R) = (1, 1)$
+   
+68. Šta je D reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
+
+    [WORK IN PROGRESS]
+
+    D reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
+
+    | $D$ | $e$ | $Q$ | $Q^{next}$ |
+    | -   |   0 | 0   |          0 |
+    | -   |   0 | 1   |          1 |
+    | 0   |   1 | -   |          0 |
+    | 1   |   1 | -   |          1 |
+
+    Imajući u vidu da SR reza ima problem sa nedozvoljenim ulazom $(S, R) = (1, 1)$, jedan od načina na koji bi to moglo da se reši jeste da se uvede ulaz $D$ (/data/) koji se direktno povezao sa $S$, dok bi se njegova negacija na $R$, čime bi se izgubila mogćnost "čitanja memorije" odnosno stanja $(S, R) = (0, 0)$ zbog čega se uvodi i ulaz $e$ (/enable/) koji se pre povezivanja sa $S$ odnosno $R$ konjuguje sa $D$ odnosno $\bar{D}$.
+
+69. Koja je osnovna razlika između reze i flip-flopa?
+
+    Reza je asinhrono sekvencijalno kolo dok je flip-flop povezan na *časovnik* odnosno sinhrono sekvencijalno kolo.
+
+70. Nacrtati implementaciju master-slave SR flip-flopa i objasniti ponašanje
+
+    [WORK IN PROGRESS]
+
+    Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
+
+    U prethodnom objašnjenju je pretpostavljena implementacija koja menja stanje u *uzlaznom rubu*, suprotnim invertovanjem signala časovnika je moguće implementacija koja menja stanje u *silaznom rubu*.
+
+71. Nacrtati implementaciju master-slave D flip-flopa i objasniti ponašanje
+
+    [WORK IN PROGRESS]
+
+    Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
+
+    Kao i kod D reze ulaz pre konjunkcija /master/-a biva i negiran da bi se eliminisao slučaj $(S, R) = (1, 1)$. Takođe se dodaje i multipleksor koji u zavisnosti od $e$ bira da li da propusti stari signal ili D.
+
+72. Nacrtati implementaciju master-slave JK flip-flopa i objasniti ponašanje
+
+    [WORK IN PROGRESS]
+
+    Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
+
+    JK flip-flop rešava problem $(S, R) = (1, 1)$ tako što na konjunkcije ispred ulaza /master/-a dovodi i izlaze /slave/-a koji će uvek biti različiti, i time se semantika $(S, R) = (1, 1)$ menja na invertovanje stanja.
+   
+73. Nacrtati implementaciju master-slave T flip-flopa i objasniti ponašanje
+
+    [WORK IN PROGRESS]
+
+    Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
+
+    T flip-flop je praktično JK flip-flop gde su $J$ i $K$ spojeni u jedan ulaz, čime je semantika takva da registar može ili da čuva tekuće stanje ili da ga invertuje.
+
+74. Objasniti problem "hvatanja jedinice" (/1s cathing problem/) kod master-slave SR i JK flip-flopova. Na koji način se ovaj problem može rešiti?
+
+    Kada imamo kratkotrajni šum signala (npr. nagli skok i pad) na jednom od ulaza u fazi časovnika u kojoj se menjaju vrednosti, kod SR, JK i T flip-flopova se zabeleži $1$ iako se u međuvremenu promenilo na $0$. Do toga dolazi jer se $1$ odmah pamti u $master$-u da bi pri promeni na $0$ to samo dalo signal da se ono što je zapamćeno održi.
+
+    Moguće je rešiti problem tako što se SR, JK ili T flip-flop svedu na D flip-flop koji ne pati od istog problema tako što se uvede multipleksor koji u zavisnosti od ulaza polaznog flip-flopa bira šta će se dalje propustiti.
+
+75. Šta je registar i kako se implementira? Navesti primer.
+
+    [WORK IN PROGRESS]
+
+    Registar dužine $n$ je kolo koje čuva $n$-bitnu vrednost. Najčešće se implementira preko D flip-flopova koji su svi povezani na zajednički signal časovnika i $e$ signal.
+
+76. Statička memorija. Primer realizacije memorije $4\times4$.
+
+    Statička memorija se najčešće koristi za implementaciju procesorskih registara i keš memorije.
+
+    $4 \times 4$ memorija se sastoji iz $4$ reda od po $4$ registra, gde $4$ registra predstavljaju jednu adresu.
+
+    I/O:
+    - $adr$ - adresa nad kojom treba operisati
+    - $data_in$ - podatke sa kojima treba raditi
+    - $data_out$ - pročitani podaci
+    - $wr$ - flag koji označava dozvoljeno pisanje
+    - $rd$ - flaag koji označva dozvoljeno čitanje
+    - $clk$ - signal od časovnika
+
+    Pisanje:
+    1. $adr$ se prosleđuje dekoderu
+    2. rezultat se prosleđuje u konjunkciju sa $wr$
+    3. to stvara signal $e$ za sve flip-flopove u tom redu
+    4. podaci iz $data_in$ bivaju upisani u adresu $adr$
+
+    Čitanje:
+    1. $adr$ se prosleđuje dekoderu
+    2. rezultat aktivira bafere sa 3 stanja
+    3. dodatni baferi sa 3 stanja se aktiviraju u zavisnosti od $rd$
+    4. podaci sa adrese $adr$ bivaju poslati na $data_out$
+      
+77. Na primeru objasniti princip konstrukcije većih memorija pomoću manjih.
+
+    [WORK IN PROGRESS]
+
+78. Efikasna realizacija memorijske ćelije kod statičkih memorija.
+
+    Da bismo smanjili cenu i kašnjenje signala i ujedno povećali efikasnost težimo da smanjimo broj komponenti potreban za realizaciju nekog kola.
+
+    Kod asinhronih memorija, gde koristimo reze, bismo mogli umesto D-reza da "izvučemo" zajedničko NE za jednu kolonu i koristimo SR reze sa dodatnim ulazom $e$. Na ovaj način smanjujemo broj NE gejtova sa $mn$ na $n$.
+
+    Kod sinhronih memorija, gde koristimo flip-flopove u /master-slave/ organizaciji, tada bismo mogli umesto da svaki flip-flop ima svog /master/-a uvedemo jednog /master/-a za jednu kolonu, koji će dalje naći svog /slave/-a pomoću dekodera. Potrebna su i $2$ reza koja će da pamte adresu. Na ovaj način smanjujemo broj potrebnih reza sa $2mn$ na $mn + n + 2$, što je značajna ušteda.
+
+79. Objasniti princip rada memorijske ćelije kod dinamičkih memorija.
+
+    Svaka ćelija za čuvanje jednog bita se sastoji iz jednog tranzistora i kondenzatora. Vrednost bita se čuva naelektrisanjem kondenzatora. Pun kondenzator odgovara $1$, dok prazan odgovara $0$. Kada želimo da upišemo vrednost, na *bitsku liniju* dovodimo odgovarajuću vrednost i aktiviramo *liniju reči* čime se otvara tranzistor i zbog toga se kondenzator puni ili prazni u zavisnosti od vrednosti koju želimo da upišemo. Prilikom čitanja *bitska linija* se naelektriše na neki međupotencijal (npr. 2.5V), pa se aktivira *linija reči* zbog čega će se potencijal na liniji reči blago promeniti u odnosu na vrednost koja je sačuvana, što će pojačavač registrovati i "pojačati" ka 0V ili 5V. Prilikom čitanja uništavamo zapisanu vrednost, tako da je potrebno nakon čitanja da je opet i upišemo. Kondenzator se vremenom sam prazni, tako da je potrebno periodično vršiti osvežavanje kompletne memorije.
+
+80. Prednosti i nedostaci dinamičkih memorija u odnosu na statičke.
+
+    Prednosti:
+    - Manji broj tranzistora i komponenti, dakle manja cena
+    Mane:
+    - Dosta sporije čitanje i pisanje u odnosu na statičke
+    - Komplikovaniji proces sinhronizacije zbog većeg broja mogućih operacija nad memorijom
+     
+81. Šta je pomerački registar i gde se obično koristi?
+
+    What the actual fuck
+
+82. Asinhroni binarni brojač. Nacrati šemu i objasniti princip rada. Koji je osnovni nedostatak asinhronih brojača?
+
+    [WORK IN PROGRESS]
+
+    Implementiramo ga preko nekoliko T flip-flopova tako što je onaj koji čuva bit najniže vrednosti direktno povezan na signal časovnika. Svi T flip-flopovi za ulaz primaju $1$. Izlaz $N - 1$og T flip-flopa predstavlja signal časovnika, što znači da do promene dolazi samo ako je signal časovnika prešao sa $1$ na $0$, zbog čega se javlja "talasasti" efekat odnosno kašnjenje je $O(N)$, za $N$ - broj T flip-flopova.
+
+    Glavni nedostatak je vremenska neefikasnost.
+
+83. Sinhroni binarni brojač. Nacrtati šemu i objasniti princip rada.
+
+    [WORK IN PROGRESS]
+
+    Implementiramo ga preko nekoliko JK flip-flopova tako što ih povežemo sve sa časovnikom. Odluku da li da menjamo $i$-ti flip-flop donosimo na osnovu konjunkcije izlaza svih prethodnih flip-flopova. Na ovaj način nam se usložnjvaju AND gejtovi, zbog čega je kašnjenje $O(logN)$, za $N$ - broj JK flip-flopova.
+
+84. Dizajn brojača sa proizvoljnim redosledom stanja. Primer.
+
+    [WORK IN PROGRESS]
+
+    U slučaju da nam je potrebno da imamo brojač koji neće ići po /"default"/ redosledu, već nekim našim, potreban nam je brojač sa proizvoljnim redosledom stanja.
+
+    1. Nacrtamo /state machine/ \/ graf prelaska stanja
+    2. Prebacimo to u tablični oblik i odredimo vrednosti $J_{i}$ i $K_{i}$ potrebne za svaki prelazak stanja
+    3. Preko Karnoovih mapa minimizujemo za svako $J_{i}$ i $K_{i}$
+
+85. Konačni automati i transduktori kao model sinhronih sekvencijalnih kola. Dizajn konačnih transduktora. Primer.
+
+    [WORK IN PROGRESS]
+
+    Brojač sa ulazom kojim kontrolišemo u koje stanje će preći nazivamo *konačni automat*. Ukoliko to kolo prilikom svake promene stanja generiše novu vrednost na izlazu, onda to kolo nazivamo *konačni transduktor*.
+
+    Konačni transduktori predstavljaju opšti model sinhronih sekvencijalnih kola.
+
+    1. Definišemo tablicu prelaska
+       - $Q$ - trenutno stanje
+       - $X$ - ulaz
+       - $Q^{next}$ - sledeće stanje
+       - $Y$ - izlaz
+
+        | $Q$ | $X$ | $Q^{next}$ | Y |
+        |   0 |   0 |          1 | 0 |
+        |   0 |   1 |          2 | 0 |
+        |   1 |   0 |          1 | 1 |
+        |   1 |   1 |          3 | 1 |
+        |   2 |   0 |          0 | 0 |
+        |   2 |   1 |          2 | 1 |
+        |   3 |   0 |          1 | 0 |
+        |   3 |   1 |          0 | 1 |
+
+    2. Nacrtamo graf
+
+       - Stanja su čvorovi
+       - Grane su usmerene od trenutnog ka sledećem stanju
+       - "Težine" su formata $X/Y$, odnosno ako smo na stanju $Q$ sa ulazom $X$ preći ćemo na $Q^{next}$ i na izlazu ispisati $Y$
+        
+86. Ukratko objasniti osnovni princip dizajna kontrolne jedinice kao konačnog transduktora.
+
+    What the fuck?
+
+87. Navesti primer opisa nekog algoritma u formi konačnog transduktora (samo tablica prelaska, bez realizacije samog transduktora)
+
+    - $Q$ - trenutno stanje
+    - $X$ - ulaz
+    - $Q^{next}$ - sledeće stanje
+    - $Y$ - izlaz
+
+     | $Q$ | $X$ | $Q^{next}$ | Y |
+     |   0 |   0 |          1 | 0 |
+     |   0 |   1 |          2 | 0 |
+     |   1 |   0 |          1 | 1 |
+     |   1 |   1 |          3 | 1 |
+     |   2 |   0 |          0 | 0 |
+     |   2 |   1 |          2 | 1 |
+     |   3 |   0 |          1 | 0 |
+     |   3 |   1 |          0 | 1 |
+
+88. Šta je arhitektura a šta organizacija računara?
+
+    - Arhitektura računara je apstraktni model koji opisuje računar iz ugla programera kog zanima koje instrukcije postoje, načini adresiranja, kako se predstavljaju podaci i sl.
+      - Odgovara na pitanje *Šta radi računar?*
+    - Organizacija računara je implementacija arhitekture gde se posmatraju veze između komponenti, /low-level/ opis kako se određene operacije obavljaju
+
+89. Šta obuhvata ISA (arhitektura skupa instrukcija)?
+    Obuhvata:
+    1. Operacioni kod instrukcije
+    2. Referencu na operande instrukcije
+    3. Referencu na narednu instrukciju
+
+90. Šta su troadresni procesori? Primer instrukcija i koda. Karakteristike.
+
+    Troadresni procesor je procesr koji u instrukciji može da ima tri adrese. Programi na troadresnom računaru su kompaktni, ali samo instrukcije mogu da budu glomazne zbog zahteva za čuvanjem 3 operanda.
+
+    #+begin_src asm
+    ADD C, A, B
+    MUL C, A, B
+    #+end_src
+   
+91. Šta su dvoadresni procesori? Primer instrukcija i koda. Karakteristike.
+
+    Dvoadresni procesori su procesori koji mogu da imaju maksimalno dve adrese u instrukciji. Rezultat operacije se upisuje u neku privremenu lokaciju ili u lokaciju jednog od operanada. Smanjuje se dužina programa, ubrzava izvršavanje, ali se ponekad koristi dodatna memorija.
+
+    #+begin_src asm
+    LOAD B, A
+    ADD A, B
+    #+end_src
+
+92. Šta su jednoadresni procesori? Primer instrukcija i koda. Karakteristike.
+
+    Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Operacije koje zahtevaju dva operanda se razrešavaju tako što je druga adresa implicitna. Ovi računari često obraćaju memoriji za upis i čitanje međurezultata. Programi su dosta dugački i izvršavanje je relativno sporo. Koriste se u situacijama kada je memorija dosta skupa.
+
+    #+begin_src asm
+    LOAD X
+    ADD X
+    STORE X
+    #+end_src
+
+93. Šta su nuloadresni procesori? Primer instrukcija i koda. Karakteristike.
+
+    Nuloadresni procesori su procesori gde je minimalan broj adresa u instrukciji $0$. Takvi procesori implicitno adresiraju svoje operande (često stavljajući ih na stek), što predstavlja veliko ograničenje, pa se koriste samo u specijalnim slučajevima.
+
+    #+begin_src asm
+    PUSH A
+    PUSH B
+    ADD
+    POP
+    #+end_src
+
+94. Objasniti odnos performansi i broja adresa.
+
+    Instrukcije sa većin brojem adresa su moćnije, programi kompaktniji i veća je brzina izvršavanja. S povećanjem broja adresa raste i složenost instrukcije što otežava konstrukciju procesora i produžava vreme potrebno za preoznavanje operacionog koda.
+
+95. Šta je ~LOAD/STORE~ arhitektura? Objasniti.
+
+    Sve operacije se izvršavaju isključivo nad registrima procesora. Samo operacije ~LOAD~ i ~STORE~ mogu da pristupaju memoriji. ~RISC~ i vektorski procesori često koriste ovakvu arhitekturu. Prednost je smanjenje složenosti dekodiranja zbog manjih instrukcija.
+
+96. Karakteristike ~CISC~ arhitektura.
+
+    Ciljevi:
+    - složena arhitektura skupa instrukcija
+    - raznovrsnost operacija
+    - raznovrsnost načina adresiranja itd.
+
+    Posledice:
+    - Iz velikog skupa instrukcija se koristi oko 20%, dok se ostale ređe koriste
+    - Otežano dekodiranja zbog velikog broja instrukcija i načina adresiranja
+
+97. Karakteristike ~RISC~ arhitektura.
+    Ciljevi:
+    - jednostavna arhitektura skupa instrukcija
+    - obezbeđivanje minimalnog skupa instrukcija i načina adresiranja
+    - povećan broj registara koji se mogu koristiti za računanje
+
+    Posledice:
+    - stalniji skup instrukcija
+    - jednostavno dekodiranje
+    - kraće trajanje izvršavanja
+    - jednostavnija implementacija procesora
+
+98. Odnos ~RISC~ i ~CISC~ arhitektura.
+
+    Danas procesori najčešće predstavljaju hibride ove dve arhitekture.
+
+    ~RISC~ > ~CISC~:
+    - jednostavnija konstrukcija zbog manjeg broja instrukcija
+    - manje vremena je potrebno za izradu samog procesora
+    - bolje performanse jer je lakše definisati prevodioce koji formiraju optimalniji kod nego ~CISC~ procesor
+
+    ~CISC~ > ~RISC~:
+    - veća količina softvera je napisana za ~CISC~ arhitekturu
+
+99. Struktura i format mašinske instrukcije
+
+    - strukturu čine:
+      1. operacioni kod
+      2. operandi
+    - format instrukcije određuje način kodiranja ranijepomenutih komponenti u binarnom obliku (implicitno određuje i dužinu instrukcije)
+
+100. Vrste opernada mašinske instrukcije
+
+     1. Registarski
+     2. Memorijski
+     3. Neposredni
+
+101. Objasniti direktno adresiranje memorijskih operanada.
+
+     Stvarna adresa se direktno uključuje u instrukciju. Adrese koje se javljaju u ovom načinu adresiranja se još nazivaju i apsolutne adrese. Ovaj način adresiranja je relativno jednostavan jer nema izračunavanja adrese, a prenos operanada zahteva samo jedno referisanje memorije.
+    
+102. Objasniti indirektno adresiranje memorijskih operanada.
+
+     Kod indirektnog adresiranja je poznata samo adresa lokacije na kojoj se nalazi adresa operanda, pa se do te adrese dolazi indirektno, tj. instrukcija sadrži binarni kod regista procesora čija se vrednost koristi kao adresa memorijskog operanda. Ovaj način adresiranjađ zahteva dva ciklusa, jedan za čitanje adrese, drugi za čitanje samog operanda.
+
+103. Objasniti indeksno adresiranje memorijskih operanada.
+
+     Instrukcija sadrži binarne kodove dva registra čije se vrednosti sabiraju i tako dobijamo adresu memorijskog operanda. Obično je vrednost jednog registra fiksirana, a drugi predstavlja indeks koji se pomera. Korisno je za pristup elementima niza.
+
+     - Skalirano indeksno adresiranje:
+       - Vrednost indeksnog registra se može množiti konstantom (npr. $4$ ili $8$) pre sabiranja sa baznim registrom.
+
+     - Apsolutno indeksno adresiranje:
+       - Bazna adresa ne mora biti u registru, već može biti zadata kao apsolutna adresa na koju se dodaje vrednost indeksnog registra (uz eventualno prethodno skaliranje)
+
+104. Objasniti relativno adresiranje memorijskih operanada.
+
+     U ovom načinu za adresiranje se kao registar koristi brojač instrukcija čiji sadržaj se uzima kao *početna adresa*. U adresni deo instrukcije se upisuje ceo broj koji predstavlja udaljenje od početne adrese. Relativno adresiranje se koristi kada znamo da je ciljana adresa negde u okolini tekuće.
+
+105. Objasniti načine adresiranja na /x86-64/ arhitekturi.
+
+     Načini adresiranja opisuju kako se određuje operand instrukcije.
+
+     - *Neposredno* za konstante:
+        #+begin_src asm
+mov rax, 42
+        #+end_src
+     - *Registarsko*:
+        #+begin_src asm
+mov rax, rdi
+        #+end_src
+     - *Memorijsko*:
+       - Direktno
+        #+begin_src asm
+value dword 42
+...
+add eax, [value]
+        #+end_src
+       - Indirektno
+        #+begin_src asm
+        ; rdi je pokazivač na prvi element niza
+add eax, [rdi]
+        #+end_src
+       - Indeksno
+        #+begin_src asm
+; rdi je pokazivač na prvi element niza
+mov rsi, 3
+add eax, [rdi + 4 * rsi]
+        #+end_src
+       
+106. Objasniti načine adresiranja na /ARM/ arhitekturi.
+
+     Načini adresiranja opisuju kako se određuje operand instrukcije.
+
+     - *Neposredno* za konstante:
+        #+begin_src asm
+mov r0, r0, 42
+        #+end_src
+     - *Registarsko*:
+        #+begin_src asm
+mov r0, r1
+        #+end_src
+     - *Memorijsko*:
+       - Direktno
+        #+begin_src asm
+value dword 42
+...
+add eax, [value]
+        #+end_src
+       - Indirektno
+        #+begin_src asm
+; r1 je pokazivač na prvi element niza
+add r0, [r1]
+        #+end_src
+       - Indeksno
+         - Prefiksno bez update-a
+            #+begin_src asm
+; r1 je pokazivač na prvi element niza
+mov r2, #3
+ldr r0, [r1, r2, lsl #2] ; r0 = *(r1 + 4 * r2)
+            #+end_src
+         - Prefiksno sa update-om
+            #+begin_src asm
+; r1 je pokazivač na prvi element niza
+mov r2, #3
+ldr r0, [r1, r2, lsl #2]! ; r1 = r1 + 4 * r2; r0 = *r1;
+            #+end_src
+         - Postfiksno sa update-om
+            #+begin_src asm
+; r1 je pokazivač na prvi element niza
+mov r2, #3
+ldr r0, [r1], #4 ; r0 = *r1; r1 = r1 + 4;
+            #+end_src
+
+107. Instrukcije transfera. Funkcija i primer upotrebe. (/x86-64, ARM/)
+     - ~x86-64~
+       - ~mov, movzx, movsx~
+         - ~dest~
+           - registar
+           - memorija
+         - ~src~
+           - konstanta
+           - registar
+           - memorija
+
+                      #+begin_src asm
+           mov dest, src ; kopira iz src u dest
+
+           movzx dest, src ; kopira iz src u dest i proširuje 0
+
+           movsx dest, src ; kopira iz src u dest i proširaje znakom
+                      #+end_src
+       - ~lea~
+         - ~dest~
+           - registar
+         - ~src~
+           - konstanta
+           - registar
+           - memorija
+
+                      #+begin_src asm
+           lea dest, src ; kopira adresu od src u dest
+                      #+end_src
+     - ~ARM~
+       - ~ldr/str~
+         - ~ldr~: Učitava vrednost sa adrese u registar
+         - ~str~: Čuva vrednost registra na adresi
+         - ~op{<cond>}{<size>} Rn, <adress>~
+           - ~<cond> = {eq: =, gt: >, ge: >=, lt: <, le: <=}~
+           - ~<size> = {'': word, b: byte, h: halfword}~
+       - ~ldm/stm~
+         - ~ldm~: Učitava vrednosti u više registara počevši od adrese
+         - ~stm~: Čuva vrednosti više registara počevši od adrese
+         - ~ldm{<adrr_mode>}{<cond>} Rn{!}, <reg_list>~
+           - ~<adrr_mode> = {IA: increment_after, DB: decrement_before}~
+           - ~<cond> = {eq: =, gt: >, ge: >=, lt: <, le: <=}~
+           - ~! updateuje Rn za~ $\pm 4 \cdot len(reg\_list)$ ~u zavisnosti od <adrr_mode>~
+           - ~<reg_list> je lista registara navedena između { } koja ne sme da sadrži Rn~
+
+108. Aritmetičko-logičke instrukcije. (/x86-64, ARM/)
+
+     [WORK IN PROGRESS]
+
+109. Instrukcije bezuslovnog skoka. (/x86-64, ARM/)
+
+     [WORK IN PROGRESS]
+
+110. Flegovi procesora ~(O, S, Z, C)~. Kada se postavljaju i čemu služe?
+     - Postavljaju se nakon određenih operacija
+       - Kod ~x86-64~ se to radi automatski, npr.
+                      #+begin_src asm
+cmp eax, edi ; biće updateovani O, S i Z flegovi
+add eax, esi ; biće updateovani O, Z, C flegovi PROVERI
+                      #+end_src
+       - Kod ~ARM~ se to radi tako što se dodaje sufiks ~s~ na operacije kojima to po /default/-u nije tako
+                      #+begin_src asm
+cmp r0, r1 ; biće updateovani O, S i Z flegovi
+adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
+                      #+end_src
+     - ~O~ (overflow) - prekoračenje kod označenih operatora
+       - govori da li je došlo do prekoračenja
+     - ~S~ (sign) - najveći bit rezultata
+       - govori da li je broj negativan ili nenegativan ($x < 0 \ \lor x \leq 0$)
+     - ~Z~ (zero)
+       - govori da li je rezultat prethodne operacije $0$
+     - ~C~ (carry)
+       - govori da li je došlo do prenosa na bitu najveće težine
+
+111. Instrukcije poređenja i njihova uloga u realizaciji uslovnih skokova. (/x86-64, ARM/)
+
+     [WORK IN PROGRESS]
+
+112. Instrukcije uslovnog skoka. (/x86-64, ARM/)
+
+     [WORK IN PROGRESS]
+
+113. Koju kombinaciju flegova testira instrukcija ~jl~, a koju ~jb~ na ~x86-64~ arhitekturi?
+
+     - ~jl~: $S \oplus O$
+     - ~jb~: $C$
+
+114. Objasniti pozivanje procedura i vraćanje iz njih korišćenjem steka za čuvanje povratne adrese. Prednosti i mane.
+
+    Pre pozivanja procedure na stek se čuva povratna adresa. Kada se procedura izvrši, instrukcija povratka uzima vrednost povratne adrese sa steka kako bi povratila kontrolu instrukciji koja sledi nakon zvanja procedure.
+
+    Mane:
+     - sporije nego čuvanje u registrima
+     Prednosti:
+     - nemamo ograničen broj parametara koji možemo čuvati na steku što je pogodno za rekurzivne procedure
+
+115. Objasniti pozivanje procedura i vraćanje iz njih korišćenjem registara za čuvanje povratne adrese. Prednosti i mane.
+
+    Pre pozivanja procedure u poseban registar se čuva povratna adresa. Kada se procedura izvrši, instrukcija povratka uzima vrednost povratna adrese iz tog registra kako bi povratila kontrolu instrukciji koja sledi nakon zvanja procedure.
+
+    Mane:
+     - imamo ograničen broj parametara koji možemo čuvati zbog ograničenog broja registara
+     Prednosti:
+     - brže nego čuvanje na steku
+
+116. Objasniti prenos argumenata procedure korišćenjem steka. Prednosti i mane.
+
+    Parametri se postavljaju na stek i pozvana procedura mora da ih vrati.
+
+    Mane:
+     - sporije nego registarski
+     Prednosti:
+     - nemamo ograničen broj parametara, što je pogodno za rekurzivne procedure
+
+117. Objasniti prenos argumenata procedure korišćenjem registora procesora. Prednosti i mane.
+
+    Pre pozivanja procedure vrednosti koje bi trebalo da joj prosledimo stavljamo u registre koje će koristiti pozvana procedura
+
+    Mane:
+     - imamo ograničen broj parametara zbog ograničenog broja registara
+     Prednosti:
+     - brže nego čuvanje na steku
+
+118. Na koji način pozvana funkcija može vratiti vrednost pozivajućoj funkciji?
+
+    Putem steka i registara.
+
+119. Objasniti pozivanje funkcija na ~x86-64~ arhitekturi. Kako se prenosi adresa povratka, argumenti, kao i povratna vrednost?
+
+    Prvih 6 argumenata se prosleđuju redom u registre:
+     1. ~rdi~
+     2. ~rsi~
+     3. ~rdx~
+     4. ~rcx~
+     5. ~r8~
+     6. ~r9~
+
+     U slučaju da nam je potrebno više od 6 argumenata, postavljamo ih na stek zdesna ulevo.
+
+     Povratna vrednost se čuva u registru ~rax~.
+
+                #+begin_src asm
+      mov edi, 42
+      mov esi, 7
+      call f
+      add r10, eax ; sum += eax
+                #+end_src
+
+     Instrukcija ~call~ postavlja adresu sledeće instrukcije na stek kao adresu povratka.
+
+120. Objasniti pozivanje funkcija na ~ARM~ arhitekturi. Kako se prenosi adresa povratka, argumenti, kao i povratna vrednost?
+
+     Prvih 4 argumenata se prosleđuju redom u registre:
+     1. ~r0~
+     2. ~r1~
+     3. ~r2~
+     4. ~r3~
+
+      U slučaju da nam je potrebno više od 4 argumenata, postavljamo ih na stek zdesna ulevo.
+
+      Povratna vrednost se čuva u registru ~r0~.
+
+                #+begin_src asm
+      mov r0, 42
+      mov r1, 7
+      bl f
+      add r4, r0 ; sum += eax
+                #+end_src
+
+     Instrukcija ~bl~ postavlja adresu sledeće instrukcije u ~lr~ (/link register/) kao adresu povratka.
+
+121. Koje su osnovne komponente procesora? Objasniti ih.
+
+     - ~ALU~ - Aritmetičko logička jedinica
+       - zadužena je za aritmetičke i logičke operacije nad podacima
+       - kombinatorno kolo
+       - obradu podataka vrši isključivo nad registrima
+       - danas se ne implementira kao jedinstvena komponenta, već iz nekoliko specijalizovanih podjedinica
+     - ~CU~ - Kontrolna jedinica
+       - zadužena je za kontrolu redosleda izvršavanja operacija u ~ALU~ i kontrolu prenosa podataka i instrukcija iz i u procesor.
+       - sekvencijalno kolo
+
+122. Šta je ~ALU~ i čemu služi?
+
+     - ~ALU~ - Aritmetičko logička jedinica
+       - zadužena je za aritmetičke i logičke operacije nad podacima
+       - kombinatorno kolo
+       - ~ALU~ obradu podataka vrši isključivo nad registrima
+       - danas se ne implementira kao jedinstvena komponenta, već iz nekoliko specijalizovanih podjedinica
+
+123. Šta su registri opšte namene i čemu služe?
+
+    Registri opšte namene su procesorski registri kojima programer ima pristup, nad kojima je moguće vršiti računanje i privremeno čuvanje podataka.
+
+124. Čemu služi instrukcioni registar ~IR~?
+
+    ~IR~ sadrži poslednju pročitanu instrukciju. Sadrži instrukciju koja se trenutno izvršava ili dekodira.
+
+    Spada u *registre specijalne namene*, odnosno *nije* registar opšte namene.
+
+125. Čemu služi programski brojač ~PC~?
+
+    ~PC~ sadrži adresu naredne instrukcije koja treba da se izvrši.
+
+    Spada u *registre specijalne namene*, odnosno *nije* registar opšte namene.
+
+126. Čemu služi statusni registar ~PSW~?
+
+    ~PSW~ = Program Status Word
+
+    ~PSW~ sadrži informacije o trenutnom stanju (/state/) procesora, odnosno flegove.
+
+    Spada u *registre specijalne namene*, odnosno *nije* registar opšte namene.
+
+127. Čemu služi registar memorijskih adresa ~MAR~?
+
+    ~MAR~ = memory adress register
+
+    ~MAR~ sadrži memorijsku adresu sledećeg podataka ili instrukcije koji će procesor da obradi ili da sačuva na to mesto.
+
+    Predstavlja medijum komunikacije između procesora i adresne magistrale.
+
+    Spada u *registre specijalne namene*, odnosno *nije* registar opšte namene.
+
+128. Čemu služi registar memorijskih podataka ~MDR~?
+
+    ~MDR~ = memory data register
+
+    ~MDR~ sadrži vrednost sledećeg podataka koji će procesor da obradi ili da sačuva negde u memoriji
+
+    Predstavlja medijum komunikacije između procesora i data magistrale.
+
+    Spada u *registre specijalne namene*, odnosno *nije* registar opšte namene.
+
+129. Šta je putanja podataka (/datapath/) i iz čega se sastoji?
+
+     /Datapath/ je deo procesora koji se sastoji iz registara, ~ALU~-a i internih magistrala koje ih međusobno povezuju koji je zadužen za transformisanje podataka.
+
+130. Nacrtati uopštenu shemu putanje podataka sa tri interne magistrale. Primer izvršavanja operacije.
+
+    [WORK IN PROGRESS]
+   
+131. Nacrtati uopštenu shemu putanje podataka sa dve interne magistrale. Primer izvršavanja operacije.
+
+    [WORK IN PROGRESS]
+
+132. Nacrtati uopštenu shemu putanje podataka sa jednom internom magistralom. Primer izvršavanja operacije.
+
+    [WORK IN PROGRESS]
+
+133. Šta je kontrolna jedinica (~CU~)? Šta je ulaz, a šta izlaz kontrolne jedinice?
+
+     Kontrolna jedinica je komponenta procesora koja pomoću kontrolnih signala govori /datapath/-u šta da uradi sa podacima
+
+     Uloga ~CU~ je:
+     - koordinacija podataka iz, u i među procesorskim podjedinicama
+     - interpretiranje instrukcija
+     - kontrola toka podataka u procesoru
+     - generisanje kontrolnih signala na osnovu instrukcija
+
+     Ulazu u ~CU~ se obavlja prihvatanjem podataka iz prihvatnog registra u dekoder, dok je izlaz od ~CU~ zapravo izlaz iz dekodera koji je spojen sa ulazom ~ALU~-a.
+
+134. Opisati osnovne faze pri izvršavanju instrukcija procesora.
+
+     Program čini skup instrukcija koje su smeštene u memoriji. Procesor čita redom instrukcije iz memorije, zatim ih izvršava pa prihvata narednu. Proces se ponavlja sve dok je računar upaljen. Ovaj ciklus je poznat kao *pribavi-dekodiraj-izvrši* (/fetch-decode-execute/).
+
+135. Objasniti fazu dohvatanja instrukcije
+
+     1. Adresa zapisana u ~PC~ se kopira u ~MAR~, nakon čega se ~PC~ inkrementira.
+     2. Kopira se vrednost iz adrese koja je sačuvana u ~MAR~ i smešta se u ~MDR~
+     3. Eventualno, vrednost iz ~MDR~ se kopira u ~IR~ nakon čega je faza dohvatanja gotova
+
+         Pseudo-asembler kod
+         #+begin_src asm
+mov mar, pc
+inc pc
+mov mdr, [mar]
+mov ir, mdr
+         #+end_src
+       
+136. Objasniti fazu dekodiranja instrukcije
+
+     1. Kodirana instrukcija u ~IR~ se dekodira
+     2. Zajedno sa upravljačkim signalima, dekodirana instrukcija se šalje dalje na ~ALU~ za obradu
+
+137. Objasniti fazu izvršavanja instrukcije
+
+     1. Na ulaze se dovode operandi, dok se na upravljačke linije dovodi kod operacije
+     2. Kao izlaz dobijamo obrađene podatke
+
+138. Na koje načine se može realizovati kontrolna jedinica? Poređenje.
+
+     1. Harverski
+        - implementira se kroz upotrebu sekvencijalnih logičkih jedinica, zbog čega se dobija komplikovanija struktura sa povećanjem instrukcija
+        - koriste se u ~RISC~ arhiterkturi
+        - rade velikom brzinom, ali broj instrukcija koje mogu da implementiraju je ograničen
+        - skuplja izrada
+     2. Mikroprogramski
+        - jednostavnija struktura
+        - koriste se u ~CISC~ arhitekturi
+        - rade sporije u odnosu na hardverski zbog dodatnog sloja apstrakcije u vidu mikroinstrukcija, ali je lakše izmeniti same instrukcije
+        - jeftinija izrada
+
+139. Objasniti tvrdo ožičenu (hardversku) implementaciju ~CU~
+
+     - implementira se kroz upotrebu sekvencijalnih logičkih jedinica, zbog čega se dobija komplikovanija struktura sa povećanjem instrukcija
+     - koriste se u ~RISC~ arhiterkturi
+     - rade velikom brzinom, ali broj instrukcija koje mogu da implementiraju je ograničen
+     - skuplja izrada
+     - danas se retko koriste
+
+140. Objasniti mikroprogramsku (softversku) implementaciju ~CU~
+
+     - jednostavnija struktura
+     - koriste se u ~CISC~ arhitekturi
+     - rade sporije u odnosu na hardverski zbog dodatnog sloja apstrakcije između hardvera i mašinskih instrukcija, no lakše je izmeniti instrukcije
+     - jeftinija izrada
+     - danas se praktično uvek koriste
+
+     Mikroprogram, koji se sastoji iz mikroinstrukcija sačuvan je u posebnoj ~ROM~ ili ~PLA~ memoriji ~CU~-a. Izvršavanje mikroinstrukcija generiše skup kontrolnih signala.
+    
+141. Šta je mikroinstrukcija? Struktura mikroinstrukcije
+
+    Mikro instrukcija je najmanja celina mikrokoda koji predstavlja programibilni sloj apstrakcije između hardvera i mašinskog koda dostupnog programeru. Struktura mikroinstrukcije može biti *horizontalna* i *vertikalna*
+
+142. Šta je mikroprogram? Objasniti način izvršavanja mikroprograma.
+
+    Mikroprogram je niz mikroinstrukcija. Ideja mikroprogama je da se mašinske instrukcije mapiraju u ROM ili PLA memoriji u odgovarajuće kontrolne signale.
+
+    [TODO]
+
+143. Objasniti horizontalni format mikroinstrukcija procesora.
+
+    [TODO]
+
+144. Objasniti vertikalni format mikroinstrukcija procesora.
+
+    [TODO]
+
+145. Karakteristike memorija.
+
+     - kapacitet
+     - adresivost
+     - performanse
+     - trajnost (postojanost) zapisa
+     - mogućnost promene sadržaja
+     - promenljivost zapisa
+     - cena
+     - fizički tip medijuma
+
+146. Navesti moguće načine pristupa memoriji
+
+     - sekvencijalni
+     - direktni
+     - proizvoljni
+     - asocijativni
+
+147. Objasniti sekvencijalni pristup memoriji
+
+     Podaci se upisuju po redosledu unošenja, a čitaju po istom ili obrnutom redosledu.
+
+     Da bi se pristupilo $i$-tom podatku potrebno je proći kroz svih prethodnih $i - 1$ podataka, što znači da je ovaj način dosta spor.
+
+148. Objasniti direktni pristup memoriji
+
+     Kod ovog načina pristupa postoji veza između adrese podatka i njegove pozicije na medijumu. Na osnovu adrese se pristupa lokaciji gde je smešten podatak ili njenoj okolini. Vreme pristupa je promenljivo i zavisi od pozicije na medijumu.
+
+149. Objasniti proizvoljni pristup memoriji (Random Access Memory)
+
+     Kod ovakvog načina pristupa svaka adresibilna lokacija sadrži adresni mehanizam ugrađen u memorijski sklop. Vreme pristupa svakoj lokaciji je konstantno.
+
+150. Objasniti asocijativni pristup memoriji
+
+     Ovo je podtip memorije sa proizvoljnim pristupom koji omogućava poređenje maske i vrednosti određenih bitova u reči. Na ovaj način se reč čita na osnovu njenog sadržaja a ne adrese.
+
+     Često se koristi kod baza podataka.
+
+151. Šta je kapacitet memorije i u kojim jedinicama se izražava?
+
+     Kapacitet predstavlja količinu podataka koji se mogu sačuvati u memoriji.
+
+     Obično se izražava u ~KiB, MiB, GiB, TiB~
+
+152. Kakva memorija može biti s obzirom na trajnost (postojanost) zapisa? Primeri.
+
+     - Privremena
+       - gube zapis s nestankom napajanja
+     - Stalna
+       - čuvaju zapis sve dok ne dođe do namerne promene (ignorišemo fizičko degradiranje materijala itd.)
+
+153. Kakva memorija može biti s obzirom na promenjivost sadržaja? Primeri.
+
+     - promenljive
+       - memorija koja se koristi za implementaciju registara i ~RAM~
+     - polu-promenljive
+       - ~EPROM, EEPROM~
+     - nepromenljive
+       - ~ROM~
+
+154. Kako se izražava brzina memorije? Koji faktori najviše utiču na brzinu memorije?
+
+     Izražava se u količini obrađenih podataka po jedinici vremena. Kod RAM memorija se često izražava u $MHz$.
+
+     Najviše utiču:
+     - način adresiranja
+     - tehnologija izrade
+
+155. Objasniti hijerarhiju memorija
+
+     [TODO]
+     Smara, stvarno treba da se ranim ako ne budem znao ovo.
+
+156. Šta je ~ROM~? Kakve vrste postoje? Gde se koristi?
+
+     ~ROM~ je /read-only/ memorija čiji sadržaj se stalan i ne može se menjati (u klasičnom smislu). Implementira se kao kombinatorno kolo jer vrednosti na izlazu zavise isključivo od vrednosti na ulazu.
+
+     Najčešće se koristi za smeštanje /low-level/ programa i mikrokoda koji su potrebni za pokretanje računara.
+    
+     Vrste:
+     - ~ROM: Read Only Memory~
+     - ~PROM: Programmable Read Only Memory~
+     - ~EPROM: Erasable Programmable Read Only Memory~
+     - ~EEPROM: Electrically Erasable Programmable Read Only Memory~
+     - ~Flash~
+      
+157. Šta je ~RAM~? Kakve vrste postoje?
+
+    ~RAM~ (/Random Access Memory/) je memorija sa slučajnim pristupom.
+
+    Sadržaj memorije se gubi bez napajanja. Moguće je proizvoljan broj puta čitati i pisati iz iste memorije.
+
+    Vrste:
+     - statički
+     - dinamički
+
+158. Šta je statički ~RAM~ i koje su njegove osnovne karakteristike? Gde se koristi?
+
+     ~SRAM~ je vrsta ~RAM~-a koja se najčešće koristi za implementaciju keš memorije i registara procesora.
+
+     Najčešće se implementiraju pomoću D-flip-flopova i nekih drugih kombinatornih kola.
+
+     Karakteriše ga velika brzina čitanja i pisanja, ali takođe i velika cena izrade, zbog čega se i rezervisano koriste.
+
+159. Šta je dinamički ~RAM~ i koje su njegove osnovne karakteristike? Gde se koristi?
+
+     ~DRAM~ je vrsta ~RAM~-a koja se najčešće koristi za implementaciju glavne memorije u računaru (u "narodnom" shvatanju ~RAM~).
+
+     Jedna memorijska jedinica je sačinjena od jednog tranizstora i kondenzatora, što ga čini dosta jeftinim za proizvodnju, kao i kompaktnim za ređanje velikog broja memorijskih ćelija na malom prostoru.
+
+     Mana ~DRAM~-a je što je potrebno relativno često ažurirati vrednosti jer se vremenom gube iz kondenzatora. Takođe, pri čitanju se vrednost uništava, pa ju je potrebno opet upisati nakon čitanja.
+
+160. Šta su isprepletane memorije? Objasniti.
+
+    To je jedna od tehnika koja se koristi za smanjenje kašnjenja prilikom pristupa susednim memorijskim adresama.
+
+    Ideja je da se memorija izdeli na nekoliko manjih uzastopnih memorijskih jedinica koje nazivamo *bankama*. Ulazne adrese izdelimo u dva dela $m$ (viši bitovi) i $k$ (niži bitovi), tako da $k$ služi da identifikuje banku, dok $m$ služi da identifikuje adresu u toj banci. Na taj način možemo paralelno pristupati različitim bankama i da smanjimo vreme koje nam je potrebno za pristupanje memoriji.
+
+161. Koje vrste preslikavanja memorijskih adresa razlikujemo? Objasniti.
+
+     Preslikavanje adresa je postupak kojim se fizička memorija mapira u adresnom prostoru računara.
+     [TODO]
+
+     Preslikavanje može biti *puno* i *delimično*
+
+162. Objasniti puno preslikavanje memorijskih adresa.
+
+     Puno preslikavanje memorijskih adresa je ~1-1~ preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
+     [TODO]
+
+163. Objasniti delimično preslikavanje memorijskih adresa
+
+     Puno preslikavanje memorijskih adresa *nije* ~1-1~ preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
+     [TODO]
+
+164. Objasniti poravnanje podataka (memorija).
+
+      Procesori čitaju podatke u rečima. Ako imamo poravnate podatke to znači da je moguće samo u jednom ciklusu pročitati reč u kojoj se nalazi naš podatak. Kada ne bismo imali poravnate podatke, uštedeli bismo malo na memoriji, ali bismo dosta izgubili na performansama, ne samo zbog većeg broj utrošenih ciklusa za čitanje već i zbog promašaja u kešu.
+
+165. Navesti osnovne vrste spoljašnjih memorija i navesti njihove karakteristike
+
+     smara.
+
+     - magnetna traka
+     - magnetni diskovi (floppy, HDD)
+     - optički diskovi (CD, DVD, BlueRay)
+     - flash drive, SSD
+
+166. Objasniti namenu i osnovni princip rada keša.
+
+     Keš memorija predstavlja malu količinu brze memorije koja u memorijskoj hijerarhiji stoji između procesorskih registara i glavne memorije i služi da ublaži razliku u brzini između procesora i glavne memorije.
+
+     Implemenitraju se preko ~SRAM~-a. Funkcionišu tako što unapred dobave podatke ili instrukcije za koje se smatra da postoji velika verovatnoća da će procesoru trebati, zbog čega se u slučajevima kada se pogodi, dosta smanjuje vreme potrebno za neku operaciju.
+
+167. Objasniti princip lokalnosti. Šta je prostorna a šta vremenska lokalnost? Primeri.
+
+     Prostorna lokalnost je tendencija naših programa da se podaci i instrukcije pristupaju sekvencijalno.
+
+     Primeri:
+     - u C-u niz predstavlja uzastopni blok memorije, te on zadovoljava princip prostorne lokalnosti
+     - instrukcije najčešće se izvršavaju sekvencijalno, osim ako imamo skokove
+
+     Vremenska lokalnost je tendencija naših programa da ponovno koriste iste instrukcije ili podatke.
+
+     Primer:
+     - ako imamo program koji računa sumu niza, onda se promenljiva koja čuva sumu može staviti u keš zajedno sa instrukcijama u petlji
+
+168. Na koji način keš koristi principe prostorne i vremenske lokalnosti?
+
+     Keš memorije koriste princip prostorne lokalnosti tako što kopiraju celu okolinu nekog podatka/instrukcije iz glavne memorije iako je samo jedan podatak tražen jer se očekuje da će i susedni podaci biti uskoro korišćeni.
+
+     Princip vremenske lokalnosti ostvaruje se tako što se podaci/instruckije koji su nedavno korišćeni nalaze u kešu, jer je pretpostavka da će uskoro biti ponovo korišćeni.
+
+169. Objasniti čitanje keša u slučaju pogotka
+
+     Čitanje keša u slučaju pogotka znači da smo podatak koji smo tražili od glavne memorije našli u kešu. Magistrale za adrese i podatke se blokiraju i razmena podataka se dešava direktno između procesora i keša. Na ovaj način čitanje je dosta brže.
+
+170. Objasniti čitanje keša u slučaju promašaja
+
+     Ako se traženi podaci ne nalaze u kešu, onda se čitaju iz memorije i istovremeno upisuju u keš. Magistrale za adrese i podatke su aktivne, što znači da se odvija uobičajeno čitanje iz memorije sa dodatnim upisom u keš što ovaj slučaj čini sporijim nego čitanje iz memorije bez prisutva keša.
+    
+171. Objasniti pisanje keša u slučaju pogotka
+
+     U slučaju pogodtka postoje dve mogućnosti za pisanje:
+     - samo u kešu
+     - i u kešu i u glavnoj memoriji
+
+172. Objasniti pisanje keša u slučaju promašaja
+    
+     U slučaju promašaja podaci se upisuju samo u memoriju zato što ne postoje u kešu.
+
+173. Šta je preslikavanje adresa keša i koje vrste preslikavanja postoje?
+
+     blok = uzastopni komad memorije
+
+     Preslikavanje adrese keša je mapiranje između blokova iz glavne memorije i keš linija.
+
+     Vrste:
+     - neposredno
+     - set-asocijativno
+     - asocijativno
+
+174. Objasniti neposredno preslikavanje adresa keša i dati primer.
+
+     - Svaki blok se mapira u tačno jednu liniju keša
+       - $M$ - količina glavne memorije
+       - $m$ - količina keš memorije
+       - $B$ - veličina jednog bloka memorije
+       - $C = m / B$ - broj keš linija
+       - $c_{i} = i \ mod \ C$ - $i$-ti blok memorije se mapira u $c_{i}$-tu keš liniju
+     - Lako je za implementaciju, ali je takođe lako dobiti najgori mogući slučaj
+
+     Primer:
+     - $M = 64$
+     - $m = 16$
+     - $B = 4$
+     - $C = m / B = 4$
+       |  i | c_{i} |
+       |  0 |     0 |
+       |  1 |     1 |
+       |  2 |     2 |
+       |  3 |     3 |
+       |  4 |     0 |
+       |  5 |     1 |
+       |  6 |     2 |
+       |  7 |     3 |
+       |  8 |     0 |
+       |  9 |     1 |
+       | 10 |     2 |
+       | 11 |     3 |
+       | 12 |     0 |
+       | 13 |     1 |
+       | 14 |     2 |
+       | 15 |     3 |
+
+     Svaka adresa iz memorije se deli u 3 dela:
+     | keš tag | keš linija id | offset |
+
+     - /offset/
+       - služi da dopuni do veličine bloka zbog poravnanja memorije
+       - zauzima $b = log_{2}(B)$ bitova
+     - /keš linija id/
+       - moduliramo ovaj uzastopni podniz bitova da bismo dobili na koju liniju keša mapiramo dati blok
+       - zauzima $c = log_{2}(C)$ bitova
+     - /keš tag/
+       - služi za čuvanje u kešu kako bi keš znao koji blok memorije je u pitanju (pošto se više blokova memorije mogu mapirati u istu keš liniju)
+       - zauzima $t = B - b - c$ bitova
+
+     U liniji keša čuva se:
+     | validan bit | keš tag | keš podatak |
+
+       - keš podatak
+         - podaci kopirani iz mapiranog bloka memorije
+       - keš tag
+         - pošto se više blokova memorije mogu mapirati u istu keš liniju, koristimo keš tag da ih razlikujemo
+       - /validan bit/
+         - govori da li keš linija sadrži validne podatke (na početku je nego đubre, pa na ovaj način to naznačavamo)
+
+     - Kada želimo da proverimo da li se blok nalazi u kešu potrebno je:
+       1. naći "id" keš linije, odonosno $c_{i}$
+       2. ako je /validan bit/ jednak $0$ onda je promašaj
+       3. ako se keš tag i trenutni tag razlikuju onda je promašaj
+       4. u suprotnom nađen je
+
+       Slično važi i za upis, koji je dodatno vezan za polisu upisa.
+   
+175. Objasniti asocijativno preslikavanje adresa keša i dati primer.
+
+     - Svaki blok je moguće mapirati u bilo koju keš liniju
+       - Ako koristimo ~FIFO~ alokaciju, onda se faktički novi blok opisuje prvu sledeću slobodnu liniju. Kada se popuni keš izbacijemo ih redom kojim smo ih uneli.
+       - $M$ - količina glavne memorije
+       - $m$ - količina keš memorije
+       - $B$ - veličina jednog bloka memorije
+       - $C = m / B$ - broj keš linija
+
+     Svaka adresa iz memorije se deli u 2 dela:
+     | keš tag | offset |
+
+     - /offset/
+       - služi da dopuni do veličine bloka zbog poravnanja memorije
+       - zauzima $b = log_{2}(B)$ bitova
+     - /keš tag/
+       - služi za čuvanje u kešu kako bi keš znao koji blok memorije je u pitanju (pošto se više blokova memorije mogu mapirati u istu keš liniju)
+       - zauzima $t = B - b$ bitova
+
+     U liniji keša čuva se:
+     | validan bit | keš tag | keš podatak |
+
+       - keš podatak
+         - podaci kopirani iz mapiranog bloka memorije
+       - keš tag
+         - pošto se više blokova memorije mogu mapirati u istu keš liniju, koristimo keš tag da ih razlikujemo
+       - /validan bit/
+         - govori da li keš linija sadrži validne podatke (na početku je nego đubre, pa na ovaj način to naznačavamo)
+
+     - Kada želimo da proverimo da li se blok nalazi u kešu potrebno je:
+       1. sve linije koje imaju /validan bit/ jednak $1$ se uzimaju u obzir
+       2. porede se keš tagovi i trenutni tag, ako se ne nađu onda imamo promašaj
+       3. u suprotnom nađen je
+
+     - Problem nije veća količina memorije odvojena za keš tag, već činjenica da jedan blok može da bude u bilo kojoj keš liniji, zbog čega nam je potreban $2^{C}$ komparatora što ga čini dosta skupim.
+
+176. Objasniti skup-asocijativno preslikavanje adresa keša i dati primer.
+
+     Skup-asocijativno preslikavanje prestavlja kompromis između ~neposrednog~ i ~asocijativnog~ preslikavanja i kombinaciju tih ideja.
+     - $M$ - količina glavne memorije
+     - $m$ - količina keš memorije
+     - $B$ - veličina jednog bloka memorije
+     - $C = m / B$ - broj keš linija
+     - $S \in \{ 2, 4, 8 \} $ - broj disjunktnih skupova
+     - $s_{i} = i \ mod \ S$ - $i$-ti blok memorije se mapira u $s_{i}$-ti skup keš linija
+
+177. Izdelimo keš linije u *disjunktne skupove*, kojima pristupamo metodom sličnom kao kod ~neposrednog~ preslikavanja.
+     - Unutar samih skupova unosimo na proizvoljne keš linije kao kod ~asocijativnog~ preslikavanja
+
+     Svaka adresa iz memorije se deli u 3 dela:
+     | keš tag | skup id | offset |
+
+     - /offset/
+       - služi da dopuni do veličine bloka zbog poravnanja memorije
+       - zauzima $b = log_{2}(B)$ bitova
+     - /skup id/
+       - moduliramo ovaj uzastopni podniz bitova da bismo dobili na u koji skup mapiramo dati blok
+       - zauzima $s = log_{2}(S)$ bitova
+     - /keš tag/
+       - služi za čuvanje u kešu kako bi keš znao koji blok memorije je u pitanju (pošto se više blokova memorije mogu mapirati u istu keš liniju)
+       - zauzima $t = B - b - s$ bitova
+
+     U liniji keša čuva se:
+     | validan bit | keš tag | keš podatak |
+
+       - keš podatak
+         - podaci kopirani iz mapiranog bloka memorije
+       - keš tag
+         - pošto se više blokova memorije mogu mapirati u istu keš liniju, koristimo keš tag da ih razlikujemo
+       - /validan bit/
+         - govori da li keš linija sadrži validne podatke (na početku je nego đubre, pa na ovaj način to naznačavamo)
+
+     - Kada želimo da proverimo da li se blok nalazi u kešu potrebno je:
+       1. pronaći /id/ skupa u kojem se nalazi blok
+       2. sve linije koje imaju /validan bit/ jednak $1$ se uzimaju u obzir
+       3. porede se keš tagovi i trenutni tag, ako se ne nađu onda imamo promašaj
+       4. u suprotnom nađen je
+         
+178. Šta su i čemu služe politike zamenjivanja keša? Nabrojati ih.
+
+     - Politika zamenjivanje sa primenjuje radi odabira keš linije čiji sadržaj će biti zamenjen sadržajem novog memorijskog bloka.
+     - Zavisi od primenjenog preslikavanja
+       - U slučaju ~neposrednog~ preslikavanja *nema* politike zamene jer nema izbora
+
+     Najčešće se koriste:
+     - ~LRU~
+     - ~pseudo-LRU~
+     - ~FIFO~
+     - ~LFU~
+     - ~random~
+      
+179. Objasniti politiku zamenjivanja najduže nekorišćene linije keša (~LRU~). Dobre i loše strane.
+
+     ~LRU = Least Recently Used~
+
+     Predviđanje zasniva na principu *vremenske lokalnosti*. Zamenjuje sadržaj one linije keša koja najduže nije bila korišćena.
+
+    Prednosti:
+     - najbolji rezultati
+     Mane:
+     - za $n$ linija potrebno mu je $n!$ stanja koja je moguće predstaviti kao konačni automat, ali je memorijska složenost prevelika da bi se realizovalo u ~asocijativnom mapiranju~
+     - moguće je realizovati za $2$ ili $4$ keš linije, zbog čege se i koristi u ~skup-asocijativnom~ mapiranju
+      
+180. Objasniti politiku zamenjivanja pseudo-najduže nekorišćene linije keša (~pseudo-LRU~). Dobre i loše strane.
+
+     ~pseudo-LRU = pseudo Least Recently Used~
+
+     Predstavlja aproksimaciju ~LRU~ politike. Keš linije se dele u dve grupe, gde se pomoću jednog bita označava linija keša koja je najskorije korišćena u skupu. Potom se drugoj grupi pristupa koja se dalje deli u podskupove dok ne dođemo do jedne linije keša.
+
+    Prednosti:
+     - dosta manja memorijska složenost, što se najviše ogleda u situacijama kada imamo više od $4$ keš linije u jednom skupu
+     Mane:
+     - smanjena preciznost u odnosu na ~LRU~
+
+181. Objasniti ~FIFO~ politiku zamenjivanja linije keša.
+
+     Zamenjuje se ona linija keša koja je prva pročitana, tj. ona koja je najduže u kešu.
+
+     Relativno jednostavna implementacija:
+     - skup linija keša se ponaša kao kružni bafer
+     - za svaki skup je potreban po jedan kružni brojač koji označava koja linija je poslednje popunjena
+
+     Retko se koristi
+
+182. Koje politike pisanja keša postoje i u čemu se razlikuju
+
+     Kada se podaci menjaju, mora se uzeti u obzir da postoje dve kopije podataka (u kešu i glavnoj memoriji)
+
+     Dve osnovne politike:
+     1. Pisanje sa propuštanjem (/write-through/) - pisanje se odvija i u kešu i u memoriji
+     2. Pisanje sa prepisivanjem (/write-back/) - samo keš
+    
+183. Objasniti politiku pisanja keša sa propuštanjem (/write-through/). Dobre i loše strane
+
+     Svaki put kada se vrši upis u keš, vrši se i u memoriji.
+
+    Prednosti:
+     - jednostavna implementacija
+     Mane:
+     - relativno sporo
+      
+184. Objasniti politiku pisanja keša sa prepisivanjem (/write-back/). Dobre i loše strane
+
+     Ažuriramo isključivo u kešu, dok se pisanje u memoriju odvija pri zameni u kešu. Koristimo /update bit/ koji nam govori da li je keš linija koju treba zameniti bila ažurirana, tj. da li treba ažurirati u glavnoj memoriji. Na ovaj način poboljšavamo performanse zamene linije keša, koja bi bez /update bit/-a i /write-back/ politikom bila duplo sporija.
+
+185. Razdvojeni i unifikovani keš. Poređenje.
+
+     Kod razdvojenog keša postoji poseban keš za podatke i instrukcije, dok je kod unifikovanog sve u jednom.
+
+     Prednost razdvojenog keša je što omogućava drugačije načine korišćenja principa lokalnosti čime povećava performanse. Takođe olakšava implementaciju jer keš za instrukcije samo čita.
+
+     Nedostatak razdvojenog keša je u tome što je nemoguće dinamički menjati količinu keša odvojenu za podatke i instrukcije.
+
+186. Objasniti arhitekture višestepenog keša i način njihovog funkcionisanja.
+
+     Organizacija keša hijerarhijski u više nivoa može biti:
+     - Inkluzivna - svaki sledeći nivo sadrži podatke iz prethodnog, ali i neke dodatne
+     - Ekskluzivna - ne sadrži iste podatke, već isključivo nove
+
+     Prednost inkluzivnog pristupa je u tom što veće keš memorije mogu imati veće linije, dok kod ekskluzivnog sve keš memorije moraju da imaju linije iste veličine
+
+      Podaci se prvo traže u najbližem kešu, pa ako ih tu nema onda u sledećem itd. dok se ne nađe ili od do memorije.
+       - kod inkluzivnog se podaci upisuju sve bliže nivoe
+       - kod ekskluzivnog se podaci brišu iz prethodnih nivoa
+
+       Danas se najčešće organizuje u 3 nivoa:
+       - ~L1~ - nalazi se na samom čipu procesora, najbliže samom procesoru
+       - ~L2~ - uglavnom se nalazi na samom čipu procesora
+       - ~L3~ - obično je znatno veći i zajednički za sva jezgra na istom procesoru
+
+187. Objasniti odnos veličine keša i performansi.
+
+     Povećanjem keša do određene granice dobijamo bolje performanse, ali se u nekom trenutku taj rast performansi usporava i postaje beznačajan.
+
+     Ovo se može objasniti time da određenom veličinom keša procenat pogodtka postane blizak $100%$ nakon čega dalje povećanje nema uticaja
+
+188. Objasniti odnos veličine linije keša i performansi.
+
+     Povećanjem linije keša do neek mere se poboljšavaju performanse, ali se u nekom trenutku te performanse počinju kvariti.
+
+     Za premale linije keša slabo se koristi princip prostorne lokalnosti, dok se za velike smanjuje preciznost.
+    
+189. Objasniti odnos asocijativnosti i performansi.
+
+     Povećanjem stepena asocijativnosti se povećava procenat pogotka keša. Potpuno asocijativni keš je u tom smislu najbolji, ali je njegova implementacija teška, pa se dizajneri češće odlučuju za ~skup-asocijativno~ mapiranje, uz izbor većih skupova kad je to moguće.
+
+190. Šta je magistrala i čemu služi?
+
+     Magistrala je komunikacioni sistem koji prenosi podatke/instrukcije između komponenti računara ili eksternih uređaja.
+    
+191. Kako se ostvaruje deljenje magistrale? Na koji način se sprečava kolizija signala? Objasniti.
+
+     [TODO]
+
+     Da bismo povezali više uređaja na magistralu, potrebno je sprečiti istovremeno puštanje signala od strane različitih uređaja. Ovo se obično postiže korišćenjem *bafera sa tri stanja* (/tri-state buffer/).
+
+192. Šta je transakcija a šta operacija magistrale? Šta je protokol magistrale?
+
+     - Transakcija predstavlja niz operacija potrebnih za izvršanje jasno definisane akcije.
+     - Operacija predstavlja čitanje/pisanje memorije, čitanje ~I/O~ uređaja, "rafalno" čitanje itd.
+     - Protokol magistrale predstavlja skup pravila kojima se reguliše komunikacija između komponenti
+
+193. Šta su serijske, a šta paralelne magistrale? Poređenje.
+
+     Prema načinu transfera, magistrale je moguće podeliti na:
+     - serijske
+       - sastoje se iz jedne linije preko koje se podaci prenose bit po bit
+     - paralelne
+       - sastoje se iz više linija preko kojih se podaci prenose reč po reč
+
+     Naizgled paralelne magistrale deluju kao bolji izbor, ali se ispostavilo da je u većini slučajeva bolje koristiti serijske.
+
+     Problemi paralelnih magistrala:
+     - zbog različitih dužina i provodljivosti *ne stižu* svi bitovi *u isto vreme* što znatno otežava ispravno čitanje
+     - pri velikim frekvencijama dolazi do elektromagnetne indukcije što znači da je moguće da odvojeni signali utiču jedni na druge, a.k.a. *interferencija*
+
+     Serijske ne samo što nemaju ove probleme, takođe su jeftinije i jednostavnije za izradu jer je potrebno manje delova. Serijske jesu sporije, ali dozvoljavaju da se poveća frekvencija čime se anulira taj faktor.
+
+     Zbog toga se danass umesto ranijih paralelnih (~PCI, PATA...~) koriste serijske magistrale (~PCI-Express, SATA, USB~). Izuzetak je *memorijska magistrala* koja povezuje procesor sa glavnom memorijom.
+   
+194. Koja je razlika između multipleksiranih i razdvojenih magistrala? Poređenje.
+
+     Paralelne magistrale mogu biti:
+     - multipleksirane (/multiplexed/)
+       - iste linije se koriste i za adrese i za podatke tako što se prenose naizmenično u različitim ciklusima
+       - ~PCI~ magistrala je primer multipleksirane paralelne magistrale
+     - razdvojene (/dedicated/)
+       - odvojene linije se koriste za adrese, podatke i kontrolne signale (tzv. /magistrala podataka, adresna magistrala, kontrolna magistrala/)
+       - Memorijska magistrala je primer odvojene paralelne magistrale
+
+     Prednosti multipleksiranih magistrala u odnosu na odvojene je u jeftinijoj implementaciji, a mana je u manjoj brzini prenosa (jer je potrebno više ciklusa za obavljanje transakcije)
+   
+195. Šta je širina magistrale?
+
+     Širina magistrale određuje veličinu podataka koji se prenose magistralom. Osnovna motivacija za proširivanje je podizanje propustnosti (/throughput/) a time i performansi. Sužavanje se radi u slučajevima da nam je potrebno da smanjimo složenost, samim tim i cenu.
+
+196. Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije čitanja u slučaju sinhrone magistrale.
+
+     [TODO]
+
+197. Objasniti i predsaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.
+
+     [TODO]
+
+198. Šta je stanje čekanja? Kada se i kako upotrebljava? Objasniti operaciju čitanja sa stanjem čekanja.
+
+     Imajući u vidu da je procesor često dosta brži od memorije, potrebno je na neki način mu reći da sačeka. Za to se koristi stanje čekanja i kontroni signal /ready/.
+
+     1. procesor želi da pročita određenu adresu u memoriji, stoga tu adresu postavlja na *adresnu magistralu*.
+
+     2. pošto je procesor brži od memorije, kontrolni signal /ready/ se postavlja na $1% za koje vreme procesor čeka
+
+     3. kada je /ready/ na $0$ onda procesor uzima podatke sa magistrale podataka
+
+199. Šta je "prenošenje blokova podataka"? Kada se i za šta upotrebljava?
+
+     Prenošenje blokova podrazumeva da se jednom *složenom operacijom* prenosi više uzastopnih reči jer se ispostavilo da je efikasnije pri istoj transakciji pročitati više reči nego u više uzastopnih operacija pojedinačno.
+
+     Koristi se često za popunjavanje keš memorije.
+
+200. Šta je "/read-modify-write/" transakcija i za šta se upotrebljava?
+
+     Ova transakcija je pogodna za realizaciju ekskluzivnog pristupa *zajedničkim podacima/kodu* (a.k.a. /critical section/) kod multiprocesorskih sistema.
+
+     Predstavlja *atomičku* operaciju što znači da tokom njenog trajanja nije moguće da se izvrši bilo koja druga operacija nad istom magistralom.
+
+201. Kako se sinhronizuje rad na asinhronoj magistrali? Objasniti signale i tok aktivnosti (četvorofazno rukovanje)
+
+     Sinhronizuje se pomoću protokola za eksplicitnu sinhronizaciju kao što je *četvorofazno rukovanje*.
+
+     Pošto asinhrone magistrale nemaju zajednički časovnik, uređaji reaguju odmah na pristigle signale.
+     Kod četvorofaznog rukovanja uvode se dva kontrolna signala ~MSYN~ (/master synchronization/) i ~SSYN~ (/slave synchronization/).
+
+     Tok aktivnosti:
+     1. /master/ postavilja sve podatke na magistralu i "pali" ~MSYN~ signal kako bi /slave/-u stavio do znanja da započinje transakciju
+
+     2. /slave/ obavlja transakciju i "pali" ~SSYN~ signal kako bi javio /master/-u da je završena transakcija
+
+     3. /master/ "gasi" ~MSYN~
+
+     4. /slave/ "gasi" ~SSYN~
+
+202. Prednosti i mane asinhronih magistrala u odnosu na sinhrone.
+
+     Prednosti:
+     - Brži transfer jer se brzina može prilagoditi brzini uređaja sa kojim komunicira
+     Mane:
+     - Teža implementacija u odnosu na sinhrone
+      
+203. Šta je arbitraža magistrale? Objasniti razliku između centralizovane i distribuirane arbitraže.
+
+    Postojanje više /master/-a (npr. ~CPU~ i ~DMA~ kontroler) za jednu magistralu se rešava pomoću arbitraže magistrale.
+
+    Uloga arbitrže magistrale je da na osnovu *politike dodeljivanja* i *politike oslobađanja* odredi kom /master/-u će dodeliti upravljanje nad magistralom.
+
+    Kod centralizovanih arbitraža jedan centralni arbitar dobija zahteve od svih /master/-a i određuje kome dodeljuje magistralu.
+    Kod distribuiranih arbitraža hardver je distribuiran među /master/-ima koji međusobno komuniciraju i određuju kome ide magistrala.
+
+204. Nabrojati i ukratko objasniti politike dodeljivanja magistrale.
+
+     - Politike fiksnih prioriteta
+       - svaki master ima fiksiran prioritet i na osnovu toga se i određuje ko će dobiti magistralu
+
+     - Politike rotirajućih prioriteta
+       - prioritet nije fiksiran i može se na različite načine implementirati kao:
+         - funkcija vremena čekanja za dodelu magistrale
+         - kružna politika odnosno onaj koji je poslednji dobio pristup magistrali dobija najniži prioritet
+
+     - Hibridna politika
+       - kombinacija prethodne dve politike
+        
+205. Navesti i ukratko objasniti politike oslobađanja magistrale.
+
+     - Politika bez preuzimanja
+       - oslobađa se magistrala tek kada trenutni /master/ dozvoli
+         - jedna varijanta je da uređaj oslobodi čim završi transakciju
+         - druga varijanta je da uređaj oslobodi kad završi transakciju i drugi /master/ je zahteva
+     - Politika sa preuzimanjem
+       - magistralu je moguće osloboditi u slučaju da je zahteva /master/ višeg prioriteta iako se trenutna transakcija možda nije obavila do kraja
+
+206. Objasniti detaljno mehanizam ulančavanja kod centralizovane arbitraže.
+
+    Signal za zahtev se formira kao disjunkcija zahteva pojedinačnih /master/-a na zajedničkoj magistrali.
+
+    Signal za dodelu se prosleđuje redom od jednog do drugog /master/-a. Ako neku uređaj nije tražio pristup magistrali onda on prosleđuje sledećem sve dok ne dođe do prvog po prioritetu koji je zatražio pristup magistrali.
+
+    Veoma je jednostavan za implementaciju, ali mu je mana što omogućava samo fiksni prioritet politike dodele.
+
+207. Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.
+208. Električne karakteristike serijskih magistrala
+209. Navesti najčešće načine kodiranja bitova kod serijskog prenosa
+210. Koja je osnovna prednost, a koja mana ~NRZ~ kodiranja u odnosu na ~RZ~ kodiranje?
+211. Objasniti ~NRZI~ kodiranje.
+212. Ukratko objasniti ~8b/10b~ kodiranje? Koji je razlog za korišćenje ovog načina kodiranja?
+213. Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike
+214. Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike
+
+215. Šta je sistem prekida i koja mu je uloga?
+216. Navesti i ukratko objasniti vrste prekida
+217. Objasniti hardverske prekide. Šta su maskirajući, a šta nemaskirajući prekidi?
+218. Objasniti softverske prekide. Koja je tipična uloga softverskih prekida?
+219. Šta su izuzeci (u kontekstu sistema prekida) i čemu služe?
+220. Šta je vektor prekida? Šta je deskriptor prekida? Gde se nalazi tabela deskriptora prekida?
+221. Objasniti detaljno način pozivanja rukovaoca prekidom u slučaju vektorskih prekida.
+222. Objasniti komponente i rad kontrolora prekida ~PIC 8259~
+
+223. Šta su ulazno/izlazni uređaji?
+224. Šta su ulazno/izlazni kontroleri i koja je njihova uloga?
+225. Šta podrazumeva upotreba ~I/O~ uređaja putem memorijskog mapiranja?
+226. Šta podrazumeva upotreba ~I/O~ uređaja putem izolovanog ulaza i izlaza?
+227. Objasniti tehniku programiranog ~I/O~
+228. Objasniti tehniku ~I/O~ vođenog prekidima
+229. Objasniti direktan pristup memoriji (~DMA~). Kontroler ~DMA~. Koraci pri realizaciji ~DMA~ pristupa
+
+230. Šta je virtuelna memorija i zbog čega se koristi?
+231. Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?
+232. Objasniti preslikavanje adresa virtuelne memorije. Primer.
+233. Preslikavanje adresa na više nivoa. Zbog čega se koristi? Primer.
+234. Šta su i kada se koriste politike zamene stranica?
+235. Navesti i ukratko objasniti najčešće politike zamene stranica
+236. Objasniti značaj veličine stranice virtuelne memorije i navesti primer.
+237. Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.
+238. Šta sadrže stavke u tablici stranica virtuelne memorije? Objasniti.
+239. Šta je bafer tablice stranica virtuelne memorije (~TLB~) i čemu služi?
+
+240. Objasniti princip preklapanja instrukcija u modernim procesorima
+241. Koji su osnovni uzroci zaustavljanja "pokretne trake" kod preklapanja instrukcija u savremenim procesorima? Koje se tehnike koriste za rešavanje ovakvih problema?
+242. Objasniti tehniku izvršavanja van redosleda (/out-of-order execution/)
+243. Objasniti tehniku predikcije grananja (/branch prediction/)
+244. Šta su superskalarni procesori?
+
+245. Koji su osnovni tipovi podataka u jeziku /Verilog/?
+246. Objasniti razliku između žičanih i registarskih tipova u jeziku /Verilog/
+247. Šta predstavljaju vektorski tipovi, a šta nizovi u jeziku /Verilog/?
+248. Šta predstavlja vrednost $z$ a šta vrednost $x$ u jeziku /Verilog/?
+249. Na koji način se u jeziku /Verilog/ mogu izdvajati podsignali iz vektorskih signala, a na koji način se jednostavniji signali mogu grupisati u složenije?
+250. Šta su moduli u jeziku /Verilog/? Kakvi moduli postoje? Na koji način se moduli instanciraju? Primer
+251. Šta su portovi u jeziku /Verilog/? Koje vrste portova postoje i kako se deklarišu? Primer.
+252. Na koji način se može zadavati kašnjenje pilikom modelovanja na nivou gejtova u jeziku /Verilog/? Primer.
+253. Objasniti naredbu /assign/ u jeziku /Verilog/. Zadavanje kašnjenja. Primer.
+254. Koje vrste procesa na nivou modelovanja ponašanja postoje u jeziku /Verilog/?
+255. Opisati sintaksu i semantiku /initial/ procesa u jeziku /Verilog/. Primer
+256. Opisati sintaksu i semantiku /always/ procesa u jeziku /Verilog/. Primer
+257. Na koji način se može kontrolisati izvršavanje /always/ procesa u jeziku /Verilog/?
+258. Naredbe proceduralne dodele u jeziku /Verilog/. Blokirajuće i neblokirajuće dodele. Primeri.
+259. Na koji način se može zadavati kašnjenje prilikom izvršavanja naredbi u okviru procesa u jeziku /Verilog/?
+260. Naredbe grananja u jeziku /Verilog/. Primeri
+261. Dizajn kombinatornih kola pomoću /always/ procesa u jeziku /Verilog/. Primeri
+262. Dizajn asinhronih sekvencijalnih kola pomoću /always/ procesa u jeziku /Verilog/. Primeri
+263. Dizajn sinhronih sekvencijalnih kola pomoću /always/ procesa u jeziku /Verilog/. Primeri

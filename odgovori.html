@@ -1,0 +1,4478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-06-01 Mon 14:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Odgovori na ispitna pitanja iz UOAR2</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Aleksandar Šmigić" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Odgovori na ispitna pitanja iz UOAR2</h1>
+<ol class="org-ol">
+<li>Napisati istinitosne tablice osnovnih logičkih veznika (NE, I, ILI)
+
+<ul class="org-ul">
+<li><p>
+NE
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">A</td>
+<td class="org-right">NE(A)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+I
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">A</td>
+<td class="org-right">B</td>
+<td class="org-right">I(A, B)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+ILI
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">A</td>
+<td class="org-right">B</td>
+<td class="org-right">ILI(A, B)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+
+<li>Napisati istinitosne tablice izvedenih logičkih veznika (NI, NILI, EILI)
+
+<ul class="org-ul">
+<li><p>
+NI (NAND)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">A</td>
+<td class="org-right">B</td>
+<td class="org-right">NI(A, B)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+NILI (NOR)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">A</td>
+<td class="org-right">B</td>
+<td class="org-right">NILI(A, B)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>
+EILI (XOR)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">A</td>
+<td class="org-right">B</td>
+<td class="org-right">EILI(A, B)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+
+<li>Navesti bar jedan način na koji se EILI veznik može predstaviti pomoću osnovnih logičkih veznika (NE, I, ILI)
+
+<ul class="org-ul">
+<li>Preko KNF-a
+(A ili ne(B)) i (ne(A) ili B)</li>
+</ul></li>
+
+<li><p>
+Navesti osnovne zakone algebre logike
+</p>
+
+<p>
+Algebra logike je uređena šestorka \((S, \cdot, +, \bar{}, 1, 0)\)
+</p>
+<ul class="org-ul">
+<li>\(S\) - neprazan skup</li>
+<li>\(\cdot, +\) - binarne operacije</li>
+<li>\(\bar{}\) - unarna operacija</li>
+<li><p>
+\(1, 0\) - izdvojeni elementi skupa \(S\)
+</p>
+
+<p>
+Osnovni zakoni:
+</p>
+<ol class="org-ol">
+<li>Asocijativnost
+<ul class="org-ul">
+<li>\((x \cdot y) \cdot z = x \cdot (y \cdot z)\)</li>
+<li>\((x + y) + z = x + (y + z)\)</li>
+</ul></li>
+<li>Neutral
+<ul class="org-ul">
+<li>\(x \cdot 1 = x\)</li>
+<li>\(x + 0 = x\)</li>
+</ul></li>
+<li>Komplementarnost
+<ul class="org-ul">
+<li>\(x \cdot \bar{x} = 0\)</li>
+<li>\(x + \bar{x} = 1\)</li>
+</ul></li>
+<li>Komutativnost
+<ul class="org-ul">
+<li>\(x \cdot y = y \cdot x\)</li>
+<li>\(x + y = y + x\)</li>
+</ul></li>
+<li>Distributivnost
+<ul class="org-ul">
+<li>\(x \cdot (y + z) = x \cdot y + x \cdot z\)</li>
+<li>\(x + (y \cdot z) = (x + y) \cdot (x + z)\)</li>
+</ul></li>
+</ol></li>
+</ul></li>
+
+<li><p>
+Zbog čega se algebra logike koristi kao osnova savremenih računara?
+</p>
+
+<p>
+Iz razloga što je mnogo jednostavnije, stabilnije i jeftinije napraviti fizički uređaj koji ime dva diskretna stanja nego više njih. Takođe, aritmetičke operacije nad binarnim brojevima je jednostavno opisati pomoću algebre logike i samim tim implementirati pomoću logičkih kola.
+</p></li>
+
+<li><p>
+Šta znači da su dva logička izraza ekvivalentna?
+</p>
+
+<p>
+Znači da su im vrednosti pri istim valuacijama promenljivih iste odnosno da za istu kombinaciju vrednosti &ldquo;ulaznih&rdquo; promenljivih daju isti &ldquo;izlaz&rdquo;
+</p></li>
+
+<li>Definisati pojmove elementarne konjunkcije i disjunktivne normalne forme (DNF). Šta je savršena elementarna konjunkcija, a šta savršena DNF?
+
+<ul class="org-ul">
+<li>Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})</li>
+<li>Elementarna konjunkcija je logički izraz koji se sastoji iz konjunkcije literala (eg. \(x\bar{y}z\bar{p}\))
+<ul class="org-ul">
+<li>Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promeljivu (eg. \(P = {x, y, z}, S = \bar{x} \cdot y \cdot z\))</li>
+</ul></li>
+<li>DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. $x\bar{y}z + \bar{x}yz + xyz)
+<ul class="org-ul">
+<li>Savršena DNF se sastoji od savršenih elementarnih konjunkcija</li>
+</ul></li>
+</ul></li>
+
+<li>Definisati pojmove elementarne disjunkcije i konjunktivne normalne forme (KNF). Šta je savršena elementarna disjunkcija, a šta savršena KNF?
+
+<ul class="org-ul">
+<li>Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})</li>
+<li>Elementarna disjunkcija je logički izraz koji se sastoji iz disjunkcije literala (eg. \(x + \bar{y} + z\bar{p}\))
+<ul class="org-ul">
+<li>Savršena elementarna disjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, \bar{x} + y + z)</li>
+</ul></li>
+<li>KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. $(x + \bar{y} + z) &sdot; (\bar{x} + y + z) &sdot; (x + y + z)
+<ul class="org-ul">
+<li>Savršena KNF se sastoji od savršenih elementarnih konjunkcija</li>
+</ul></li>
+</ul></li>
+
+<li>Ukratko opisati postupak za svođenje logičkog izraza na DNF
+
+<ol class="org-ol">
+<li>Eleminisanje logičkih konstanti - primena veznika nad 0 i 1 sve dok se izraz ne svede na 0 ili 1 ili ostane bez konstanti</li>
+<li>De Morganovi zakoni i dupla negacija</li>
+<li>Distributivnost \(\cdot\) prema \(+\) - nakon ovog koraka dobijamo DNF
+<ul class="org-ul">
+<li>Za svođenje na KNF važe prethodna dva koraka, dok je treći distributivnost \(+\) prema \(\cdot\)</li>
+</ul></li>
+<li>Idempotentnost, neutral, apsorpcija - primenom ovih (i drugih zakona) moguće je dodatno minimizovati DNF</li>
+</ol></li>
+
+<li><p>
+Šta je logička funkcija i koliko ima funkcija reda \(n\)?
+</p>
+
+<p>
+Logička funkcija je svako preslikavanje \(f: {0, 1}^{n} \rightarrow {0, 1}\) koja <b>logičke vrednosti</b> \((x_{1}, x_{2}, ..., x_{n})\) slika u <b>logičku vrednost</b> \(y \in {0, 1}\).
+Kardinalnost domena logičkih funkcija reda \(n\) je \(2^{n}\), dok je kodomena \(2\), dakle, pošto se svaka funkcija iz domena može slikati u dve vrednosti u kodomenu, postoji \(2^{2^{n}}\) funkcija reda \(n\)
+</p></li>
+
+<li><p>
+Šta je potpun sistem veznika? Navesti bar tri primera potpunih sistema logičkih veznika
+</p>
+
+<p>
+Potpun sistem veznika predstavlja skup veznika pomoću kojeg je moguće predsaviti svaku logičku funkciju.
+Primeri:
+</p>
+<ol class="org-ol">
+<li>I, ILI, NE</li>
+<li>I, NE</li>
+<li>ILI, NE</li>
+<li>NI (Šeferov veznik: \(\uparrow\))</li>
+<li>NILI (Pirsov/Lukašijevičev veznik: \(\downarrow\))</li>
+</ol></li>
+
+<li>Izraziti NE, I i ILI veznik pomoću NI veznika
+
+<ul class="org-ul">
+<li>NE(x) = NI(x, x)</li>
+<li>I(a, b) = NE(NI(a, b)) = NI(NI(a, b), NI(a, b))</li>
+<li>ILI(a, b) = NE(I(NE(a), NE(b))) = &#x2026;</li>
+</ul></li>
+
+<li><p>
+Ukratko objasniti kako se proizvoljna logička funkcija može izraziti u obliku izraza u savršenoj DNF
+</p>
+
+<p>
+Čitajući tablicu logičke funkcije, ako je izlaz za neku valuaciju 1, onda na našu savršenu DNF formulu dodajemo novi konjunkt koji se sastoji iz konjunkcije literala koji za tu valuaciju daju vrednost 1.
+</p></li>
+
+<li><p>
+Šta je minimizacija logičkih izraza i zbog čega nam je značajna?
+</p>
+
+<p>
+Minimizovati logički izraz znači pronaći logički ekvivalentan izraz koji sadrži najmanji mogući broj veznika.
+</p>
+
+<p>
+Najčešće nam koristi pri dizajnu logičkih kola kako bismo smanjili cenu proizvodnje, ali suštinski može da služi za rešavanje mnogo šire grupe problema koji se mogu mapirati u SAT problem.
+</p></li>
+
+<li><p>
+Na primeru objasniti metod algebarskih transformacija za minimizaciju logičkih izraza.
+</p>
+
+<p>
+Koristimo dva pravila:
+</p>
+<ol class="org-ol">
+<li>Grupisanje:
+\[
+       K_{1} = x \cdot K' \\
+       K_{2} = \bar{x} \cdot K' \\
+       \downarrow \\
+       K = K'(x + \bar{x}) = K' \\
+       \]</li>
+
+<li>Udvajanje:
+<ul class="org-ul">
+<li>U slučaju da imamo konjunkte \(K_{1}, K_{2}\) nad kojima bismo mogli da primenimo <i>grupisanje</i> sa \(K\), onda dupliramo \(K\) da bismo mogli da grupišemo sa oba</li>
+</ul></li>
+</ol>
+
+<p>
+Eg. \(F(x, y, z) = x\bar{y}z + \bar{x}\bar{y}z + x\bar{y}\bar{z}\)
+Možemo grupisati prvi i drugi i prvi i treći, tako da ćemo primeniti prvo <i>udvajanje</i> pa tek onda grupisanje
+\(F(x, y, z) = x\bar{y}z + \bar{x}\bar{y}z + x\bar{y}z + x\bar{y}\bar{z}\)
+\(F(x, y, z) = \bar{y}z(x + \bar{x}) + x\bar{y}(z + \bar{z})\)
+\(F(x, y, z) = \bar{y}z(x + \bar{x}) + x\bar{y}(z + \bar{z})\)
+\(F(x, y, z) = \bar{y}z + x\bar{y}\)
+</p></li>
+
+<li><p>
+Objasniti način upotrebe Karnoovih mapa za minimizaciju logičkih izraza. Primer.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Karnoove mape predstavljaju grafički metod za minimizaciju logičkih izraza koji funkcioniše po principu grupisanja. Nakon što nacrtamo tabelu gde se susendna polja (susedstvo se gleda kao da je tabela zapravo površina torusa) razlikuju za jednu vrednost (Grejov kod) popunimo mesta koja u tabeli daju \(1\) kao rezultat. Minimizujemo tako što prvo pokušamo da obuhvatimo sve \(1\) u pravougaonik od \(16\) elemenata, zatim redom \(8\), \(4\), \(2\), \(1\). Posmatramo promenljive u okviru jednog pravougaonika koje se nisu promenile i njih stavljamo u finalnu minimizovanu DNF formulu.
+</p></li>
+
+<li><p>
+Objasniti metodu Kvin-Meklaskog za minimizaciju logičkih izraza. Primer.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+Metoda Kvin-Meklaskog je metoda minimiacije logičkih izraza koja je pogodna za implementaciju na računaru.
+</p>
+
+<ol class="org-ol">
+<li>Na ulazu dobijamo funkciju u SDNF. Sortiramo rastuće savršene konjunkcije po broju neinvertovanih literala i izdelimo ih u klase, gde $i$-ta klasa sadrži SK koji imaju \(i\) neinvertovanih literala.</li>
+
+<li>Vršimo grupisanje elemenata iz $i$-te sa elementima iz $i + 1$-ve klase, i rezultat čuvamo za sledeću iteraciju. Grupisanje je moguće ako se elementi koji se porede razlikuju samo na jednom mestu. Ovo radimo sve dok je moguće grupisati.</li>
+
+<li>Formiramo tabelu prostih implikanata (vidi primer). Identifikujemo <i>bitne proste implikante</i>.</li>
+</ol></li>
+
+<li><p>
+Kako se upotrebljavaju Karnoove mape u prisustvu nebitnih vrednosti? Primer.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Kada imamo nebitne (<i>don&rsquo;t care</i>) vrednost, njih možemo da tretiramo onako kako nama odgovara, odnosno ako nam omogućavaju da zaokružimo veću površinu tretiramo ih kao \(1\), u suprotnom nema potrebe da ih zaokružimo.
+</p></li>
+
+<li><p>
+Kako se metod Kvin-Meklaskog koristi u prisustvu nebitnih vrednosti? Primer.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+U prvoj fazi algoritma se nebitne vrednosti tretiraju kao \(1\), odnosno učestvuju u grupisanju.
+</p>
+
+<p>
+U drugoj fazi algoritma se nebitne vrednosti tretiraju kao \(0\), tj. ne navode se u tabeli prostih implikanata.
+</p></li>
+
+<li><p>
+Šta je Petrikov metod i koja je njegova uloga u okviru metode Kvin-Mekalskog? Primer.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+Petrikov metod je metod koji se koristi za pronalaženje najmanjeg podskupa preostalih prostih implikanata u slučaju da neka kolona ostane &ldquo;nepokrivena&rdquo; u metodi Kvin-Mekalskog.
+</p></li>
+
+<li><p>
+Elementarna logička kola (gejtovi) i njihove šematske oznake.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<ul class="org-ul">
+<li>Buffer</li>
+<li>3-state buffer</li>
+<li>NOT</li>
+<li>AND</li>
+<li>OR</li>
+<li>NAND</li>
+<li>NOR</li>
+<li>XOR</li>
+<li>NXOR</li>
+</ul></li>
+
+<li><p>
+Nacrtati simbol i objasniti funkciju NMOS tranzistora.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+NMOS tranzistor ima 3 ulaza:
+</p>
+<ol class="org-ol">
+<li>Source - povezan sa <b>negativan</b> napon</li>
+<li>Drain - povezan na <b>pozitivan</b> napon</li>
+<li>Gate - odredjuje da li će struja proticati
+<ul class="org-ul">
+<li>Ako je napon u zoni logičke nule onda je izlaz 0</li>
+<li>Ako je napon u zoni logičke jedinice onda je izlaz 1</li>
+</ul></li>
+</ol>
+
+<p>
+NMOS tranzistor ima ulogu u donjoj mreži (<i>pulldown network</i>) prekidača da poveže masu (<i>ground</i>) sa izlazom da bi u slučaju <b>niske</b> voltaže na izlazu bila <b>0</b>
+</p></li>
+
+<li><p>
+Nacrtati simbol i objasniti funkciju PMOS tranzistora.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+PMOS tranzistor ima 3 ulaza:
+</p>
+<ol class="org-ol">
+<li>Source - povezan sa <b>pozitivan</b> napon</li>
+<li>Drain - povezan na <b>negativan</b> napon</li>
+<li>Gate - odredjuje da li će struja proticati
+<ul class="org-ul">
+<li>Ako je napon u zoni logičke nule onda je izlaz 1</li>
+<li>Ako je napon u zoni logičke jedinice onda je izlaz 0</li>
+</ul></li>
+</ol>
+
+<p>
+PMOS tranzistor ima ulogu u gornjoj mreži (<i>pullup network</i>) prekidača da poveže napajanje (<i>supply</i>) sa izlazom da bi u slučaju <b>visoke</b> voltaže na izlazu bila <b>1</b>
+</p></li>
+
+<li><p>
+Implementacija NE kola u CMOS-u
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<ul class="org-ul">
+<li>Ako je ulaz 0 samo iz PMOS-a tranzistora će izlaziti struja koja predstavlja 1</li>
+<li>Ako je ulaz 1 samo iz NMOS-a tranzistora će izlaziti struja koja predstavlja 0</li>
+<li>Dakle, biće <i>upaljen</i> samo tranzistor koji je potreban, čime se postiže ušteda u potrošnji i smanjuje grejanje komponenti.</li>
+</ul></li>
+
+<li><p>
+Implementacija NI i I kola u CMOS-u
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Donja mreža se implementira rednim povezivanjem dva NMOS tranzistora čime se postiže da se 0 dobije samo kada su oba ulaza 1
+</p>
+
+<p>
+Gornja mreža se implementira paralelnim povezivanjem dva PMOS tranzistora čime se postiže da se 1 dobija samo kada je barem jedan od ulaza 0 (čime se takođe osigurava da pri ulazu 1 1 pušta samo donja mreža &ldquo;da radi&rdquo;)
+</p>
+
+<p>
+I se dobija tako što se na NI nadoveže NE
+</p></li>
+
+<li><p>
+Implementacija NILI i ILI kola u CMOS-u
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+NILI se implementira po istom principu kao NI, s tim što su ovde NMOS tranzistori povezani paralelno, dok su PMOS povezani redno.
+</p>
+
+<p>
+Gornja mreža se implementira rednim povezivanjem dva PMOS tranzistora čime se postiže da se 1 dobije samo kada su oba ulaza 0
+</p>
+
+<p>
+Donja mreža se implementira paralelnim povezivanjem dva NMOS tranzistora čime se postiže da se 0 dobija samo kada je barem jedan od ulaza 1 (čime se takođe osigurava da pri ulazu 0 0 pušta samo gornja mreža &ldquo;da radi&rdquo;)
+</p>
+
+<p>
+ILI se dobija tako što se na NILI nadoveže NE
+</p></li>
+
+<li><p>
+Implementacija EILI kola u CMOS-u
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Donja mreža se implementira pomoću 4 redno-paralelna NMOS tranzistora čiji ulazi su \(X\) i \(Y\) s leve i \(\bar{X}\) i \(\bar{Y}\) s desne strane čime se 0 dobija samo akko su \(X\) i \(Y\) isti
+</p>
+
+<p>
+Gornja mreža se implementira pomoću 4 redno-paralelna PMOS tranzistora čiji ulazi su \(X\) i \(\bar{Y}\) s leve i \(\bar{X}\) i \(Y\) s desne strane čime se 1 dobijamo samo akko su \(X\) i \(Y\) različiti
+</p></li>
+
+<li><p>
+Propusni tranzistori i prenosne kapije. Funkcija i uloga.
+</p>
+
+<p>
+Propusne tranzistore koristimo u slučaju da nam je potrebno uslovno propuštanje nekog signala. Ako koristimo samo NMOS tranzistor imaćemo problem sa propuštanjem signala 1 jer neće postojati velika razliku u naponu između <i>source</i>-a i <i>gate</i>-a. Analogno za samo PMOS i signal 0.
+</p>
+
+<p>
+Da bismo to rešili, koristimo prenosne kapije koje su spoj ova dva propusna tranzistora. Često se koriste i za realizaciju bafera sa 3 stanja.
+</p></li>
+
+<li><p>
+Šta je bafer sa tri stanja i čemu služi?
+</p>
+
+<p>
+Bafer sa 3 stanja je logičko kolo koje služi za pojačavanje stanja i uslovno/kontrolno propuštanje signala.
+</p></li>
+
+<li><p>
+Implementacija bafera sa tri stanja u CMOS-u.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Implementacija zavisi od toga šta nam je potrebno, i koje signale imamo na raspolaganju. U slučaju da nam nije potrebno pojačavanje signala neće nam trebati dvostruki inverter. Povezujemo ulazni signal, kontrolni signal i njegovu negaciju sa prenosnom kapijom čime i implementiramo bafer sa tri stanja.
+</p></li>
+
+<li><p>
+Šta je vrednost visoke impendanse i koja je njena uloga u logičkim kolima?
+</p>
+
+<p>
+Vrednost visoke impendanse odgovara tipu NULL u nekim višim programskim jezicima, odnosno predstavlja odsustvo vrednosti. Označavamo je sa <b>Z</b> i koristimo je na primer u slučaju da imamo dva kola koja se povezuju na isti ulaz, kako ne bismo imali vrednosti u konfliktu, jedna od njih ima vrednost visoke impendanse.
+</p></li>
+
+<li><p>
+Šta je kombinatorno kolo?
+</p>
+
+<p>
+Kombinatorno kolo je logičko kolo čije vrednosti na izlazima se mogu sračunati u bilo kom trenutku u zavisnosti od ulaznih vrednosti odnosno prethodne ulazne vrednosti ne utiču na novu izlaznu vrednost.
+</p></li>
+
+<li><p>
+Navesti najvažnije vrste osnovnih kombinatornih kola.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<ul class="org-ul">
+<li>Multipleksor (Mux)</li>
+<li>Demultipleksor (DeMux)</li>
+</ul></li>
+
+<li><p>
+Šta je multipleksor i koja mu je osnovna funkcija? Predstaviti grafičkim simbolom i tablicom multipleksor 4-1.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Multipleksor \(2^{k}-1\) je kombinatorno kolo koje omogućava selekciju nekog od \(k\) ulaza pomoću selekcionih bitova, čime faktički igra istu ulogu kao `if else` konstrukt u višim programskim jezicima.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">S</td>
+<td class="org-left">I</td>
+</tr>
+
+<tr>
+<td class="org-right">00</td>
+<td class="org-left">\(U_{0}\)</td>
+</tr>
+
+<tr>
+<td class="org-right">01</td>
+<td class="org-left">\(U_{1}\)</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-left">\(U_{2}\)</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-left">\(U_{3}\)</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Nacrtati logičko kolo implementacije multipleksora 4-1.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<ul class="org-ul">
+<li>Možemo implementirati direktno</li>
+
+<li>Možemo implementirati pomoću multipleksora 2-1</li>
+</ul></li>
+
+<li><p>
+Kako se multipleksor upotrebljava za implementaciju logičkih funkcija?
+</p>
+
+<p>
+Fiksiranjem jedne ili više vrednosti, jednu &ldquo;veliku&rdquo; funkciju dekomponujemo na dve ili više manjih koje biramo pomoću multipleksora.
+</p></li>
+
+<li><p>
+Šta je demultipleksor i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom demultipleksor 1-4.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Demultipleksor je kombinatorno kolo koje igra obrnutu ulogu u odnosu na multipleksor, odnosno ima \(1\) ulaz koji preusmerava na \(2^{k}\) izlaza u zavisnosti od vrednosti selekcionih bitova.
+</p>
+
+<p>
+U nepopunjenim ćelijama tabele može biti 0 ili <b>Z</b> u zavisnosti od implementacije.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">S</td>
+<td class="org-left">\(I_{0}\)</td>
+<td class="org-left">\(I_{1}\)</td>
+<td class="org-left">\(I_{2}\)</td>
+<td class="org-left">\(I_{3}\)</td>
+</tr>
+
+<tr>
+<td class="org-right">00</td>
+<td class="org-left">\(U_{0}\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">01</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(U_{0}\)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(U_{0}\)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">\(U_{0}\)</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Nacrtati logičko kolo implementacije demultipleksora 1-4.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<ul class="org-ul">
+<li>Možemo implementirati direktno</li>
+
+<li>Možemo implementirati pomoću demultipleksora 1-2</li>
+</ul></li>
+
+<li><p>
+Šta je dekoder i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom dekoder 2-4.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Dekoder je kombinarno kolo koje na osnovu vrednosti binarnog broja aktivira odgovarajući signal na izlazu. Najčešće se koristi pri dekodiranju mašinskih instrukcija.
+</p>
+
+<p>
+Eg. Ako pretpostavimo da imamo 16 registara, u samoj instrukciji možemo kodirati koje registre koristimo samo preko 4 bita. Dekoder služi za &ldquo;prevođenje&rdquo; koje registre želimo da učestvuju.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">S</td>
+<td class="org-right">\(I_{0}\)</td>
+<td class="org-right">\(I_{1}\)</td>
+<td class="org-right">\(I_{2}\)</td>
+<td class="org-right">\(I_{3}\)</td>
+</tr>
+
+<tr>
+<td class="org-right">00</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">01</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Nacrtati logičko kolo implementacije dekodera 2-4.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Praktično isto kao i demultipleksor 1-4 (direktna implementacija) s tim što je ovde binarna konjunkcija i nemamo ulaz već samo kontrolne bitove.
+</p></li>
+
+<li><p>
+Šta je koder i gde se obično koristi? Šta je koder sa prioritetom?
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Koder je kombinatorno kolo koje \(2^{k}\) ulaza mapira u $k$-bitni broj (pod pretpostavkom da je najviše jedan ulaz 1). Takođe imamo i kontrolni izlaz koji nas obaveštava u slučaju da nijedan ulaz nije 1.
+</p>
+
+<p>
+Obično se koristi u keš memorijama za određivanje indeksa registra koji sadrži određenu vrednost (prisutnost vrednosti se proverava komparatorima).
+</p>
+
+<p>
+Običan komparator ne može da handle-uje slučaj kada je više od jednog ulaza 1. Iz tog razloga svakom od ulaza se pridodaje težina, što omogućava da na izlazu bude ulaz sa najvišim prioritetom.
+</p></li>
+
+<li><p>
+Nacrtati logičko kolo implementacije kodera 4-2.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Implementacija ima smisla kad se pogleda tabela (namerno su naopačke indeksi)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">\(U_{3}\)</td>
+<td class="org-right">\(U_{2}\)</td>
+<td class="org-right">\(U_{1}\)</td>
+<td class="org-right">\(U_{0}\)</td>
+<td class="org-right">\(I_{1}\)</td>
+<td class="org-right">\(I_{0}\)</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Nacrtati logičko kolo implementacije kodera 4-2 sa prioritetom.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Ne kapiram crtež moraću u nekoj knjizi to da vidim verovatno
+</p></li>
+
+<li><p>
+Šta je komparator? Navesti osnovne vrste komparatora.
+</p>
+
+<p>
+Komparator je kombinatorno kolo koje služi za upoređivanje dva podatka.
+</p>
+
+<p>
+Vrste:
+</p>
+<ul class="org-ul">
+<li>Komparatori za jednakost</li>
+<li>Komparatori za potpuno poređenje</li>
+</ul></li>
+
+<li><p>
+Nacrtati logičko kolo 4-bitnog komparatora (za poređenje na jednakost)
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Bitovi se redom porede tako što se <b>XOR</b>-uju i na kraju povežu sa <b>NILI</b> gejtom koje će dati \(1\) ako su svi ulazi \(0\) i \(0\) u suprotnom
+</p></li>
+
+<li><p>
+Nacrtati logičko kolo 4-bitnog komparatora za potpuno poređenje
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Koristimo 4-bitni oduzimač čiji rezultat šaljemo na NILI koje nam govori da li su ulazi jednaki i <i>carry bit</i> koji nam govori da li je \(x\) manji od \(y\), u suprotnom kad su oba \(0\), \(x\) je veći od \(y\)
+</p></li>
+
+<li><p>
+Nacrtati logičko kolo 8-bitnog pomerača (ulevo)
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Pošto je 8-bitni pomerač, maksimalno je moguće pomeriti ga 7 puta.
+</p>
+
+<p>
+Ideja je da se pomoću 8-bitnih 2-1 multipleksora u zavisnosti od kontrolnih bitova prvo proba da se pomeri za 4 pa za 2 pa za 1, čijim kombinacijama je moguće dobiti vrednosti pomeranja između 0 i 7. Pomeranje se vrši tako što se u multipleksorima ručno poveže ulaz pomeren za \(2^{i}, i = 0,1,2\) bitova.
+</p></li>
+
+<li><p>
+Nacrtati istinitosnu tablicu i logičko kolo binarnog polusabirača
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">\(x\)</td>
+<td class="org-right">\(y\)</td>
+<td class="org-right">\(S\)</td>
+<td class="org-right">\(C\)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Iz čega se vidi da je \(S\) zapravo <b>XOR</b> od \(x\) i \(y\), a \(C\) <b>AND</b>.
+</p></li>
+
+<li><p>
+Nacrtati istinitosnu tablicu i logičko kolo binarnog sabirača
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">\(x\)</td>
+<td class="org-right">\(y\)</td>
+<td class="org-right">\(pc\)</td>
+<td class="org-right">\(S\)</td>
+<td class="org-right">\(C\)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Možemo implementirati ili preko dva polusabirača ili direktno. Preko dva polusabirača je lakše.
+</p></li>
+
+<li><p>
+Višebitni talasasti sabirač. Kašnjenje.
+</p>
+
+<p>
+Ulančavanjem manjih sabirača koji zavise od svog <i>prethodnika</i> kako bismo dobili sabirač za veći broj bitova dolazimo u situaciju da kašnjenje raste linearno u odnosu na broj bitova. Talasasti sabirač znači da se <i>talasasto</i> računa zbir počevši od sabirača zaduženog za najniže bitove ka višim.
+</p></li>
+
+<li><p>
+Nacrtati istinitosnu tablicu i logičko kolo binarnog poluoduzimača
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">\(x\)</td>
+<td class="org-right">\(y\)</td>
+<td class="org-right">\(S\)</td>
+<td class="org-right">\(C\)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Nacrtati istinitosnu tablicu i logičko kolo binarnog oduzimača
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">\(x\)</td>
+<td class="org-right">\(y\)</td>
+<td class="org-right">\(pc\)</td>
+<td class="org-right">\(S\)</td>
+<td class="org-right">\(C\)</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Višebitni talasasti oduzimač. Kašnjenje.
+</p>
+
+<p>
+Ulančavanjem manjih oduzimača koji zavise od svog <i>prethodnika</i> kako bismo dobili oduzimač za veći broj bitova dolazimo u situaciju da kašnjenje raste linearno u odnosu na broj bitova. Talasasti oduzimač znači da se <i>talasasto</i> računa razlika počevši od sabirača zaduženog za najniže bitove ka višim.
+</p></li>
+
+<li><p>
+Objasniti ukratko princip rada sabirača sa računanjem prenosa unapred.
+</p>
+
+<p>
+CLA sabirači problem računanja zbira dva broja rade tako što efikasno pretprocesiraju u \(O(logN)\) vremenu, \(N\) - broj bitova, da li će biti prenosa na individualnom bitu i samim tim, sabiranje je moguće izvršiti paralelno nad svim bitovima čime je ukupna vremenska složenost sabiranja svedena na \(O(logN)\) za razliku od \(O(N)\) kod talasastog sabirača.
+</p></li>
+
+<li><p>
+Šta kod sabirača sa računanjem prenosa unapred označavaju vrednosti \(P_{i}\) i \(G_{i}\) i po kojim se formulama računaju?
+</p>
+
+<p>
+Koristeći činjenicu da prenos na $i$-tom bitu zavisi od toga da li $i$-ti bitovi generišu prenos ili prenose prethodni prenos, dobijamo formulu:
+</p>
+
+<p>
+\[C_{0} = x_{0}y_{0} + x_{0}pc + y_{0}pc = x_{0}y_{0} + (x_{0} + y_{0})pc\]
+što možemo dodatno svesti na
+\[C_{0} = x_{0}y_{0} + (x_{0} \oplus y_{0})pc\]
+jer ako su \(x\) i \(y\) jednaki \(1\) svakako će zbog prethodne disjunkcije biti validan izraz
+</p>
+
+<ul class="org-ul">
+<li>\(G_{i}\) = x<sub>i</sub>y<sub>i</sub>$ - govori nam da li $i$-ti bit <b>generiše</b> prenos</li>
+<li>\(P_{i}\) = x<sub>i</sub> &oplus; y<sub>i</sub>$ - govori nam da li $i$-ti bit <b>propagira</b> prethodni prenos</li>
+</ul>
+
+<p>
+Finalno, imamo /rekurentnu jednačinu:
+\[
+    C_{i} = G_{i} + P_{i}C_{i - 1} \\
+    C_{0} = G_{0} + P_{0}pc
+    \]
+</p></li>
+
+<li><p>
+Navesti formule po kojima CLA (<i>Carry Look Ahead</i>) jedinica računa prenose \(C_{i}\) kao i grupne \(P\) i \(G\) vrednosti.
+</p>
+
+<p>
+\[
+    C_{i} = G_{i} + P_{i}C_{i - 1} \\
+    C_{0} = G_{0} + P_{0}pc \\
+    \]
+\[ G_{G} = \sum_{i = 0}^{K}G_{i}\prod_{j = i + 1}^{K}P_{j}\] \(K\) - broj bitova
+\[ P_{G} = \sum_{i = 0}^{K}P_{i}\]
+</p></li>
+
+<li><p>
+Navesti primer implementacije ALU jedinice.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Nacrtaj kolo koje prima dva 8-bitna ulaza i 3-bitni \(op\) ulaz koji specificira koju operaciju treba izvrsiti. Stavi bilo kojih 8 operacija i povezi rezultate sa <i>mux</i>-om koji za selekcione bitove uzima \(op\).
+</p></li>
+
+<li><p>
+Šta je programibilni niz logičkih elemenata (PLA)? Navesti primer
+</p>
+
+<p>
+Programibilni niz logičkih elemenata je programibilni logički uređaj (<b>PLD</b>) koje ima programibilne AND zatim i OR gejtove.
+</p>
+
+<p>
+Koristimo ih u slučaju da imamo fiksan skup &ldquo;retkih&rdquo;\/&ldquo;raštrkanih&rdquo; (eng. <i>sparse</i>) logičkih funkcija i želimo jednostavno i jeftino kolo koje će njih računati.
+</p>
+
+<p>
+Primer procesa pravljenja PLA-a:
+</p>
+<ol class="org-ol">
+<li>Funkcije koje želimo da računamo u PLA-u predstavimo u SDNF
+<ul class="org-ul">
+<li>neka su te funkcije u SDNF:
+<ol class="org-ol">
+<li>\(F_{1} = x\bar{y}\bar{z} + x\bar{y}z + xyz\)</li>
+<li>\(F_{2} = \bar{x}\yz + x\bar{y}z + xyz\)</li>
+</ol></li>
+</ul></li>
+<li>Minimizujemo ih
+<ul class="org-ul">
+<li>dobijamo:
+<ol class="org-ol">
+<li>\(F_{1} = x\bar{y} + xz\)</li>
+<li>\(F_{2} = yz + xz\)</li>
+</ol></li>
+</ul></li>
+
+<li>Koliko imamo promeljivih toliko će nam <i>input buffer</i>-a trebati (<i>input buffer</i> nam daje njegov ulazni signal i njegovu negaciju)</li>
+
+<li>Programibilno povezujemo AND gejtove sa izlazima <i>input buffer</i>-a u zavisnosti od konjunkta prisutnih u funkcijama
+<ul class="org-ul">
+<li>Imaćemo 3 <b>različita</b> konjunkta (\(x\bar{y}, xz, yz\)), dakle trebaće nam 3 AND gejta</li>
+</ul></li>
+<li>Programibilno povezujemo ILI gejtove sa AND gejtovima tako da dobijemo željene funkcije</li>
+</ol></li>
+
+<li><p>
+Kako se pomoću kombinatornih mreža implementira neizmenjiva memorija (ROM)? Primer tablice i odgovarajuće implementacije.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Na ulazu se dobija adresa koja se potom prosleđuje ka dekoderu koji aktivira odgovarajuće izlaze na koje su povezani ulazi disjunkcija. U zavisnosti od povezanosti izlaza dekodera i ulaza disjunkcija određujemo koje podatke ćemo čitati iz ROM memorije.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">adr</td>
+<td class="org-right">out</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">0101</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-right">1010</td>
+</tr>
+
+<tr>
+<td class="org-right">01</td>
+<td class="org-right">1100</td>
+</tr>
+
+<tr>
+<td class="org-right">00</td>
+<td class="org-right">0011</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Šta je sekvencijalno kolo? Po čemu se sekvencijalna kola razlikuju od kombinatornih kola?
+</p>
+
+<p>
+Sekvencijalno kolo je logičko kolo koje daje izlaz na osnovu trenutnog ulaza i <b>prethodnih izlaza</b>.
+</p>
+
+<p>
+Za razliku od sekvencijalnih, kombinatorna kola nemaju interno stanje koje se čuva u memoriji, stoga za isti ulaz uvek daju isti izlaz, što nije slučaj sa sekvencijalnim kolima.
+</p></li>
+
+<li><p>
+Nacrtati konceptualni dijagram sekvencijalnog kola i objasniti osnovni princip rada.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<ul class="org-ul">
+<li>\(G\) je kombinatorno kolo koje po principu povratne sprege održava stanje \(S\) (\(G\) se može posmatrati kao vektorska funkcija \(G: X \times S \rightarrow S\), za \(X\) skup svih ulaza i \(S\) skup svih stanja)
+<ul class="org-ul">
+<li>\(S\) se neće promeniti sve dok se $X ne promeni</li>
+</ul></li>
+<li>\(F\) je kombinatorno kolo koje transformiše stanje \(S\) u izlaz \(Y\) (\(F\) se može posmatrati kao vektorska funkcija \(F: S \rightarrow Y\) za \(X\) skup svih ulaza i \(S\) skup svih stanja)</li>
+</ul></li>
+
+<li>Šta je nestabilnost sekvencijalnog kola, a šta nedeterminističnost? Šta je metastabilnost?
+
+<ul class="org-ul">
+<li>Nestabilnost sekvencijalnog kola je pojava oscilovanja kola između različitih stanja</li>
+<li>Nederminističnost sekvencijalnog kola je pojava odlaženja u neko &ldquo;nasumično&rdquo; stabilno stanje u zavisnosti od fizičkih faktora</li>
+<li>Metastabilnost sekvencijalnog kola je pojava stabilizacije u nekom nevalidnom međustanju</li>
+</ul></li>
+
+<li><p>
+Šta je funkcija (tablica) prelaska sekvencijalnog kola? Navesti primer.
+</p>
+
+<p>
+To je vektorska logička funkcija koja deterministički definiše prelaz sa jednog stabilnog stanja u drugo stabilno stanje na osnovu prethodnog stanja i novog ulaza.
+</p>
+
+<p>
+Funkcija prelaska za SR reze:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">S</td>
+<td class="org-right">R</td>
+<td class="org-left">Q</td>
+<td class="org-right">Q<sup>next</sup></td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-left">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-left">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-left">-</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-left">-</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-left">-</td>
+<td class="org-right">?</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>`-` označava bilo koju vrednost</li>
+<li>`?` označava nedefinisanu vrednost</li>
+</ul></li>
+
+<li><p>
+Objasniti ulogu časovnika. Na koji način časovnik omogućava sinhronizaciju sekvencijalnih kola?
+</p>
+
+<p>
+Časovnik istom frekvencijom izbacuje naizmenično signale 0 i 1 što se koristi za sinhronizaciju sekvencijalnih kola. Postavljanjem frekvencije časovnika na dovoljnu tako da najsporije sekvencijalno kolo uspe da se dovede u stabilno stanje, omogućava da se vreme posmatra diskretno, što olakšava rezonovanje o sekvencijalnim kolima i omogućava jednostavnu sinhronizaciju. Svako kolo povezano na časovnik prima njegov signal, i svoje promene vrši isključivo kad signal časovnika to dozvoli.
+</p></li>
+
+<li><p>
+Objasniti razliku između sinhronih i asinhronih sekvencijalnih kola.
+</p>
+
+<p>
+Sinhrona sekvencijalna kola zavise od zajedničkog signala odnosno časovnika, koji svima diktira kada je moguće izvršiti promene stanja, dok asinhrona moraju eksplicitno da naprave komplikovane međusobne veze kako bi uskladile kada je dozvoljeno kojem kolu da izvrši promene stanja.
+</p></li>
+
+<li>Elementi ciklusa časovnika. Tipovi časovnika. Frekvencija časovnika.
+<ul class="org-ul">
+<li>Elementi ciklusa časovnika:
+<ul class="org-ul">
+<li><b>Pozitivan</b> deo ciklusa = vreme trajanja \(1\)</li>
+<li><b>Negativan</b> deo ciklusa = vreme trajanja \(0\)</li>
+</ul></li>
+<li>Tipovi časovnika:
+<ul class="org-ul">
+<li>Simetrični = pozitivan deo ciklusa traje isto koliko i negativan</li>
+<li>Asimetrični = različito traju pozitivan i negativan deo ciklusa</li>
+</ul></li>
+<li>Frekvencija časovnika = broj ciklusa u jednoj sekundi</li>
+</ul></li>
+
+<li><p>
+Šta je SR reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+SR reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">\(S\)</td>
+<td class="org-right">\(R\)</td>
+<td class="org-left">\(Q\)</td>
+<td class="org-right">\(Q^{next}\)</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-left">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-left">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-left">-</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-left">-</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-left">-</td>
+<td class="org-right">?</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+SR reza funkcioniše tako što postavljanjem \((S, R) = (0, 1)\) resetujemo sačuvanu vrednost odnosno čuvamo \(0\), analogno za \((S, R) = (1, 0)\) i \(1\). Kada imamo \((S, R) = (0, 0)\), tada nam izlaz ostaje zapamćena vrednost. Problem sa SR rezom je što kolo ne može da bude stabilno pri ulazu \((S, R) = (1, 1)\)
+</p></li>
+
+<li><p>
+Šta je D reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+D reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">\(D\)</td>
+<td class="org-right">\(e\)</td>
+<td class="org-left">\(Q\)</td>
+<td class="org-right">\(Q^{next}\)</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">0</td>
+<td class="org-left">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-right">0</td>
+<td class="org-left">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">0</td>
+<td class="org-right">1</td>
+<td class="org-left">-</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">1</td>
+<td class="org-right">1</td>
+<td class="org-left">-</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Imajući u vidu da SR reza ima problem sa nedozvoljenim ulazom \((S, R) = (1, 1)\), jedan od načina na koji bi to moglo da se reši jeste da se uvede ulaz \(D\) (<i>data</i>) koji se direktno povezao sa \(S\), dok bi se njegova negacija na \(R\), čime bi se izgubila mogćnost &ldquo;čitanja memorije&rdquo; odnosno stanja \((S, R) = (0, 0)\) zbog čega se uvodi i ulaz \(e\) (<i>enable</i>) koji se pre povezivanja sa \(S\) odnosno \(R\) konjuguje sa \(D\) odnosno \(\bar{D}\).
+</p></li>
+
+<li><p>
+Koja je osnovna razlika između reze i flip-flopa?
+</p>
+
+<p>
+Reza je asinhrono sekvencijalno kolo dok je flip-flop povezan na <b>časovnik</b> odnosno sinhrono sekvencijalno kolo.
+</p></li>
+
+<li><p>
+Nacrtati implementaciju master-slave SR flip-flopa i objasniti ponašanje
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Imamo dve SR reze, leva je <i>master</i>, desna je <i>slave</i>. Izlazi <i>master</i>-a se prosleđuju i čuvaju u <i>slave</i>-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika \(0\), tada su ulazi <i>master</i>-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi <i>slave</i>-a zatvoreni. Pri uzlaznom rubu ulazi <i>master</i>-a se zatvaraju dok se ulazi <i>slave</i>-a otvaraju i upisuje se ono što je bilo u <i>master</i>-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u <b>uzlaznom rubu</b>.
+</p>
+
+<p>
+U prethodnom objašnjenju je pretpostavljena implementacija koja menja stanje u <b>uzlaznom rubu</b>, suprotnim invertovanjem signala časovnika je moguće implementacija koja menja stanje u <b>silaznom rubu</b>.
+</p></li>
+
+<li><p>
+Nacrtati implementaciju master-slave D flip-flopa i objasniti ponašanje
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Imamo dve SR reze, leva je <i>master</i>, desna je <i>slave</i>. Izlazi <i>master</i>-a se prosleđuju i čuvaju u <i>slave</i>-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika \(0\), tada su ulazi <i>master</i>-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi <i>slave</i>-a zatvoreni. Pri uzlaznom rubu ulazi <i>master</i>-a se zatvaraju dok se ulazi <i>slave</i>-a otvaraju i upisuje se ono što je bilo u <i>master</i>-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u <b>uzlaznom rubu</b>.
+</p>
+
+<p>
+Kao i kod D reze ulaz pre konjunkcija <i>master</i>-a biva i negiran da bi se eliminisao slučaj \((S, R) = (1, 1)\). Takođe se dodaje i multipleksor koji u zavisnosti od \(e\) bira da li da propusti stari signal ili D.
+</p></li>
+
+<li><p>
+Nacrtati implementaciju master-slave JK flip-flopa i objasniti ponašanje
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Imamo dve SR reze, leva je <i>master</i>, desna je <i>slave</i>. Izlazi <i>master</i>-a se prosleđuju i čuvaju u <i>slave</i>-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika \(0\), tada su ulazi <i>master</i>-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi <i>slave</i>-a zatvoreni. Pri uzlaznom rubu ulazi <i>master</i>-a se zatvaraju dok se ulazi <i>slave</i>-a otvaraju i upisuje se ono što je bilo u <i>master</i>-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u <b>uzlaznom rubu</b>.
+</p>
+
+<p>
+JK flip-flop rešava problem \((S, R) = (1, 1)\) tako što na konjunkcije ispred ulaza <i>master</i>-a dovodi i izlaze <i>slave</i>-a koji će uvek biti različiti, i time se semantika \((S, R) = (1, 1)\) menja na invertovanje stanja.
+</p></li>
+
+<li><p>
+Nacrtati implementaciju master-slave T flip-flopa i objasniti ponašanje
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Imamo dve SR reze, leva je <i>master</i>, desna je <i>slave</i>. Izlazi <i>master</i>-a se prosleđuju i čuvaju u <i>slave</i>-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika \(0\), tada su ulazi <i>master</i>-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi <i>slave</i>-a zatvoreni. Pri uzlaznom rubu ulazi <i>master</i>-a se zatvaraju dok se ulazi <i>slave</i>-a otvaraju i upisuje se ono što je bilo u <i>master</i>-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u <b>uzlaznom rubu</b>.
+</p>
+
+<p>
+T flip-flop je praktično JK flip-flop gde su \(J\) i \(K\) spojeni u jedan ulaz, čime je semantika takva da registar može ili da čuva tekuće stanje ili da ga invertuje.
+</p></li>
+
+<li><p>
+Objasniti problem &ldquo;hvatanja jedinice&rdquo; (<i>1s cathing problem</i>) kod master-slave SR i JK flip-flopova. Na koji način se ovaj problem može rešiti?
+</p>
+
+<p>
+Kada imamo kratkotrajni šum signala (npr. nagli skok i pad) na jednom od ulaza u fazi časovnika u kojoj se menjaju vrednosti, kod SR, JK i T flip-flopova se zabeleži \(1\) iako se u međuvremenu promenilo na \(0\). Do toga dolazi jer se \(1\) odmah pamti u $master$-u da bi pri promeni na \(0\) to samo dalo signal da se ono što je zapamćeno održi.
+</p>
+
+<p>
+Moguće je rešiti problem tako što se SR, JK ili T flip-flop svedu na D flip-flop koji ne pati od istog problema tako što se uvede multipleksor koji u zavisnosti od ulaza polaznog flip-flopa bira šta će se dalje propustiti.
+</p></li>
+
+<li><p>
+Šta je registar i kako se implementira? Navesti primer.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Registar dužine \(n\) je kolo koje čuva $n$-bitnu vrednost. Najčešće se implementira preko D flip-flopova koji su svi povezani na zajednički signal časovnika i \(e\) signal.
+</p></li>
+
+<li><p>
+Statička memorija. Primer realizacije memorije \(4\times4\).
+</p>
+
+<p>
+Statička memorija se najčešće koristi za implementaciju procesorskih registara i keš memorije.
+</p>
+
+<p>
+\(4 \times 4\) memorija se sastoji iz \(4\) reda od po \(4\) registra, gde \(4\) registra predstavljaju jednu adresu.
+</p>
+
+<p>
+I/O:
+</p>
+<ul class="org-ul">
+<li>\(adr\) - adresa nad kojom treba operisati</li>
+<li>\(data_in\) - podatke sa kojima treba raditi</li>
+<li>\(data_out\) - pročitani podaci</li>
+<li>\(wr\) - flag koji označava dozvoljeno pisanje</li>
+<li>\(rd\) - flaag koji označva dozvoljeno čitanje</li>
+<li>\(clk\) - signal od časovnika</li>
+</ul>
+
+<p>
+Pisanje:
+</p>
+<ol class="org-ol">
+<li>\(adr\) se prosleđuje dekoderu</li>
+<li>rezultat se prosleđuje u konjunkciju sa \(wr\)</li>
+<li>to stvara signal \(e\) za sve flip-flopove u tom redu</li>
+<li>podaci iz \(data_in\) bivaju upisani u adresu \(adr\)</li>
+</ol>
+
+<p>
+Čitanje:
+</p>
+<ol class="org-ol">
+<li>\(adr\) se prosleđuje dekoderu</li>
+<li>rezultat aktivira bafere sa 3 stanja</li>
+<li>dodatni baferi sa 3 stanja se aktiviraju u zavisnosti od \(rd\)</li>
+<li>podaci sa adrese \(adr\) bivaju poslati na \(data_out\)</li>
+</ol></li>
+
+<li><p>
+Na primeru objasniti princip konstrukcije većih memorija pomoću manjih.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p></li>
+
+<li><p>
+Efikasna realizacija memorijske ćelije kod statičkih memorija.
+</p>
+
+<p>
+Da bismo smanjili cenu i kašnjenje signala i ujedno povećali efikasnost težimo da smanjimo broj komponenti potreban za realizaciju nekog kola.
+</p>
+
+<p>
+Kod asinhronih memorija, gde koristimo reze, bismo mogli umesto D-reza da &ldquo;izvučemo&rdquo; zajedničko NE za jednu kolonu i koristimo SR reze sa dodatnim ulazom \(e\). Na ovaj način smanjujemo broj NE gejtova sa \(mn\) na \(n\).
+</p>
+
+<p>
+Kod sinhronih memorija, gde koristimo flip-flopove u <i>master-slave</i> organizaciji, tada bismo mogli umesto da svaki flip-flop ima svog <i>master</i>-a uvedemo jednog <i>master</i>-a za jednu kolonu, koji će dalje naći svog <i>slave</i>-a pomoću dekodera. Potrebna su i \(2\) reza koja će da pamte adresu. Na ovaj način smanjujemo broj potrebnih reza sa \(2mn\) na \(mn + n + 2\), što je značajna ušteda.
+</p></li>
+
+<li><p>
+Objasniti princip rada memorijske ćelije kod dinamičkih memorija.
+</p>
+
+<p>
+Svaka ćelija za čuvanje jednog bita se sastoji iz jednog tranzistora i kondenzatora. Vrednost bita se čuva naelektrisanjem kondenzatora. Pun kondenzator odgovara \(1\), dok prazan odgovara \(0\). Kada želimo da upišemo vrednost, na <b>bitsku liniju</b> dovodimo odgovarajuću vrednost i aktiviramo <b>liniju reči</b> čime se otvara tranzistor i zbog toga se kondenzator puni ili prazni u zavisnosti od vrednosti koju želimo da upišemo. Prilikom čitanja <b>bitska linija</b> se naelektriše na neki međupotencijal (npr. 2.5V), pa se aktivira <b>linija reči</b> zbog čega će se potencijal na liniji reči blago promeniti u odnosu na vrednost koja je sačuvana, što će pojačavač registrovati i &ldquo;pojačati&rdquo; ka 0V ili 5V. Prilikom čitanja uništavamo zapisanu vrednost, tako da je potrebno nakon čitanja da je opet i upišemo. Kondenzator se vremenom sam prazni, tako da je potrebno periodično vršiti osvežavanje kompletne memorije.
+</p></li>
+
+<li><p>
+Prednosti i nedostaci dinamičkih memorija u odnosu na statičke.
+</p>
+
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>Manji broj tranzistora i komponenti, dakle manja cena</li>
+</ul>
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>Dosta sporije čitanje i pisanje u odnosu na statičke</li>
+<li>Komplikovaniji proces sinhronizacije zbog većeg broja mogućih operacija nad memorijom</li>
+</ul></li>
+
+<li><p>
+Šta je pomerački registar i gde se obično koristi?
+</p>
+
+<p>
+What the actual fuck
+</p></li>
+
+<li><p>
+Asinhroni binarni brojač. Nacrati šemu i objasniti princip rada. Koji je osnovni nedostatak asinhronih brojača?
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Implementiramo ga preko nekoliko T flip-flopova tako što je onaj koji čuva bit najniže vrednosti direktno povezan na signal časovnika. Svi T flip-flopovi za ulaz primaju \(1\). Izlaz $N - 1$og T flip-flopa predstavlja signal časovnika, što znači da do promene dolazi samo ako je signal časovnika prešao sa \(1\) na \(0\), zbog čega se javlja &ldquo;talasasti&rdquo; efekat odnosno kašnjenje je \(O(N)\), za \(N\) - broj T flip-flopova.
+</p>
+
+<p>
+Glavni nedostatak je vremenska neefikasnost.
+</p></li>
+
+<li><p>
+Sinhroni binarni brojač. Nacrtati šemu i objasniti princip rada.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Implementiramo ga preko nekoliko JK flip-flopova tako što ih povežemo sve sa časovnikom. Odluku da li da menjamo $i$-ti flip-flop donosimo na osnovu konjunkcije izlaza svih prethodnih flip-flopova. Na ovaj način nam se usložnjvaju AND gejtovi, zbog čega je kašnjenje \(O(logN)\), za \(N\) - broj JK flip-flopova.
+</p></li>
+
+<li><p>
+Dizajn brojača sa proizvoljnim redosledom stanja. Primer.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+U slučaju da nam je potrebno da imamo brojač koji neće ići po <i>&ldquo;default&rdquo;</i> redosledu, već nekim našim, potreban nam je brojač sa proizvoljnim redosledom stanja.
+</p>
+
+<ol class="org-ol">
+<li>Nacrtamo <i>state machine</i> \/ graf prelaska stanja</li>
+<li>Prebacimo to u tablični oblik i odredimo vrednosti \(J_{i}\) i \(K_{i}\) potrebne za svaki prelazak stanja</li>
+<li>Preko Karnoovih mapa minimizujemo za svako \(J_{i}\) i \(K_{i}\)</li>
+</ol></li>
+
+<li><p>
+Konačni automati i transduktori kao model sinhronih sekvencijalnih kola. Dizajn konačnih transduktora. Primer.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Brojač sa ulazom kojim kontrolišemo u koje stanje će preći nazivamo <b>konačni automat</b>. Ukoliko to kolo prilikom svake promene stanja generiše novu vrednost na izlazu, onda to kolo nazivamo <b>konačni transduktor</b>.
+</p>
+
+<p>
+Konačni transduktori predstavljaju opšti model sinhronih sekvencijalnih kola.
+</p>
+
+<ol class="org-ol">
+<li>Definišemo tablicu prelaska
+<ul class="org-ul">
+<li>\(Q\) - trenutno stanje</li>
+<li>\(X\) - ulaz</li>
+<li>\(Q^{next}\) - sledeće stanje</li>
+<li><p>
+\(Y\) - izlaz
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">\(Q\)</td>
+<td class="org-right">\(X\)</td>
+<td class="org-right">\(Q^{next}\)</td>
+<td class="org-right">Y</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+
+<li>Nacrtamo graf
+
+<ul class="org-ul">
+<li>Stanja su čvorovi</li>
+<li>Grane su usmerene od trenutnog ka sledećem stanju</li>
+<li>&ldquo;Težine&rdquo; su formata \(X/Y\), odnosno ako smo na stanju \(Q\) sa ulazom \(X\) preći ćemo na \(Q^{next}\) i na izlazu ispisati \(Y\)</li>
+</ul></li>
+</ol></li>
+
+<li><p>
+Ukratko objasniti osnovni princip dizajna kontrolne jedinice kao konačnog transduktora.
+</p>
+
+<p>
+What the fuck?
+</p></li>
+
+<li>Navesti primer opisa nekog algoritma u formi konačnog transduktora (samo tablica prelaska, bez realizacije samog transduktora)
+
+<ul class="org-ul">
+<li>\(Q\) - trenutno stanje</li>
+<li>\(X\) - ulaz</li>
+<li>\(Q^{next}\) - sledeće stanje</li>
+<li><p>
+\(Y\) - izlaz
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">\(Q\)</td>
+<td class="org-right">\(X\)</td>
+<td class="org-right">\(Q^{next}\)</td>
+<td class="org-right">Y</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+<td class="org-right">2</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+
+<li>Šta je arhitektura a šta organizacija računara?
+
+<ul class="org-ul">
+<li>Arhitektura računara je apstraktni model koji opisuje računar iz ugla programera kog zanima koje instrukcije postoje, načini adresiranja, kako se predstavljaju podaci i sl.
+<ul class="org-ul">
+<li>Odgovara na pitanje <b>Šta radi računar?</b></li>
+</ul></li>
+<li>Organizacija računara je implementacija arhitekture gde se posmatraju veze između komponenti, <i>low-level</i> opis kako se određene operacije obavljaju</li>
+</ul></li>
+
+<li>Šta obuhvata ISA (arhitektura skupa instrukcija)?
+Obuhvata:
+<ol class="org-ol">
+<li>Operacioni kod instrukcije</li>
+<li>Referencu na operande instrukcije</li>
+<li>Referencu na narednu instrukciju</li>
+</ol></li>
+
+<li><p>
+Šta su troadresni procesori? Primer instrukcija i koda. Karakteristike.
+</p>
+
+<p>
+Troadresni procesor je procesr koji u instrukciji može da ima tri adrese. Programi na troadresnom računaru su kompaktni, ali samo instrukcije mogu da budu glomazne zbog zahteva za čuvanjem 3 operanda.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">ADD</span> C, A, B
+    <span style="color: #ff2afc; font-weight: bold;">MUL</span> C, A, B
+</pre>
+</div></li>
+
+<li><p>
+Šta su dvoadresni procesori? Primer instrukcija i koda. Karakteristike.
+</p>
+
+<p>
+Dvoadresni procesori su procesori koji mogu da imaju maksimalno dve adrese u instrukciji. Rezultat operacije se upisuje u neku privremenu lokaciju ili u lokaciju jednog od operanada. Smanjuje se dužina programa, ubrzava izvršavanje, ali se ponekad koristi dodatna memorija.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">LOAD</span> B, A
+    <span style="color: #ff2afc; font-weight: bold;">ADD</span> A, B
+</pre>
+</div></li>
+
+<li><p>
+Šta su jednoadresni procesori? Primer instrukcija i koda. Karakteristike.
+</p>
+
+<p>
+Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Operacije koje zahtevaju dva operanda se razrešavaju tako što je druga adresa implicitna. Ovi računari često obraćaju memoriji za upis i čitanje međurezultata. Programi su dosta dugački i izvršavanje je relativno sporo. Koriste se u situacijama kada je memorija dosta skupa.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">LOAD</span> X
+    <span style="color: #ff2afc; font-weight: bold;">ADD</span> X
+    <span style="color: #ff2afc; font-weight: bold;">STORE</span> X
+</pre>
+</div></li>
+
+<li><p>
+Šta su nuloadresni procesori? Primer instrukcija i koda. Karakteristike.
+</p>
+
+<p>
+Nuloadresni procesori su procesori gde je minimalan broj adresa u instrukciji \(0\). Takvi procesori implicitno adresiraju svoje operande (često stavljajući ih na stek), što predstavlja veliko ograničenje, pa se koriste samo u specijalnim slučajevima.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">PUSH</span> A
+    <span style="color: #ff2afc; font-weight: bold;">PUSH</span> B
+    <span style="color: #ff2afc; font-weight: bold;">ADD</span>
+    <span style="color: #ff2afc; font-weight: bold;">POP</span>
+</pre>
+</div></li>
+
+<li><p>
+Objasniti odnos performansi i broja adresa.
+</p>
+
+<p>
+Instrukcije sa većin brojem adresa su moćnije, programi kompaktniji i veća je brzina izvršavanja. S povećanjem broja adresa raste i složenost instrukcije što otežava konstrukciju procesora i produžava vreme potrebno za preoznavanje operacionog koda.
+</p></li>
+
+<li><p>
+Šta je <code>LOAD/STORE</code> arhitektura? Objasniti.
+</p>
+
+<p>
+Sve operacije se izvršavaju isključivo nad registrima procesora. Samo operacije <code>LOAD</code> i <code>STORE</code> mogu da pristupaju memoriji. <code>RISC</code> i vektorski procesori često koriste ovakvu arhitekturu. Prednost je smanjenje složenosti dekodiranja zbog manjih instrukcija.
+</p></li>
+
+<li><p>
+Karakteristike <code>CISC</code> arhitektura.
+</p>
+
+<p>
+Ciljevi:
+</p>
+<ul class="org-ul">
+<li>složena arhitektura skupa instrukcija</li>
+<li>raznovrsnost operacija</li>
+<li>raznovrsnost načina adresiranja itd.</li>
+</ul>
+
+<p>
+Posledice:
+</p>
+<ul class="org-ul">
+<li>Iz velikog skupa instrukcija se koristi oko 20%, dok se ostale ređe koriste</li>
+<li>Otežano dekodiranja zbog velikog broja instrukcija i načina adresiranja</li>
+</ul></li>
+
+<li><p>
+Karakteristike <code>RISC</code> arhitektura.
+Ciljevi:
+</p>
+<ul class="org-ul">
+<li>jednostavna arhitektura skupa instrukcija</li>
+<li>obezbeđivanje minimalnog skupa instrukcija i načina adresiranja</li>
+<li>povećan broj registara koji se mogu koristiti za računanje</li>
+</ul>
+
+<p>
+Posledice:
+</p>
+<ul class="org-ul">
+<li>stalniji skup instrukcija</li>
+<li>jednostavno dekodiranje</li>
+<li>kraće trajanje izvršavanja</li>
+<li>jednostavnija implementacija procesora</li>
+</ul></li>
+
+<li><p>
+Odnos <code>RISC</code> i <code>CISC</code> arhitektura.
+</p>
+
+<p>
+Danas procesori najčešće predstavljaju hibride ove dve arhitekture.
+</p>
+
+<p>
+<code>RISC</code> &gt; <code>CISC</code>:
+</p>
+<ul class="org-ul">
+<li>jednostavnija konstrukcija zbog manjeg broja instrukcija</li>
+<li>manje vremena je potrebno za izradu samog procesora</li>
+<li>bolje performanse jer je lakše definisati prevodioce koji formiraju optimalniji kod nego <code>CISC</code> procesor</li>
+</ul>
+
+<p>
+<code>CISC</code> &gt; <code>RISC</code>:
+</p>
+<ul class="org-ul">
+<li>veća količina softvera je napisana za <code>CISC</code> arhitekturu</li>
+</ul></li>
+
+<li>Struktura i format mašinske instrukcije
+
+<ul class="org-ul">
+<li>strukturu čine:
+<ol class="org-ol">
+<li>operacioni kod</li>
+<li>operandi</li>
+</ol></li>
+<li>format instrukcije određuje način kodiranja ranijepomenutih komponenti u binarnom obliku (implicitno određuje i dužinu instrukcije)</li>
+</ul></li>
+
+<li>Vrste opernada mašinske instrukcije
+
+<ol class="org-ol">
+<li>Registarski</li>
+<li>Memorijski</li>
+<li>Neposredni</li>
+</ol></li>
+
+<li><p>
+Objasniti direktno adresiranje memorijskih operanada.
+</p>
+
+<p>
+Stvarna adresa se direktno uključuje u instrukciju. Adrese koje se javljaju u ovom načinu adresiranja se još nazivaju i apsolutne adrese. Ovaj način adresiranja je relativno jednostavan jer nema izračunavanja adrese, a prenos operanada zahteva samo jedno referisanje memorije.
+</p></li>
+
+<li><p>
+Objasniti indirektno adresiranje memorijskih operanada.
+</p>
+
+<p>
+Kod indirektnog adresiranja je poznata samo adresa lokacije na kojoj se nalazi adresa operanda, pa se do te adrese dolazi indirektno, tj. instrukcija sadrži binarni kod regista procesora čija se vrednost koristi kao adresa memorijskog operanda. Ovaj način adresiranjađ zahteva dva ciklusa, jedan za čitanje adrese, drugi za čitanje samog operanda.
+</p></li>
+
+<li><p>
+Objasniti indeksno adresiranje memorijskih operanada.
+</p>
+
+<p>
+Instrukcija sadrži binarne kodove dva registra čije se vrednosti sabiraju i tako dobijamo adresu memorijskog operanda. Obično je vrednost jednog registra fiksirana, a drugi predstavlja indeks koji se pomera. Korisno je za pristup elementima niza.
+</p>
+
+<ul class="org-ul">
+<li>Skalirano indeksno adresiranje:
+<ul class="org-ul">
+<li>Vrednost indeksnog registra se može množiti konstantom (npr. \(4\) ili \(8\)) pre sabiranja sa baznim registrom.</li>
+</ul></li>
+
+<li>Apsolutno indeksno adresiranje:
+<ul class="org-ul">
+<li>Bazna adresa ne mora biti u registru, već može biti zadata kao apsolutna adresa na koju se dodaje vrednost indeksnog registra (uz eventualno prethodno skaliranje)</li>
+</ul></li>
+</ul></li>
+
+<li><p>
+Objasniti relativno adresiranje memorijskih operanada.
+</p>
+
+<p>
+U ovom načinu za adresiranje se kao registar koristi brojač instrukcija čiji sadržaj se uzima kao <b>početna adresa</b>. U adresni deo instrukcije se upisuje ceo broj koji predstavlja udaljenje od početne adrese. Relativno adresiranje se koristi kada znamo da je ciljana adresa negde u okolini tekuće.
+</p></li>
+
+<li><p>
+Objasniti načine adresiranja na <i>x86-64</i> arhitekturi.
+</p>
+
+<p>
+Načini adresiranja opisuju kako se određuje operand instrukcije.
+</p>
+
+<ul class="org-ul">
+<li><p>
+<b>Neposredno</b> za konstante:
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">rax</span>, <span style="color: #ffd400; font-weight: bold;">42</span>
+</pre>
+</div></li>
+<li><p>
+<b>Registarsko</b>:
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">rax</span>, rdi
+</pre>
+</div></li>
+<li><b>Memorijsko</b>:
+<ul class="org-ul">
+<li><p>
+Direktno
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">value</span> <span style="color: #ff2afc; font-weight: bold;">dword</span> <span style="color: #ffd400; font-weight: bold;">42</span>
+...
+<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, [value]
+</pre>
+</div></li>
+<li><p>
+Indirektno
+</p>
+<div class="org-src-container">
+<pre class="src src-asm">        <span style="color: #546A90;">; </span><span style="color: #546A90;">rdi je pokaziva&#269; na prvi element niza</span>
+<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, [rdi]
+</pre>
+</div></li>
+<li><p>
+Indeksno
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">rdi je pokaziva&#269; na prvi element niza</span>
+<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">rsi</span>, <span style="color: #ffd400; font-weight: bold;">3</span>
+<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, [rdi + <span style="color: #ffd400; font-weight: bold;">4</span> * rsi]
+</pre>
+</div></li>
+</ul></li>
+</ul></li>
+
+<li><p>
+Objasniti načine adresiranja na <i>ARM</i> arhitekturi.
+</p>
+
+<p>
+Načini adresiranja opisuju kako se određuje operand instrukcije.
+</p>
+
+<ul class="org-ul">
+<li><p>
+<b>Neposredno</b> za konstante:
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, r0, <span style="color: #ffd400; font-weight: bold;">42</span>
+</pre>
+</div></li>
+<li><p>
+<b>Registarsko</b>:
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, r1
+</pre>
+</div></li>
+<li><b>Memorijsko</b>:
+<ul class="org-ul">
+<li><p>
+Direktno
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">value</span> <span style="color: #ff2afc; font-weight: bold;">dword</span> <span style="color: #ffd400; font-weight: bold;">42</span>
+...
+<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, [value]
+</pre>
+</div></li>
+<li><p>
+Indirektno
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
+<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, [r1]
+</pre>
+</div></li>
+<li>Indeksno
+<ul class="org-ul">
+<li><p>
+Prefiksno bez update-a
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
+<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r2</span>, #<span style="color: #ffd400; font-weight: bold;">3</span>
+<span style="color: #42c6ff; font-weight: bold;">ldr</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, [r1, r2, lsl #<span style="color: #ffd400; font-weight: bold;">2</span>] <span style="color: #546A90;">; </span><span style="color: #546A90;">r0 = *(r1 + 4 * r2)</span>
+</pre>
+</div></li>
+<li><p>
+Prefiksno sa update-om
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
+<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r2</span>, #<span style="color: #ffd400; font-weight: bold;">3</span>
+<span style="color: #42c6ff; font-weight: bold;">ldr</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, [r1, r2, lsl #<span style="color: #ffd400; font-weight: bold;">2</span>]! <span style="color: #546A90;">; </span><span style="color: #546A90;">r1 = r1 + 4 * r2; r0 = *r1;</span>
+</pre>
+</div></li>
+<li><p>
+Postfiksno sa update-om
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
+<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r2</span>, #<span style="color: #ffd400; font-weight: bold;">3</span>
+<span style="color: #42c6ff; font-weight: bold;">ldr</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, [r1], #<span style="color: #ffd400; font-weight: bold;">4</span> <span style="color: #546A90;">; </span><span style="color: #546A90;">r0 = *r1; r1 = r1 + 4;</span>
+</pre>
+</div></li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li>Instrukcije transfera. Funkcija i primer upotrebe. (<i>x86-64, ARM</i>)
+<ul class="org-ul">
+<li><code>x86-64</code>
+<ul class="org-ul">
+<li><code>mov, movzx, movsx</code>
+<ul class="org-ul">
+<li><code>dest</code>
+<ul class="org-ul">
+<li>registar</li>
+<li>memorija</li>
+</ul></li>
+<li><code>src</code>
+<ul class="org-ul">
+<li>konstanta</li>
+<li>registar</li>
+<li><p>
+memorija
+</p>
+
+<div class="org-src-container">
+<pre class="src src-asm">           <span style="color: #ff2afc; font-weight: bold;">mov</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest</span>
+
+           <span style="color: #ff2afc; font-weight: bold;">movzx</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iruje 0</span>
+
+           <span style="color: #ff2afc; font-weight: bold;">movsx</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iraje znakom</span>
+</pre>
+</div></li>
+</ul></li>
+</ul></li>
+<li><code>lea</code>
+<ul class="org-ul">
+<li><code>dest</code>
+<ul class="org-ul">
+<li>registar</li>
+</ul></li>
+<li><code>src</code>
+<ul class="org-ul">
+<li>konstanta</li>
+<li>registar</li>
+<li><p>
+memorija
+</p>
+
+<div class="org-src-container">
+<pre class="src src-asm">           <span style="color: #ff2afc; font-weight: bold;">lea</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira adresu od src u dest</span>
+</pre>
+</div></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><code>ARM</code>
+<ul class="org-ul">
+<li><code>ldr/str</code>
+<ul class="org-ul">
+<li><code>ldr</code>: Učitava vrednost sa adrese u registar</li>
+<li><code>str</code>: Čuva vrednost registra na adresi</li>
+<li><code>op{&lt;cond&gt;}{&lt;size&gt;} Rn, &lt;adress&gt;</code>
+<ul class="org-ul">
+<li><code>&lt;cond&gt; = {eq: =, gt: &gt;, ge: &gt;=, lt: &lt;, le: &lt;=}</code></li>
+<li><code>&lt;size&gt; = {'': word, b: byte, h: halfword}</code></li>
+</ul></li>
+</ul></li>
+<li><code>ldm/stm</code>
+<ul class="org-ul">
+<li><code>ldm</code>: Učitava vrednosti u više registara počevši od adrese</li>
+<li><code>stm</code>: Čuva vrednosti više registara počevši od adrese</li>
+<li><code>ldm{&lt;adrr_mode&gt;}{&lt;cond&gt;} Rn{!}, &lt;reg_list&gt;</code>
+<ul class="org-ul">
+<li><code>&lt;adrr_mode&gt; = {IA: increment_after, DB: decrement_before}</code></li>
+<li><code>&lt;cond&gt; = {eq: =, gt: &gt;, ge: &gt;=, lt: &lt;, le: &lt;=}</code></li>
+<li><code>! updateuje Rn za</code> \(\pm 4 \cdot len(reg\_list)\) <code>u zavisnosti od &lt;adrr_mode&gt;</code></li>
+<li><code>&lt;reg_list&gt; je lista registara navedena između { } koja ne sme da sadrži Rn</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>
+Aritmetičko-logičke instrukcije. (<i>x86-64, ARM</i>)
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p></li>
+
+<li><p>
+Instrukcije bezuslovnog skoka. (<i>x86-64, ARM</i>)
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p></li>
+
+<li>Flegovi procesora <code>(O, S, Z, C)</code>. Kada se postavljaju i čemu služe?
+<ul class="org-ul">
+<li>Postavljaju se nakon određenih operacija
+<ul class="org-ul">
+<li><p>
+Kod <code>x86-64</code> se to radi automatski, npr.
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">cmp</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, edi <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, S i Z flegovi</span>
+<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, esi <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, Z, C flegovi PROVERI</span>
+</pre>
+</div></li>
+<li><p>
+Kod <code>ARM</code> se to radi tako što se dodaje sufiks <code>s</code> na operacije kojima to po <i>default</i>-u nije tako
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">cmp</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, r1 <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, S i Z flegovi</span>
+<span style="color: #42c6ff; font-weight: bold;">adds</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, r2 <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, Z, C flegovi PROVERI</span>
+</pre>
+</div></li>
+</ul></li>
+<li><code>O</code> (overflow) - prekoračenje kod označenih operatora
+<ul class="org-ul">
+<li>govori da li je došlo do prekoračenja</li>
+</ul></li>
+<li><code>S</code> (sign) - najveći bit rezultata
+<ul class="org-ul">
+<li>govori da li je broj negativan ili nenegativan (\(x < 0 \ \lor x \leq 0\))</li>
+</ul></li>
+<li><code>Z</code> (zero)
+<ul class="org-ul">
+<li>govori da li je rezultat prethodne operacije \(0\)</li>
+</ul></li>
+<li><code>C</code> (carry)
+<ul class="org-ul">
+<li>govori da li je došlo do prenosa na bitu najveće težine</li>
+</ul></li>
+</ul></li>
+
+<li><p>
+Instrukcije poređenja i njihova uloga u realizaciji uslovnih skokova. (<i>x86-64, ARM</i>)
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p></li>
+
+<li><p>
+Instrukcije uslovnog skoka. (<i>x86-64, ARM</i>)
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p></li>
+
+<li>Koju kombinaciju flegova testira instrukcija <code>jl</code>, a koju <code>jb</code> na <code>x86-64</code> arhitekturi?
+
+<ul class="org-ul">
+<li><code>jl</code>: \(S \oplus O\)</li>
+<li><code>jb</code>: \(C\)</li>
+</ul></li>
+
+<li><p>
+Objasniti pozivanje procedura i vraćanje iz njih korišćenjem steka za čuvanje povratne adrese. Prednosti i mane.
+</p>
+
+<p>
+Pre pozivanja procedure na stek se čuva povratna adresa. Kada se procedura izvrši, instrukcija povratka uzima vrednost povratne adrese sa steka kako bi povratila kontrolu instrukciji koja sledi nakon zvanja procedure.
+</p>
+
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>sporije nego čuvanje u registrima</li>
+</ul>
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>nemamo ograničen broj parametara koji možemo čuvati na steku što je pogodno za rekurzivne procedure</li>
+</ul></li>
+
+<li><p>
+Objasniti pozivanje procedura i vraćanje iz njih korišćenjem registara za čuvanje povratne adrese. Prednosti i mane.
+</p>
+
+<p>
+Pre pozivanja procedure u poseban registar se čuva povratna adresa. Kada se procedura izvrši, instrukcija povratka uzima vrednost povratna adrese iz tog registra kako bi povratila kontrolu instrukciji koja sledi nakon zvanja procedure.
+</p>
+
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>imamo ograničen broj parametara koji možemo čuvati zbog ograničenog broja registara</li>
+</ul>
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>brže nego čuvanje na steku</li>
+</ul></li>
+
+<li><p>
+Objasniti prenos argumenata procedure korišćenjem steka. Prednosti i mane.
+</p>
+
+<p>
+Parametri se postavljaju na stek i pozvana procedura mora da ih vrati.
+</p>
+
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>sporije nego registarski</li>
+</ul>
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>nemamo ograničen broj parametara, što je pogodno za rekurzivne procedure</li>
+</ul></li>
+
+<li><p>
+Objasniti prenos argumenata procedure korišćenjem registora procesora. Prednosti i mane.
+</p>
+
+<p>
+Pre pozivanja procedure vrednosti koje bi trebalo da joj prosledimo stavljamo u registre koje će koristiti pozvana procedura
+</p>
+
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>imamo ograničen broj parametara zbog ograničenog broja registara</li>
+</ul>
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>brže nego čuvanje na steku</li>
+</ul></li>
+
+<li><p>
+Na koji način pozvana funkcija može vratiti vrednost pozivajućoj funkciji?
+</p>
+
+<p>
+Putem steka i registara.
+</p></li>
+
+<li><p>
+Objasniti pozivanje funkcija na <code>x86-64</code> arhitekturi. Kako se prenosi adresa povratka, argumenti, kao i povratna vrednost?
+</p>
+
+<p>
+Prvih 6 argumenata se prosleđuju redom u registre:
+</p>
+<ol class="org-ol">
+<li><code>rdi</code></li>
+<li><code>rsi</code></li>
+<li><code>rdx</code></li>
+<li><code>rcx</code></li>
+<li><code>r8</code></li>
+<li><code>r9</code></li>
+</ol>
+
+<p>
+U slučaju da nam je potrebno više od 6 argumenata, postavljamo ih na stek zdesna ulevo.
+</p>
+
+<p>
+Povratna vrednost se čuva u registru <code>rax</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-asm">      <span style="color: #ff2afc; font-weight: bold;">mov</span> edi, <span style="color: #ffd400; font-weight: bold;">42</span>
+      <span style="color: #ff2afc; font-weight: bold;">mov</span> esi, <span style="color: #ffd400; font-weight: bold;">7</span>
+      <span style="color: #ff2afc; font-weight: bold;">call</span> f
+      <span style="color: #ff2afc; font-weight: bold;">add</span> r10, eax <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
+</pre>
+</div>
+
+<p>
+Instrukcija <code>call</code> postavlja adresu sledeće instrukcije na stek kao adresu povratka.
+</p></li>
+
+<li><p>
+Objasniti pozivanje funkcija na <code>ARM</code> arhitekturi. Kako se prenosi adresa povratka, argumenti, kao i povratna vrednost?
+</p>
+
+<p>
+Prvih 4 argumenata se prosleđuju redom u registre:
+</p>
+<ol class="org-ol">
+<li><code>r0</code></li>
+<li><code>r1</code></li>
+<li><code>r2</code></li>
+<li><p>
+<code>r3</code>
+</p>
+
+<p>
+U slučaju da nam je potrebno više od 4 argumenata, postavljamo ih na stek zdesna ulevo.
+</p>
+
+<p>
+Povratna vrednost se čuva u registru <code>r0</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-asm">      <span style="color: #ff2afc; font-weight: bold;">mov</span> r0, <span style="color: #ffd400; font-weight: bold;">42</span>
+      <span style="color: #ff2afc; font-weight: bold;">mov</span> r1, <span style="color: #ffd400; font-weight: bold;">7</span>
+      <span style="color: #ff2afc; font-weight: bold;">bl</span> f
+      <span style="color: #ff2afc; font-weight: bold;">add</span> r4, r0 <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
+</pre>
+</div></li>
+</ol>
+
+<p>
+Instrukcija <code>bl</code> postavlja adresu sledeće instrukcije u <code>lr</code> (<i>link register</i>) kao adresu povratka.
+</p></li>
+
+<li>Koje su osnovne komponente procesora? Objasniti ih.
+
+<ul class="org-ul">
+<li><code>ALU</code> - Aritmetičko logička jedinica
+<ul class="org-ul">
+<li>zadužena je za aritmetičke i logičke operacije nad podacima</li>
+<li>kombinatorno kolo</li>
+<li>obradu podataka vrši isključivo nad registrima</li>
+<li>danas se ne implementira kao jedinstvena komponenta, već iz nekoliko specijalizovanih podjedinica</li>
+</ul></li>
+<li><code>CU</code> - Kontrolna jedinica
+<ul class="org-ul">
+<li>zadužena je za kontrolu redosleda izvršavanja operacija u <code>ALU</code> i kontrolu prenosa podataka i instrukcija iz i u procesor.</li>
+<li>sekvencijalno kolo</li>
+</ul></li>
+</ul></li>
+
+<li>Šta je <code>ALU</code> i čemu služi?
+
+<ul class="org-ul">
+<li><code>ALU</code> - Aritmetičko logička jedinica
+<ul class="org-ul">
+<li>zadužena je za aritmetičke i logičke operacije nad podacima</li>
+<li>kombinatorno kolo</li>
+<li><code>ALU</code> obradu podataka vrši isključivo nad registrima</li>
+<li>danas se ne implementira kao jedinstvena komponenta, već iz nekoliko specijalizovanih podjedinica</li>
+</ul></li>
+</ul></li>
+
+<li><p>
+Šta su registri opšte namene i čemu služe?
+</p>
+
+<p>
+Registri opšte namene su procesorski registri kojima programer ima pristup, nad kojima je moguće vršiti računanje i privremeno čuvanje podataka.
+</p></li>
+
+<li><p>
+Čemu služi instrukcioni registar <code>IR</code>?
+</p>
+
+<p>
+<code>IR</code> sadrži poslednju pročitanu instrukciju. Sadrži instrukciju koja se trenutno izvršava ili dekodira.
+</p>
+
+<p>
+Spada u <b>registre specijalne namene</b>, odnosno <b>nije</b> registar opšte namene.
+</p></li>
+
+<li><p>
+Čemu služi programski brojač <code>PC</code>?
+</p>
+
+<p>
+<code>PC</code> sadrži adresu naredne instrukcije koja treba da se izvrši.
+</p>
+
+<p>
+Spada u <b>registre specijalne namene</b>, odnosno <b>nije</b> registar opšte namene.
+</p></li>
+
+<li><p>
+Čemu služi statusni registar <code>PSW</code>?
+</p>
+
+<p>
+<code>PSW</code> = Program Status Word
+</p>
+
+<p>
+<code>PSW</code> sadrži informacije o trenutnom stanju (<i>state</i>) procesora, odnosno flegove.
+</p>
+
+<p>
+Spada u <b>registre specijalne namene</b>, odnosno <b>nije</b> registar opšte namene.
+</p></li>
+
+<li><p>
+Čemu služi registar memorijskih adresa <code>MAR</code>?
+</p>
+
+<p>
+<code>MAR</code> = memory adress register
+</p>
+
+<p>
+<code>MAR</code> sadrži memorijsku adresu sledećeg podataka ili instrukcije koji će procesor da obradi ili da sačuva na to mesto.
+</p>
+
+<p>
+Predstavlja medijum komunikacije između procesora i adresne magistrale.
+</p>
+
+<p>
+Spada u <b>registre specijalne namene</b>, odnosno <b>nije</b> registar opšte namene.
+</p></li>
+
+<li><p>
+Čemu služi registar memorijskih podataka <code>MDR</code>?
+</p>
+
+<p>
+<code>MDR</code> = memory data register
+</p>
+
+<p>
+<code>MDR</code> sadrži vrednost sledećeg podataka koji će procesor da obradi ili da sačuva negde u memoriji
+</p>
+
+<p>
+Predstavlja medijum komunikacije između procesora i data magistrale.
+</p>
+
+<p>
+Spada u <b>registre specijalne namene</b>, odnosno <b>nije</b> registar opšte namene.
+</p></li>
+
+<li><p>
+Šta je putanja podataka (<i>datapath</i>) i iz čega se sastoji?
+</p>
+
+<p>
+<i>Datapath</i> je deo procesora koji se sastoji iz registara, <code>ALU</code>-a i internih magistrala koje ih međusobno povezuju koji je zadužen za transformisanje podataka.
+</p></li>
+
+<li><p>
+Nacrtati uopštenu shemu putanje podataka sa tri interne magistrale. Primer izvršavanja operacije.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p></li>
+
+<li><p>
+Nacrtati uopštenu shemu putanje podataka sa dve interne magistrale. Primer izvršavanja operacije.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p></li>
+
+<li><p>
+Nacrtati uopštenu shemu putanje podataka sa jednom internom magistralom. Primer izvršavanja operacije.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p></li>
+
+<li><p>
+Šta je kontrolna jedinica (<code>CU</code>)? Šta je ulaz, a šta izlaz kontrolne jedinice?
+</p>
+
+<p>
+Kontrolna jedinica je komponenta procesora koja pomoću kontrolnih signala govori <i>datapath</i>-u šta da uradi sa podacima
+</p>
+
+<p>
+Uloga <code>CU</code> je:
+</p>
+<ul class="org-ul">
+<li>koordinacija podataka iz, u i među procesorskim podjedinicama</li>
+<li>interpretiranje instrukcija</li>
+<li>kontrola toka podataka u procesoru</li>
+<li>generisanje kontrolnih signala na osnovu instrukcija</li>
+</ul>
+
+<p>
+Ulazu u <code>CU</code> se obavlja prihvatanjem podataka iz prihvatnog registra u dekoder, dok je izlaz od <code>CU</code> zapravo izlaz iz dekodera koji je spojen sa ulazom <code>ALU</code>-a.
+</p></li>
+
+<li><p>
+Opisati osnovne faze pri izvršavanju instrukcija procesora.
+</p>
+
+<p>
+Program čini skup instrukcija koje su smeštene u memoriji. Procesor čita redom instrukcije iz memorije, zatim ih izvršava pa prihvata narednu. Proces se ponavlja sve dok je računar upaljen. Ovaj ciklus je poznat kao <b>pribavi-dekodiraj-izvrši</b> (<i>fetch-decode-execute</i>).
+</p></li>
+
+<li>Objasniti fazu dohvatanja instrukcije
+
+<ol class="org-ol">
+<li>Adresa zapisana u <code>PC</code> se kopira u <code>MAR</code>, nakon čega se <code>PC</code> inkrementira.</li>
+<li>Kopira se vrednost iz adrese koja je sačuvana u <code>MAR</code> i smešta se u <code>MDR</code></li>
+<li><p>
+Eventualno, vrednost iz <code>MDR</code> se kopira u <code>IR</code> nakon čega je faza dohvatanja gotova
+</p>
+
+<p>
+Pseudo-asembler kod
+</p>
+<div class="org-src-container">
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">mar</span>, pc
+<span style="color: #42c6ff; font-weight: bold;">inc</span> <span style="color: #ff2afc; font-weight: bold;">pc</span>
+<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">mdr</span>, [mar]
+<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">ir</span>, mdr
+</pre>
+</div></li>
+</ol></li>
+
+<li>Objasniti fazu dekodiranja instrukcije
+
+<ol class="org-ol">
+<li>Kodirana instrukcija u <code>IR</code> se dekodira</li>
+<li>Zajedno sa upravljačkim signalima, dekodirana instrukcija se šalje dalje na <code>ALU</code> za obradu</li>
+</ol></li>
+
+<li>Objasniti fazu izvršavanja instrukcije
+
+<ol class="org-ol">
+<li>Na ulaze se dovode operandi, dok se na upravljačke linije dovodi kod operacije</li>
+<li>Kao izlaz dobijamo obrađene podatke</li>
+</ol></li>
+
+<li>Na koje načine se može realizovati kontrolna jedinica? Poređenje.
+
+<ol class="org-ol">
+<li>Harverski
+<ul class="org-ul">
+<li>implementira se kroz upotrebu sekvencijalnih logičkih jedinica, zbog čega se dobija komplikovanija struktura sa povećanjem instrukcija</li>
+<li>koriste se u <code>RISC</code> arhiterkturi</li>
+<li>rade velikom brzinom, ali broj instrukcija koje mogu da implementiraju je ograničen</li>
+<li>skuplja izrada</li>
+</ul></li>
+<li>Mikroprogramski
+<ul class="org-ul">
+<li>jednostavnija struktura</li>
+<li>koriste se u <code>CISC</code> arhitekturi</li>
+<li>rade sporije u odnosu na hardverski zbog dodatnog sloja apstrakcije u vidu mikroinstrukcija, ali je lakše izmeniti same instrukcije</li>
+<li>jeftinija izrada</li>
+</ul></li>
+</ol></li>
+
+<li>Objasniti tvrdo ožičenu (hardversku) implementaciju <code>CU</code>
+
+<ul class="org-ul">
+<li>implementira se kroz upotrebu sekvencijalnih logičkih jedinica, zbog čega se dobija komplikovanija struktura sa povećanjem instrukcija</li>
+<li>koriste se u <code>RISC</code> arhiterkturi</li>
+<li>rade velikom brzinom, ali broj instrukcija koje mogu da implementiraju je ograničen</li>
+<li>skuplja izrada</li>
+<li>danas se retko koriste</li>
+</ul></li>
+
+<li><p>
+Objasniti mikroprogramsku (softversku) implementaciju <code>CU</code>
+</p>
+
+<ul class="org-ul">
+<li>jednostavnija struktura</li>
+<li>koriste se u <code>CISC</code> arhitekturi</li>
+<li>rade sporije u odnosu na hardverski zbog dodatnog sloja apstrakcije između hardvera i mašinskih instrukcija, no lakše je izmeniti instrukcije</li>
+<li>jeftinija izrada</li>
+<li>danas se praktično uvek koriste</li>
+</ul>
+
+<p>
+Mikroprogram, koji se sastoji iz mikroinstrukcija sačuvan je u posebnoj <code>ROM</code> ili <code>PLA</code> memoriji <code>CU</code>-a. Izvršavanje mikroinstrukcija generiše skup kontrolnih signala.
+</p></li>
+
+<li><p>
+Šta je mikroinstrukcija? Struktura mikroinstrukcije
+</p>
+
+<p>
+Mikro instrukcija je najmanja celina mikrokoda koji predstavlja programibilni sloj apstrakcije između hardvera i mašinskog koda dostupnog programeru. Struktura mikroinstrukcije može biti <b>horizontalna</b> i <b>vertikalna</b>
+</p></li>
+
+<li><p>
+Šta je mikroprogram? Objasniti način izvršavanja mikroprograma.
+</p>
+
+<p>
+Mikroprogram je niz mikroinstrukcija. Ideja mikroprogama je da se mašinske instrukcije mapiraju u ROM ili PLA memoriji u odgovarajuće kontrolne signale.
+</p>
+
+<p>
+[TODO]
+</p></li>
+
+<li><p>
+Objasniti horizontalni format mikroinstrukcija procesora.
+</p>
+
+<p>
+[TODO]
+</p></li>
+
+<li><p>
+Objasniti vertikalni format mikroinstrukcija procesora.
+</p>
+
+<p>
+[TODO]
+</p></li>
+
+<li>Karakteristike memorija.
+
+<ul class="org-ul">
+<li>kapacitet</li>
+<li>adresivost</li>
+<li>performanse</li>
+<li>trajnost (postojanost) zapisa</li>
+<li>mogućnost promene sadržaja</li>
+<li>promenljivost zapisa</li>
+<li>cena</li>
+<li>fizički tip medijuma</li>
+</ul></li>
+
+<li>Navesti moguće načine pristupa memoriji
+
+<ul class="org-ul">
+<li>sekvencijalni</li>
+<li>direktni</li>
+<li>proizvoljni</li>
+<li>asocijativni</li>
+</ul></li>
+
+<li><p>
+Objasniti sekvencijalni pristup memoriji
+</p>
+
+<p>
+Podaci se upisuju po redosledu unošenja, a čitaju po istom ili obrnutom redosledu.
+</p>
+
+<p>
+Da bi se pristupilo $i$-tom podatku potrebno je proći kroz svih prethodnih \(i - 1\) podataka, što znači da je ovaj način dosta spor.
+</p></li>
+
+<li><p>
+Objasniti direktni pristup memoriji
+</p>
+
+<p>
+Kod ovog načina pristupa postoji veza između adrese podatka i njegove pozicije na medijumu. Na osnovu adrese se pristupa lokaciji gde je smešten podatak ili njenoj okolini. Vreme pristupa je promenljivo i zavisi od pozicije na medijumu.
+</p></li>
+
+<li><p>
+Objasniti proizvoljni pristup memoriji (Random Access Memory)
+</p>
+
+<p>
+Kod ovakvog načina pristupa svaka adresibilna lokacija sadrži adresni mehanizam ugrađen u memorijski sklop. Vreme pristupa svakoj lokaciji je konstantno.
+</p></li>
+
+<li><p>
+Objasniti asocijativni pristup memoriji
+</p>
+
+<p>
+Ovo je podtip memorije sa proizvoljnim pristupom koji omogućava poređenje maske i vrednosti određenih bitova u reči. Na ovaj način se reč čita na osnovu njenog sadržaja a ne adrese.
+</p>
+
+<p>
+Često se koristi kod baza podataka.
+</p></li>
+
+<li><p>
+Šta je kapacitet memorije i u kojim jedinicama se izražava?
+</p>
+
+<p>
+Kapacitet predstavlja količinu podataka koji se mogu sačuvati u memoriji.
+</p>
+
+<p>
+Obično se izražava u <code>KiB, MiB, GiB, TiB</code>
+</p></li>
+
+<li>Kakva memorija može biti s obzirom na trajnost (postojanost) zapisa? Primeri.
+
+<ul class="org-ul">
+<li>Privremena
+<ul class="org-ul">
+<li>gube zapis s nestankom napajanja</li>
+</ul></li>
+<li>Stalna
+<ul class="org-ul">
+<li>čuvaju zapis sve dok ne dođe do namerne promene (ignorišemo fizičko degradiranje materijala itd.)</li>
+</ul></li>
+</ul></li>
+
+<li>Kakva memorija može biti s obzirom na promenjivost sadržaja? Primeri.
+
+<ul class="org-ul">
+<li>promenljive
+<ul class="org-ul">
+<li>memorija koja se koristi za implementaciju registara i <code>RAM</code></li>
+</ul></li>
+<li>polu-promenljive
+<ul class="org-ul">
+<li><code>EPROM, EEPROM</code></li>
+</ul></li>
+<li>nepromenljive
+<ul class="org-ul">
+<li><code>ROM</code></li>
+</ul></li>
+</ul></li>
+
+<li><p>
+Kako se izražava brzina memorije? Koji faktori najviše utiču na brzinu memorije?
+</p>
+
+<p>
+Izražava se u količini obrađenih podataka po jedinici vremena. Kod RAM memorija se često izražava u \(MHz\).
+</p>
+
+<p>
+Najviše utiču:
+</p>
+<ul class="org-ul">
+<li>način adresiranja</li>
+<li>tehnologija izrade</li>
+</ul></li>
+
+<li><p>
+Objasniti hijerarhiju memorija
+</p>
+
+<p>
+[TODO]
+Smara, stvarno treba da se ranim ako ne budem znao ovo.
+</p></li>
+
+<li><p>
+Šta je <code>ROM</code>? Kakve vrste postoje? Gde se koristi?
+</p>
+
+<p>
+<code>ROM</code> je <i>read-only</i> memorija čiji sadržaj se stalan i ne može se menjati (u klasičnom smislu). Implementira se kao kombinatorno kolo jer vrednosti na izlazu zavise isključivo od vrednosti na ulazu.
+</p>
+
+<p>
+Najčešće se koristi za smeštanje <i>low-level</i> programa i mikrokoda koji su potrebni za pokretanje računara.
+</p>
+
+<p>
+Vrste:
+</p>
+<ul class="org-ul">
+<li><code>ROM: Read Only Memory</code></li>
+<li><code>PROM: Programmable Read Only Memory</code></li>
+<li><code>EPROM: Erasable Programmable Read Only Memory</code></li>
+<li><code>EEPROM: Electrically Erasable Programmable Read Only Memory</code></li>
+<li><code>Flash</code></li>
+</ul></li>
+
+<li><p>
+Šta je <code>RAM</code>? Kakve vrste postoje?
+</p>
+
+<p>
+<code>RAM</code> (<i>Random Access Memory</i>) je memorija sa slučajnim pristupom.
+</p>
+
+<p>
+Sadržaj memorije se gubi bez napajanja. Moguće je proizvoljan broj puta čitati i pisati iz iste memorije.
+</p>
+
+<p>
+Vrste:
+</p>
+<ul class="org-ul">
+<li>statički</li>
+<li>dinamički</li>
+</ul></li>
+
+<li><p>
+Šta je statički <code>RAM</code> i koje su njegove osnovne karakteristike? Gde se koristi?
+</p>
+
+<p>
+<code>SRAM</code> je vrsta <code>RAM</code>-a koja se najčešće koristi za implementaciju keš memorije i registara procesora.
+</p>
+
+<p>
+Najčešće se implementiraju pomoću D-flip-flopova i nekih drugih kombinatornih kola.
+</p>
+
+<p>
+Karakteriše ga velika brzina čitanja i pisanja, ali takođe i velika cena izrade, zbog čega se i rezervisano koriste.
+</p></li>
+
+<li><p>
+Šta je dinamički <code>RAM</code> i koje su njegove osnovne karakteristike? Gde se koristi?
+</p>
+
+<p>
+<code>DRAM</code> je vrsta <code>RAM</code>-a koja se najčešće koristi za implementaciju glavne memorije u računaru (u &ldquo;narodnom&rdquo; shvatanju <code>RAM</code>).
+</p>
+
+<p>
+Jedna memorijska jedinica je sačinjena od jednog tranizstora i kondenzatora, što ga čini dosta jeftinim za proizvodnju, kao i kompaktnim za ređanje velikog broja memorijskih ćelija na malom prostoru.
+</p>
+
+<p>
+Mana <code>DRAM</code>-a je što je potrebno relativno često ažurirati vrednosti jer se vremenom gube iz kondenzatora. Takođe, pri čitanju se vrednost uništava, pa ju je potrebno opet upisati nakon čitanja.
+</p></li>
+
+<li><p>
+Šta su isprepletane memorije? Objasniti.
+</p>
+
+<p>
+To je jedna od tehnika koja se koristi za smanjenje kašnjenja prilikom pristupa susednim memorijskim adresama.
+</p>
+
+<p>
+Ideja je da se memorija izdeli na nekoliko manjih uzastopnih memorijskih jedinica koje nazivamo <b>bankama</b>. Ulazne adrese izdelimo u dva dela \(m\) (viši bitovi) i \(k\) (niži bitovi), tako da \(k\) služi da identifikuje banku, dok \(m\) služi da identifikuje adresu u toj banci. Na taj način možemo paralelno pristupati različitim bankama i da smanjimo vreme koje nam je potrebno za pristupanje memoriji.
+</p></li>
+
+<li><p>
+Koje vrste preslikavanja memorijskih adresa razlikujemo? Objasniti.
+</p>
+
+<p>
+Preslikavanje adresa je postupak kojim se fizička memorija mapira u adresnom prostoru računara.
+[TODO]
+</p>
+
+<p>
+Preslikavanje može biti <b>puno</b> i <b>delimično</b>
+</p></li>
+
+<li><p>
+Objasniti puno preslikavanje memorijskih adresa.
+</p>
+
+<p>
+Puno preslikavanje memorijskih adresa je <code>1-1</code> preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
+[TODO]
+</p></li>
+
+<li><p>
+Objasniti delimično preslikavanje memorijskih adresa
+</p>
+
+<p>
+Puno preslikavanje memorijskih adresa <b>nije</b> <code>1-1</code> preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
+[TODO]
+</p></li>
+
+<li><p>
+Objasniti poravnanje podataka (memorija).
+</p>
+
+<p>
+Procesori čitaju podatke u rečima. Ako imamo poravnate podatke to znači da je moguće samo u jednom ciklusu pročitati reč u kojoj se nalazi naš podatak. Kada ne bismo imali poravnate podatke, uštedeli bismo malo na memoriji, ali bismo dosta izgubili na performansama, ne samo zbog većeg broj utrošenih ciklusa za čitanje već i zbog promašaja u kešu.
+</p></li>
+
+<li><p>
+Navesti osnovne vrste spoljašnjih memorija i navesti njihove karakteristike
+</p>
+
+<p>
+smara.
+</p>
+
+<ul class="org-ul">
+<li>magnetna traka</li>
+<li>magnetni diskovi (floppy, HDD)</li>
+<li>optički diskovi (CD, DVD, BlueRay)</li>
+<li>flash drive, SSD</li>
+</ul></li>
+
+<li><p>
+Objasniti namenu i osnovni princip rada keša.
+</p>
+
+<p>
+Keš memorija predstavlja malu količinu brze memorije koja u memorijskoj hijerarhiji stoji između procesorskih registara i glavne memorije i služi da ublaži razliku u brzini između procesora i glavne memorije.
+</p>
+
+<p>
+Implemenitraju se preko <code>SRAM</code>-a. Funkcionišu tako što unapred dobave podatke ili instrukcije za koje se smatra da postoji velika verovatnoća da će procesoru trebati, zbog čega se u slučajevima kada se pogodi, dosta smanjuje vreme potrebno za neku operaciju.
+</p></li>
+
+<li><p>
+Objasniti princip lokalnosti. Šta je prostorna a šta vremenska lokalnost? Primeri.
+</p>
+
+<p>
+Prostorna lokalnost je tendencija naših programa da se podaci i instrukcije pristupaju sekvencijalno.
+</p>
+
+<p>
+Primeri:
+</p>
+<ul class="org-ul">
+<li>u C-u niz predstavlja uzastopni blok memorije, te on zadovoljava princip prostorne lokalnosti</li>
+<li>instrukcije najčešće se izvršavaju sekvencijalno, osim ako imamo skokove</li>
+</ul>
+
+<p>
+Vremenska lokalnost je tendencija naših programa da ponovno koriste iste instrukcije ili podatke.
+</p>
+
+<p>
+Primer:
+</p>
+<ul class="org-ul">
+<li>ako imamo program koji računa sumu niza, onda se promenljiva koja čuva sumu može staviti u keš zajedno sa instrukcijama u petlji</li>
+</ul></li>
+
+<li><p>
+Na koji način keš koristi principe prostorne i vremenske lokalnosti?
+</p>
+
+<p>
+Keš memorije koriste princip prostorne lokalnosti tako što kopiraju celu okolinu nekog podatka/instrukcije iz glavne memorije iako je samo jedan podatak tražen jer se očekuje da će i susedni podaci biti uskoro korišćeni.
+</p>
+
+<p>
+Princip vremenske lokalnosti ostvaruje se tako što se podaci/instruckije koji su nedavno korišćeni nalaze u kešu, jer je pretpostavka da će uskoro biti ponovo korišćeni.
+</p></li>
+
+<li><p>
+Objasniti čitanje keša u slučaju pogotka
+</p>
+
+<p>
+Čitanje keša u slučaju pogotka znači da smo podatak koji smo tražili od glavne memorije našli u kešu. Magistrale za adrese i podatke se blokiraju i razmena podataka se dešava direktno između procesora i keša. Na ovaj način čitanje je dosta brže.
+</p></li>
+
+<li><p>
+Objasniti čitanje keša u slučaju promašaja
+</p>
+
+<p>
+Ako se traženi podaci ne nalaze u kešu, onda se čitaju iz memorije i istovremeno upisuju u keš. Magistrale za adrese i podatke su aktivne, što znači da se odvija uobičajeno čitanje iz memorije sa dodatnim upisom u keš što ovaj slučaj čini sporijim nego čitanje iz memorije bez prisutva keša.
+</p></li>
+
+<li><p>
+Objasniti pisanje keša u slučaju pogotka
+</p>
+
+<p>
+U slučaju pogodtka postoje dve mogućnosti za pisanje:
+</p>
+<ul class="org-ul">
+<li>samo u kešu</li>
+<li>i u kešu i u glavnoj memoriji</li>
+</ul></li>
+
+<li><p>
+Objasniti pisanje keša u slučaju promašaja
+</p>
+
+<p>
+U slučaju promašaja podaci se upisuju samo u memoriju zato što ne postoje u kešu.
+</p></li>
+
+<li><p>
+Šta je preslikavanje adresa keša i koje vrste preslikavanja postoje?
+</p>
+
+<p>
+blok = uzastopni komad memorije
+</p>
+
+<p>
+Preslikavanje adrese keša je mapiranje između blokova iz glavne memorije i keš linija.
+</p>
+
+<p>
+Vrste:
+</p>
+<ul class="org-ul">
+<li>neposredno</li>
+<li>set-asocijativno</li>
+<li>asocijativno</li>
+</ul></li>
+
+<li><p>
+Objasniti neposredno preslikavanje adresa keša i dati primer.
+</p>
+
+<ul class="org-ul">
+<li>Svaki blok se mapira u tačno jednu liniju keša
+<ul class="org-ul">
+<li>\(M\) - količina glavne memorije</li>
+<li>\(m\) - količina keš memorije</li>
+<li>\(B\) - veličina jednog bloka memorije</li>
+<li>\(C = m / B\) - broj keš linija</li>
+<li>\(c_{i} = i \ mod \ C\) - $i$-ti blok memorije se mapira u $c<sub>i</sub>$-tu keš liniju</li>
+</ul></li>
+<li>Lako je za implementaciju, ali je takođe lako dobiti najgori mogući slučaj</li>
+</ul>
+
+<p>
+Primer:
+</p>
+<ul class="org-ul">
+<li>\(M = 64\)</li>
+<li>\(m = 16\)</li>
+<li>\(B = 4\)</li>
+<li><p>
+\(C = m / B = 4\)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">i</td>
+<td class="org-right">c<sub>i</sub></td>
+</tr>
+
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">7</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">8</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">9</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">12</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">13</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">14</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">15</td>
+<td class="org-right">3</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<p>
+Svaka adresa iz memorije se deli u 3 dela:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">keš tag</td>
+<td class="org-left">keš linija id</td>
+<td class="org-left">offset</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li><i>offset</i>
+<ul class="org-ul">
+<li>služi da dopuni do veličine bloka zbog poravnanja memorije</li>
+<li>zauzima \(b = log_{2}(B)\) bitova</li>
+</ul></li>
+<li><i>keš linija id</i>
+<ul class="org-ul">
+<li>moduliramo ovaj uzastopni podniz bitova da bismo dobili na koju liniju keša mapiramo dati blok</li>
+<li>zauzima \(c = log_{2}(C)\) bitova</li>
+</ul></li>
+<li><i>keš tag</i>
+<ul class="org-ul">
+<li>služi za čuvanje u kešu kako bi keš znao koji blok memorije je u pitanju (pošto se više blokova memorije mogu mapirati u istu keš liniju)</li>
+<li>zauzima \(t = B - b - c\) bitova</li>
+</ul></li>
+</ul>
+
+<p>
+U liniji keša čuva se:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">validan bit</td>
+<td class="org-left">keš tag</td>
+<td class="org-left">keš podatak</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>keš podatak
+<ul class="org-ul">
+<li>podaci kopirani iz mapiranog bloka memorije</li>
+</ul></li>
+<li>keš tag
+<ul class="org-ul">
+<li>pošto se više blokova memorije mogu mapirati u istu keš liniju, koristimo keš tag da ih razlikujemo</li>
+</ul></li>
+<li><i>validan bit</i>
+<ul class="org-ul">
+<li>govori da li keš linija sadrži validne podatke (na početku je nego đubre, pa na ovaj način to naznačavamo)</li>
+</ul></li>
+</ul>
+<ul class="org-ul">
+<li><p>
+Kada želimo da proverimo da li se blok nalazi u kešu potrebno je:
+</p>
+<ol class="org-ol">
+<li>naći &ldquo;id&rdquo; keš linije, odonosno \(c_{i}\)</li>
+<li>ako je <i>validan bit</i> jednak \(0\) onda je promašaj</li>
+<li>ako se keš tag i trenutni tag razlikuju onda je promašaj</li>
+<li>u suprotnom nađen je</li>
+</ol>
+
+<p>
+Slično važi i za upis, koji je dodatno vezan za polisu upisa.
+</p></li>
+</ul></li>
+
+<li><p>
+Objasniti asocijativno preslikavanje adresa keša i dati primer.
+</p>
+
+<ul class="org-ul">
+<li>Svaki blok je moguće mapirati u bilo koju keš liniju
+<ul class="org-ul">
+<li>Ako koristimo <code>FIFO</code> alokaciju, onda se faktički novi blok opisuje prvu sledeću slobodnu liniju. Kada se popuni keš izbacijemo ih redom kojim smo ih uneli.</li>
+<li>\(M\) - količina glavne memorije</li>
+<li>\(m\) - količina keš memorije</li>
+<li>\(B\) - veličina jednog bloka memorije</li>
+<li>\(C = m / B\) - broj keš linija</li>
+</ul></li>
+</ul>
+
+<p>
+Svaka adresa iz memorije se deli u 2 dela:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">keš tag</td>
+<td class="org-left">offset</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li><i>offset</i>
+<ul class="org-ul">
+<li>služi da dopuni do veličine bloka zbog poravnanja memorije</li>
+<li>zauzima \(b = log_{2}(B)\) bitova</li>
+</ul></li>
+<li><i>keš tag</i>
+<ul class="org-ul">
+<li>služi za čuvanje u kešu kako bi keš znao koji blok memorije je u pitanju (pošto se više blokova memorije mogu mapirati u istu keš liniju)</li>
+<li>zauzima \(t = B - b\) bitova</li>
+</ul></li>
+</ul>
+
+<p>
+U liniji keša čuva se:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">validan bit</td>
+<td class="org-left">keš tag</td>
+<td class="org-left">keš podatak</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>keš podatak
+<ul class="org-ul">
+<li>podaci kopirani iz mapiranog bloka memorije</li>
+</ul></li>
+<li>keš tag
+<ul class="org-ul">
+<li>pošto se više blokova memorije mogu mapirati u istu keš liniju, koristimo keš tag da ih razlikujemo</li>
+</ul></li>
+<li><i>validan bit</i>
+<ul class="org-ul">
+<li>govori da li keš linija sadrži validne podatke (na početku je nego đubre, pa na ovaj način to naznačavamo)</li>
+</ul></li>
+</ul>
+<ul class="org-ul">
+<li>Kada želimo da proverimo da li se blok nalazi u kešu potrebno je:
+<ol class="org-ol">
+<li>sve linije koje imaju <i>validan bit</i> jednak \(1\) se uzimaju u obzir</li>
+<li>porede se keš tagovi i trenutni tag, ako se ne nađu onda imamo promašaj</li>
+<li>u suprotnom nađen je</li>
+</ol></li>
+
+<li>Problem nije veća količina memorije odvojena za keš tag, već činjenica da jedan blok može da bude u bilo kojoj keš liniji, zbog čega nam je potreban \(2^{C}\) komparatora što ga čini dosta skupim.</li>
+</ul></li>
+
+<li><p>
+Objasniti skup-asocijativno preslikavanje adresa keša i dati primer.
+</p>
+
+<p>
+Skup-asocijativno preslikavanje prestavlja kompromis između <code>neposrednog</code> i <code>asocijativnog</code> preslikavanja i kombinaciju tih ideja.
+</p>
+<ul class="org-ul">
+<li>\(M\) - količina glavne memorije</li>
+<li>\(m\) - količina keš memorije</li>
+<li>\(B\) - veličina jednog bloka memorije</li>
+<li>\(C = m / B\) - broj keš linija</li>
+<li>$S &isin; \{ 2, 4, 8 \} $ - broj disjunktnih skupova</li>
+<li>\(s_{i} = i \ mod \ S\) - $i$-ti blok memorije se mapira u $s<sub>i</sub>$-ti skup keš linija</li>
+</ul></li>
+
+<li><p>
+Izdelimo keš linije u <b>disjunktne skupove</b>, kojima pristupamo metodom sličnom kao kod <code>neposrednog</code> preslikavanja.
+</p>
+<ul class="org-ul">
+<li>Unutar samih skupova unosimo na proizvoljne keš linije kao kod <code>asocijativnog</code> preslikavanja</li>
+</ul>
+
+<p>
+Svaka adresa iz memorije se deli u 3 dela:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">keš tag</td>
+<td class="org-left">skup id</td>
+<td class="org-left">offset</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li><i>offset</i>
+<ul class="org-ul">
+<li>služi da dopuni do veličine bloka zbog poravnanja memorije</li>
+<li>zauzima \(b = log_{2}(B)\) bitova</li>
+</ul></li>
+<li><i>skup id</i>
+<ul class="org-ul">
+<li>moduliramo ovaj uzastopni podniz bitova da bismo dobili na u koji skup mapiramo dati blok</li>
+<li>zauzima \(s = log_{2}(S)\) bitova</li>
+</ul></li>
+<li><i>keš tag</i>
+<ul class="org-ul">
+<li>služi za čuvanje u kešu kako bi keš znao koji blok memorije je u pitanju (pošto se više blokova memorije mogu mapirati u istu keš liniju)</li>
+<li>zauzima \(t = B - b - s\) bitova</li>
+</ul></li>
+</ul>
+
+<p>
+U liniji keša čuva se:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">validan bit</td>
+<td class="org-left">keš tag</td>
+<td class="org-left">keš podatak</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>keš podatak
+<ul class="org-ul">
+<li>podaci kopirani iz mapiranog bloka memorije</li>
+</ul></li>
+<li>keš tag
+<ul class="org-ul">
+<li>pošto se više blokova memorije mogu mapirati u istu keš liniju, koristimo keš tag da ih razlikujemo</li>
+</ul></li>
+<li><i>validan bit</i>
+<ul class="org-ul">
+<li>govori da li keš linija sadrži validne podatke (na početku je nego đubre, pa na ovaj način to naznačavamo)</li>
+</ul></li>
+</ul>
+<ul class="org-ul">
+<li>Kada želimo da proverimo da li se blok nalazi u kešu potrebno je:
+<ol class="org-ol">
+<li>pronaći <i>id</i> skupa u kojem se nalazi blok</li>
+<li>sve linije koje imaju <i>validan bit</i> jednak \(1\) se uzimaju u obzir</li>
+<li>porede se keš tagovi i trenutni tag, ako se ne nađu onda imamo promašaj</li>
+<li>u suprotnom nađen je</li>
+</ol></li>
+</ul></li>
+
+<li><p>
+Šta su i čemu služe politike zamenjivanja keša? Nabrojati ih.
+</p>
+<ul class="org-ul">
+<li>Politika zamenjivanje sa primenjuje radi odabira keš linije čiji sadržaj će biti zamenjen sadržajem novog memorijskog bloka.</li>
+<li>Zavisi od primenjenog preslikavanja
+<ul class="org-ul">
+<li>U slučaju <code>neposrednog</code> preslikavanja <b>nema</b> politike zamene jer nema izbora</li>
+</ul></li>
+</ul>
+
+<p>
+Najčešće se koriste:
+</p>
+<ul class="org-ul">
+<li><code>LRU</code></li>
+<li><code>pseudo-LRU</code></li>
+<li><code>FIFO</code></li>
+<li><code>LFU</code></li>
+</ul></li>
+
+<li>Objasniti politiku zamenjivanja najduže nekorišćene linije keša (<code>LRU</code>). Dobre i loše strane.</li>
+<li>Objasniti politiku zamenjivanja pseudo-najduže nekorišćene linije keša (<code>pseudo-LRU</code>). Dobre i loše strane.</li>
+<li>Objasniti <code>FIFO</code> politiku zamenjivanja linije keša.</li>
+<li>Koje politike pisanja keša postoje i u čemu se razlikuju</li>
+<li>Objasniti politiku pisanja keša sa propuštanjem (<i>write-through</i>). Dobre i loše strane</li>
+<li>Objasniti politiku pisanja keša sa prepisivanjem (<i>write-back</i>). Dobre i loše strane</li>
+<li>Razdvojeni i unifikovani keš. Poređenje.</li>
+<li>Objasniti arhitekture višestepenog keša i način njihovog funkcionisanja.</li>
+<li>Objasniti odnos veličine keša i performansi.</li>
+<li>Objasniti odnos veličine linije keša i performansi.</li>
+<li>Objasniti odnos asocijativnosti i performansi.</li>
+
+<li>Šta je magistrala i čemu služi?</li>
+<li>Kako se ostvaruje deljenje magistrale? Na koji način se sprečava kolizija signala? Objasniti.</li>
+<li>Šta je transakcija a šta operacija magistrale? Šta je protokol magistrale?</li>
+<li>Šta su serijske, a šta paralelne magistrale? Poređenje.</li>
+<li>Koja je razlika između multipleksiranih i razdvojenih magistrala? Poređenje.</li>
+<li>Šta je širina magistrale?</li>
+<li>Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije čitanja u slučaju sinhrone magistrale.</li>
+<li>Objasniti i predsaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.</li>
+<li>Šta je stanje čekanja? Kada se i kako upotrebljava? Objasniti operaciju čitanja sa stanjem čekanja.</li>
+<li>Šta je &ldquo;prenošenje blokova podataka&rdquo;? Kada se i za šta upotrebljava?</li>
+<li>Šta je &ldquo;<i>read-modify-write</i>&rdquo; transakcija i za šta se upotrebljava?</li>
+<li>Kako se sinhronizuje rad na asinhronoj magistrali? Objasniti signale i tok aktivnosti (četvorofazno rukovanje)</li>
+<li>Prednosti i mane asinhronih magistrala u odnosu na sinhrone.</li>
+<li>Šta je arbitraža magistrale? Objasniti razliku između centralizovane i distribuirane arbitraže.</li>
+<li>Nabrojati i ukratko objasniti politike dodeljivanja magistrale.</li>
+<li>Navesti i ukratko objasniti politike oslobađanja magistrale.</li>
+<li>Objasniti detaljno mehanizam ulančavanja kod centralizovane arbitraže.</li>
+<li>Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.</li>
+<li>Električne karakteristike serijskih magistrala</li>
+<li>Navesti najčešće načine kodiranja bitova kod serijskog prenosa</li>
+<li>Koja je osnovna prednost, a koja mana <code>NRZ</code> kodiranja u odnosu na <code>RZ</code> kodiranje?</li>
+<li>Objasniti <code>NRZI</code> kodiranje.</li>
+<li>Ukratko objasniti <code>8b/10b</code> kodiranje? Koji je razlog za korišćenje ovog načina kodiranja?</li>
+<li>Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike</li>
+<li>Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike</li>
+
+<li>Šta je sistem prekida i koja mu je uloga?</li>
+<li>Navesti i ukratko objasniti vrste prekida</li>
+<li>Objasniti hardverske prekide. Šta su maskirajući, a šta nemaskirajući prekidi?</li>
+<li>Objasniti softverske prekide. Koja je tipična uloga softverskih prekida?</li>
+<li>Šta su izuzeci (u kontekstu sistema prekida) i čemu služe?</li>
+<li>Šta je vektor prekida? Šta je deskriptor prekida? Gde se nalazi tabela deskriptora prekida?</li>
+<li>Objasniti detaljno način pozivanja rukovaoca prekidom u slučaju vektorskih prekida.</li>
+<li>Objasniti komponente i rad kontrolora prekida <code>PIC 8259</code></li>
+
+<li>Šta su ulazno/izlazni uređaji?</li>
+<li>Šta su ulazno/izlazni kontroleri i koja je njihova uloga?</li>
+<li>Šta podrazumeva upotreba <code>I/O</code> uređaja putem memorijskog mapiranja?</li>
+<li>Šta podrazumeva upotreba <code>I/O</code> uređaja putem izolovanog ulaza i izlaza?</li>
+<li>Objasniti tehniku programiranog <code>I/O</code></li>
+<li>Objasniti tehniku <code>I/O</code> vođenog prekidima</li>
+<li>Objasniti direktan pristup memoriji (<code>DMA</code>). Kontroler <code>DMA</code>. Koraci pri realizaciji <code>DMA</code> pristupa</li>
+
+<li>Šta je virtuelna memorija i zbog čega se koristi?</li>
+<li>Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?</li>
+<li>Objasniti preslikavanje adresa virtuelne memorije. Primer.</li>
+<li>Preslikavanje adresa na više nivoa. Zbog čega se koristi? Primer.</li>
+<li>Šta su i kada se koriste politike zamene stranica?</li>
+<li>Navesti i ukratko objasniti najčešće politike zamene stranica</li>
+<li>Objasniti značaj veličine stranice virtuelne memorije i navesti primer.</li>
+<li>Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.</li>
+<li>Šta sadrže stavke u tablici stranica virtuelne memorije? Objasniti.</li>
+<li>Šta je bafer tablice stranica virtuelne memorije (<code>TLB</code>) i čemu služi?</li>
+
+<li>Objasniti princip preklapanja instrukcija u modernim procesorima</li>
+<li>Koji su osnovni uzroci zaustavljanja &ldquo;pokretne trake&rdquo; kod preklapanja instrukcija u savremenim procesorima? Koje se tehnike koriste za rešavanje ovakvih problema?</li>
+<li>Objasniti tehniku izvršavanja van redosleda (<i>out-of-order execution</i>)</li>
+<li>Objasniti tehniku predikcije grananja (<i>branch prediction</i>)</li>
+<li>Šta su superskalarni procesori?</li>
+
+<li>Koji su osnovni tipovi podataka u jeziku <i>Verilog</i>?</li>
+<li>Objasniti razliku između žičanih i registarskih tipova u jeziku <i>Verilog</i></li>
+<li>Šta predstavljaju vektorski tipovi, a šta nizovi u jeziku <i>Verilog</i>?</li>
+<li>Šta predstavlja vrednost \(z\) a šta vrednost \(x\) u jeziku <i>Verilog</i>?</li>
+<li>Na koji način se u jeziku <i>Verilog</i> mogu izdvajati podsignali iz vektorskih signala, a na koji način se jednostavniji signali mogu grupisati u složenije?</li>
+<li>Šta su moduli u jeziku <i>Verilog</i>? Kakvi moduli postoje? Na koji način se moduli instanciraju? Primer</li>
+<li>Šta su portovi u jeziku <i>Verilog</i>? Koje vrste portova postoje i kako se deklarišu? Primer.</li>
+<li>Na koji način se može zadavati kašnjenje pilikom modelovanja na nivou gejtova u jeziku <i>Verilog</i>? Primer.</li>
+<li>Objasniti naredbu <i>assign</i> u jeziku <i>Verilog</i>. Zadavanje kašnjenja. Primer.</li>
+<li>Koje vrste procesa na nivou modelovanja ponašanja postoje u jeziku <i>Verilog</i>?</li>
+<li>Opisati sintaksu i semantiku <i>initial</i> procesa u jeziku <i>Verilog</i>. Primer</li>
+<li>Opisati sintaksu i semantiku <i>always</i> procesa u jeziku <i>Verilog</i>. Primer</li>
+<li>Na koji način se može kontrolisati izvršavanje <i>always</i> procesa u jeziku <i>Verilog</i>?</li>
+<li>Naredbe proceduralne dodele u jeziku <i>Verilog</i>. Blokirajuće i neblokirajuće dodele. Primeri.</li>
+<li>Na koji način se može zadavati kašnjenje prilikom izvršavanja naredbi u okviru procesa u jeziku <i>Verilog</i>?</li>
+<li>Naredbe grananja u jeziku <i>Verilog</i>. Primeri</li>
+<li>Dizajn kombinatornih kola pomoću <i>always</i> procesa u jeziku <i>Verilog</i>. Primeri</li>
+<li>Dizajn asinhronih sekvencijalnih kola pomoću <i>always</i> procesa u jeziku <i>Verilog</i>. Primeri</li>
+<li>Dizajn sinhronih sekvencijalnih kola pomoću <i>always</i> procesa u jeziku <i>Verilog</i>. Primeri</li>
+</ol>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Aleksandar Šmigić</p>
+<p class="date">Created: 2020-06-01 Mon 14:52</p>
+</div>
+</body>
+</html>
