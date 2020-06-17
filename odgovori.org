@@ -82,9 +82,9 @@
 
    - Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})
    - Elementarna konjunkcija je logički izraz koji se sastoji iz konjunkcije literala (eg. $x\bar{y}z\bar{p}$)
-     - Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promeljivu (eg. $P = {x, y, z}, S = \bar{x} \cdot y \cdot z$)
+     - Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, S = \bar{x} \cdot y \cdot z$)
    - DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. $x\bar{y}z + \bar{x}yz + xyz)
-     - Savršena DNF se sastoji od savršenih elementarnih konjunkcija
+     - Savršena DNF se sastoji od disjunkcije savršenih elementarnih konjunkcija
 
 8. Definisati pojmove elementarne disjunkcije i konjunktivne normalne forme (KNF). Šta je savršena elementarna disjunkcija, a šta savršena KNF?
 
@@ -92,7 +92,7 @@
    - Elementarna disjunkcija je logički izraz koji se sastoji iz disjunkcije literala (eg. $x + \bar{y} + z\bar{p}$)
      - Savršena elementarna disjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, \bar{x} + y + z)
    - KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. $(x + \bar{y} + z) \cdot (\bar{x} + y + z) \cdot (x + y + z)
-     - Savršena KNF se sastoji od savršenih elementarnih konjunkcija
+     - Savršena KNF se sastoji od konjunkcije savršenih elementarnih disjunkcija
 
 9. Ukratko opisati postupak za svođenje logičkog izraza na DNF
 
