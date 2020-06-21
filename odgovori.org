@@ -814,20 +814,22 @@
     - Arhitektura računara je apstraktni model koji opisuje računar iz ugla programera kog zanima koje instrukcije postoje, načini adresiranja, kako se predstavljaju podaci i sl.
       - Odgovara na pitanje *Šta radi računar?*
     - Organizacija računara je implementacija arhitekture gde se posmatraju veze između komponenti, /low-level/ opis kako se određene operacije obavljaju
+      - Odgovara na pitanje *Kako radi računar?*
 
-89. Šta obuhvata ISA (arhitektura skupa instrukcija)?
-    Obuhvata:
-    1. Operacioni kod instrukcije
-    2. Referencu na operande instrukcije
-    3. Referencu na narednu instrukciju
+89. Šta obuhvata ISA (/instruction set architecture/)?
+
+    ISA obuhvata:
+    - koje instrukcije postoje
+    - koji načini upravljanja memorijom hardver podržava (načine adresiranja, virtuelna memorija, konzistentnost memorije)
+    - kako se predstavljaju podaci
 
 90. Šta su troadresni procesori? Primer instrukcija i koda. Karakteristike.
 
-    Troadresni procesor je procesr koji u instrukciji može da ima tri adrese. Programi na troadresnom računaru su kompaktni, ali samo instrukcije mogu da budu glomazne zbog zahteva za čuvanjem 3 operanda.
+    Troadresni procesor je procesor koji u instrukciji može da ima tri adrese. Programi na troadresnom računaru su kompaktni, ali samo instrukcije mogu da budu glomazne zbog zahteva za čuvanjem 3 operanda.
 
     #+begin_src asm
-    ADD C, A, B
-    MUL C, A, B
+ADD C, A, B
+MUL C, A, B
     #+end_src
    
 91. Šta su dvoadresni procesori? Primer instrukcija i koda. Karakteristike.
@@ -835,40 +837,40 @@
     Dvoadresni procesori su procesori koji mogu da imaju maksimalno dve adrese u instrukciji. Rezultat operacije se upisuje u neku privremenu lokaciju ili u lokaciju jednog od operanada. Smanjuje se dužina programa, ubrzava izvršavanje, ali se ponekad koristi dodatna memorija.
 
     #+begin_src asm
-    LOAD B, A
-    ADD A, B
+LOAD B, A
+ADD A, B
     #+end_src
 
 92. Šta su jednoadresni procesori? Primer instrukcija i koda. Karakteristike.
 
-    Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Operacije koje zahtevaju dva operanda se razrešavaju tako što je druga adresa implicitna. Ovi računari često obraćaju memoriji za upis i čitanje međurezultata. Programi su dosta dugački i izvršavanje je relativno sporo. Koriste se u situacijama kada je memorija dosta skupa.
+    Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Operacije koje zahtevaju dva operanda se razrešavaju tako što je druga adresa implicitna. Ovi računari se često obraćaju memoriji za upis i čitanje međurezultata. Programi su dosta dugački i izvršavanje je relativno sporo. Koriste se u situacijama kada je memorija dosta skupa.
 
     #+begin_src asm
-    LOAD X
-    ADD X
-    STORE X
+LOAD X
+ADD X
+STORE X
     #+end_src
 
 93. Šta su nuloadresni procesori? Primer instrukcija i koda. Karakteristike.
 
-    Nuloadresni procesori su procesori gde je minimalan broj adresa u instrukciji $0$. Takvi procesori implicitno adresiraju svoje operande (često stavljajući ih na stek), što predstavlja veliko ograničenje, pa se koriste samo u specijalnim slučajevima.
+    Nuloadresni procesori su procesori gde je maksimalan broj adresa u instrukciji $0$ osim kod instrukcija ~PUSH~ i ~POP~. Takvi procesori implicitno adresiraju svoje operande (često stavljajući ih na stek), što predstavlja veliko ograničenje, pa se koriste samo u specijalnim slučajevima.
 
     #+begin_src asm
-    PUSH A
-    PUSH B
-    ADD
-    POP
+PUSH A
+PUSH B
+ADD
+POP
     #+end_src
 
 94. Objasniti odnos performansi i broja adresa.
 
-    Instrukcije sa većin brojem adresa su moćnije, programi kompaktniji i veća je brzina izvršavanja. S povećanjem broja adresa raste i složenost instrukcije što otežava konstrukciju procesora i produžava vreme potrebno za preoznavanje operacionog koda.
+    Instrukcije sa većim brojem adresa su moćnije, programi kompaktniji i veća je brzina izvršavanja. S povećanjem broja adresa raste i složenost instrukcije što otežava konstrukciju procesora i produžava vreme potrebno za prepoznavanje operacionog koda.
 
 95. Šta je ~LOAD/STORE~ arhitektura? Objasniti.
 
-    Sve operacije se izvršavaju isključivo nad registrima procesora. Samo operacije ~LOAD~ i ~STORE~ mogu da pristupaju memoriji. ~RISC~ i vektorski procesori često koriste ovakvu arhitekturu. Prednost je smanjenje složenosti dekodiranja zbog manjih instrukcija.
+    Sve operacije se izvršavaju isključivo nad registrima procesora. Samo operacije ~LOAD~ i ~STORE~ mogu da pristupaju memoriji. ~RISC~ i vektorski procesori često koriste ovakvu arhitekturu. Prednost je smanjenje složenosti dekodiranja zbog manjeg broja instrukcija.
 
-96. Karakteristike ~CISC~ arhitektura.
+96. Karakteristike ~CISC~ arhitekture.
 
     Ciljevi:
     - složena arhitektura skupa instrukcija
@@ -879,7 +881,8 @@
     - Iz velikog skupa instrukcija se koristi oko 20%, dok se ostale ređe koriste
     - Otežano dekodiranja zbog velikog broja instrukcija i načina adresiranja
 
-97. Karakteristike ~RISC~ arhitektura.
+97. Karakteristike ~RISC~ arhitekture.
+   
     Ciljevi:
     - jednostavna arhitektura skupa instrukcija
     - obezbeđivanje minimalnog skupa instrukcija i načina adresiranja
@@ -898,7 +901,7 @@
     ~RISC~ > ~CISC~:
     - jednostavnija konstrukcija zbog manjeg broja instrukcija
     - manje vremena je potrebno za izradu samog procesora
-    - bolje performanse jer je lakše definisati prevodioce koji formiraju optimalniji kod nego ~CISC~ procesor
+    - bolje performanse jer je lakše definisati prevodioce koji formiraju optimalniji kod nego ~CISC~ procesori
 
     ~CISC~ > ~RISC~:
     - veća količina softvera je napisana za ~CISC~ arhitekturu
@@ -910,11 +913,11 @@
       2. operandi
     - format instrukcije određuje način kodiranja ranijepomenutih komponenti u binarnom obliku (implicitno određuje i dužinu instrukcije)
 
-100. Vrste opernada mašinske instrukcije
+100. Vrste operanada mašinske instrukcije
 
      1. Registarski
      2. Memorijski
-     3. Neposredni
+     3. Neposredni (konstante)
 
 101. Objasniti direktno adresiranje memorijskih operanada.
 
@@ -922,7 +925,7 @@
     
 102. Objasniti indirektno adresiranje memorijskih operanada.
 
-     Kod indirektnog adresiranja je poznata samo adresa lokacije na kojoj se nalazi adresa operanda, pa se do te adrese dolazi indirektno, tj. instrukcija sadrži binarni kod regista procesora čija se vrednost koristi kao adresa memorijskog operanda. Ovaj način adresiranjađ zahteva dva ciklusa, jedan za čitanje adrese, drugi za čitanje samog operanda.
+     Kod indirektnog adresiranja je poznata samo adresa lokacije na kojoj se nalazi adresa operanda, pa se do te adrese dolazi indirektno, tj. instrukcija sadrži binarni kod regista procesora čija se vrednost koristi kao adresa memorijskog operanda. Ovaj način adresiranja zahteva dva ciklusa, jedan za čitanje adrese, drugi za čitanje samog operanda.
 
 103. Objasniti indeksno adresiranje memorijskih operanada.
 
@@ -936,7 +939,7 @@
 
 104. Objasniti relativno adresiranje memorijskih operanada.
 
-     U ovom načinu za adresiranje se kao registar koristi brojač instrukcija čiji sadržaj se uzima kao *početna adresa*. U adresni deo instrukcije se upisuje ceo broj koji predstavlja udaljenje od početne adrese. Relativno adresiranje se koristi kada znamo da je ciljana adresa negde u okolini tekuće.
+     U ovom načinu za adresiranje se kao registar koristi brojač instrukcija (~PC~ /program counter/) čiji sadržaj se uzima kao *početna adresa*. U adresni deo instrukcije se upisuje ceo broj koji predstavlja udaljenje od početne adrese. Relativno adresiranje se koristi kada znamo da je ciljana adresa negde u okolini tekuće.
 
 105. Objasniti načine adresiranja na /x86-64/ arhitekturi.
 
@@ -959,7 +962,7 @@ add eax, [value]
         #+end_src
        - Indirektno
         #+begin_src asm
-        ; rdi je pokazivač na prvi element niza
+; rdi je pokazivač na prvi element niza
 add eax, [rdi]
         #+end_src
        - Indeksno
@@ -982,7 +985,7 @@ mov r0, r0, 42
 mov r0, r1
         #+end_src
      - *Memorijsko*:
-       - Direktno
+       - Direktno //FIXME
         #+begin_src asm
 value dword 42
 ...
@@ -1025,11 +1028,11 @@ ldr r0, [r1], #4 ; r0 = *r1; r1 = r1 + 4;
            - memorija
 
                       #+begin_src asm
-           mov dest, src ; kopira iz src u dest
+mov dest, src ; kopira iz src u dest
 
-           movzx dest, src ; kopira iz src u dest i proširuje 0
+movzx dest, src ; kopira iz src u dest i proširuje 0
 
-           movsx dest, src ; kopira iz src u dest i proširaje znakom
+movsx dest, src ; kopira iz src u dest i proširaje znakom
                       #+end_src
        - ~lea~
          - ~dest~
@@ -1040,7 +1043,7 @@ ldr r0, [r1], #4 ; r0 = *r1; r1 = r1 + 4;
            - memorija
 
                       #+begin_src asm
-           lea dest, src ; kopira adresu od src u dest
+lea dest, src ; kopira adresu od src u dest
                       #+end_src
      - ~ARM~
        - ~ldr/str~
@@ -1052,7 +1055,7 @@ ldr r0, [r1], #4 ; r0 = *r1; r1 = r1 + 4;
        - ~ldm/stm~
          - ~ldm~: Učitava vrednosti u više registara počevši od adrese
          - ~stm~: Čuva vrednosti više registara počevši od adrese
-         - ~ldm{<adrr_mode>}{<cond>} Rn{!}, <reg_list>~
+         - ~op{<adrr_mode>}{<cond>} Rn{!}, <reg_list>~
            - ~<adrr_mode> = {IA: increment_after, DB: decrement_before}~
            - ~<cond> = {eq: =, gt: >, ge: >=, lt: <, le: <=}~
            - ~! updateuje Rn za~ $\pm 4 \cdot len(reg\_list)$ ~u zavisnosti od <adrr_mode>~
@@ -1127,7 +1130,7 @@ adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
      Prednosti:
      - nemamo ograničen broj parametara, što je pogodno za rekurzivne procedure
 
-117. Objasniti prenos argumenata procedure korišćenjem registora procesora. Prednosti i mane.
+117. Objasniti prenos argumenata procedure korišćenjem registra procesora. Prednosti i mane.
 
     Pre pozivanja procedure vrednosti koje bi trebalo da joj prosledimo stavljamo u registre koje će koristiti pozvana procedura
 
@@ -1155,10 +1158,10 @@ adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
      Povratna vrednost se čuva u registru ~rax~.
 
                 #+begin_src asm
-      mov edi, 42
-      mov esi, 7
-      call f
-      add r10, eax ; sum += eax
+mov edi, 42
+mov esi, 7
+call f
+add r10d, eax ; sum += eax
                 #+end_src
 
      Instrukcija ~call~ postavlja adresu sledeće instrukcije na stek kao adresu povratka.
@@ -1176,10 +1179,10 @@ adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
       Povratna vrednost se čuva u registru ~r0~.
 
                 #+begin_src asm
-      mov r0, 42
-      mov r1, 7
-      bl f
-      add r4, r0 ; sum += eax
+mov r0, 42
+mov r1, 7
+bl f
+add r4, r0 ; sum += eax
                 #+end_src
 
      Instrukcija ~bl~ postavlja adresu sledeće instrukcije u ~lr~ (/link register/) kao adresu povratka.
@@ -1209,7 +1212,7 @@ adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
 
 124. Čemu služi instrukcioni registar ~IR~?
 
-    ~IR~ sadrži poslednju pročitanu instrukciju. Sadrži instrukciju koja se trenutno izvršava ili dekodira.
+    ~IR~ sadrži instrukciju koja se trenutno izvršava ili dekodira.
 
     Spada u *registre specijalne namene*, odnosno *nije* registar opšte namene.
 
@@ -1305,7 +1308,7 @@ mov ir, mdr
 
 138. Na koje načine se može realizovati kontrolna jedinica? Poređenje.
 
-     1. Harverski
+     1. Hardverski
         - implementira se kroz upotrebu sekvencijalnih logičkih jedinica, zbog čega se dobija komplikovanija struktura sa povećanjem instrukcija
         - koriste se u ~RISC~ arhiterkturi
         - rade velikom brzinom, ali broj instrukcija koje mogu da implementiraju je ograničen
