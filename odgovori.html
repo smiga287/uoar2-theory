@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-06-01 Mon 14:52 -->
+<!-- 2020-06-21 Sun 14:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Odgovori na ispitna pitanja iz UOAR2</title>
@@ -583,11 +583,11 @@ Znači da su im vrednosti pri istim valuacijama promenljivih iste odnosno da za 
 <li>Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})</li>
 <li>Elementarna konjunkcija je logički izraz koji se sastoji iz konjunkcije literala (eg. \(x\bar{y}z\bar{p}\))
 <ul class="org-ul">
-<li>Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promeljivu (eg. \(P = {x, y, z}, S = \bar{x} \cdot y \cdot z\))</li>
+<li>Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. \(P = {x, y, z}, S = \bar{x} \cdot y \cdot z\))</li>
 </ul></li>
 <li>DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. $x\bar{y}z + \bar{x}yz + xyz)
 <ul class="org-ul">
-<li>Savršena DNF se sastoji od savršenih elementarnih konjunkcija</li>
+<li>Savršena DNF se sastoji od disjunkcije savršenih elementarnih konjunkcija</li>
 </ul></li>
 </ul></li>
 
@@ -601,7 +601,7 @@ Znači da su im vrednosti pri istim valuacijama promenljivih iste odnosno da za 
 </ul></li>
 <li>KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. $(x + \bar{y} + z) &sdot; (\bar{x} + y + z) &sdot; (x + y + z)
 <ul class="org-ul">
-<li>Savršena KNF se sastoji od savršenih elementarnih konjunkcija</li>
+<li>Savršena KNF se sastoji od konjunkcije savršenih elementarnih disjunkcija</li>
 </ul></li>
 </ul></li>
 
@@ -2603,28 +2603,36 @@ What the fuck?
 <ul class="org-ul">
 <li>Odgovara na pitanje <b>Šta radi računar?</b></li>
 </ul></li>
-<li>Organizacija računara je implementacija arhitekture gde se posmatraju veze između komponenti, <i>low-level</i> opis kako se određene operacije obavljaju</li>
+<li>Organizacija računara je implementacija arhitekture gde se posmatraju veze između komponenti, <i>low-level</i> opis kako se određene operacije obavljaju
+<ul class="org-ul">
+<li>Odgovara na pitanje <b>Kako radi računar?</b></li>
+</ul></li>
 </ul></li>
 
-<li>Šta obuhvata ISA (arhitektura skupa instrukcija)?
-Obuhvata:
-<ol class="org-ol">
-<li>Operacioni kod instrukcije</li>
-<li>Referencu na operande instrukcije</li>
-<li>Referencu na narednu instrukciju</li>
-</ol></li>
+<li><p>
+Šta obuhvata ISA (<i>instruction set architecture</i>)?
+</p>
+
+<p>
+ISA obuhvata:
+</p>
+<ul class="org-ul">
+<li>koje instrukcije postoje</li>
+<li>koji načini upravljanja memorijom hardver podržava (načine adresiranja, virtuelna memorija, konzistentnost memorije)</li>
+<li>kako se predstavljaju podaci</li>
+</ul></li>
 
 <li><p>
 Šta su troadresni procesori? Primer instrukcija i koda. Karakteristike.
 </p>
 
 <p>
-Troadresni procesor je procesr koji u instrukciji može da ima tri adrese. Programi na troadresnom računaru su kompaktni, ali samo instrukcije mogu da budu glomazne zbog zahteva za čuvanjem 3 operanda.
+Troadresni procesor je procesor koji u instrukciji može da ima tri adrese. Programi na troadresnom računaru su kompaktni, ali samo instrukcije mogu da budu glomazne zbog zahteva za čuvanjem 3 operanda.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">ADD</span> C, A, B
-    <span style="color: #ff2afc; font-weight: bold;">MUL</span> C, A, B
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">ADD</span> <span style="color: #ff2afc; font-weight: bold;">C</span>, A, B
+<span style="color: #42c6ff; font-weight: bold;">MUL</span> <span style="color: #ff2afc; font-weight: bold;">C</span>, A, B
 </pre>
 </div></li>
 
@@ -2637,8 +2645,8 @@ Dvoadresni procesori su procesori koji mogu da imaju maksimalno dve adrese u ins
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">LOAD</span> B, A
-    <span style="color: #ff2afc; font-weight: bold;">ADD</span> A, B
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">LOAD</span> <span style="color: #ff2afc; font-weight: bold;">B</span>, A
+<span style="color: #42c6ff; font-weight: bold;">ADD</span> <span style="color: #ff2afc; font-weight: bold;">A</span>, B
 </pre>
 </div></li>
 
@@ -2647,13 +2655,13 @@ Dvoadresni procesori su procesori koji mogu da imaju maksimalno dve adrese u ins
 </p>
 
 <p>
-Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Operacije koje zahtevaju dva operanda se razrešavaju tako što je druga adresa implicitna. Ovi računari često obraćaju memoriji za upis i čitanje međurezultata. Programi su dosta dugački i izvršavanje je relativno sporo. Koriste se u situacijama kada je memorija dosta skupa.
+Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Operacije koje zahtevaju dva operanda se razrešavaju tako što je druga adresa implicitna. Ovi računari se često obraćaju memoriji za upis i čitanje međurezultata. Programi su dosta dugački i izvršavanje je relativno sporo. Koriste se u situacijama kada je memorija dosta skupa.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">LOAD</span> X
-    <span style="color: #ff2afc; font-weight: bold;">ADD</span> X
-    <span style="color: #ff2afc; font-weight: bold;">STORE</span> X
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">LOAD</span> <span style="color: #ff2afc; font-weight: bold;">X</span>
+<span style="color: #42c6ff; font-weight: bold;">ADD</span> <span style="color: #ff2afc; font-weight: bold;">X</span>
+<span style="color: #42c6ff; font-weight: bold;">STORE</span> <span style="color: #ff2afc; font-weight: bold;">X</span>
 </pre>
 </div></li>
 
@@ -2662,14 +2670,14 @@ Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Opera
 </p>
 
 <p>
-Nuloadresni procesori su procesori gde je minimalan broj adresa u instrukciji \(0\). Takvi procesori implicitno adresiraju svoje operande (često stavljajući ih na stek), što predstavlja veliko ograničenje, pa se koriste samo u specijalnim slučajevima.
+Nuloadresni procesori su procesori gde je maksimalan broj adresa u instrukciji \(0\) osim kod instrukcija <code>PUSH</code> i <code>POP</code>. Takvi procesori implicitno adresiraju svoje operande (često stavljajući ih na stek), što predstavlja veliko ograničenje, pa se koriste samo u specijalnim slučajevima.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">PUSH</span> A
-    <span style="color: #ff2afc; font-weight: bold;">PUSH</span> B
-    <span style="color: #ff2afc; font-weight: bold;">ADD</span>
-    <span style="color: #ff2afc; font-weight: bold;">POP</span>
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">PUSH</span> <span style="color: #ff2afc; font-weight: bold;">A</span>
+<span style="color: #42c6ff; font-weight: bold;">PUSH</span> <span style="color: #ff2afc; font-weight: bold;">B</span>
+<span style="color: #42c6ff; font-weight: bold;">ADD</span>
+<span style="color: #42c6ff; font-weight: bold;">POP</span>
 </pre>
 </div></li>
 
@@ -2678,7 +2686,7 @@ Objasniti odnos performansi i broja adresa.
 </p>
 
 <p>
-Instrukcije sa većin brojem adresa su moćnije, programi kompaktniji i veća je brzina izvršavanja. S povećanjem broja adresa raste i složenost instrukcije što otežava konstrukciju procesora i produžava vreme potrebno za preoznavanje operacionog koda.
+Instrukcije sa većim brojem adresa su moćnije, programi kompaktniji i veća je brzina izvršavanja. S povećanjem broja adresa raste i složenost instrukcije što otežava konstrukciju procesora i produžava vreme potrebno za prepoznavanje operacionog koda.
 </p></li>
 
 <li><p>
@@ -2686,11 +2694,11 @@ Instrukcije sa većin brojem adresa su moćnije, programi kompaktniji i veća je
 </p>
 
 <p>
-Sve operacije se izvršavaju isključivo nad registrima procesora. Samo operacije <code>LOAD</code> i <code>STORE</code> mogu da pristupaju memoriji. <code>RISC</code> i vektorski procesori često koriste ovakvu arhitekturu. Prednost je smanjenje složenosti dekodiranja zbog manjih instrukcija.
+Sve operacije se izvršavaju isključivo nad registrima procesora. Samo operacije <code>LOAD</code> i <code>STORE</code> mogu da pristupaju memoriji. <code>RISC</code> i vektorski procesori često koriste ovakvu arhitekturu. Prednost je smanjenje složenosti dekodiranja zbog manjeg broja instrukcija.
 </p></li>
 
 <li><p>
-Karakteristike <code>CISC</code> arhitektura.
+Karakteristike <code>CISC</code> arhitekture.
 </p>
 
 <p>
@@ -2711,7 +2719,10 @@ Posledice:
 </ul></li>
 
 <li><p>
-Karakteristike <code>RISC</code> arhitektura.
+Karakteristike <code>RISC</code> arhitekture.
+</p>
+
+<p>
 Ciljevi:
 </p>
 <ul class="org-ul">
@@ -2744,7 +2755,7 @@ Danas procesori najčešće predstavljaju hibride ove dve arhitekture.
 <ul class="org-ul">
 <li>jednostavnija konstrukcija zbog manjeg broja instrukcija</li>
 <li>manje vremena je potrebno za izradu samog procesora</li>
-<li>bolje performanse jer je lakše definisati prevodioce koji formiraju optimalniji kod nego <code>CISC</code> procesor</li>
+<li>bolje performanse jer je lakše definisati prevodioce koji formiraju optimalniji kod nego <code>CISC</code> procesori</li>
 </ul>
 
 <p>
@@ -2765,12 +2776,12 @@ Danas procesori najčešće predstavljaju hibride ove dve arhitekture.
 <li>format instrukcije određuje način kodiranja ranijepomenutih komponenti u binarnom obliku (implicitno određuje i dužinu instrukcije)</li>
 </ul></li>
 
-<li>Vrste opernada mašinske instrukcije
+<li>Vrste operanada mašinske instrukcije
 
 <ol class="org-ol">
 <li>Registarski</li>
 <li>Memorijski</li>
-<li>Neposredni</li>
+<li>Neposredni (konstante)</li>
 </ol></li>
 
 <li><p>
@@ -2786,7 +2797,7 @@ Objasniti indirektno adresiranje memorijskih operanada.
 </p>
 
 <p>
-Kod indirektnog adresiranja je poznata samo adresa lokacije na kojoj se nalazi adresa operanda, pa se do te adrese dolazi indirektno, tj. instrukcija sadrži binarni kod regista procesora čija se vrednost koristi kao adresa memorijskog operanda. Ovaj način adresiranjađ zahteva dva ciklusa, jedan za čitanje adrese, drugi za čitanje samog operanda.
+Kod indirektnog adresiranja je poznata samo adresa lokacije na kojoj se nalazi adresa operanda, pa se do te adrese dolazi indirektno, tj. instrukcija sadrži binarni kod regista procesora čija se vrednost koristi kao adresa memorijskog operanda. Ovaj način adresiranja zahteva dva ciklusa, jedan za čitanje adrese, drugi za čitanje samog operanda.
 </p></li>
 
 <li><p>
@@ -2814,7 +2825,7 @@ Objasniti relativno adresiranje memorijskih operanada.
 </p>
 
 <p>
-U ovom načinu za adresiranje se kao registar koristi brojač instrukcija čiji sadržaj se uzima kao <b>početna adresa</b>. U adresni deo instrukcije se upisuje ceo broj koji predstavlja udaljenje od početne adrese. Relativno adresiranje se koristi kada znamo da je ciljana adresa negde u okolini tekuće.
+U ovom načinu za adresiranje se kao registar koristi brojač instrukcija (<code>PC</code> <i>program counter</i>) čiji sadržaj se uzima kao <b>početna adresa</b>. U adresni deo instrukcije se upisuje ceo broj koji predstavlja udaljenje od početne adrese. Relativno adresiranje se koristi kada znamo da je ciljana adresa negde u okolini tekuće.
 </p></li>
 
 <li><p>
@@ -2855,7 +2866,7 @@ Direktno
 Indirektno
 </p>
 <div class="org-src-container">
-<pre class="src src-asm">        <span style="color: #546A90;">; </span><span style="color: #546A90;">rdi je pokaziva&#269; na prvi element niza</span>
+<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">rdi je pokaziva&#269; na prvi element niza</span>
 <span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, [rdi]
 </pre>
 </div></li>
@@ -2897,7 +2908,7 @@ Načini adresiranja opisuju kako se određuje operand instrukcije.
 <li><b>Memorijsko</b>:
 <ul class="org-ul">
 <li><p>
-Direktno
+Direktno //FIXME
 </p>
 <div class="org-src-container">
 <pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">value</span> <span style="color: #ff2afc; font-weight: bold;">dword</span> <span style="color: #ffd400; font-weight: bold;">42</span>
@@ -2966,11 +2977,11 @@ memorija
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm">           <span style="color: #ff2afc; font-weight: bold;">mov</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest</span>
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">dest</span>, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest</span>
 
-           <span style="color: #ff2afc; font-weight: bold;">movzx</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iruje 0</span>
+<span style="color: #42c6ff; font-weight: bold;">movzx</span> <span style="color: #ff2afc; font-weight: bold;">dest</span>, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iruje 0</span>
 
-           <span style="color: #ff2afc; font-weight: bold;">movsx</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iraje znakom</span>
+<span style="color: #42c6ff; font-weight: bold;">movsx</span> <span style="color: #ff2afc; font-weight: bold;">dest</span>, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iraje znakom</span>
 </pre>
 </div></li>
 </ul></li>
@@ -2990,7 +3001,7 @@ memorija
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm">           <span style="color: #ff2afc; font-weight: bold;">lea</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira adresu od src u dest</span>
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">lea</span> <span style="color: #ff2afc; font-weight: bold;">dest</span>, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira adresu od src u dest</span>
 </pre>
 </div></li>
 </ul></li>
@@ -3012,7 +3023,7 @@ memorija
 <ul class="org-ul">
 <li><code>ldm</code>: Učitava vrednosti u više registara počevši od adrese</li>
 <li><code>stm</code>: Čuva vrednosti više registara počevši od adrese</li>
-<li><code>ldm{&lt;adrr_mode&gt;}{&lt;cond&gt;} Rn{!}, &lt;reg_list&gt;</code>
+<li><code>op{&lt;adrr_mode&gt;}{&lt;cond&gt;} Rn{!}, &lt;reg_list&gt;</code>
 <ul class="org-ul">
 <li><code>&lt;adrr_mode&gt; = {IA: increment_after, DB: decrement_before}</code></li>
 <li><code>&lt;cond&gt; = {eq: =, gt: &gt;, ge: &gt;=, lt: &lt;, le: &lt;=}</code></li>
@@ -3165,7 +3176,7 @@ Prednosti:
 </ul></li>
 
 <li><p>
-Objasniti prenos argumenata procedure korišćenjem registora procesora. Prednosti i mane.
+Objasniti prenos argumenata procedure korišćenjem registra procesora. Prednosti i mane.
 </p>
 
 <p>
@@ -3218,10 +3229,10 @@ Povratna vrednost se čuva u registru <code>rax</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm">      <span style="color: #ff2afc; font-weight: bold;">mov</span> edi, <span style="color: #ffd400; font-weight: bold;">42</span>
-      <span style="color: #ff2afc; font-weight: bold;">mov</span> esi, <span style="color: #ffd400; font-weight: bold;">7</span>
-      <span style="color: #ff2afc; font-weight: bold;">call</span> f
-      <span style="color: #ff2afc; font-weight: bold;">add</span> r10, eax <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">edi</span>, <span style="color: #ffd400; font-weight: bold;">42</span>
+<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">esi</span>, <span style="color: #ffd400; font-weight: bold;">7</span>
+<span style="color: #42c6ff; font-weight: bold;">call</span> <span style="color: #ff2afc; font-weight: bold;">f</span>
+<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">r10d</span>, eax <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
 </pre>
 </div>
 
@@ -3253,10 +3264,10 @@ Povratna vrednost se čuva u registru <code>r0</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm">      <span style="color: #ff2afc; font-weight: bold;">mov</span> r0, <span style="color: #ffd400; font-weight: bold;">42</span>
-      <span style="color: #ff2afc; font-weight: bold;">mov</span> r1, <span style="color: #ffd400; font-weight: bold;">7</span>
-      <span style="color: #ff2afc; font-weight: bold;">bl</span> f
-      <span style="color: #ff2afc; font-weight: bold;">add</span> r4, r0 <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
+<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, <span style="color: #ffd400; font-weight: bold;">42</span>
+<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r1</span>, <span style="color: #ffd400; font-weight: bold;">7</span>
+<span style="color: #42c6ff; font-weight: bold;">bl</span> <span style="color: #ff2afc; font-weight: bold;">f</span>
+<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">r4</span>, r0 <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
 </pre>
 </div></li>
 </ol>
@@ -3307,7 +3318,7 @@ Registri opšte namene su procesorski registri kojima programer ima pristup, nad
 </p>
 
 <p>
-<code>IR</code> sadrži poslednju pročitanu instrukciju. Sadrži instrukciju koja se trenutno izvršava ili dekodira.
+<code>IR</code> sadrži instrukciju koja se trenutno izvršava ili dekodira.
 </p>
 
 <p>
@@ -3482,7 +3493,7 @@ Pseudo-asembler kod
 <li>Na koje načine se može realizovati kontrolna jedinica? Poređenje.
 
 <ol class="org-ol">
-<li>Harverski
+<li>Hardverski
 <ul class="org-ul">
 <li>implementira se kroz upotrebu sekvencijalnih logičkih jedinica, zbog čega se dobija komplikovanija struktura sa povećanjem instrukcija</li>
 <li>koriste se u <code>RISC</code> arhiterkturi</li>
@@ -4359,6 +4370,7 @@ U liniji keša čuva se:
 <li><p>
 Šta su i čemu služe politike zamenjivanja keša? Nabrojati ih.
 </p>
+
 <ul class="org-ul">
 <li>Politika zamenjivanje sa primenjuje radi odabira keš linije čiji sadržaj će biti zamenjen sadržajem novog memorijskog bloka.</li>
 <li>Zavisi od primenjenog preslikavanja
@@ -4375,48 +4387,574 @@ Najčešće se koriste:
 <li><code>pseudo-LRU</code></li>
 <li><code>FIFO</code></li>
 <li><code>LFU</code></li>
+<li><code>random</code></li>
 </ul></li>
 
-<li>Objasniti politiku zamenjivanja najduže nekorišćene linije keša (<code>LRU</code>). Dobre i loše strane.</li>
-<li>Objasniti politiku zamenjivanja pseudo-najduže nekorišćene linije keša (<code>pseudo-LRU</code>). Dobre i loše strane.</li>
-<li>Objasniti <code>FIFO</code> politiku zamenjivanja linije keša.</li>
-<li>Koje politike pisanja keša postoje i u čemu se razlikuju</li>
-<li>Objasniti politiku pisanja keša sa propuštanjem (<i>write-through</i>). Dobre i loše strane</li>
-<li>Objasniti politiku pisanja keša sa prepisivanjem (<i>write-back</i>). Dobre i loše strane</li>
-<li>Razdvojeni i unifikovani keš. Poređenje.</li>
-<li>Objasniti arhitekture višestepenog keša i način njihovog funkcionisanja.</li>
-<li>Objasniti odnos veličine keša i performansi.</li>
-<li>Objasniti odnos veličine linije keša i performansi.</li>
-<li>Objasniti odnos asocijativnosti i performansi.</li>
+<li><p>
+Objasniti politiku zamenjivanja najduže nekorišćene linije keša (<code>LRU</code>). Dobre i loše strane.
+</p>
 
-<li>Šta je magistrala i čemu služi?</li>
-<li>Kako se ostvaruje deljenje magistrale? Na koji način se sprečava kolizija signala? Objasniti.</li>
-<li>Šta je transakcija a šta operacija magistrale? Šta je protokol magistrale?</li>
-<li>Šta su serijske, a šta paralelne magistrale? Poređenje.</li>
-<li>Koja je razlika između multipleksiranih i razdvojenih magistrala? Poređenje.</li>
-<li>Šta je širina magistrale?</li>
-<li>Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije čitanja u slučaju sinhrone magistrale.</li>
-<li>Objasniti i predsaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.</li>
-<li>Šta je stanje čekanja? Kada se i kako upotrebljava? Objasniti operaciju čitanja sa stanjem čekanja.</li>
-<li>Šta je &ldquo;prenošenje blokova podataka&rdquo;? Kada se i za šta upotrebljava?</li>
-<li>Šta je &ldquo;<i>read-modify-write</i>&rdquo; transakcija i za šta se upotrebljava?</li>
-<li>Kako se sinhronizuje rad na asinhronoj magistrali? Objasniti signale i tok aktivnosti (četvorofazno rukovanje)</li>
-<li>Prednosti i mane asinhronih magistrala u odnosu na sinhrone.</li>
-<li>Šta je arbitraža magistrale? Objasniti razliku između centralizovane i distribuirane arbitraže.</li>
-<li>Nabrojati i ukratko objasniti politike dodeljivanja magistrale.</li>
-<li>Navesti i ukratko objasniti politike oslobađanja magistrale.</li>
-<li>Objasniti detaljno mehanizam ulančavanja kod centralizovane arbitraže.</li>
-<li>Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.</li>
-<li>Električne karakteristike serijskih magistrala</li>
-<li>Navesti najčešće načine kodiranja bitova kod serijskog prenosa</li>
-<li>Koja je osnovna prednost, a koja mana <code>NRZ</code> kodiranja u odnosu na <code>RZ</code> kodiranje?</li>
+<p>
+<code>LRU = Least Recently Used</code>
+</p>
+
+<p>
+Predviđanje zasniva na principu <b>vremenske lokalnosti</b>. Zamenjuje sadržaj one linije keša koja najduže nije bila korišćena.
+</p>
+
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>najbolji rezultati</li>
+</ul>
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>za \(n\) linija potrebno mu je \(n!\) stanja koja je moguće predstaviti kao konačni automat, ali je memorijska složenost prevelika da bi se realizovalo u <code>asocijativnom mapiranju</code></li>
+<li>moguće je realizovati za \(2\) ili \(4\) keš linije, zbog čege se i koristi u <code>skup-asocijativnom</code> mapiranju</li>
+</ul></li>
+
+<li><p>
+Objasniti politiku zamenjivanja pseudo-najduže nekorišćene linije keša (<code>pseudo-LRU</code>). Dobre i loše strane.
+</p>
+
+<p>
+<code>pseudo-LRU = pseudo Least Recently Used</code>
+</p>
+
+<p>
+Predstavlja aproksimaciju <code>LRU</code> politike. Keš linije se dele u dve grupe, gde se pomoću jednog bita označava linija keša koja je najskorije korišćena u skupu. Potom se drugoj grupi pristupa koja se dalje deli u podskupove dok ne dođemo do jedne linije keša.
+</p>
+
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>dosta manja memorijska složenost, što se najviše ogleda u situacijama kada imamo više od \(4\) keš linije u jednom skupu</li>
+</ul>
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>smanjena preciznost u odnosu na <code>LRU</code></li>
+</ul></li>
+
+<li><p>
+Objasniti <code>FIFO</code> politiku zamenjivanja linije keša.
+</p>
+
+<p>
+Zamenjuje se ona linija keša koja je prva pročitana, tj. ona koja je najduže u kešu.
+</p>
+
+<p>
+Relativno jednostavna implementacija:
+</p>
+<ul class="org-ul">
+<li>skup linija keša se ponaša kao kružni bafer</li>
+<li>za svaki skup je potreban po jedan kružni brojač koji označava koja linija je poslednje popunjena</li>
+</ul>
+
+<p>
+Retko se koristi
+</p></li>
+
+<li><p>
+Koje politike pisanja keša postoje i u čemu se razlikuju
+</p>
+
+<p>
+Kada se podaci menjaju, mora se uzeti u obzir da postoje dve kopije podataka (u kešu i glavnoj memoriji)
+</p>
+
+<p>
+Dve osnovne politike:
+</p>
+<ol class="org-ol">
+<li>Pisanje sa propuštanjem (<i>write-through</i>) - pisanje se odvija i u kešu i u memoriji</li>
+<li>Pisanje sa prepisivanjem (<i>write-back</i>) - samo keš</li>
+</ol></li>
+
+<li><p>
+Objasniti politiku pisanja keša sa propuštanjem (<i>write-through</i>). Dobre i loše strane
+</p>
+
+<p>
+Svaki put kada se vrši upis u keš, vrši se i u memoriji.
+</p>
+
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>jednostavna implementacija</li>
+</ul>
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>relativno sporo</li>
+</ul></li>
+
+<li><p>
+Objasniti politiku pisanja keša sa prepisivanjem (<i>write-back</i>). Dobre i loše strane
+</p>
+
+<p>
+Ažuriramo isključivo u kešu, dok se pisanje u memoriju odvija pri zameni u kešu. Koristimo <i>update bit</i> koji nam govori da li je keš linija koju treba zameniti bila ažurirana, tj. da li treba ažurirati u glavnoj memoriji. Na ovaj način poboljšavamo performanse zamene linije keša, koja bi bez <i>update bit</i>-a i <i>write-back</i> politikom bila duplo sporija.
+</p></li>
+
+<li><p>
+Razdvojeni i unifikovani keš. Poređenje.
+</p>
+
+<p>
+Kod razdvojenog keša postoji poseban keš za podatke i instrukcije, dok je kod unifikovanog sve u jednom.
+</p>
+
+<p>
+Prednost razdvojenog keša je što omogućava drugačije načine korišćenja principa lokalnosti čime povećava performanse. Takođe olakšava implementaciju jer keš za instrukcije samo čita.
+</p>
+
+<p>
+Nedostatak razdvojenog keša je u tome što je nemoguće dinamički menjati količinu keša odvojenu za podatke i instrukcije.
+</p></li>
+
+<li><p>
+Objasniti arhitekture višestepenog keša i način njihovog funkcionisanja.
+</p>
+
+<p>
+Organizacija keša hijerarhijski u više nivoa može biti:
+</p>
+<ul class="org-ul">
+<li>Inkluzivna - svaki sledeći nivo sadrži podatke iz prethodnog, ali i neke dodatne</li>
+<li>Ekskluzivna - ne sadrži iste podatke, već isključivo nove</li>
+</ul>
+
+<p>
+Prednost inkluzivnog pristupa je u tom što veće keš memorije mogu imati veće linije, dok kod ekskluzivnog sve keš memorije moraju da imaju linije iste veličine
+</p>
+
+<p>
+Podaci se prvo traže u najbližem kešu, pa ako ih tu nema onda u sledećem itd. dok se ne nađe ili od do memorije.
+</p>
+<ul class="org-ul">
+<li>kod inkluzivnog se podaci upisuju sve bliže nivoe</li>
+<li>kod ekskluzivnog se podaci brišu iz prethodnih nivoa</li>
+</ul>
+
+<p>
+Danas se najčešće organizuje u 3 nivoa:
+</p>
+<ul class="org-ul">
+<li><code>L1</code> - nalazi se na samom čipu procesora, najbliže samom procesoru</li>
+<li><code>L2</code> - uglavnom se nalazi na samom čipu procesora</li>
+<li><code>L3</code> - obično je znatno veći i zajednički za sva jezgra na istom procesoru</li>
+</ul></li>
+
+<li><p>
+Objasniti odnos veličine keša i performansi.
+</p>
+
+<p>
+Povećanjem keša do određene granice dobijamo bolje performanse, ali se u nekom trenutku taj rast performansi usporava i postaje beznačajan.
+</p>
+
+<p>
+Ovo se može objasniti time da određenom veličinom keša procenat pogodtka postane blizak \(100%\) nakon čega dalje povećanje nema uticaja
+</p></li>
+
+<li><p>
+Objasniti odnos veličine linije keša i performansi.
+</p>
+
+<p>
+Povećanjem linije keša do neek mere se poboljšavaju performanse, ali se u nekom trenutku te performanse počinju kvariti.
+</p>
+
+<p>
+Za premale linije keša slabo se koristi princip prostorne lokalnosti, dok se za velike smanjuje preciznost.
+</p></li>
+
+<li><p>
+Objasniti odnos asocijativnosti i performansi.
+</p>
+
+<p>
+Povećanjem stepena asocijativnosti se povećava procenat pogotka keša. Potpuno asocijativni keš je u tom smislu najbolji, ali je njegova implementacija teška, pa se dizajneri češće odlučuju za <code>skup-asocijativno</code> mapiranje, uz izbor većih skupova kad je to moguće.
+</p></li>
+
+<li><p>
+Šta je magistrala i čemu služi?
+</p>
+
+<p>
+Magistrala je komunikacioni sistem koji prenosi podatke/instrukcije između komponenti računara ili eksternih uređaja.
+</p></li>
+
+<li><p>
+Kako se ostvaruje deljenje magistrale? Na koji način se sprečava kolizija signala? Objasniti.
+</p>
+
+<p>
+[TODO]
+</p>
+
+<p>
+Da bismo povezali više uređaja na magistralu, potrebno je sprečiti istovremeno puštanje signala od strane različitih uređaja. Ovo se obično postiže korišćenjem <b>bafera sa tri stanja</b> (<i>tri-state buffer</i>).
+</p></li>
+
+<li>Šta je transakcija a šta operacija magistrale? Šta je protokol magistrale?
+
+<ul class="org-ul">
+<li>Transakcija predstavlja niz operacija potrebnih za izvršanje jasno definisane akcije.</li>
+<li>Operacija predstavlja čitanje/pisanje memorije, čitanje <code>I/O</code> uređaja, &ldquo;rafalno&rdquo; čitanje itd.</li>
+<li>Protokol magistrale predstavlja skup pravila kojima se reguliše komunikacija između komponenti</li>
+</ul></li>
+
+<li><p>
+Šta su serijske, a šta paralelne magistrale? Poređenje.
+</p>
+
+<p>
+Prema načinu transfera, magistrale je moguće podeliti na:
+</p>
+<ul class="org-ul">
+<li>serijske
+<ul class="org-ul">
+<li>sastoje se iz jedne linije preko koje se podaci prenose bit po bit</li>
+</ul></li>
+<li>paralelne
+<ul class="org-ul">
+<li>sastoje se iz više linija preko kojih se podaci prenose reč po reč</li>
+</ul></li>
+</ul>
+
+<p>
+Naizgled paralelne magistrale deluju kao bolji izbor, ali se ispostavilo da je u većini slučajeva bolje koristiti serijske.
+</p>
+
+<p>
+Problemi paralelnih magistrala:
+</p>
+<ul class="org-ul">
+<li>zbog različitih dužina i provodljivosti <b>ne stižu</b> svi bitovi <b>u isto vreme</b> što znatno otežava ispravno čitanje</li>
+<li>pri velikim frekvencijama dolazi do elektromagnetne indukcije što znači da je moguće da odvojeni signali utiču jedni na druge, a.k.a. <b>interferencija</b></li>
+</ul>
+
+<p>
+Serijske ne samo što nemaju ove probleme, takođe su jeftinije i jednostavnije za izradu jer je potrebno manje delova. Serijske jesu sporije, ali dozvoljavaju da se poveća frekvencija čime se anulira taj faktor.
+</p>
+
+<p>
+Zbog toga se danass umesto ranijih paralelnih (<code>PCI, PATA...</code>) koriste serijske magistrale (<code>PCI-Express, SATA, USB</code>). Izuzetak je <b>memorijska magistrala</b> koja povezuje procesor sa glavnom memorijom.
+</p></li>
+
+<li><p>
+Koja je razlika između multipleksiranih i razdvojenih magistrala? Poređenje.
+</p>
+
+<p>
+Paralelne magistrale mogu biti:
+</p>
+<ul class="org-ul">
+<li>multipleksirane (<i>multiplexed</i>)
+<ul class="org-ul">
+<li>iste linije se koriste i za adrese i za podatke tako što se prenose naizmenično u različitim ciklusima</li>
+<li><code>PCI</code> magistrala je primer multipleksirane paralelne magistrale</li>
+</ul></li>
+<li>razdvojene (<i>dedicated</i>)
+<ul class="org-ul">
+<li>odvojene linije se koriste za adrese, podatke i kontrolne signale (tzv. <i>magistrala podataka, adresna magistrala, kontrolna magistrala</i>)</li>
+<li>Memorijska magistrala je primer odvojene paralelne magistrale</li>
+</ul></li>
+</ul>
+
+<p>
+Prednosti multipleksiranih magistrala u odnosu na odvojene je u jeftinijoj implementaciji, a mana je u manjoj brzini prenosa (jer je potrebno više ciklusa za obavljanje transakcije)
+</p></li>
+
+<li><p>
+Šta je širina magistrale?
+</p>
+
+<p>
+Širina magistrale određuje veličinu podataka koji se prenose magistralom. Osnovna motivacija za proširivanje je podizanje propustnosti (<i>throughput</i>) a time i performansi. Sužavanje se radi u slučajevima da nam je potrebno da smanjimo složenost, samim tim i cenu.
+</p></li>
+
+<li><p>
+Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije čitanja u slučaju sinhrone magistrale.
+</p>
+
+<p>
+[TODO]
+</p></li>
+
+<li><p>
+Objasniti i predsaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.
+</p>
+
+<p>
+[TODO]
+</p></li>
+
+<li><p>
+Šta je stanje čekanja? Kada se i kako upotrebljava? Objasniti operaciju čitanja sa stanjem čekanja.
+</p>
+
+<p>
+Imajući u vidu da je procesor često dosta brži od memorije, potrebno je na neki način mu reći da sačeka. Za to se koristi stanje čekanja i kontroni signal <i>ready</i>.
+</p>
+
+<ol class="org-ol">
+<li>procesor želi da pročita određenu adresu u memoriji, stoga tu adresu postavlja na <b>adresnu magistralu</b>.</li>
+
+<li>pošto je procesor brži od memorije, kontrolni signal <i>ready</i> se postavlja na $1% za koje vreme procesor čeka</li>
+
+<li>kada je <i>ready</i> na \(0\) onda procesor uzima podatke sa magistrale podataka</li>
+</ol></li>
+
+<li><p>
+Šta je &ldquo;prenošenje blokova podataka&rdquo;? Kada se i za šta upotrebljava?
+</p>
+
+<p>
+Prenošenje blokova podrazumeva da se jednom <b>složenom operacijom</b> prenosi više uzastopnih reči jer se ispostavilo da je efikasnije pri istoj transakciji pročitati više reči nego u više uzastopnih operacija pojedinačno.
+</p>
+
+<p>
+Koristi se često za popunjavanje keš memorije.
+</p></li>
+
+<li><p>
+Šta je &ldquo;<i>read-modify-write</i>&rdquo; transakcija i za šta se upotrebljava?
+</p>
+
+<p>
+Ova transakcija je pogodna za realizaciju ekskluzivnog pristupa <b>zajedničkim podacima/kodu</b> (a.k.a. <i>critical section</i>) kod multiprocesorskih sistema.
+</p>
+
+<p>
+Predstavlja <b>atomičku</b> operaciju što znači da tokom njenog trajanja nije moguće da se izvrši bilo koja druga operacija nad istom magistralom.
+</p></li>
+
+<li><p>
+Kako se sinhronizuje rad na asinhronoj magistrali? Objasniti signale i tok aktivnosti (četvorofazno rukovanje)
+</p>
+
+<p>
+Sinhronizuje se pomoću protokola za eksplicitnu sinhronizaciju kao što je <b>četvorofazno rukovanje</b>.
+</p>
+
+<p>
+Pošto asinhrone magistrale nemaju zajednički časovnik, uređaji reaguju odmah na pristigle signale.
+Kod četvorofaznog rukovanja uvode se dva kontrolna signala <code>MSYN</code> (<i>master synchronization</i>) i <code>SSYN</code> (<i>slave synchronization</i>).
+</p>
+
+<p>
+Tok aktivnosti:
+</p>
+<ol class="org-ol">
+<li><i>master</i> postavilja sve podatke na magistralu i &ldquo;pali&rdquo; <code>MSYN</code> signal kako bi <i>slave</i>-u stavio do znanja da započinje transakciju</li>
+
+<li><i>slave</i> obavlja transakciju i &ldquo;pali&rdquo; <code>SSYN</code> signal kako bi javio <i>master</i>-u da je završena transakcija</li>
+
+<li><i>master</i> &ldquo;gasi&rdquo; <code>MSYN</code></li>
+
+<li><i>slave</i> &ldquo;gasi&rdquo; <code>SSYN</code></li>
+</ol></li>
+
+<li><p>
+Prednosti i mane asinhronih magistrala u odnosu na sinhrone.
+</p>
+
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>Brži transfer jer se brzina može prilagoditi brzini uređaja sa kojim komunicira</li>
+</ul>
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>Teža implementacija u odnosu na sinhrone</li>
+</ul></li>
+
+<li><p>
+Šta je arbitraža magistrale? Objasniti razliku između centralizovane i distribuirane arbitraže.
+</p>
+
+<p>
+Postojanje više <i>master</i>-a (npr. <code>CPU</code> i <code>DMA</code> kontroler) za jednu magistralu se rešava pomoću arbitraže magistrale.
+</p>
+
+<p>
+Uloga arbitrže magistrale je da na osnovu <b>politike dodeljivanja</b> i <b>politike oslobađanja</b> odredi kom <i>master</i>-u će dodeliti upravljanje nad magistralom.
+</p>
+
+<p>
+Kod centralizovanih arbitraža jedan centralni arbitar dobija zahteve od svih <i>master</i>-a i određuje kome dodeljuje magistralu.
+Kod distribuiranih arbitraža hardver je distribuiran među <i>master</i>-ima koji međusobno komuniciraju i određuju kome ide magistrala.
+</p></li>
+
+<li>Nabrojati i ukratko objasniti politike dodeljivanja magistrale.
+
+<ul class="org-ul">
+<li>Politike fiksnih prioriteta
+<ul class="org-ul">
+<li>svaki master ima fiksiran prioritet i na osnovu toga se i određuje ko će dobiti magistralu</li>
+</ul></li>
+
+<li>Politike rotirajućih prioriteta
+<ul class="org-ul">
+<li>prioritet nije fiksiran i može se na različite načine implementirati kao:
+<ul class="org-ul">
+<li>funkcija vremena čekanja za dodelu magistrale</li>
+<li>kružna politika odnosno onaj koji je poslednji dobio pristup magistrali dobija najniži prioritet</li>
+</ul></li>
+</ul></li>
+
+<li>Hibridna politika
+<ul class="org-ul">
+<li>kombinacija prethodne dve politike</li>
+</ul></li>
+</ul></li>
+
+<li>Navesti i ukratko objasniti politike oslobađanja magistrale.
+
+<ul class="org-ul">
+<li>Politika bez preuzimanja
+<ul class="org-ul">
+<li>oslobađa se magistrala tek kada trenutni <i>master</i> dozvoli
+<ul class="org-ul">
+<li>jedna varijanta je da uređaj oslobodi čim završi transakciju</li>
+<li>druga varijanta je da uređaj oslobodi kad završi transakciju i drugi <i>master</i> je zahteva</li>
+</ul></li>
+</ul></li>
+<li>Politika sa preuzimanjem
+<ul class="org-ul">
+<li>magistralu je moguće osloboditi u slučaju da je zahteva <i>master</i> višeg prioriteta iako se trenutna transakcija možda nije obavila do kraja</li>
+</ul></li>
+</ul></li>
+
+<li><p>
+Objasniti detaljno mehanizam ulančavanja kod centralizovane arbitraže.
+</p>
+
+<p>
+Signal za zahtev se formira kao disjunkcija zahteva pojedinačnih <i>master</i>-a na zajedničkoj magistrali.
+</p>
+
+<p>
+Signal za dodelu se prosleđuje redom od jednog do drugog <i>master</i>-a. Ako neku uređaj nije tražio pristup magistrali onda on prosleđuje sledećem sve dok ne dođe do prvog po prioritetu koji je zatražio pristup magistrali.
+</p>
+
+<p>
+Veoma je jednostavan za implementaciju, ali mu je mana što omogućava samo fiksni prioritet politike dodele.
+</p></li>
+
+<li><p>
+Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.
+</p>
+
+<p>
+[WORK IN PROGRESS]
+</p>
+
+<p>
+Svaki <i>master</i> je povezan sa arbitrom putem <i>Request</i> i <i>Grant</i> linija. To omogućava implementaciju složenijih politika dodele.
+</p>
+
+<p>
+Kada <i>master</i> želi pristup magistrali, šalje signal arbitru preko <i>Request</i> linije. U zavisnosti od politike dodele arbitar odgovara putem <i>Grant</i> linije.
+</p>
+
+<p>
+Kompleksan je za implementaciju, ali ima odličnu toleranciju u slučaju da neki <i>master</i> &ldquo;umre&rdquo;.
+</p>
+
+<p>
+[TODO]: 208 - 214 MORAS OPET
+</p></li>
+
+<li><p>
+Električne karakteristike serijskih magistrala
+</p>
+
+<p>
+[TODO]
+</p></li>
+
+<li>Navesti najčešće načine kodiranja bitova kod serijskog prenosa
+
+<ul class="org-ul">
+<li><code>RZ</code> (<i>return to zero</i>)</li>
+<li><code>NRZ</code> (<i>non return to zero</i>)</li>
+<li><code>NRZI</code> (<i>non return to zero inverted</i>)</li>
+<li><code>8B/10B</code></li>
+<li><code>64B/66B</code></li>
+<li><code>128B/132B</code></li>
+<li><code>128B/130B</code></li>
+</ul></li>
+
+<li><p>
+Koja je osnovna prednost, a koja mana <code>NRZ</code> kodiranja u odnosu na <code>RZ</code> kodiranje?
+</p>
+
+<p>
+Prednosti:
+</p>
+<ul class="org-ul">
+<li>Veća brzina prenosa i veća frekvencija jer nema povratka na nulu, odnosno odmora</li>
+<li>Nakon prenosa jednog se odmah prelazi na prenos sledeceg bita</li>
+</ul>
+<p>
+Mane:
+</p>
+<ul class="org-ul">
+<li>Ukoliko imamo dugacak niz istih bitova koje prenosimo, nece biti nikakve promene napona u duzem vremenskom periodu pa prijemni uredjaj moze da izgubi sinhronizaciju sa časovnikom predajnika.</li>
+</ul></li>
+
 <li>Objasniti <code>NRZI</code> kodiranje.</li>
 <li>Ukratko objasniti <code>8b/10b</code> kodiranje? Koji je razlog za korišćenje ovog načina kodiranja?</li>
 <li>Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike</li>
 <li>Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike</li>
 
-<li>Šta je sistem prekida i koja mu je uloga?</li>
-<li>Navesti i ukratko objasniti vrste prekida</li>
+<li><p>
+Šta je sistem prekida i koja mu je uloga?
+</p>
+
+<p>
+Sistem prekida je mehanizam izmene kontrole toka programa.
+</p>
+
+<p>
+Osnovna uloga mu je da omogući procesoru da reaguje na događaje koji zahtevaju hitnu obradu koji nisu unapred programirani da se dese (npr. pritiskanje tastera na tastaturi, nasilno prekidanje programa od strane korisnika, deljenje nulom&#x2026;)
+</p></li>
+
+<li>Navesti i ukratko objasniti vrste prekida
+
+<ul class="org-ul">
+<li>Hardverski
+<ul class="org-ul">
+<li>generišu ih hardverski uređaji kako bi dobili pažnju od procesora da pauzira to što radi i pozove odgovarajući <i>handler</i> (npr. pritiskanje tastera na tastaturi)</li>
+<li>dele se na:
+<ul class="org-ul">
+<li>maskirajuće</li>
+<li>nemaskirajuće</li>
+</ul></li>
+</ul></li>
+<li>Softverski
+<ul class="org-ul">
+<li>izazivaju ih instrukcije u procesoru (aritmetički overflow, deljenje nulom&#x2026;) [OVO NIJE SKROZ TACNO]</li>
+<li></li>
+</ul></li>
+</ul></li>
+
 <li>Objasniti hardverske prekide. Šta su maskirajući, a šta nemaskirajući prekidi?</li>
 <li>Objasniti softverske prekide. Koja je tipična uloga softverskih prekida?</li>
 <li>Šta su izuzeci (u kontekstu sistema prekida) i čemu služe?</li>
@@ -4472,7 +5010,7 @@ Najčešće se koriste:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aleksandar Šmigić</p>
-<p class="date">Created: 2020-06-01 Mon 14:52</p>
+<p class="date">Created: 2020-06-21 Sun 14:46</p>
 </div>
 </body>
 </html>
