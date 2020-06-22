@@ -1632,7 +1632,7 @@ mov ir, mdr
 175. Objasniti asocijativno preslikavanje adresa keša i dati primer.
 
      - Svaki blok je moguće mapirati u bilo koju keš liniju
-       - Ako koristimo ~FIFO~ alokaciju, onda se faktički novi blok opisuje prvu sledeću slobodnu liniju. Kada se popuni keš izbacijemo ih redom kojim smo ih uneli.
+       - Ako koristimo ~FIFO~ alokaciju, onda se faktički novi blok upisuje u prvu sledeću slobodnu liniju. Kada se popuni keš izbacujemo ih redom kojim smo ih uneli.
        - $M$ - količina glavne memorije
        - $m$ - količina keš memorije
        - $B$ - veličina jednog bloka memorije
@@ -1672,14 +1672,14 @@ mov ir, mdr
      - $m$ - količina keš memorije
      - $B$ - veličina jednog bloka memorije
      - $C = m / B$ - broj keš linija
-     - $S \in \{ 2, 4, 8 \} $ - broj disjunktnih skupova
+     - $S \in \{ 2, 4, 8 \}$ - broj disjunktnih skupova
      - $s_{i} = i \ mod \ S$ - $i$-ti blok memorije se mapira u $s_{i}$-ti skup keš linija
 
-177. Izdelimo keš linije u *disjunktne skupove*, kojima pristupamo metodom sličnom kao kod ~neposrednog~ preslikavanja.
-     - Unutar samih skupova unosimo na proizvoljne keš linije kao kod ~asocijativnog~ preslikavanja
+     - Izdelimo keš linije u *disjunktne skupove*, kojima pristupamo metodom sličnom kao kod ~neposrednog~ preslikavanja.
+       - Unutar samih skupova unosimo na proizvoljne keš linije kao kod ~asocijativnog~ preslikavanja
 
-     Svaka adresa iz memorije se deli u 3 dela:
-     | keš tag | skup id | offset |
+       Svaka adresa iz memorije se deli u 3 dela:
+       | keš tag | skup id | offset |
 
      - /offset/
        - služi da dopuni do veličine bloka zbog poravnanja memorije
@@ -1707,9 +1707,9 @@ mov ir, mdr
        3. porede se keš tagovi i trenutni tag, ako se ne nađu onda imamo promašaj
        4. u suprotnom nađen je
          
-178. Šta su i čemu služe politike zamenjivanja keša? Nabrojati ih.
+177. Šta su i čemu služe politike zamenjivanja keša? Nabrojati ih.
 
-     - Politika zamenjivanje sa primenjuje radi odabira keš linije čiji sadržaj će biti zamenjen sadržajem novog memorijskog bloka.
+     - Politika zamenjivanja sa primenjuje radi odabira keš linije čiji sadržaj će biti zamenjen sadržajem novog memorijskog bloka.
      - Zavisi od primenjenog preslikavanja
        - U slučaju ~neposrednog~ preslikavanja *nema* politike zamene jer nema izbora
 
@@ -1720,7 +1720,7 @@ mov ir, mdr
      - ~LFU~
      - ~random~
       
-179. Objasniti politiku zamenjivanja najduže nekorišćene linije keša (~LRU~). Dobre i loše strane.
+178. Objasniti politiku zamenjivanja najduže nekorišćene linije keša (~LRU~). Dobre i loše strane.
 
      ~LRU = Least Recently Used~
 
@@ -1732,7 +1732,7 @@ mov ir, mdr
      - za $n$ linija potrebno mu je $n!$ stanja koja je moguće predstaviti kao konačni automat, ali je memorijska složenost prevelika da bi se realizovalo u ~asocijativnom mapiranju~
      - moguće je realizovati za $2$ ili $4$ keš linije, zbog čege se i koristi u ~skup-asocijativnom~ mapiranju
       
-180. Objasniti politiku zamenjivanja pseudo-najduže nekorišćene linije keša (~pseudo-LRU~). Dobre i loše strane.
+179. Objasniti politiku zamenjivanja pseudo-najduže nekorišćene linije keša (~pseudo-LRU~). Dobre i loše strane.
 
      ~pseudo-LRU = pseudo Least Recently Used~
 
@@ -1743,7 +1743,7 @@ mov ir, mdr
      Mane:
      - smanjena preciznost u odnosu na ~LRU~
 
-181. Objasniti ~FIFO~ politiku zamenjivanja linije keša.
+180. Objasniti ~FIFO~ politiku zamenjivanja linije keša.
 
      Zamenjuje se ona linija keša koja je prva pročitana, tj. ona koja je najduže u kešu.
 
@@ -1753,7 +1753,7 @@ mov ir, mdr
 
      Retko se koristi
 
-182. Koje politike pisanja keša postoje i u čemu se razlikuju
+181. Koje politike pisanja keša postoje i u čemu se razlikuju
 
      Kada se podaci menjaju, mora se uzeti u obzir da postoje dve kopije podataka (u kešu i glavnoj memoriji)
 
@@ -1761,7 +1761,7 @@ mov ir, mdr
      1. Pisanje sa propuštanjem (/write-through/) - pisanje se odvija i u kešu i u memoriji
      2. Pisanje sa prepisivanjem (/write-back/) - samo keš
     
-183. Objasniti politiku pisanja keša sa propuštanjem (/write-through/). Dobre i loše strane
+182. Objasniti politiku pisanja keša sa propuštanjem (/write-through/). Dobre i loše strane
 
      Svaki put kada se vrši upis u keš, vrši se i u memoriji.
 
@@ -1770,11 +1770,11 @@ mov ir, mdr
      Mane:
      - relativno sporo
       
-184. Objasniti politiku pisanja keša sa prepisivanjem (/write-back/). Dobre i loše strane
+183. Objasniti politiku pisanja keša sa prepisivanjem (/write-back/). Dobre i loše strane
 
      Ažuriramo isključivo u kešu, dok se pisanje u memoriju odvija pri zameni u kešu. Koristimo /update bit/ koji nam govori da li je keš linija koju treba zameniti bila ažurirana, tj. da li treba ažurirati u glavnoj memoriji. Na ovaj način poboljšavamo performanse zamene linije keša, koja bi bez /update bit/-a i /write-back/ politikom bila duplo sporija.
 
-185. Razdvojeni i unifikovani keš. Poređenje.
+184. Razdvojeni i unifikovani keš. Poređenje.
 
      Kod razdvojenog keša postoji poseban keš za podatke i instrukcije, dok je kod unifikovanog sve u jednom.
 
@@ -1782,16 +1782,16 @@ mov ir, mdr
 
      Nedostatak razdvojenog keša je u tome što je nemoguće dinamički menjati količinu keša odvojenu za podatke i instrukcije.
 
-186. Objasniti arhitekture višestepenog keša i način njihovog funkcionisanja.
+185. Objasniti arhitekture višestepenog keša i način njihovog funkcionisanja.
 
      Organizacija keša hijerarhijski u više nivoa može biti:
      - Inkluzivna - svaki sledeći nivo sadrži podatke iz prethodnog, ali i neke dodatne
      - Ekskluzivna - ne sadrži iste podatke, već isključivo nove
 
-     Prednost inkluzivnog pristupa je u tom što veće keš memorije mogu imati veće linije, dok kod ekskluzivnog sve keš memorije moraju da imaju linije iste veličine
+     Prednost inkluzivnog pristupa je u tome što veće keš memorije mogu imati veće linije, dok kod ekskluzivnog sve keš memorije moraju da imaju linije iste veličine
 
-      Podaci se prvo traže u najbližem kešu, pa ako ih tu nema onda u sledećem itd. dok se ne nađe ili od do memorije.
-       - kod inkluzivnog se podaci upisuju sve bliže nivoe
+      Podaci se prvo traže u najbližem kešu, pa ako ih tu nema onda u sledećem itd. dok se ne nađe ili ode do memorije.
+       - kod inkluzivnog se podaci upisuju sve bliže nivoe [CHECK]
        - kod ekskluzivnog se podaci brišu iz prethodnih nivoa
 
        Danas se najčešće organizuje u 3 nivoa:
@@ -1799,39 +1799,39 @@ mov ir, mdr
        - ~L2~ - uglavnom se nalazi na samom čipu procesora
        - ~L3~ - obično je znatno veći i zajednički za sva jezgra na istom procesoru
 
-187. Objasniti odnos veličine keša i performansi.
+186. Objasniti odnos veličine keša i performansi.
 
      Povećanjem keša do određene granice dobijamo bolje performanse, ali se u nekom trenutku taj rast performansi usporava i postaje beznačajan.
 
      Ovo se može objasniti time da određenom veličinom keša procenat pogodtka postane blizak $100%$ nakon čega dalje povećanje nema uticaja
 
-188. Objasniti odnos veličine linije keša i performansi.
+187. Objasniti odnos veličine linije keša i performansi.
 
-     Povećanjem linije keša do neek mere se poboljšavaju performanse, ali se u nekom trenutku te performanse počinju kvariti.
+     Povećanjem linije keša do neke mere se poboljšavaju performanse, ali se u nekom trenutku te performanse počinju kvariti.
 
      Za premale linije keša slabo se koristi princip prostorne lokalnosti, dok se za velike smanjuje preciznost.
     
-189. Objasniti odnos asocijativnosti i performansi.
+188. Objasniti odnos asocijativnosti i performansi.
 
      Povećanjem stepena asocijativnosti se povećava procenat pogotka keša. Potpuno asocijativni keš je u tom smislu najbolji, ali je njegova implementacija teška, pa se dizajneri češće odlučuju za ~skup-asocijativno~ mapiranje, uz izbor većih skupova kad je to moguće.
 
-190. Šta je magistrala i čemu služi?
+189. Šta je magistrala i čemu služi?
 
      Magistrala je komunikacioni sistem koji prenosi podatke/instrukcije između komponenti računara ili eksternih uređaja.
     
-191. Kako se ostvaruje deljenje magistrale? Na koji način se sprečava kolizija signala? Objasniti.
+190. Kako se ostvaruje deljenje magistrale? Na koji način se sprečava kolizija signala? Objasniti.
 
      [TODO]
 
      Da bismo povezali više uređaja na magistralu, potrebno je sprečiti istovremeno puštanje signala od strane različitih uređaja. Ovo se obično postiže korišćenjem *bafera sa tri stanja* (/tri-state buffer/).
 
-192. Šta je transakcija a šta operacija magistrale? Šta je protokol magistrale?
+191. Šta je transakcija a šta operacija magistrale? Šta je protokol magistrale?
 
      - Transakcija predstavlja niz operacija potrebnih za izvršanje jasno definisane akcije.
      - Operacija predstavlja čitanje/pisanje memorije, čitanje ~I/O~ uređaja, "rafalno" čitanje itd.
      - Protokol magistrale predstavlja skup pravila kojima se reguliše komunikacija između komponenti
 
-193. Šta su serijske, a šta paralelne magistrale? Poređenje.
+192. Šta su serijske, a šta paralelne magistrale? Poređenje.
 
      Prema načinu transfera, magistrale je moguće podeliti na:
      - serijske
@@ -1849,7 +1849,7 @@ mov ir, mdr
 
      Zbog toga se danass umesto ranijih paralelnih (~PCI, PATA...~) koriste serijske magistrale (~PCI-Express, SATA, USB~). Izuzetak je *memorijska magistrala* koja povezuje procesor sa glavnom memorijom.
    
-194. Koja je razlika između multipleksiranih i razdvojenih magistrala? Poređenje.
+193. Koja je razlika između multipleksiranih i razdvojenih magistrala? Poređenje.
 
      Paralelne magistrale mogu biti:
      - multipleksirane (/multiplexed/)
@@ -1861,41 +1861,41 @@ mov ir, mdr
 
      Prednosti multipleksiranih magistrala u odnosu na odvojene je u jeftinijoj implementaciji, a mana je u manjoj brzini prenosa (jer je potrebno više ciklusa za obavljanje transakcije)
    
-195. Šta je širina magistrale?
+194. Šta je širina magistrale?
 
      Širina magistrale određuje veličinu podataka koji se prenose magistralom. Osnovna motivacija za proširivanje je podizanje propustnosti (/throughput/) a time i performansi. Sužavanje se radi u slučajevima da nam je potrebno da smanjimo složenost, samim tim i cenu.
 
-196. Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije čitanja u slučaju sinhrone magistrale.
+195. Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije čitanja u slučaju sinhrone magistrale.
 
      [TODO]
 
-197. Objasniti i predsaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.
+196. Objasniti i predsaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.
 
      [TODO]
 
-198. Šta je stanje čekanja? Kada se i kako upotrebljava? Objasniti operaciju čitanja sa stanjem čekanja.
+197. Šta je stanje čekanja? Kada se i kako upotrebljava? Objasniti operaciju čitanja sa stanjem čekanja.
 
      Imajući u vidu da je procesor često dosta brži od memorije, potrebno je na neki način mu reći da sačeka. Za to se koristi stanje čekanja i kontroni signal /ready/.
 
      1. procesor želi da pročita određenu adresu u memoriji, stoga tu adresu postavlja na *adresnu magistralu*.
 
-     2. pošto je procesor brži od memorije, kontrolni signal /ready/ se postavlja na $1% za koje vreme procesor čeka
+     2. pošto je procesor brži od memorije, kontrolni signal /ready/ se postavlja na $1$ za koje vreme procesor čeka
 
      3. kada je /ready/ na $0$ onda procesor uzima podatke sa magistrale podataka
 
-199. Šta je "prenošenje blokova podataka"? Kada se i za šta upotrebljava?
+198. Šta je "prenošenje blokova podataka"? Kada se i za šta upotrebljava?
 
      Prenošenje blokova podrazumeva da se jednom *složenom operacijom* prenosi više uzastopnih reči jer se ispostavilo da je efikasnije pri istoj transakciji pročitati više reči nego u više uzastopnih operacija pojedinačno.
 
      Koristi se često za popunjavanje keš memorije.
 
-200. Šta je "/read-modify-write/" transakcija i za šta se upotrebljava?
+199. Šta je "/read-modify-write/" transakcija i za šta se upotrebljava?
 
      Ova transakcija je pogodna za realizaciju ekskluzivnog pristupa *zajedničkim podacima/kodu* (a.k.a. /critical section/) kod multiprocesorskih sistema.
 
      Predstavlja *atomičku* operaciju što znači da tokom njenog trajanja nije moguće da se izvrši bilo koja druga operacija nad istom magistralom.
 
-201. Kako se sinhronizuje rad na asinhronoj magistrali? Objasniti signale i tok aktivnosti (četvorofazno rukovanje)
+200. Kako se sinhronizuje rad na asinhronoj magistrali? Objasniti signale i tok aktivnosti (četvorofazno rukovanje)
 
      Sinhronizuje se pomoću protokola za eksplicitnu sinhronizaciju kao što je *četvorofazno rukovanje*.
 
@@ -1911,14 +1911,14 @@ mov ir, mdr
 
      4. /slave/ "gasi" ~SSYN~
 
-202. Prednosti i mane asinhronih magistrala u odnosu na sinhrone.
+201. Prednosti i mane asinhronih magistrala u odnosu na sinhrone.
 
      Prednosti:
      - Brži transfer jer se brzina može prilagoditi brzini uređaja sa kojim komunicira
      Mane:
      - Teža implementacija u odnosu na sinhrone
       
-203. Šta je arbitraža magistrale? Objasniti razliku između centralizovane i distribuirane arbitraže.
+202. Šta je arbitraža magistrale? Objasniti razliku između centralizovane i distribuirane arbitraže.
 
     Postojanje više /master/-a (npr. ~CPU~ i ~DMA~ kontroler) za jednu magistralu se rešava pomoću arbitraže magistrale.
 
@@ -1927,7 +1927,7 @@ mov ir, mdr
     Kod centralizovanih arbitraža jedan centralni arbitar dobija zahteve od svih /master/-a i određuje kome dodeljuje magistralu.
     Kod distribuiranih arbitraža hardver je distribuiran među /master/-ima koji međusobno komuniciraju i određuju kome ide magistrala.
 
-204. Nabrojati i ukratko objasniti politike dodeljivanja magistrale.
+203. Nabrojati i ukratko objasniti politike dodeljivanja magistrale.
 
      - Politike fiksnih prioriteta
        - svaki master ima fiksiran prioritet i na osnovu toga se i određuje ko će dobiti magistralu
@@ -1940,7 +1940,7 @@ mov ir, mdr
      - Hibridna politika
        - kombinacija prethodne dve politike
         
-205. Navesti i ukratko objasniti politike oslobađanja magistrale.
+204. Navesti i ukratko objasniti politike oslobađanja magistrale.
 
      - Politika bez preuzimanja
        - oslobađa se magistrala tek kada trenutni /master/ dozvoli
@@ -1949,7 +1949,7 @@ mov ir, mdr
      - Politika sa preuzimanjem
        - magistralu je moguće osloboditi u slučaju da je zahteva /master/ višeg prioriteta iako se trenutna transakcija možda nije obavila do kraja
 
-206. Objasniti detaljno mehanizam ulančavanja kod centralizovane arbitraže.
+205. Objasniti detaljno mehanizam ulančavanja kod centralizovane arbitraže.
 
     Signal za zahtev se formira kao disjunkcija zahteva pojedinačnih /master/-a na zajedničkoj magistrali.
 
@@ -1957,16 +1957,16 @@ mov ir, mdr
 
     Veoma je jednostavan za implementaciju, ali mu je mana što omogućava samo fiksni prioritet politike dodele.
 
-207. Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.
-208. Električne karakteristike serijskih magistrala
-209. Navesti najčešće načine kodiranja bitova kod serijskog prenosa
-210. Koja je osnovna prednost, a koja mana ~NRZ~ kodiranja u odnosu na ~RZ~ kodiranje?
-211. Objasniti ~NRZI~ kodiranje.
-212. Ukratko objasniti ~8b/10b~ kodiranje? Koji je razlog za korišćenje ovog načina kodiranja?
-213. Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike
-214. Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike
+206. Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.
+207. Električne karakteristike serijskih magistrala
+208. Navesti najčešće načine kodiranja bitova kod serijskog prenosa
+209. Koja je osnovna prednost, a koja mana ~NRZ~ kodiranja u odnosu na ~RZ~ kodiranje?
+210. Objasniti ~NRZI~ kodiranje.
+211. Ukratko objasniti ~8b/10b~ kodiranje? Koji je razlog za korišćenje ovog načina kodiranja?
+212. Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike
+213. Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike
 
-215. Šta je sistem prekida i koja mu je uloga?
+214. Šta je sistem prekida i koja mu je uloga?
 
      Sistem prekida je mehanizam izmene kontrole toka programa.
 
@@ -1977,7 +1977,7 @@ mov ir, mdr
      - čitanje/pisanje u fajl (softverski)
      - deljenje sa 0 (izuzetak)
       
-216. Navesti i ukratko objasniti vrste prekida
+215. Navesti i ukratko objasniti vrste prekida
 
      - Hardverski a.k.a. *asinhroni*
        - generišu ih hardverski uređaji koji su povezani sa procesorom
@@ -1990,7 +1990,7 @@ mov ir, mdr
      - Izuzeci (/Exceptions/)
        - faktički predstavljaju softverske prekide koji se koriste kada dođe do *greške* u samim instrukcijama (npr. deljenje sa 0, overflow itd.)
         
-217. Objasniti hardverske prekide. Šta su maskirajući, a šta nemaskirajući prekidi?
+216. Objasniti hardverske prekide. Šta su maskirajući, a šta nemaskirajući prekidi?
 
      Hardverski prekidi su generisani od strane hardverskih uređaja, najčešće zbog I/O (input/output) tako što procesor ima jedan ili više priključaka na koje se može dovesti signal kojim se izaziva prekid.
 
@@ -1999,7 +1999,7 @@ mov ir, mdr
      - Maskirajući (/maskable/): procesor ima mogućnost da privremeno ignoriše prekide pa da se pozabavi njima kasnije
      - Nemaskirajući (/non-maskable/): procesor mora odmah da reaguje na njih
 
-218. Objasniti softverske prekide. Koja je tipična uloga softverskih prekida?
+217. Objasniti softverske prekide. Koja je tipična uloga softverskih prekida?
 
     Softverske prekide izazivaju posebne instrukcije. Kod ~Intel Pentium~ procesora je to ~int <interrupt_code>~, gde je ~<interrupt_code>~ $\in [0, 255]$
 
@@ -2007,7 +2007,7 @@ mov ir, mdr
 
     Tipično se koriste za dobijanje ulaza od korisnika ili za ispisivanje na ekran itd.
 
-219. Šta su izuzeci (u kontekstu sistema prekida) i čemu služe?
+218. Šta su izuzeci (u kontekstu sistema prekida) i čemu služe?
 
      Izuzeci su prekidi koji funkcionišu jako slično kao softverski prekidi, s tim što nastaju kao posledica *grešaka* u izvršavanju instrukcija.
 
@@ -2017,7 +2017,7 @@ mov ir, mdr
      - deljenje sa 0
      - overflow / underflow
 
-220. Šta je vektor prekida? Šta je deskriptor prekida? Gde se nalazi tabela deskriptora prekida?
+219. Šta je vektor prekida? Šta je deskriptor prekida? Gde se nalazi tabela deskriptora prekida?
 
      Vektorski prekidi predstavljaju metod pozivanja /handler/-a prekida.
 
@@ -2027,7 +2027,7 @@ mov ir, mdr
 
      Tabela deskriptora prekida (TDP) može da se nalazi bilo gde u memoriji. Lokacija je sačuvana pomoću 48-bitnog *registra za TDP* koji čuva 32-bitnu adresu TDP-a i 16-bitnu vrednost veličine TDP-a.
 
-221. Objasniti detaljno način pozivanja rukovaoca (/handler/) prekidom u slučaju vektorskih prekida.
+220. Objasniti detaljno način pozivanja rukovaoca (/handler/) prekidom u slučaju vektorskih prekida.
 
     Tabela deskriptora prekida = TDP
 
@@ -2039,7 +2039,7 @@ mov ir, mdr
 
      4. Nakon što je /handler/ završio svoje vraćamo kontrolu programu koji se izvršavao pre prekida
 
-222. Objasniti komponente i rad kontrolora prekida ~PIC 8259~ (/Programmable Interrupt Controller)
+221. Objasniti komponente i rad kontrolora prekida ~PIC 8259~ (/Programmable Interrupt Controller)
 
      ~PIC~ služi da upravlja sa više uređaja koji mogu slati signale prekida.
 
@@ -2049,11 +2049,11 @@ mov ir, mdr
 
      Komunicira sa procesorom putem donjih 8 bitova data magistrale putem kojih i šalje indeks za vektor prekida.
 
-223. Šta su ulazno/izlazni uređaji?
+222. Šta su ulazno/izlazni uređaji?
 
      Ulazno/izlazni uređaji predstavljaju sredstvo pomoću kojeg računar komunicira sa spoljašnjim svetom odnosno sa čovekom i drugim uređajima.
 
-224. Šta su ulazno/izlazni kontroleri i koja je njihova uloga?
+223. Šta su ulazno/izlazni kontroleri i koja je njihova uloga?
 
      ~I/O~ = Ulazno/izlazni
 
@@ -2061,7 +2061,7 @@ mov ir, mdr
 
      Vrši /low-level/ komunikaciju sa ~I/O~ uređajem, dok procesoru daje unifikovan interfejs za komunikaciju sa ~I/O~ uređajem.
 
-225. Šta podrazumeva upotreba ~I/O~ uređaja putem memorijskog mapiranja?
+224. Šta podrazumeva upotreba ~I/O~ uređaja putem memorijskog mapiranja?
 
      ~I/O port~ = *adresa* internih registara ~I/O~ kontrolera (najčešće *status*, *data*, *command* registri)
 
@@ -2071,7 +2071,7 @@ mov ir, mdr
 
      ~I/O~ kontroleri kada primete na adresnoj magistrali ~I/O~ port, šalju odgovarajuće podatke na data magistralu.
 
-226. Šta podrazumeva upotreba ~I/O~ uređaja putem izolovanog ulaza i izlaza?
+225. Šta podrazumeva upotreba ~I/O~ uređaja putem izolovanog ulaza i izlaza?
 
      ~I/O port~ = *adresa* internih registara ~I/O~ kontrolera (najčešće *status*, *data*, *command* registri)
 
@@ -2081,7 +2081,7 @@ mov ir, mdr
 
      Kod ~Intel Pentium~ procesora koriste se instrukcije ~in~ i ~out~ za pristup ~I/O~ portovima
 
-227. Objasniti tehniku programiranog ~I/O~
+226. Objasniti tehniku programiranog ~I/O~
 
      /polling/ = periodično proveravanje vrednosti
 
@@ -2091,13 +2091,13 @@ mov ir, mdr
 
      Mana ovog pristupa je to što je procesor sve vreme u upotrebi.
 
-228. Objasniti tehniku ~I/O~ vođenog prekidima
+227. Objasniti tehniku ~I/O~ vođenog prekidima
 
      Ideja je slična programiranom ~I/O~, s tim što procesor delegira posao drugom kontroleru (npr. ~DMAC~) koji je zadužen za transfer, dok procesor obavlja druge instrukcije. Kada se transfer završi, kontroler obaveštava procesor pomoću signala prekida.
     
      Analogija: Šef da zadatak radniku i kaže mu da ga obavesti kada završi, dok će on u međuvremenu završavati ostale poslove
 
-229. Objasniti direktan pristup memoriji (~DMA~). Kontroler ~DMA~. Koraci pri realizaciji ~DMA~ pristupa
+228. Objasniti direktan pristup memoriji (~DMA~). Kontroler ~DMA~. Koraci pri realizaciji ~DMA~ pristupa
 
      ~DMAC~ = ~DMA~ kontroler
 
@@ -2114,39 +2114,53 @@ mov ir, mdr
         - šalju se kontrolni signali u $id$, nakon čega se obezbeđuje da se podatak prenese preko data magistrale
      4. Šalje se signal za prekid procesoru, kako bi se obavestio da je transfer završen
 
-230. Šta je virtuelna memorija i zbog čega se koristi?
-231. Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?
-232. Objasniti preslikavanje adresa virtuelne memorije. Primer.
-233. Preslikavanje adresa na više nivoa. Zbog čega se koristi? Primer.
-234. Šta su i kada se koriste politike zamene stranica?
-235. Navesti i ukratko objasniti najčešće politike zamene stranica
-236. Objasniti značaj veličine stranice virtuelne memorije i navesti primer.
-237. Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.
-238. Šta sadrže stavke u tablici stranica virtuelne memorije? Objasniti.
-239. Šta je bafer tablice stranica virtuelne memorije (~TLB~) i čemu služi?
+229. Šta je virtuelna memorija i zbog čega se koristi?
 
-240. Objasniti princip preklapanja instrukcija u modernim procesorima
-241. Koji su osnovni uzroci zaustavljanja "pokretne trake" kod preklapanja instrukcija u savremenim procesorima? Koje se tehnike koriste za rešavanje ovakvih problema?
-242. Objasniti tehniku izvršavanja van redosleda (/out-of-order execution/)
-243. Objasniti tehniku predikcije grananja (/branch prediction/)
-244. Šta su superskalarni procesori?
+     Virtuelna memorija predstavlja tehniku upravljanja memorijom koja omogućava da svaki program ima /idealan/ pogled na memoriju.
 
-245. Koji su osnovni tipovi podataka u jeziku /Verilog/?
-246. Objasniti razliku između žičanih i registarskih tipova u jeziku /Verilog/
-247. Šta predstavljaju vektorski tipovi, a šta nizovi u jeziku /Verilog/?
-248. Šta predstavlja vrednost $z$ a šta vrednost $x$ u jeziku /Verilog/?
-249. Na koji način se u jeziku /Verilog/ mogu izdvajati podsignali iz vektorskih signala, a na koji način se jednostavniji signali mogu grupisati u složenije?
-250. Šta su moduli u jeziku /Verilog/? Kakvi moduli postoje? Na koji način se moduli instanciraju? Primer
-251. Šta su portovi u jeziku /Verilog/? Koje vrste portova postoje i kako se deklarišu? Primer.
-252. Na koji način se može zadavati kašnjenje pilikom modelovanja na nivou gejtova u jeziku /Verilog/? Primer.
-253. Objasniti naredbu /assign/ u jeziku /Verilog/. Zadavanje kašnjenja. Primer.
-254. Koje vrste procesa na nivou modelovanja ponašanja postoje u jeziku /Verilog/?
-255. Opisati sintaksu i semantiku /initial/ procesa u jeziku /Verilog/. Primer
-256. Opisati sintaksu i semantiku /always/ procesa u jeziku /Verilog/. Primer
-257. Na koji način se može kontrolisati izvršavanje /always/ procesa u jeziku /Verilog/?
-258. Naredbe proceduralne dodele u jeziku /Verilog/. Blokirajuće i neblokirajuće dodele. Primeri.
-259. Na koji način se može zadavati kašnjenje prilikom izvršavanja naredbi u okviru procesa u jeziku /Verilog/?
-260. Naredbe grananja u jeziku /Verilog/. Primeri
-261. Dizajn kombinatornih kola pomoću /always/ procesa u jeziku /Verilog/. Primeri
-262. Dizajn asinhronih sekvencijalnih kola pomoću /always/ procesa u jeziku /Verilog/. Primeri
-263. Dizajn sinhronih sekvencijalnih kola pomoću /always/ procesa u jeziku /Verilog/. Primeri
+     Idealan pogled:
+     - programima memorija izgleda *nefragmentisano*, zbog čega individualni programu ne moraju da brinu o upravljanju memorije u kontekstu drugih programa
+     - svaki program ima *sopstveni virtuelni adresni prostor* fiksirane velicine koji je često veći nego količina fizički dostupne memorije
+     - svaki program misli *da je sam* i da je sva vidljiva memorija njegova
+
+         U instrukcijama se koriste virtuelne adrese koje ~MMU~ (/Memory Management Unit/) u procesoru prevodi u fizičke adrese
+
+     Koristi se zbog sadasnjih programa koji su memorijski zahtevni i zato sto se uz pomoc nje mogu sacuvati veliki programi i velike kolicine podataka.
+
+230. Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?
+231. Objasniti preslikavanje adresa virtuelne memorije. Primer.
+232. Preslikavanje adresa na više nivoa. Zbog čega se koristi? Primer.
+233. Šta su i kada se koriste politike zamene stranica?
+234. Navesti i ukratko objasniti najčešće politike zamene stranica
+235. Objasniti značaj veličine stranice virtuelne memorije i navesti primer.
+236. Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.
+237. Šta sadrže stavke u tablici stranica virtuelne memorije? Objasniti.
+238. Šta je bafer tablice stranica virtuelne memorije (~TLB~) i čemu služi?
+
+     ~TLB~ = /Translation Lookaside Buffer/
+
+239. Objasniti princip preklapanja instrukcija u modernim procesorima
+240. Koji su osnovni uzroci zaustavljanja "pokretne trake" kod preklapanja instrukcija u savremenim procesorima? Koje se tehnike koriste za rešavanje ovakvih problema?
+241. Objasniti tehniku izvršavanja van redosleda (/out-of-order execution/)
+242. Objasniti tehniku predikcije grananja (/branch prediction/)
+243. Šta su superskalarni procesori?
+
+244. Koji su osnovni tipovi podataka u jeziku /Verilog/?
+245. Objasniti razliku između žičanih i registarskih tipova u jeziku /Verilog/
+246. Šta predstavljaju vektorski tipovi, a šta nizovi u jeziku /Verilog/?
+247. Šta predstavlja vrednost $z$ a šta vrednost $x$ u jeziku /Verilog/?
+248. Na koji način se u jeziku /Verilog/ mogu izdvajati podsignali iz vektorskih signala, a na koji način se jednostavniji signali mogu grupisati u složenije?
+249. Šta su moduli u jeziku /Verilog/? Kakvi moduli postoje? Na koji način se moduli instanciraju? Primer
+250. Šta su portovi u jeziku /Verilog/? Koje vrste portova postoje i kako se deklarišu? Primer.
+251. Na koji način se može zadavati kašnjenje pilikom modelovanja na nivou gejtova u jeziku /Verilog/? Primer.
+252. Objasniti naredbu /assign/ u jeziku /Verilog/. Zadavanje kašnjenja. Primer.
+253. Koje vrste procesa na nivou modelovanja ponašanja postoje u jeziku /Verilog/?
+254. Opisati sintaksu i semantiku /initial/ procesa u jeziku /Verilog/. Primer
+255. Opisati sintaksu i semantiku /always/ procesa u jeziku /Verilog/. Primer
+256. Na koji način se može kontrolisati izvršavanje /always/ procesa u jeziku /Verilog/?
+257. Naredbe proceduralne dodele u jeziku /Verilog/. Blokirajuće i neblokirajuće dodele. Primeri.
+258. Na koji način se može zadavati kašnjenje prilikom izvršavanja naredbi u okviru procesa u jeziku /Verilog/?
+259. Naredbe grananja u jeziku /Verilog/. Primeri
+260. Dizajn kombinatornih kola pomoću /always/ procesa u jeziku /Verilog/. Primeri
+261. Dizajn asinhronih sekvencijalnih kola pomoću /always/ procesa u jeziku /Verilog/. Primeri
+262. Dizajn sinhronih sekvencijalnih kola pomoću /always/ procesa u jeziku /Verilog/. Primeri

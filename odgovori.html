@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-06-21 Sun 14:46 -->
+<!-- 2020-06-23 Tue 00:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Odgovori na ispitna pitanja iz UOAR2</title>
@@ -3217,8 +3217,9 @@ Prvih 6 argumenata se prosleđuju redom u registre:
 <li><code>rdx</code></li>
 <li><code>rcx</code></li>
 <li><code>r8</code></li>
-<li><code>r9</code></li>
-</ol>
+<li><p>
+<code>r9</code>
+</p>
 
 <p>
 U slučaju da nam je potrebno više od 6 argumenata, postavljamo ih na stek zdesna ulevo.
@@ -3229,16 +3230,17 @@ Povratna vrednost se čuva u registru <code>rax</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">edi</span>, <span style="color: #ffd400; font-weight: bold;">42</span>
-<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">esi</span>, <span style="color: #ffd400; font-weight: bold;">7</span>
-<span style="color: #42c6ff; font-weight: bold;">call</span> <span style="color: #ff2afc; font-weight: bold;">f</span>
-<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">r10d</span>, eax <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
+<pre class="src src-asm">     <span style="color: #ff2afc; font-weight: bold;">mov</span> edi, <span style="color: #ffd400; font-weight: bold;">42</span>
+     <span style="color: #ff2afc; font-weight: bold;">mov</span> esi, <span style="color: #ffd400; font-weight: bold;">7</span>
+     <span style="color: #ff2afc; font-weight: bold;">call</span> f
+     <span style="color: #ff2afc; font-weight: bold;">add</span> r10d, eax <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
 </pre>
 </div>
 
 <p>
 Instrukcija <code>call</code> postavlja adresu sledeće instrukcije na stek kao adresu povratka.
 </p></li>
+</ol></li>
 
 <li><p>
 Objasniti pozivanje funkcija na <code>ARM</code> arhitekturi. Kako se prenosi adresa povratka, argumenti, kao i povratna vrednost?
@@ -3540,7 +3542,7 @@ Mikroprogram, koji se sastoji iz mikroinstrukcija sačuvan je u posebnoj <code>R
 </p>
 
 <p>
-Mikro instrukcija je najmanja celina mikrokoda koji predstavlja programibilni sloj apstrakcije između hardvera i mašinskog koda dostupnog programeru. Struktura mikroinstrukcije može biti <b>horizontalna</b> i <b>vertikalna</b>
+Mikroinstrukcija je najmanja celina mikrokoda koji predstavlja programibilni sloj apstrakcije između hardvera i mašinskog koda dostupnog programeru. Struktura mikroinstrukcije može biti <b>horizontalna</b> i <b>vertikalna</b>
 </p></li>
 
 <li><p>
@@ -3588,8 +3590,8 @@ Objasniti vertikalni format mikroinstrukcija procesora.
 
 <ul class="org-ul">
 <li>sekvencijalni</li>
-<li>direktni</li>
-<li>proizvoljni</li>
+<li>direktni (neposredni)</li>
+<li>proizvoljni (slučajni)</li>
 <li>asocijativni</li>
 </ul></li>
 
@@ -3598,39 +3600,55 @@ Objasniti sekvencijalni pristup memoriji
 </p>
 
 <p>
+Podaci su organizovani u jedinice koje nazivamo <b>slogovi</b> koji su međusobno razdvojeni <b>kontrolnim informacijama</b> (npr. dužina sloga) koje se koriste pri pristupanju određenom slogu.
+</p>
+
+<p>
 Podaci se upisuju po redosledu unošenja, a čitaju po istom ili obrnutom redosledu.
 </p>
 
 <p>
-Da bi se pristupilo $i$-tom podatku potrebno je proći kroz svih prethodnih \(i - 1\) podataka, što znači da je ovaj način dosta spor.
+Da bi se pristupilo $i$-tom slogu potrebno je proći kroz svih prethodnih \(i - 1\) slogova, što znači da je ovaj način dosta spor.
+</p>
+
+<p>
+Primer: magnetna traka
 </p></li>
 
 <li><p>
-Objasniti direktni pristup memoriji
+Objasniti direktni (neposredni) pristup memoriji (<i>semi-random</i>)
 </p>
 
 <p>
-Kod ovog načina pristupa postoji veza između adrese podatka i njegove pozicije na medijumu. Na osnovu adrese se pristupa lokaciji gde je smešten podatak ili njenoj okolini. Vreme pristupa je promenljivo i zavisi od pozicije na medijumu.
+Kod ovog načina pristupa postoji veza između adrese podatka i pozicije njegovog sloga na medijumu. Na osnovu adrese se pristupa lokaciji sloga ili njegovoj okolini. Vreme pristupa je promenljivo i zavisi od pozicije na medijumu.
+</p>
+
+<p>
+Primer: magnetni disk
 </p></li>
 
 <li><p>
-Objasniti proizvoljni pristup memoriji (Random Access Memory)
+Objasniti proizvoljni (slučajni) pristup memoriji (<i>Random Access Memory</i>)
 </p>
 
 <p>
-Kod ovakvog načina pristupa svaka adresibilna lokacija sadrži adresni mehanizam ugrađen u memorijski sklop. Vreme pristupa svakoj lokaciji je konstantno.
+Kod ovakvog načina pristupa moguće je u konstantnom vremenu pristupiti bilo kojoj adresibilnoj lokaciji nezavisno od toga gde se fizički nalazi.
+</p>
+
+<p>
+Primer: glavna memorija (<code>RAM</code>)
 </p></li>
 
 <li><p>
-Objasniti asocijativni pristup memoriji
+Objasniti asocijativni pristup memoriji (<i>Content Adressable Memory</i>)
 </p>
 
 <p>
-Ovo je podtip memorije sa proizvoljnim pristupom koji omogućava poređenje maske i vrednosti određenih bitova u reči. Na ovaj način se reč čita na osnovu njenog sadržaja a ne adrese.
+Ovo je podtip proizvoljnog pristupa memoriji koji omogućava pretragu cele memorije na osnovu dela sadržaja (reči) umesto pomoću adrese.
 </p>
 
 <p>
-Često se koristi kod baza podataka.
+Primer: koristi se kod specijalizovanih baza podataka
 </p></li>
 
 <li><p>
@@ -3667,7 +3685,7 @@ Obično se izražava u <code>KiB, MiB, GiB, TiB</code>
 </ul></li>
 <li>polu-promenljive
 <ul class="org-ul">
-<li><code>EPROM, EEPROM</code></li>
+<li><code>PROM, EPROM, EEPROM</code></li>
 </ul></li>
 <li>nepromenljive
 <ul class="org-ul">
@@ -3705,7 +3723,7 @@ Smara, stvarno treba da se ranim ako ne budem znao ovo.
 </p>
 
 <p>
-<code>ROM</code> je <i>read-only</i> memorija čiji sadržaj se stalan i ne može se menjati (u klasičnom smislu). Implementira se kao kombinatorno kolo jer vrednosti na izlazu zavise isključivo od vrednosti na ulazu.
+<code>ROM</code> je <i>read-only</i> memorija čiji sadržaj je stalan i ne može se menjati (u klasičnom smislu). Implementira se kao kombinatorno kolo jer vrednosti na izlazu zavise isključivo od vrednosti na ulazu.
 </p>
 
 <p>
@@ -3858,7 +3876,7 @@ Objasniti princip lokalnosti. Šta je prostorna a šta vremenska lokalnost? Prim
 </p>
 
 <p>
-Prostorna lokalnost je tendencija naših programa da se podaci i instrukcije pristupaju sekvencijalno.
+Prostorna lokalnost je tendencija naših programa da se podacima i instrukcija pristupa sekvencijalno.
 </p>
 
 <p>
@@ -4171,7 +4189,7 @@ Objasniti asocijativno preslikavanje adresa keša i dati primer.
 <ul class="org-ul">
 <li>Svaki blok je moguće mapirati u bilo koju keš liniju
 <ul class="org-ul">
-<li>Ako koristimo <code>FIFO</code> alokaciju, onda se faktički novi blok opisuje prvu sledeću slobodnu liniju. Kada se popuni keš izbacijemo ih redom kojim smo ih uneli.</li>
+<li>Ako koristimo <code>FIFO</code> alokaciju, onda se faktički novi blok upisuje u prvu sledeću slobodnu liniju. Kada se popuni keš izbacujemo ih redom kojim smo ih uneli.</li>
 <li>\(M\) - količina glavne memorije</li>
 <li>\(m\) - količina keš memorije</li>
 <li>\(B\) - veličina jednog bloka memorije</li>
@@ -4270,9 +4288,8 @@ Skup-asocijativno preslikavanje prestavlja kompromis između <code>neposrednog</
 <li>\(m\) - količina keš memorije</li>
 <li>\(B\) - veličina jednog bloka memorije</li>
 <li>\(C = m / B\) - broj keš linija</li>
-<li>$S &isin; \{ 2, 4, 8 \} $ - broj disjunktnih skupova</li>
+<li>\(S \in \{ 2, 4, 8 \}\) - broj disjunktnih skupova</li>
 <li>\(s_{i} = i \ mod \ S\) - $i$-ti blok memorije se mapira u $s<sub>i</sub>$-ti skup keš linija</li>
-</ul></li>
 
 <li><p>
 Izdelimo keš linije u <b>disjunktne skupove</b>, kojima pristupamo metodom sličnom kao kod <code>neposrednog</code> preslikavanja.
@@ -4301,9 +4318,8 @@ Svaka adresa iz memorije se deli u 3 dela:
 <td class="org-left">offset</td>
 </tr>
 </tbody>
-</table>
+</table></li>
 
-<ul class="org-ul">
 <li><i>offset</i>
 <ul class="org-ul">
 <li>služi da dopuni do veličine bloka zbog poravnanja memorije</li>
@@ -4372,7 +4388,7 @@ U liniji keša čuva se:
 </p>
 
 <ul class="org-ul">
-<li>Politika zamenjivanje sa primenjuje radi odabira keš linije čiji sadržaj će biti zamenjen sadržajem novog memorijskog bloka.</li>
+<li>Politika zamenjivanja sa primenjuje radi odabira keš linije čiji sadržaj će biti zamenjen sadržajem novog memorijskog bloka.</li>
 <li>Zavisi od primenjenog preslikavanja
 <ul class="org-ul">
 <li>U slučaju <code>neposrednog</code> preslikavanja <b>nema</b> politike zamene jer nema izbora</li>
@@ -4535,14 +4551,14 @@ Organizacija keša hijerarhijski u više nivoa može biti:
 </ul>
 
 <p>
-Prednost inkluzivnog pristupa je u tom što veće keš memorije mogu imati veće linije, dok kod ekskluzivnog sve keš memorije moraju da imaju linije iste veličine
+Prednost inkluzivnog pristupa je u tome što veće keš memorije mogu imati veće linije, dok kod ekskluzivnog sve keš memorije moraju da imaju linije iste veličine
 </p>
 
 <p>
-Podaci se prvo traže u najbližem kešu, pa ako ih tu nema onda u sledećem itd. dok se ne nađe ili od do memorije.
+Podaci se prvo traže u najbližem kešu, pa ako ih tu nema onda u sledećem itd. dok se ne nađe ili ode do memorije.
 </p>
 <ul class="org-ul">
-<li>kod inkluzivnog se podaci upisuju sve bliže nivoe</li>
+<li>kod inkluzivnog se podaci upisuju sve bliže nivoe [CHECK]</li>
 <li>kod ekskluzivnog se podaci brišu iz prethodnih nivoa</li>
 </ul>
 
@@ -4572,7 +4588,7 @@ Objasniti odnos veličine linije keša i performansi.
 </p>
 
 <p>
-Povećanjem linije keša do neek mere se poboljšavaju performanse, ali se u nekom trenutku te performanse počinju kvariti.
+Povećanjem linije keša do neke mere se poboljšavaju performanse, ali se u nekom trenutku te performanse počinju kvariti.
 </p>
 
 <p>
@@ -4712,7 +4728,7 @@ Imajući u vidu da je procesor često dosta brži od memorije, potrebno je na ne
 <ol class="org-ol">
 <li>procesor želi da pročita određenu adresu u memoriji, stoga tu adresu postavlja na <b>adresnu magistralu</b>.</li>
 
-<li>pošto je procesor brži od memorije, kontrolni signal <i>ready</i> se postavlja na $1% za koje vreme procesor čeka</li>
+<li>pošto je procesor brži od memorije, kontrolni signal <i>ready</i> se postavlja na \(1\) za koje vreme procesor čeka</li>
 
 <li>kada je <i>ready</i> na \(0\) onda procesor uzima podatke sa magistrale podataka</li>
 </ol></li>
@@ -4857,68 +4873,10 @@ Signal za dodelu se prosleđuje redom od jednog do drugog <i>master</i>-a. Ako n
 Veoma je jednostavan za implementaciju, ali mu je mana što omogućava samo fiksni prioritet politike dodele.
 </p></li>
 
-<li><p>
-Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.
-</p>
-
-<p>
-[WORK IN PROGRESS]
-</p>
-
-<p>
-Svaki <i>master</i> je povezan sa arbitrom putem <i>Request</i> i <i>Grant</i> linija. To omogućava implementaciju složenijih politika dodele.
-</p>
-
-<p>
-Kada <i>master</i> želi pristup magistrali, šalje signal arbitru preko <i>Request</i> linije. U zavisnosti od politike dodele arbitar odgovara putem <i>Grant</i> linije.
-</p>
-
-<p>
-Kompleksan je za implementaciju, ali ima odličnu toleranciju u slučaju da neki <i>master</i> &ldquo;umre&rdquo;.
-</p>
-
-<p>
-[TODO]: 208 - 214 MORAS OPET
-</p></li>
-
-<li><p>
-Električne karakteristike serijskih magistrala
-</p>
-
-<p>
-[TODO]
-</p></li>
-
-<li>Navesti najčešće načine kodiranja bitova kod serijskog prenosa
-
-<ul class="org-ul">
-<li><code>RZ</code> (<i>return to zero</i>)</li>
-<li><code>NRZ</code> (<i>non return to zero</i>)</li>
-<li><code>NRZI</code> (<i>non return to zero inverted</i>)</li>
-<li><code>8B/10B</code></li>
-<li><code>64B/66B</code></li>
-<li><code>128B/132B</code></li>
-<li><code>128B/130B</code></li>
-</ul></li>
-
-<li><p>
-Koja je osnovna prednost, a koja mana <code>NRZ</code> kodiranja u odnosu na <code>RZ</code> kodiranje?
-</p>
-
-<p>
-Prednosti:
-</p>
-<ul class="org-ul">
-<li>Veća brzina prenosa i veća frekvencija jer nema povratka na nulu, odnosno odmora</li>
-<li>Nakon prenosa jednog se odmah prelazi na prenos sledeceg bita</li>
-</ul>
-<p>
-Mane:
-</p>
-<ul class="org-ul">
-<li>Ukoliko imamo dugacak niz istih bitova koje prenosimo, nece biti nikakve promene napona u duzem vremenskom periodu pa prijemni uredjaj moze da izgubi sinhronizaciju sa časovnikom predajnika.</li>
-</ul></li>
-
+<li>Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.</li>
+<li>Električne karakteristike serijskih magistrala</li>
+<li>Navesti najčešće načine kodiranja bitova kod serijskog prenosa</li>
+<li>Koja je osnovna prednost, a koja mana <code>NRZ</code> kodiranja u odnosu na <code>RZ</code> kodiranje?</li>
 <li>Objasniti <code>NRZI</code> kodiranje.</li>
 <li>Ukratko objasniti <code>8b/10b</code> kodiranje? Koji je razlog za korišćenje ovog načina kodiranja?</li>
 <li>Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike</li>
@@ -4933,44 +4891,306 @@ Sistem prekida je mehanizam izmene kontrole toka programa.
 </p>
 
 <p>
-Osnovna uloga mu je da omogući procesoru da reaguje na događaje koji zahtevaju hitnu obradu koji nisu unapred programirani da se dese (npr. pritiskanje tastera na tastaturi, nasilno prekidanje programa od strane korisnika, deljenje nulom&#x2026;)
-</p></li>
+Osnovna uloga mu je da omogući procesoru da reaguje na događaje koji zahtevaju hitnu obradu koji mogu ali <b>ne moraju</b> biti unapred programirani da se dese.
+</p>
+
+<p>
+Primeri:
+</p>
+<ul class="org-ul">
+<li>pritiskanje tastera na tastaturi (hardverski)</li>
+<li>čitanje/pisanje u fajl (softverski)</li>
+<li>deljenje sa 0 (izuzetak)</li>
+</ul></li>
 
 <li>Navesti i ukratko objasniti vrste prekida
 
 <ul class="org-ul">
-<li>Hardverski
+<li>Hardverski a.k.a. <b>asinhroni</b>
 <ul class="org-ul">
-<li>generišu ih hardverski uređaji kako bi dobili pažnju od procesora da pauzira to što radi i pozove odgovarajući <i>handler</i> (npr. pritiskanje tastera na tastaturi)</li>
+<li>generišu ih hardverski uređaji koji su povezani sa procesorom</li>
 <li>dele se na:
 <ul class="org-ul">
 <li>maskirajuće</li>
 <li>nemaskirajuće</li>
 </ul></li>
 </ul></li>
-<li>Softverski
+<li>Softverski a.k.a. <b>sinhroni</b>
 <ul class="org-ul">
-<li>izazivaju ih instrukcije u procesoru (aritmetički overflow, deljenje nulom&#x2026;) [OVO NIJE SKROZ TACNO]</li>
-<li></li>
+<li>izazivaju ih posebne instrukcije u procesoru
+<ul class="org-ul">
+<li>kod <code>Intel Pentium</code> procesora je to <code>int &lt;interrupt_code&gt;</code></li>
+</ul></li>
+</ul></li>
+<li>Izuzeci (<i>Exceptions</i>)
+<ul class="org-ul">
+<li>faktički predstavljaju softverske prekide koji se koriste kada dođe do <b>greške</b> u samim instrukcijama (npr. deljenje sa 0, overflow itd.)</li>
 </ul></li>
 </ul></li>
 
-<li>Objasniti hardverske prekide. Šta su maskirajući, a šta nemaskirajući prekidi?</li>
-<li>Objasniti softverske prekide. Koja je tipična uloga softverskih prekida?</li>
-<li>Šta su izuzeci (u kontekstu sistema prekida) i čemu služe?</li>
-<li>Šta je vektor prekida? Šta je deskriptor prekida? Gde se nalazi tabela deskriptora prekida?</li>
-<li>Objasniti detaljno način pozivanja rukovaoca prekidom u slučaju vektorskih prekida.</li>
-<li>Objasniti komponente i rad kontrolora prekida <code>PIC 8259</code></li>
+<li><p>
+Objasniti hardverske prekide. Šta su maskirajući, a šta nemaskirajući prekidi?
+</p>
 
-<li>Šta su ulazno/izlazni uređaji?</li>
-<li>Šta su ulazno/izlazni kontroleri i koja je njihova uloga?</li>
-<li>Šta podrazumeva upotreba <code>I/O</code> uređaja putem memorijskog mapiranja?</li>
-<li>Šta podrazumeva upotreba <code>I/O</code> uređaja putem izolovanog ulaza i izlaza?</li>
-<li>Objasniti tehniku programiranog <code>I/O</code></li>
-<li>Objasniti tehniku <code>I/O</code> vođenog prekidima</li>
-<li>Objasniti direktan pristup memoriji (<code>DMA</code>). Kontroler <code>DMA</code>. Koraci pri realizaciji <code>DMA</code> pristupa</li>
+<p>
+Hardverski prekidi su generisani od strane hardverskih uređaja, najčešće zbog I/O (input/output) tako što procesor ima jedan ili više priključaka na koje se može dovesti signal kojim se izaziva prekid.
+</p>
 
-<li>Šta je virtuelna memorija i zbog čega se koristi?</li>
+<p>
+Zovu se i asinhroni prekidi, jer se mogu dogoditi u bilo kom trenutku (nisu programirani odnosno planirani)
+</p>
+
+<ul class="org-ul">
+<li>Maskirajući (<i>maskable</i>): procesor ima mogućnost da privremeno ignoriše prekide pa da se pozabavi njima kasnije</li>
+<li>Nemaskirajući (<i>non-maskable</i>): procesor mora odmah da reaguje na njih</li>
+</ul></li>
+
+<li><p>
+Objasniti softverske prekide. Koja je tipična uloga softverskih prekida?
+</p>
+
+<p>
+Softverske prekide izazivaju posebne instrukcije. Kod <code>Intel Pentium</code> procesora je to <code>int &lt;interrupt_code&gt;</code>, gde je <code>&lt;interrupt_code&gt;</code> \(\in [0, 255]\)
+</p>
+
+<p>
+Zovu se i sinhroni prekidi, jer se mogu dogoditi u unapred određenom trenutku.
+</p>
+
+<p>
+Tipično se koriste za dobijanje ulaza od korisnika ili za ispisivanje na ekran itd.
+</p></li>
+
+<li><p>
+Šta su izuzeci (u kontekstu sistema prekida) i čemu služe?
+</p>
+
+<p>
+Izuzeci su prekidi koji funkcionišu jako slično kao softverski prekidi, s tim što nastaju kao posledica <b>grešaka</b> u izvršavanju instrukcija.
+</p>
+
+<p>
+Služe da prekinu nevalidno izvršavanje programa.
+</p>
+
+<p>
+Primeri:
+</p>
+<ul class="org-ul">
+<li>deljenje sa 0</li>
+<li>overflow / underflow</li>
+</ul></li>
+
+<li><p>
+Šta je vektor prekida? Šta je deskriptor prekida? Gde se nalazi tabela deskriptora prekida?
+</p>
+
+<p>
+Vektorski prekidi predstavljaju metod pozivanja <i>handler</i>-a prekida.
+</p>
+
+<p>
+Svakom prekidu se dodeljuje broj \(c \in [0, 255]\) koji se koristi za indeksiranje u tabeli deskriptora prekida.
+</p>
+
+<p>
+Vektor prekida (<b>a.k.a.</b> deskriptor prekida) predstavlja jedno polje u tabeli deskriptora prekida u kojoj se za svaki prekid čuva <b>adresa</b> njegovog <i>handler</i>-a.
+</p>
+
+<p>
+Tabela deskriptora prekida (TDP) može da se nalazi bilo gde u memoriji. Lokacija je sačuvana pomoću 48-bitnog <b>registra za TDP</b> koji čuva 32-bitnu adresu TDP-a i 16-bitnu vrednost veličine TDP-a.
+</p></li>
+
+<li><p>
+Objasniti detaljno način pozivanja rukovaoca (<i>handler</i>) prekidom u slučaju vektorskih prekida.
+</p>
+
+<p>
+Tabela deskriptora prekida = TDP
+</p>
+
+<ol class="org-ol">
+<li>Svakom prekidu se dodeljuje broj \(c \in [0, 255]\) koji se koristi za indeksiranje u TDP.</li>
+
+<li>Imajući u vidu da se u TDP čuvaju <b>64-bitne adrese</b> <i>handler</i>-a za svaki prekid, potrebno je skalirati \(c\) sa \(8\) odnosno \(i = c * 8\) pomoću čega dobijamo pravi indeks za TDP</li>
+
+<li>Uzimamo adresu \(a = TDP[i]\) i kontrolu predajemo <i>handler-u</i> na toj adresi</li>
+
+<li>Nakon što je <i>handler</i> završio svoje vraćamo kontrolu programu koji se izvršavao pre prekida</li>
+</ol></li>
+
+<li><p>
+Objasniti komponente i rad kontrolora prekida <code>PIC 8259</code> (/Programmable Interrupt Controller)
+</p>
+
+<p>
+<code>PIC</code> služi da upravlja sa više uređaja koji mogu slati signale prekida.
+</p>
+
+<p>
+Moguće je povezati 8 uređaja koji se povezuju pomoću magistrala <code>IRQ0</code> &#x2026; <code>IRQ7</code> kojima <code>BIOS</code> dodeljuje prioritet
+</p>
+
+<p>
+Kada neki uređaj želi da izazove prekid, on kontroleru putem svoje ulazne magistrale šalje signal nakon čega na osnovu prioriteta kontroler određuje da li će uslužiti taj uređaj.
+</p>
+
+<p>
+Komunicira sa procesorom putem donjih 8 bitova data magistrale putem kojih i šalje indeks za vektor prekida.
+</p></li>
+
+<li><p>
+Šta su ulazno/izlazni uređaji?
+</p>
+
+<p>
+Ulazno/izlazni uređaji predstavljaju sredstvo pomoću kojeg računar komunicira sa spoljašnjim svetom odnosno sa čovekom i drugim uređajima.
+</p></li>
+
+<li><p>
+Šta su ulazno/izlazni kontroleri i koja je njihova uloga?
+</p>
+
+<p>
+<code>I/O</code> = Ulazno/izlazni
+</p>
+
+<p>
+<code>I/O</code> kontroler je komponenta pomoću koje procesor komunicira sa I/O uređajem. Kontroler se sa jedne strane povezuje sa <code>I/O</code> uređajem, dok se sa druge povezuje na sistemsku magistralu pomoću koje komunicira sa procesorom.
+</p>
+
+<p>
+Vrši <i>low-level</i> komunikaciju sa <code>I/O</code> uređajem, dok procesoru daje unifikovan interfejs za komunikaciju sa <code>I/O</code> uređajem.
+</p></li>
+
+<li><p>
+Šta podrazumeva upotreba <code>I/O</code> uređaja putem memorijskog mapiranja?
+</p>
+
+<p>
+<code>I/O port</code> = <b>adresa</b> internih registara <code>I/O</code> kontrolera (najčešće <b>status</b>, <b>data</b>, <b>command</b> registri)
+</p>
+
+<p>
+Podrazumeva mapiranje <code>I/O</code> portova i adresa u glavnoj memoriji u <b>isti adresni prostor</b>.
+</p>
+
+<p>
+Posledica toga je da procesor pristupa pomoću <b>istih instrukcija</b> nasumičnoj adresi u glavnoj memoriji i internom registru <code>I/O</code> kontrolera.
+</p>
+
+<p>
+<code>I/O</code> kontroleri kada primete na adresnoj magistrali <code>I/O</code> port, šalju odgovarajuće podatke na data magistralu.
+</p></li>
+
+<li><p>
+Šta podrazumeva upotreba <code>I/O</code> uređaja putem izolovanog ulaza i izlaza?
+</p>
+
+<p>
+<code>I/O port</code> = <b>adresa</b> internih registara <code>I/O</code> kontrolera (najčešće <b>status</b>, <b>data</b>, <b>command</b> registri)
+</p>
+
+<p>
+Podrazumeva mapiranje <code>I/O</code> portova i adresa u glavnoj memoriji u <b>različite adresne prostore</b>.
+</p>
+
+<p>
+Posledica toga je da procesor pristupa pomoću <b>različitih instrukcija</b> nasumičnoj adresi u glavnoj memoriji i internom registru <code>I/O</code> kontrolera.
+</p>
+
+<p>
+Kod <code>Intel Pentium</code> procesora koriste se instrukcije <code>in</code> i <code>out</code> za pristup <code>I/O</code> portovima
+</p></li>
+
+<li><p>
+Objasniti tehniku programiranog <code>I/O</code>
+</p>
+
+<p>
+<i>polling</i> = periodično proveravanje vrednosti
+</p>
+
+<p>
+Funkcioniše tako što procesor <i>poll</i>-uje <b>status registar</b> <code>I/O</code> kontrolera i time proverava da li je <code>I/O</code> uređaj slobodan. Ako jeste u <b>data registar</b> upisuje podatke koje želi da obradi, nakon čega <b>command registar</b> upisuje odgovarajući kod u zavisnosti od čitanja ili pisanja. U suprotnom procesor zapitkuje <code>I/O kontroler</code> sve dok ne bude slobodan (&ldquo;beskonačna petlja&rdquo;).
+</p>
+
+<p>
+Analogija: Šef da zadatak radniku, pa ga na svakih 5min pita da li je uradio, gubeći vreme na taj način
+</p>
+
+<p>
+Mana ovog pristupa je to što je procesor sve vreme u upotrebi.
+</p></li>
+
+<li><p>
+Objasniti tehniku <code>I/O</code> vođenog prekidima
+</p>
+
+<p>
+Ideja je slična programiranom <code>I/O</code>, s tim što procesor delegira posao drugom kontroleru (npr. <code>DMAC</code>) koji je zadužen za transfer, dok procesor obavlja druge instrukcije. Kada se transfer završi, kontroler obaveštava procesor pomoću signala prekida.
+</p>
+
+<p>
+Analogija: Šef da zadatak radniku i kaže mu da ga obavesti kada završi, dok će on u međuvremenu završavati ostale poslove
+</p></li>
+
+<li><p>
+Objasniti direktan pristup memoriji (<code>DMA</code>). Kontroler <code>DMA</code>. Koraci pri realizaciji <code>DMA</code> pristupa
+</p>
+
+<p>
+<code>DMAC</code> = <code>DMA</code> kontroler
+</p>
+
+<p>
+<code>DMA</code> predstavlja rešenje za preopterećenje procesora kod <code>programiranog I/O</code> (&ldquo;beskonačnu petlju&rdquo;) tako što se posao organizovanja transfera delegira na <code>DMAC</code>
+</p>
+
+<ol class="org-ol">
+<li>Procesor šalje <code>DMAC</code>-u \((id, adr, size, op)\)
+<ul class="org-ul">
+<li>\(id\) - broj koji identifikuje <code>I/O</code> uređaj</li>
+<li>\(adr\) - adresa gde treba čitati/pisati u memoriji</li>
+<li>\(size\) - broj bajtova</li>
+<li>\(op\) - definiše da li je u pitanju čitanje ili pisanje</li>
+</ul></li>
+<li><code>DMAC</code> zahteva pristup sistemskoj magistrali</li>
+<li>Nakon što <b>arbitar</b> odobri pristup
+<ul class="org-ul">
+<li>na adresnu magistralu se postavlja \(adr\)</li>
+<li>šalju se kontrolni signali u \(id\), nakon čega se obezbeđuje da se podatak prenese preko data magistrale</li>
+</ul></li>
+<li>Šalje se signal za prekid procesoru, kako bi se obavestio da je transfer završen</li>
+</ol></li>
+
+<li><p>
+Šta je virtuelna memorija i zbog čega se koristi?
+</p>
+
+<p>
+Virtuelna memorija predstavlja tehniku upravljanja memorijom koja omogućava da svaki program ima <i>idealan</i> pogled na memoriju.
+</p>
+
+<p>
+Idealan pogled:
+</p>
+<ul class="org-ul">
+<li>programima memorija izgleda <b>nefragmentisano</b>, zbog čega individualni programu ne moraju da brinu o upravljanju memorije u kontekstu drugih programa</li>
+<li>svaki program ima <b>sopstveni virtuelni adresni prostor</b> fiksirane velicine koji je često veći nego količina fizički dostupne memorije</li>
+<li><p>
+svaki program misli <b>da je sam</b> i da je sva vidljiva memorija njegova
+</p>
+
+<p>
+U instrukcijama se koriste virtuelne adrese koje <code>MMU</code> (<i>Memory Management Unit</i>) u procesoru prevodi u fizičke adrese
+</p></li>
+</ul>
+
+<p>
+Koristi se zbog sadasnjih programa koji su memorijski zahtevni i zato sto se uz pomoc nje mogu sacuvati veliki programi i velike kolicine podataka.
+</p></li>
+
 <li>Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?</li>
 <li>Objasniti preslikavanje adresa virtuelne memorije. Primer.</li>
 <li>Preslikavanje adresa na više nivoa. Zbog čega se koristi? Primer.</li>
@@ -4979,7 +5199,13 @@ Osnovna uloga mu je da omogući procesoru da reaguje na događaje koji zahtevaju
 <li>Objasniti značaj veličine stranice virtuelne memorije i navesti primer.</li>
 <li>Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.</li>
 <li>Šta sadrže stavke u tablici stranica virtuelne memorije? Objasniti.</li>
-<li>Šta je bafer tablice stranica virtuelne memorije (<code>TLB</code>) i čemu služi?</li>
+<li><p>
+Šta je bafer tablice stranica virtuelne memorije (<code>TLB</code>) i čemu služi?
+</p>
+
+<p>
+<code>TLB</code> = <i>Translation Lookaside Buffer</i>
+</p></li>
 
 <li>Objasniti princip preklapanja instrukcija u modernim procesorima</li>
 <li>Koji su osnovni uzroci zaustavljanja &ldquo;pokretne trake&rdquo; kod preklapanja instrukcija u savremenim procesorima? Koje se tehnike koriste za rešavanje ovakvih problema?</li>
@@ -5010,7 +5236,7 @@ Osnovna uloga mu je da omogući procesoru da reaguje na događaje koji zahtevaju
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aleksandar Šmigić</p>
-<p class="date">Created: 2020-06-21 Sun 14:46</p>
+<p class="date">Created: 2020-06-23 Tue 00:38</p>
 </div>
 </body>
 </html>
