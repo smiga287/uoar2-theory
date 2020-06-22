@@ -1967,16 +1967,100 @@ mov ir, mdr
 214. Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike
 
 215. Šta je sistem prekida i koja mu je uloga?
+
+     Sistem prekida je mehanizam izmene kontrole toka programa.
+
+     Osnovna uloga mu je da omogući procesoru da reaguje na događaje koji zahtevaju hitnu obradu koji mogu ali *ne moraju* biti unapred programirani da se dese.
+
+     Primeri:
+     - pritiskanje tastera na tastaturi (hardverski)
+     - čitanje/pisanje u fajl (softverski)
+     - deljenje sa 0 (izuzetak)
+      
 216. Navesti i ukratko objasniti vrste prekida
+
+     - Hardverski a.k.a. *asinhroni*
+       - generišu ih hardverski uređaji koji su povezani sa procesorom
+       - dele se na:
+         - maskirajuće
+         - nemaskirajuće
+     - Softverski a.k.a. *sinhroni*
+       - izazivaju ih posebne instrukcije u procesoru
+         - kod ~Intel Pentium~ procesora je to ~int <interrupt_code>~
+     - Izuzeci (/Exceptions/)
+       - faktički predstavljaju softverske prekide koji se koriste kada dođe do *greške* u samim instrukcijama (npr. deljenje sa 0, overflow itd.)
+        
 217. Objasniti hardverske prekide. Šta su maskirajući, a šta nemaskirajući prekidi?
+
+     Hardverski prekidi su generisani od strane hardverskih uređaja, najčešće zbog I/O (input/output) tako što procesor ima jedan ili više priključaka na koje se može dovesti signal kojim se izaziva prekid.
+
+     Zovu se i asinhroni prekidi, jer se mogu dogoditi u bilo kom trenutku (nisu programirani odnosno planirani)
+
+     - Maskirajući (/maskable/): procesor ima mogućnost da privremeno ignoriše prekide pa da se pozabavi njima kasnije
+     - Nemaskirajući (/non-maskable/): procesor mora odmah da reaguje na njih
+
 218. Objasniti softverske prekide. Koja je tipična uloga softverskih prekida?
+
+    Softverske prekide izazivaju posebne instrukcije. Kod ~Intel Pentium~ procesora je to ~int <interrupt_code>~, gde je ~<interrupt_code>~ $\in [0, 255]$
+
+    Zovu se i sinhroni prekidi, jer se mogu dogoditi u unapred određenom trenutku.
+
+    Tipično se koriste za dobijanje ulaza od korisnika ili za ispisivanje na ekran itd.
+
 219. Šta su izuzeci (u kontekstu sistema prekida) i čemu služe?
+
+     Izuzeci su prekidi koji funkcionišu jako slično kao softverski prekidi, s tim što nastaju kao posledica *grešaka* u izvršavanju instrukcija.
+
+     Služe da prekinu nevalidno izvršavanje programa.
+
+     Primeri:
+     - deljenje sa 0
+     - overflow / underflow
+
 220. Šta je vektor prekida? Šta je deskriptor prekida? Gde se nalazi tabela deskriptora prekida?
-221. Objasniti detaljno način pozivanja rukovaoca prekidom u slučaju vektorskih prekida.
-222. Objasniti komponente i rad kontrolora prekida ~PIC 8259~
+
+     Vektorski prekidi predstavljaju metod pozivanja /handler/-a prekida.
+
+     Svakom prekidu se dodeljuje broj $c \in [0, 255]$ koji se koristi za indeksiranje u tabeli deskriptora prekida.
+
+     Vektor prekida (*a.k.a.* deskriptor prekida) predstavlja jedno polje u tabeli deskriptora prekida u kojoj se za svaki prekid čuva *adresa* njegovog /handler/-a.
+
+     Tabela deskriptora prekida (TDP) može da se nalazi bilo gde u memoriji. Lokacija je sačuvana pomoću 48-bitnog *registra za TDP* koji čuva 32-bitnu adresu TDP-a i 16-bitnu vrednost veličine TDP-a.
+
+221. Objasniti detaljno način pozivanja rukovaoca (/handler/) prekidom u slučaju vektorskih prekida.
+
+    Tabela deskriptora prekida = TDP
+
+     1. Svakom prekidu se dodeljuje broj $c \in [0, 255]$ koji se koristi za indeksiranje u TDP.
+
+     2. Imajući u vidu da se u TDP čuvaju *64-bitne adrese* /handler/-a za svaki prekid, potrebno je skalirati $c$ sa $8$ odnosno $i = c * 8$ pomoću čega dobijamo pravi indeks za TDP
+
+     3. Uzimamo adresu $a = TDP[i]$ i kontrolu predajemo /handler-u/ na toj adresi
+
+     4. Nakon što je /handler/ završio svoje vraćamo kontrolu programu koji se izvršavao pre prekida
+
+222. Objasniti komponente i rad kontrolora prekida ~PIC 8259~ (/Programmable Interrupt Controller)
+
+     ~PIC~ služi da upravlja sa više uređaja koji mogu slati signale prekida.
+
+     Moguće je povezati 8 uređaja koji se povezuju pomoću magistrala ~IRQ0~ ... ~IRQ7~ kojima ~BIOS~ dodeljuje prioritet
+
+     Kada neki uređaj želi da izazove prekid, on kontroleru putem svoje ulazne magistrale šalje signal nakon čega na osnovu prioriteta kontroler određuje da li će uslužiti taj uređaj.
+
+     Komunicira sa procesorom putem donjih 8 bitova data magistrale putem kojih i šalje indeks za vektor prekida.
 
 223. Šta su ulazno/izlazni uređaji?
+
+     Ulazno/izlazni uređaji predstavljaju sredstvo pomoću kojeg računar komunicira sa spoljašnjim svetom odnosno sa čovekom i drugim uređajima.
+
 224. Šta su ulazno/izlazni kontroleri i koja je njihova uloga?
+
+     ~I/O~ = Ulazno/izlazni
+
+     ~I/O~ kontroler je komponenta pomoću koje procesor komunicira sa I/O uređajem. Kontroler se sa jedne strane povezuje sa ~I/O~ uređajem, dok se sa druge povezuje na sistemsku magistralu pomoću koje komunicira sa procesorom.
+
+     Vrši /low-level/ komunikaciju sa ~I/O~ uređajem, dok procesoru daje unifikovan interfejs za komunikaciju sa ~I/O~ uređajem.
+
 225. Šta podrazumeva upotreba ~I/O~ uređaja putem memorijskog mapiranja?
 226. Šta podrazumeva upotreba ~I/O~ uređaja putem izolovanog ulaza i izlaza?
 227. Objasniti tehniku programiranog ~I/O~
