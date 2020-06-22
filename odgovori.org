@@ -1339,7 +1339,7 @@ mov ir, mdr
     
 141. Šta je mikroinstrukcija? Struktura mikroinstrukcije
 
-    Mikro instrukcija je najmanja celina mikrokoda koji predstavlja programibilni sloj apstrakcije između hardvera i mašinskog koda dostupnog programeru. Struktura mikroinstrukcije može biti *horizontalna* i *vertikalna*
+    Mikroinstrukcija je najmanja celina mikrokoda koji predstavlja programibilni sloj apstrakcije između hardvera i mašinskog koda dostupnog programeru. Struktura mikroinstrukcije može biti *horizontalna* i *vertikalna*
 
 142. Šta je mikroprogram? Objasniti način izvršavanja mikroprograma.
 
@@ -1369,29 +1369,37 @@ mov ir, mdr
 146. Navesti moguće načine pristupa memoriji
 
      - sekvencijalni
-     - direktni
-     - proizvoljni
+     - direktni (neposredni)
+     - proizvoljni (slučajni)
      - asocijativni
 
 147. Objasniti sekvencijalni pristup memoriji
 
+     Podaci su organizovani u jedinice koje nazivamo *slogovi* koji su međusobno razdvojeni *kontrolnim informacijama* (npr. dužina sloga) koje se koriste pri pristupanju određenom slogu.
+
      Podaci se upisuju po redosledu unošenja, a čitaju po istom ili obrnutom redosledu.
 
-     Da bi se pristupilo $i$-tom podatku potrebno je proći kroz svih prethodnih $i - 1$ podataka, što znači da je ovaj način dosta spor.
+     Da bi se pristupilo $i$-tom slogu potrebno je proći kroz svih prethodnih $i - 1$ slogova, što znači da je ovaj način dosta spor.
 
-148. Objasniti direktni pristup memoriji
+     Primer: magnetna traka
 
-     Kod ovog načina pristupa postoji veza između adrese podatka i njegove pozicije na medijumu. Na osnovu adrese se pristupa lokaciji gde je smešten podatak ili njenoj okolini. Vreme pristupa je promenljivo i zavisi od pozicije na medijumu.
+148. Objasniti direktni (neposredni) pristup memoriji (/semi-random/)
 
-149. Objasniti proizvoljni pristup memoriji (Random Access Memory)
+     Kod ovog načina pristupa postoji veza između adrese podatka i pozicije njegovog sloga na medijumu. Na osnovu adrese se pristupa lokaciji sloga ili njegovoj okolini. Vreme pristupa je promenljivo i zavisi od pozicije na medijumu.
 
-     Kod ovakvog načina pristupa svaka adresibilna lokacija sadrži adresni mehanizam ugrađen u memorijski sklop. Vreme pristupa svakoj lokaciji je konstantno.
+     Primer: magnetni disk
 
-150. Objasniti asocijativni pristup memoriji
+149. Objasniti proizvoljni (slučajni) pristup memoriji (/Random Access Memory/)
 
-     Ovo je podtip memorije sa proizvoljnim pristupom koji omogućava poređenje maske i vrednosti određenih bitova u reči. Na ovaj način se reč čita na osnovu njenog sadržaja a ne adrese.
+     Kod ovakvog načina pristupa moguće je u konstantnom vremenu pristupiti bilo kojoj adresibilnoj lokaciji nezavisno od toga gde se fizički nalazi.
 
-     Često se koristi kod baza podataka.
+     Primer: glavna memorija (~RAM~)
+
+150. Objasniti asocijativni pristup memoriji (/Content Adressable Memory/)
+
+     Ovo je podtip proizvoljnog pristupa memoriji koji omogućava pretragu cele memorije na osnovu dela sadržaja (reči) umesto pomoću adrese.
+
+     Primer: koristi se kod specijalizovanih baza podataka
 
 151. Šta je kapacitet memorije i u kojim jedinicama se izražava?
 
@@ -1411,7 +1419,7 @@ mov ir, mdr
      - promenljive
        - memorija koja se koristi za implementaciju registara i ~RAM~
      - polu-promenljive
-       - ~EPROM, EEPROM~
+       - ~PROM, EPROM, EEPROM~
      - nepromenljive
        - ~ROM~
 
@@ -1430,7 +1438,7 @@ mov ir, mdr
 
 156. Šta je ~ROM~? Kakve vrste postoje? Gde se koristi?
 
-     ~ROM~ je /read-only/ memorija čiji sadržaj se stalan i ne može se menjati (u klasičnom smislu). Implementira se kao kombinatorno kolo jer vrednosti na izlazu zavise isključivo od vrednosti na ulazu.
+     ~ROM~ je /read-only/ memorija čiji sadržaj je stalan i ne može se menjati (u klasičnom smislu). Implementira se kao kombinatorno kolo jer vrednosti na izlazu zavise isključivo od vrednosti na ulazu.
 
      Najčešće se koristi za smeštanje /low-level/ programa i mikrokoda koji su potrebni za pokretanje računara.
     
@@ -1511,7 +1519,7 @@ mov ir, mdr
 
 167. Objasniti princip lokalnosti. Šta je prostorna a šta vremenska lokalnost? Primeri.
 
-     Prostorna lokalnost je tendencija naših programa da se podaci i instrukcije pristupaju sekvencijalno.
+     Prostorna lokalnost je tendencija naših programa da se podacima i instrukcija pristupa sekvencijalno.
 
      Primeri:
      - u C-u niz predstavlja uzastopni blok memorije, te on zadovoljava princip prostorne lokalnosti
