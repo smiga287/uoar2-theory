@@ -1153,18 +1153,18 @@ adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
      5. ~r8~
      6. ~r9~
 
-     U slučaju da nam je potrebno više od 6 argumenata, postavljamo ih na stek zdesna ulevo.
+          U slučaju da nam je potrebno više od 6 argumenata, postavljamo ih na stek zdesna ulevo.
 
-     Povratna vrednost se čuva u registru ~rax~.
+          Povratna vrednost se čuva u registru ~rax~.
 
-                #+begin_src asm
-mov edi, 42
-mov esi, 7
-call f
-add r10d, eax ; sum += eax
-                #+end_src
+                     #+begin_src asm
+     mov edi, 42
+     mov esi, 7
+     call f
+     add r10d, eax ; sum += eax
+                     #+end_src
 
-     Instrukcija ~call~ postavlja adresu sledeće instrukcije na stek kao adresu povratka.
+          Instrukcija ~call~ postavlja adresu sledeće instrukcije na stek kao adresu povratka.
 
 120. Objasniti pozivanje funkcija na ~ARM~ arhitekturi. Kako se prenosi adresa povratka, argumenti, kao i povratna vrednost?
 
@@ -2062,10 +2062,57 @@ mov ir, mdr
      Vrši /low-level/ komunikaciju sa ~I/O~ uređajem, dok procesoru daje unifikovan interfejs za komunikaciju sa ~I/O~ uređajem.
 
 225. Šta podrazumeva upotreba ~I/O~ uređaja putem memorijskog mapiranja?
+
+     ~I/O port~ = *adresa* internih registara ~I/O~ kontrolera (najčešće *status*, *data*, *command* registri)
+
+     Podrazumeva mapiranje ~I/O~ portova i adresa u glavnoj memoriji u *isti adresni prostor*.
+
+     Posledica toga je da procesor pristupa pomoću *istih instrukcija* nasumičnoj adresi u glavnoj memoriji i internom registru ~I/O~ kontrolera.
+
+     ~I/O~ kontroleri kada primete na adresnoj magistrali ~I/O~ port, šalju odgovarajuće podatke na data magistralu.
+
 226. Šta podrazumeva upotreba ~I/O~ uređaja putem izolovanog ulaza i izlaza?
+
+     ~I/O port~ = *adresa* internih registara ~I/O~ kontrolera (najčešće *status*, *data*, *command* registri)
+
+     Podrazumeva mapiranje ~I/O~ portova i adresa u glavnoj memoriji u *različite adresne prostore*.
+
+     Posledica toga je da procesor pristupa pomoću *različitih instrukcija* nasumičnoj adresi u glavnoj memoriji i internom registru ~I/O~ kontrolera.
+
+     Kod ~Intel Pentium~ procesora koriste se instrukcije ~in~ i ~out~ za pristup ~I/O~ portovima
+
 227. Objasniti tehniku programiranog ~I/O~
+
+     /polling/ = periodično proveravanje vrednosti
+
+     Funkcioniše tako što procesor /poll/-uje *status registar* ~I/O~ kontrolera i time proverava da li je ~I/O~ uređaj slobodan. Ako jeste u *data registar* upisuje podatke koje želi da obradi, nakon čega *command registar* upisuje odgovarajući kod u zavisnosti od čitanja ili pisanja. U suprotnom procesor zapitkuje ~I/O kontroler~ sve dok ne bude slobodan ("beskonačna petlja").
+
+     Analogija: Šef da zadatak radniku, pa ga na svakih 5min pita da li je uradio, gubeći vreme na taj način
+
+     Mana ovog pristupa je to što je procesor sve vreme u upotrebi.
+
 228. Objasniti tehniku ~I/O~ vođenog prekidima
+
+     Ideja je slična programiranom ~I/O~, s tim što procesor delegira posao drugom kontroleru (npr. ~DMAC~) koji je zadužen za transfer, dok procesor obavlja druge instrukcije. Kada se transfer završi, kontroler obaveštava procesor pomoću signala prekida.
+    
+     Analogija: Šef da zadatak radniku i kaže mu da ga obavesti kada završi, dok će on u međuvremenu završavati ostale poslove
+
 229. Objasniti direktan pristup memoriji (~DMA~). Kontroler ~DMA~. Koraci pri realizaciji ~DMA~ pristupa
+
+     ~DMAC~ = ~DMA~ kontroler
+
+     ~DMA~ predstavlja rešenje za preopterećenje procesora kod ~programiranog I/O~ ("beskonačnu petlju") tako što se posao organizovanja transfera delegira na ~DMAC~
+
+     1. Procesor šalje ~DMAC~-u $(id, adr, size, op)$
+        - $id$ - broj koji identifikuje ~I/O~ uređaj
+        - $adr$ - adresa gde treba čitati/pisati u memoriji
+        - $size$ - broj bajtova
+        - $op$ - definiše da li je u pitanju čitanje ili pisanje
+     2. ~DMAC~ zahteva pristup sistemskoj magistrali
+     3. Nakon što *arbitar* odobri pristup
+        - na adresnu magistralu se postavlja $adr$
+        - šalju se kontrolni signali u $id$, nakon čega se obezbeđuje da se podatak prenese preko data magistrale
+     4. Šalje se signal za prekid procesoru, kako bi se obavestio da je transfer završen
 
 230. Šta je virtuelna memorija i zbog čega se koristi?
 231. Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?
