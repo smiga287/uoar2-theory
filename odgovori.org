@@ -201,9 +201,9 @@
 
 20. Šta je Petrikov metod i koja je njegova uloga u okviru metode Kvin-Mekalskog? Primer.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    #+begin_tip
+     TODO
+     #+end_tip
     Petrikov metod je metod koji se koristi za pronalaženje najmanjeg podskupa preostalih prostih implikanata u slučaju da neka kolona ostane "nepokrivena" u metodi Kvin-Mekalskog.
 
 * Tranzistori i logička kola
@@ -324,7 +324,7 @@
 
 * Kombinatorna kola
 
-32. Šta je kombinatorno kolo?
+32. [@32] Šta je kombinatorno kolo?
 
     Kombinatorno kolo je logičko kolo čije vrednosti na izlazima se mogu sračunati u bilo kom trenutku u zavisnosti od ulaznih vrednosti odnosno prethodne ulazne vrednosti ne utiču na novu izlaznu vrednost.
 
@@ -339,7 +339,7 @@
 
 ** Multipleksor i demultipleksor
 
-34. Šta je multipleksor i koja mu je osnovna funkcija? Predstaviti grafičkim simbolom i tablicom multipleksor 4-1.
+34. [@34] Šta je multipleksor i koja mu je osnovna funkcija? Predstaviti grafičkim simbolom i tablicom multipleksor 4-1.
 
     #+begin_warning
      Fali slika ili nešto slično
@@ -841,6 +841,10 @@
      
 81. Šta je pomerački registar i gde se obično koristi?
 
+    #+begin_tip
+     TODO
+    #+end_tip
+   
     What the actual fuck
 
 ** Binarni brojač
@@ -910,6 +914,10 @@
        - "Težine" su formata $X/Y$, odnosno ako smo na stanju $Q$ sa ulazom $X$ preći ćemo na $Q^{next}$ i na izlazu ispisati $Y$
         
 86. Ukratko objasniti osnovni princip dizajna kontrolne jedinice kao konačnog transduktora.
+   
+    #+begin_tip
+     TODO
+    #+end_tip
 
     What the fuck?
 
@@ -1193,15 +1201,15 @@ lea dest, src ; kopira adresu od src u dest
 
 108. Aritmetičko-logičke instrukcije. (/x86-64, ARM/)
 
-     #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    #+begin_tip
+     TODO
+    #+end_tip
 
 109. Instrukcije bezuslovnog skoka. (/x86-64, ARM/)
-
-     #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    
+    #+begin_tip
+     TODO
+    #+end_tip
 
 110. Flegovi procesora ~(O, S, Z, C)~. Kada se postavljaju i čemu služe?
      - Postavljaju se nakon određenih operacija
@@ -1226,15 +1234,15 @@ adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
 
 111. Instrukcije poređenja i njihova uloga u realizaciji uslovnih skokova. (/x86-64, ARM/)
 
-     #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    #+begin_tip
+     TODO
+    #+end_tip
 
 112. Instrukcije uslovnog skoka. (/x86-64, ARM/)
 
-     #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    #+begin_tip
+     TODO
+    #+end_tip
 
 113. Koju kombinaciju flegova testira instrukcija ~jl~, a koju ~jb~ na ~x86-64~ arhitekturi?
 
@@ -1666,6 +1674,10 @@ mov ir, mdr
 
 165. Navesti osnovne vrste spoljašnjih memorija i navesti njihove karakteristike
 
+    #+begin_tip
+     TODO
+    #+end_tip
+
      smara.
 
      - magnetna traka
@@ -1898,6 +1910,10 @@ mov ir, mdr
       
 179. Objasniti politiku zamenjivanja pseudo-najduže nekorišćene linije keša (~pseudo-LRU~). Dobre i loše strane.
 
+    #+begin_tip
+     TODO
+    #+end_tip
+   
      ~pseudo-LRU = pseudo Least Recently Used~
 
      Predstavlja aproksimaciju ~LRU~ politike. Keš linije se dele u dve grupe, gde se pomoću jednog bita označava linija keša koja je najskorije korišćena u skupu. Potom se drugoj grupi pristupa koja se dalje deli u podskupove dok ne dođemo do jedne linije keša.
@@ -2222,7 +2238,9 @@ mov ir, mdr
      Kada neki uređaj želi da izazove prekid, on kontroleru putem svoje ulazne magistrale šalje signal nakon čega na osnovu prioriteta kontroler određuje da li će uslužiti taj uređaj.
 
      Komunicira sa procesorom putem donjih 8 bitova data magistrale putem kojih i šalje indeks za vektor prekida.
+
 * I/O
+
 222. [@222] Šta su ulazno/izlazni uređaji?
 
      Ulazno/izlazni uređaji predstavljaju sredstvo pomoću kojeg računar komunicira sa spoljašnjim svetom odnosno sa čovekom i drugim uređajima.
@@ -2505,6 +2523,10 @@ mov ir, mdr
      Superskalarni procesori su procesori koji implentiraju instrukcioni *paralelizam* tako što se sastoje od većeg broja funkcionalnih jedinica poput ~ALU~-a zbog čega mogu da odrade više instrukcija po jedinici vremena nego skalarni procesori (oni koji mogu najviše jednu instrukciju po ciklusu).
 
 * Verilog
+
+#+begin_tip
+    TODO, dogodine
+#+end_tip
 
 244. [@244] Koji su osnovni tipovi podataka u jeziku /Verilog/?
 245. Objasniti razliku između žičanih i registarskih tipova u jeziku /Verilog/
