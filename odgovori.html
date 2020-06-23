@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-06-23 Tue 14:19 -->
+<!-- 2020-06-23 Tue 21:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Odgovori na ispitna pitanja iz UOAR2</title>
@@ -199,6 +199,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<style> div > .org-ol > li { margin-top: 3%; } </style>
 <script type="text/javascript">
 // @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
@@ -253,45 +254,45 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1646141">1. Iskazna logika</a></li>
-<li><a href="#orga179f55">2. Minimizacija logičkih izraza</a></li>
-<li><a href="#org69c15bc">3. Tranzistori i logička kola</a></li>
-<li><a href="#orge14039c">4. Kombinatorna kola</a>
+<li><a href="#org555eea0">1. Iskazna logika</a></li>
+<li><a href="#org473c513">2. Minimizacija logičkih izraza</a></li>
+<li><a href="#orgc80b155">3. Tranzistori i logička kola</a></li>
+<li><a href="#org4e39f30">4. Kombinatorna kola</a>
 <ul>
-<li><a href="#org0557bbe">4.1. Multipleksor i demultipleksor</a></li>
-<li><a href="#org81d3616">4.2. Koder i dekoder</a></li>
-<li><a href="#org5ed276e">4.3. Komparator</a></li>
-<li><a href="#org71be4a2">4.4. Pomerač</a></li>
-<li><a href="#org8158122">4.5. Sabirači i oduzimači</a></li>
-<li><a href="#orgb806add">4.6. Implementacija ALU i kombinatornih memorija</a></li>
+<li><a href="#org5e72611">4.1. Multipleksor i demultipleksor</a></li>
+<li><a href="#org448086b">4.2. Koder i dekoder</a></li>
+<li><a href="#org71ccdcf">4.3. Komparator</a></li>
+<li><a href="#orge176bb8">4.4. Pomerač</a></li>
+<li><a href="#orge82f964">4.5. Sabirači i oduzimači</a></li>
+<li><a href="#org115ccc5">4.6. Implementacija ALU i kombinatornih memorija</a></li>
 </ul>
 </li>
-<li><a href="#org26ad491">5. Sekvencijalna kola</a>
+<li><a href="#orge5836ae">5. Sekvencijalna kola</a>
 <ul>
-<li><a href="#org5d03fb9">5.1. Reze i flip-flopovi</a></li>
-<li><a href="#orgd3461aa">5.2. Implementacija <code>RAM</code>-a</a></li>
-<li><a href="#orgbd2b79e">5.3. Binarni brojač</a></li>
-<li><a href="#orge48d754">5.4. Konačni automati i transduktori</a></li>
+<li><a href="#orge5d2338">5.1. Reze i flip-flopovi</a></li>
+<li><a href="#org6b0a4d2">5.2. Implementacija <code>RAM</code>-a</a></li>
+<li><a href="#orgf38ec3e">5.3. Binarni brojač</a></li>
+<li><a href="#orgcc61e04">5.4. Konačni automati i transduktori</a></li>
 </ul>
 </li>
-<li><a href="#org3d1a0c9">6. Arhitektura i organizacija</a></li>
-<li><a href="#org14257cf">7. Adresiranje</a></li>
-<li><a href="#org30557b9">8. Assembler</a></li>
-<li><a href="#orgb453009">9. Procesor</a></li>
-<li><a href="#org3d96874">10. Memorija</a></li>
-<li><a href="#org307bd35">11. Cache</a></li>
-<li><a href="#org1bbc5b4">12. Magistrale</a></li>
-<li><a href="#org10dc4b6">13. Sistem prekida</a></li>
-<li><a href="#orge746a3e">14. I/O</a></li>
-<li><a href="#org8e0d07a">15. Virtuelna memorija</a></li>
-<li><a href="#orgda83746">16. Moderni procesori</a></li>
-<li><a href="#org4b699e8">17. Verilog</a></li>
+<li><a href="#org3e07115">6. Arhitektura i organizacija</a></li>
+<li><a href="#org5452d6c">7. Adresiranje</a></li>
+<li><a href="#org33fa976">8. Assembler</a></li>
+<li><a href="#org59dbce1">9. Procesor</a></li>
+<li><a href="#org49175b8">10. Memorija</a></li>
+<li><a href="#org7196f69">11. Cache</a></li>
+<li><a href="#orge5ab0a6">12. Magistrale</a></li>
+<li><a href="#orgf9eb8cc">13. Sistem prekida</a></li>
+<li><a href="#orge6efa74">14. I/O</a></li>
+<li><a href="#org2531953">15. Virtuelna memorija</a></li>
+<li><a href="#org27e8d91">16. Moderni procesori</a></li>
+<li><a href="#orgdab1616">17. Verilog</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1646141" class="outline-2">
-<h2 id="org1646141"><span class="section-number-2">1</span> Iskazna logika</h2>
+<div id="outline-container-org555eea0" class="outline-2">
+<h2 id="org555eea0"><span class="section-number-2">1</span> Iskazna logika</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li value="1">Napisati istinitosne tablice osnovnih logičkih veznika (NE, I, ILI)
@@ -630,12 +631,12 @@ Znači da su im vrednosti pri istim valuacijama promenljivih iste odnosno da za 
 <li>Definisati pojmove elementarne konjunkcije i disjunktivne normalne forme (DNF). Šta je savršena elementarna konjunkcija, a šta savršena DNF?
 
 <ul class="org-ul">
-<li>Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})</li>
+<li>Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. \(x, \bar{y}\))</li>
 <li>Elementarna konjunkcija je logički izraz koji se sastoji iz konjunkcije literala (eg. \(x\bar{y}z\bar{p}\))
 <ul class="org-ul">
 <li>Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. \(P = {x, y, z}, S = \bar{x} \cdot y \cdot z\))</li>
 </ul></li>
-<li>DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. $x\bar{y}z + \bar{x}yz + xyz)
+<li>DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. \(x\bar{y}z + \bar{x}yz + xyz)\)
 <ul class="org-ul">
 <li>Savršena DNF se sastoji od disjunkcije savršenih elementarnih konjunkcija</li>
 </ul></li>
@@ -644,12 +645,12 @@ Znači da su im vrednosti pri istim valuacijama promenljivih iste odnosno da za 
 <li>Definisati pojmove elementarne disjunkcije i konjunktivne normalne forme (KNF). Šta je savršena elementarna disjunkcija, a šta savršena KNF?
 
 <ul class="org-ul">
-<li>Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})</li>
+<li>Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. \(x, \bar{y}\))</li>
 <li>Elementarna disjunkcija je logički izraz koji se sastoji iz disjunkcije literala (eg. \(x + \bar{y} + z\bar{p}\))
 <ul class="org-ul">
-<li>Savršena elementarna disjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, \bar{x} + y + z)</li>
+<li>Savršena elementarna disjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. \(P = {x, y, z}, \bar{x} + y + z\))</li>
 </ul></li>
-<li>KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. $(x + \bar{y} + z) &sdot; (\bar{x} + y + z) &sdot; (x + y + z)
+<li>KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. \((x + \bar{y} + z) \cdot (\bar{x} + y + z) \cdot (x + y + z)\)
 <ul class="org-ul">
 <li>Savršena KNF se sastoji od konjunkcije savršenih elementarnih disjunkcija</li>
 </ul></li>
@@ -711,11 +712,11 @@ Ukratko objasniti kako se proizvoljna logička funkcija može izraziti u obliku 
 </div>
 </div>
 
-<div id="outline-container-orga179f55" class="outline-2">
-<h2 id="orga179f55"><span class="section-number-2">2</span> Minimizacija logičkih izraza</h2>
+<div id="outline-container-org473c513" class="outline-2">
+<h2 id="org473c513"><span class="section-number-2">2</span> Minimizacija logičkih izraza</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
-<li><p>
+<li value="14"><p>
 Šta je minimizacija logičkih izraza i zbog čega nam je značajna?
 </p>
 
@@ -762,9 +763,12 @@ Možemo grupisati prvi i drugi i prvi i treći, tako da ćemo primeniti prvo <i>
 Objasniti način upotrebe Karnoovih mapa za minimizaciju logičkih izraza. Primer.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Karnoove mape predstavljaju grafički metod za minimizaciju logičkih izraza koji funkcioniše po principu grupisanja. Nakon što nacrtamo tabelu gde se susendna polja (susedstvo se gleda kao da je tabela zapravo površina torusa) razlikuju za jednu vrednost (Grejov kod) popunimo mesta koja u tabeli daju \(1\) kao rezultat. Minimizujemo tako što prvo pokušamo da obuhvatimo sve \(1\) u pravougaonik od \(16\) elemenata, zatim redom \(8\), \(4\), \(2\), \(1\). Posmatramo promenljive u okviru jednog pravougaonika koje se nisu promenile i njih stavljamo u finalnu minimizovanu DNF formulu.
@@ -774,8 +778,13 @@ Karnoove mape predstavljaju grafički metod za minimizaciju logičkih izraza koj
 Objasniti metodu Kvin-Meklaskog za minimizaciju logičkih izraza. Primer.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
+</p>
+
+</div>
+<p>
 Metoda Kvin-Meklaskog je metoda minimiacije logičkih izraza koja je pogodna za implementaciju na računaru.
 </p>
 
@@ -791,9 +800,12 @@ Metoda Kvin-Meklaskog je metoda minimiacije logičkih izraza koja je pogodna za 
 Kako se upotrebljavaju Karnoove mape u prisustvu nebitnih vrednosti? Primer.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Kada imamo nebitne (<i>don&rsquo;t care</i>) vrednost, njih možemo da tretiramo onako kako nama odgovara, odnosno ako nam omogućavaju da zaokružimo veću površinu tretiramo ih kao \(1\), u suprotnom nema potrebe da ih zaokružimo.
@@ -803,9 +815,12 @@ Kada imamo nebitne (<i>don&rsquo;t care</i>) vrednost, njih možemo da tretiramo
 Kako se metod Kvin-Meklaskog koristi u prisustvu nebitnih vrednosti? Primer.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 U prvoj fazi algoritma se nebitne vrednosti tretiraju kao \(1\), odnosno učestvuju u grupisanju.
@@ -819,25 +834,33 @@ U drugoj fazi algoritma se nebitne vrednosti tretiraju kao \(0\), tj. ne navode 
 Šta je Petrikov metod i koja je njegova uloga u okviru metode Kvin-Mekalskog? Primer.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
+</p>
+
+</div>
+<p>
 Petrikov metod je metod koji se koristi za pronalaženje najmanjeg podskupa preostalih prostih implikanata u slučaju da neka kolona ostane &ldquo;nepokrivena&rdquo; u metodi Kvin-Mekalskog.
 </p></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-org69c15bc" class="outline-2">
-<h2 id="org69c15bc"><span class="section-number-2">3</span> Tranzistori i logička kola</h2>
+<div id="outline-container-orgc80b155" class="outline-2">
+<h2 id="orgc80b155"><span class="section-number-2">3</span> Tranzistori i logička kola</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li value="21"><p>
 Elementarna logička kola (gejtovi) i njihove šematske oznake.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <ul class="org-ul">
 <li>Buffer</li>
@@ -855,9 +878,12 @@ Elementarna logička kola (gejtovi) i njihove šematske oznake.
 Nacrtati simbol i objasniti funkciju NMOS tranzistora.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 NMOS tranzistor ima 3 ulaza:
@@ -880,9 +906,12 @@ NMOS tranzistor ima ulogu u donjoj mreži (<i>pulldown network</i>) prekidača d
 Nacrtati simbol i objasniti funkciju PMOS tranzistora.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 PMOS tranzistor ima 3 ulaza:
@@ -905,9 +934,12 @@ PMOS tranzistor ima ulogu u gornjoj mreži (<i>pullup network</i>) prekidača da
 Implementacija NE kola u CMOS-u
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <ul class="org-ul">
 <li>Ako je ulaz 0 samo iz PMOS-a tranzistora će izlaziti struja koja predstavlja 1</li>
@@ -919,9 +951,12 @@ Implementacija NE kola u CMOS-u
 Implementacija NI i I kola u CMOS-u
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Donja mreža se implementira rednim povezivanjem dva NMOS tranzistora čime se postiže da se 0 dobije samo kada su oba ulaza 1
@@ -939,9 +974,12 @@ I se dobija tako što se na NI nadoveže NE
 Implementacija NILI i ILI kola u CMOS-u
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 NILI se implementira po istom principu kao NI, s tim što su ovde NMOS tranzistori povezani paralelno, dok su PMOS povezani redno.
@@ -963,9 +1001,12 @@ ILI se dobija tako što se na NILI nadoveže NE
 Implementacija EILI kola u CMOS-u
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Donja mreža se implementira pomoću 4 redno-paralelna NMOS tranzistora čiji ulazi su \(X\) i \(Y\) s leve i \(\bar{X}\) i \(\bar{Y}\) s desne strane čime se 0 dobija samo akko su \(X\) i \(Y\) isti
@@ -999,9 +1040,12 @@ Bafer sa 3 stanja je logičko kolo koje služi za pojačavanje stanja i uslovno/
 Implementacija bafera sa tri stanja u CMOS-u.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Implementacija zavisi od toga šta nam je potrebno, i koje signale imamo na raspolaganju. U slučaju da nam nije potrebno pojačavanje signala neće nam trebati dvostruki inverter. Povezujemo ulazni signal, kontrolni signal i njegovu negaciju sa prenosnom kapijom čime i implementiramo bafer sa tri stanja.
@@ -1018,8 +1062,8 @@ Vrednost visoke impendanse odgovara tipu NULL u nekim višim programskim jezicim
 </div>
 </div>
 
-<div id="outline-container-orge14039c" class="outline-2">
-<h2 id="orge14039c"><span class="section-number-2">4</span> Kombinatorna kola</h2>
+<div id="outline-container-org4e39f30" class="outline-2">
+<h2 id="org4e39f30"><span class="section-number-2">4</span> Kombinatorna kola</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
@@ -1034,9 +1078,12 @@ Kombinatorno kolo je logičko kolo čije vrednosti na izlazima se mogu sračunat
 Navesti najvažnije vrste osnovnih kombinatornih kola.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <ul class="org-ul">
 <li>Multipleksor (Mux)</li>
@@ -1045,17 +1092,20 @@ Navesti najvažnije vrste osnovnih kombinatornih kola.
 </ol>
 </div>
 
-<div id="outline-container-org0557bbe" class="outline-3">
-<h3 id="org0557bbe"><span class="section-number-3">4.1</span> Multipleksor i demultipleksor</h3>
+<div id="outline-container-org5e72611" class="outline-3">
+<h3 id="org5e72611"><span class="section-number-3">4.1</span> Multipleksor i demultipleksor</h3>
 <div class="outline-text-3" id="text-4-1">
 <ol class="org-ol">
 <li><p>
 Šta je multipleksor i koja mu je osnovna funkcija? Predstaviti grafičkim simbolom i tablicom multipleksor 4-1.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Multipleksor \(2^{k}-1\) je kombinatorno kolo koje omogućava selekciju nekog od \(k\) ulaza pomoću selekcionih bitova, čime faktički igra istu ulogu kao `if else` konstrukt u višim programskim jezicima.
@@ -1101,9 +1151,12 @@ Multipleksor \(2^{k}-1\) je kombinatorno kolo koje omogućava selekciju nekog od
 Nacrtati logičko kolo implementacije multipleksora 4-1.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <ul class="org-ul">
 <li>Možemo implementirati direktno</li>
@@ -1123,9 +1176,12 @@ Fiksiranjem jedne ili više vrednosti, jednu &ldquo;veliku&rdquo; funkciju dekom
 Šta je demultipleksor i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom demultipleksor 1-4.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Demultipleksor je kombinatorno kolo koje igra obrnutu ulogu u odnosu na multipleksor, odnosno ima \(1\) ulaz koji preusmerava na \(2^{k}\) izlaza u zavisnosti od vrednosti selekcionih bitova.
@@ -1196,9 +1252,12 @@ U nepopunjenim ćelijama tabele može biti 0 ili <b>Z</b> u zavisnosti od implem
 Nacrtati logičko kolo implementacije demultipleksora 1-4.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <ul class="org-ul">
 <li>Možemo implementirati direktno</li>
@@ -1209,17 +1268,20 @@ Nacrtati logičko kolo implementacije demultipleksora 1-4.
 </div>
 </div>
 
-<div id="outline-container-org81d3616" class="outline-3">
-<h3 id="org81d3616"><span class="section-number-3">4.2</span> Koder i dekoder</h3>
+<div id="outline-container-org448086b" class="outline-3">
+<h3 id="org448086b"><span class="section-number-3">4.2</span> Koder i dekoder</h3>
 <div class="outline-text-3" id="text-4-2">
 <ol class="org-ol">
 <li value="39"><p>
 Šta je dekoder i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom dekoder 2-4.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Dekoder je kombinarno kolo koje na osnovu vrednosti binarnog broja aktivira odgovarajući signal na izlazu. Najčešće se koristi pri dekodiranju mašinskih instrukcija.
@@ -1290,9 +1352,12 @@ Eg. Ako pretpostavimo da imamo 16 registara, u samoj instrukciji možemo kodirat
 Nacrtati logičko kolo implementacije dekodera 2-4.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Praktično isto kao i demultipleksor 1-4 (direktna implementacija) s tim što je ovde binarna konjunkcija i nemamo ulaz već samo kontrolne bitove.
@@ -1302,9 +1367,12 @@ Praktično isto kao i demultipleksor 1-4 (direktna implementacija) s tim što je
 Šta je koder i gde se obično koristi? Šta je koder sa prioritetom?
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Koder je kombinatorno kolo koje \(2^{k}\) ulaza mapira u $k$-bitni broj (pod pretpostavkom da je najviše jedan ulaz 1). Takođe imamo i kontrolni izlaz koji nas obaveštava u slučaju da nijedan ulaz nije 1.
@@ -1322,9 +1390,12 @@ Običan komparator ne može da handle-uje slučaj kada je više od jednog ulaza 
 Nacrtati logičko kolo implementacije kodera 4-2.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Implementacija ima smisla kad se pogleda tabela (namerno su naopačke indeksi)
@@ -1397,9 +1468,12 @@ Implementacija ima smisla kad se pogleda tabela (namerno su naopačke indeksi)
 Nacrtati logičko kolo implementacije kodera 4-2 sa prioritetom.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Ne kapiram crtež moraću u nekoj knjizi to da vidim verovatno
@@ -1408,8 +1482,8 @@ Ne kapiram crtež moraću u nekoj knjizi to da vidim verovatno
 </div>
 </div>
 
-<div id="outline-container-org5ed276e" class="outline-3">
-<h3 id="org5ed276e"><span class="section-number-3">4.3</span> Komparator</h3>
+<div id="outline-container-org71ccdcf" class="outline-3">
+<h3 id="org71ccdcf"><span class="section-number-3">4.3</span> Komparator</h3>
 <div class="outline-text-3" id="text-4-3">
 <ol class="org-ol">
 <li value="44"><p>
@@ -1432,9 +1506,12 @@ Vrste:
 Nacrtati logičko kolo 4-bitnog komparatora (za poređenje na jednakost)
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Bitovi se redom porede tako što se <b>XOR</b>-uju i na kraju povežu sa <b>NILI</b> gejtom koje će dati \(1\) ako su svi ulazi \(0\) i \(0\) u suprotnom
@@ -1444,9 +1521,12 @@ Bitovi se redom porede tako što se <b>XOR</b>-uju i na kraju povežu sa <b>NILI
 Nacrtati logičko kolo 4-bitnog komparatora za potpuno poređenje
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Koristimo 4-bitni oduzimač čiji rezultat šaljemo na NILI koje nam govori da li su ulazi jednaki i <i>carry bit</i> koji nam govori da li je \(x\) manji od \(y\), u suprotnom kad su oba \(0\), \(x\) je veći od \(y\)
@@ -1455,17 +1535,20 @@ Koristimo 4-bitni oduzimač čiji rezultat šaljemo na NILI koje nam govori da l
 </div>
 </div>
 
-<div id="outline-container-org71be4a2" class="outline-3">
-<h3 id="org71be4a2"><span class="section-number-3">4.4</span> Pomerač</h3>
+<div id="outline-container-orge176bb8" class="outline-3">
+<h3 id="orge176bb8"><span class="section-number-3">4.4</span> Pomerač</h3>
 <div class="outline-text-3" id="text-4-4">
 <ol class="org-ol">
 <li value="47"><p>
 Nacrtati logičko kolo 8-bitnog pomerača (ulevo)
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Pošto je 8-bitni pomerač, maksimalno je moguće pomeriti ga 7 puta.
@@ -1478,17 +1561,20 @@ Ideja je da se pomoću 8-bitnih 2-1 multipleksora u zavisnosti od kontrolnih bit
 </div>
 </div>
 
-<div id="outline-container-org8158122" class="outline-3">
-<h3 id="org8158122"><span class="section-number-3">4.5</span> Sabirači i oduzimači</h3>
+<div id="outline-container-orge82f964" class="outline-3">
+<h3 id="orge82f964"><span class="section-number-3">4.5</span> Sabirači i oduzimači</h3>
 <div class="outline-text-3" id="text-4-5">
 <ol class="org-ol">
 <li value="46"><p>
 Nacrtati istinitosnu tablicu i logičko kolo binarnog polusabirača
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1548,9 +1634,12 @@ Iz čega se vidi da je \(S\) zapravo <b>XOR</b> od \(x\) i \(y\), a \(C\) <b>AND
 Nacrtati istinitosnu tablicu i logičko kolo binarnog sabirača
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1657,9 +1746,12 @@ Ulančavanjem manjih sabirača koji zavise od svog <i>prethodnika</i> kako bismo
 Nacrtati istinitosnu tablicu i logičko kolo binarnog poluoduzimača
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1715,9 +1807,12 @@ Nacrtati istinitosnu tablicu i logičko kolo binarnog poluoduzimača
 Nacrtati istinitosnu tablicu i logičko kolo binarnog oduzimača
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1868,17 +1963,20 @@ Navesti formule po kojima CLA (<i>Carry Look Ahead</i>) jedinica računa prenose
 </div>
 </div>
 
-<div id="outline-container-orgb806add" class="outline-3">
-<h3 id="orgb806add"><span class="section-number-3">4.6</span> Implementacija ALU i kombinatornih memorija</h3>
+<div id="outline-container-org115ccc5" class="outline-3">
+<h3 id="org115ccc5"><span class="section-number-3">4.6</span> Implementacija ALU i kombinatornih memorija</h3>
 <div class="outline-text-3" id="text-4-6">
 <ol class="org-ol">
 <li value="57"><p>
 Navesti primer implementacije ALU jedinice.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Nacrtaj kolo koje prima dva 8-bitna ulaza i 3-bitni \(op\) ulaz koji specificira koju operaciju treba izvrsiti. Stavi bilo kojih 8 operacija i povezi rezultate sa <i>mux</i>-om koji za selekcione bitove uzima \(op\).
@@ -1930,9 +2028,12 @@ Primer procesa pravljenja PLA-a:
 Kako se pomoću kombinatornih mreža implementira neizmenjiva memorija (ROM)? Primer tablice i odgovarajuće implementacije.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Na ulazu se dobija adresa koja se potom prosleđuje ka dekoderu koji aktivira odgovarajuće izlaze na koje su povezani ulazi disjunkcija. U zavisnosti od povezanosti izlaza dekodera i ulaza disjunkcija određujemo koje podatke ćemo čitati iz ROM memorije.
@@ -1978,8 +2079,8 @@ Na ulazu se dobija adresa koja se potom prosleđuje ka dekoderu koji aktivira od
 </div>
 </div>
 
-<div id="outline-container-org26ad491" class="outline-2">
-<h2 id="org26ad491"><span class="section-number-2">5</span> Sekvencijalna kola</h2>
+<div id="outline-container-orge5836ae" class="outline-2">
+<h2 id="orge5836ae"><span class="section-number-2">5</span> Sekvencijalna kola</h2>
 <div class="outline-text-2" id="text-5">
 <ol class="org-ol">
 <li value="60"><p>
@@ -1998,9 +2099,12 @@ Za razliku od sekvencijalnih, kombinatorna kola nemaju interno stanje koje se č
 Nacrtati konceptualni dijagram sekvencijalnog kola i objasniti osnovni princip rada.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <ul class="org-ul">
 <li>\(G\) je kombinatorno kolo koje po principu povratne sprege održava stanje \(S\) (\(G\) se može posmatrati kao vektorska funkcija \(G: X \times S \rightarrow S\), za \(X\) skup svih ulaza i \(S\) skup svih stanja)
@@ -2124,17 +2228,20 @@ Sinhrona sekvencijalna kola zavise od zajedničkog signala odnosno časovnika, k
 </ol>
 </div>
 
-<div id="outline-container-org5d03fb9" class="outline-3">
-<h3 id="org5d03fb9"><span class="section-number-3">5.1</span> Reze i flip-flopovi</h3>
+<div id="outline-container-orge5d2338" class="outline-3">
+<h3 id="orge5d2338"><span class="section-number-3">5.1</span> Reze i flip-flopovi</h3>
 <div class="outline-text-3" id="text-5-1">
 <ol class="org-ol">
 <li value="67"><p>
 Šta je SR reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 SR reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
@@ -2205,9 +2312,12 @@ SR reza funkcioniše tako što postavljanjem \((S, R) = (0, 1)\) resetujemo sač
 Šta je D reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 D reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
@@ -2279,9 +2389,12 @@ Reza je asinhrono sekvencijalno kolo dok je flip-flop povezan na <b>časovnik</b
 Nacrtati implementaciju master-slave SR flip-flopa i objasniti ponašanje
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Imamo dve SR reze, leva je <i>master</i>, desna je <i>slave</i>. Izlazi <i>master</i>-a se prosleđuju i čuvaju u <i>slave</i>-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika \(0\), tada su ulazi <i>master</i>-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi <i>slave</i>-a zatvoreni. Pri uzlaznom rubu ulazi <i>master</i>-a se zatvaraju dok se ulazi <i>slave</i>-a otvaraju i upisuje se ono što je bilo u <i>master</i>-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u <b>uzlaznom rubu</b>.
@@ -2295,9 +2408,12 @@ U prethodnom objašnjenju je pretpostavljena implementacija koja menja stanje u 
 Nacrtati implementaciju master-slave D flip-flopa i objasniti ponašanje
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Imamo dve SR reze, leva je <i>master</i>, desna je <i>slave</i>. Izlazi <i>master</i>-a se prosleđuju i čuvaju u <i>slave</i>-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika \(0\), tada su ulazi <i>master</i>-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi <i>slave</i>-a zatvoreni. Pri uzlaznom rubu ulazi <i>master</i>-a se zatvaraju dok se ulazi <i>slave</i>-a otvaraju i upisuje se ono što je bilo u <i>master</i>-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u <b>uzlaznom rubu</b>.
@@ -2311,9 +2427,12 @@ Kao i kod D reze ulaz pre konjunkcija <i>master</i>-a biva i negiran da bi se el
 Nacrtati implementaciju master-slave JK flip-flopa i objasniti ponašanje
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Imamo dve SR reze, leva je <i>master</i>, desna je <i>slave</i>. Izlazi <i>master</i>-a se prosleđuju i čuvaju u <i>slave</i>-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika \(0\), tada su ulazi <i>master</i>-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi <i>slave</i>-a zatvoreni. Pri uzlaznom rubu ulazi <i>master</i>-a se zatvaraju dok se ulazi <i>slave</i>-a otvaraju i upisuje se ono što je bilo u <i>master</i>-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u <b>uzlaznom rubu</b>.
@@ -2327,9 +2446,12 @@ JK flip-flop rešava problem \((S, R) = (1, 1)\) tako što na konjunkcije ispred
 Nacrtati implementaciju master-slave T flip-flopa i objasniti ponašanje
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Imamo dve SR reze, leva je <i>master</i>, desna je <i>slave</i>. Izlazi <i>master</i>-a se prosleđuju i čuvaju u <i>slave</i>-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika \(0\), tada su ulazi <i>master</i>-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi <i>slave</i>-a zatvoreni. Pri uzlaznom rubu ulazi <i>master</i>-a se zatvaraju dok se ulazi <i>slave</i>-a otvaraju i upisuje se ono što je bilo u <i>master</i>-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u <b>uzlaznom rubu</b>.
@@ -2354,17 +2476,20 @@ Moguće je rešiti problem tako što se SR, JK ili T flip-flop svedu na D flip-f
 </div>
 </div>
 
-<div id="outline-container-orgd3461aa" class="outline-3">
-<h3 id="orgd3461aa"><span class="section-number-3">5.2</span> Implementacija <code>RAM</code>-a</h3>
+<div id="outline-container-org6b0a4d2" class="outline-3">
+<h3 id="org6b0a4d2"><span class="section-number-3">5.2</span> Implementacija <code>RAM</code>-a</h3>
 <div class="outline-text-3" id="text-5-2">
 <ol class="org-ol">
 <li value="75"><p>
 Šta je registar i kako se implementira? Navesti primer.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Registar dužine \(n\) je kolo koje čuva $n$-bitnu vrednost. Najčešće se implementira preko D flip-flopova koji su svi povezani na zajednički signal časovnika i \(e\) signal.
@@ -2418,9 +2543,12 @@ Pisanje:
 Na primeru objasniti princip konstrukcije većih memorija pomoću manjih.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
-</p></li>
+Fali slika ili nešto slično
+</p>
+
+</div></li>
 
 <li><p>
 Efikasna realizacija memorijske ćelije kod statičkih memorija.
@@ -2475,17 +2603,20 @@ What the actual fuck
 </div>
 </div>
 
-<div id="outline-container-orgbd2b79e" class="outline-3">
-<h3 id="orgbd2b79e"><span class="section-number-3">5.3</span> Binarni brojač</h3>
+<div id="outline-container-orgf38ec3e" class="outline-3">
+<h3 id="orgf38ec3e"><span class="section-number-3">5.3</span> Binarni brojač</h3>
 <div class="outline-text-3" id="text-5-3">
 <ol class="org-ol">
 <li value="82"><p>
 Asinhroni binarni brojač. Nacrati šemu i objasniti princip rada. Koji je osnovni nedostatak asinhronih brojača?
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Implementiramo ga preko nekoliko T flip-flopova tako što je onaj koji čuva bit najniže vrednosti direktno povezan na signal časovnika. Svi T flip-flopovi za ulaz primaju \(1\). Izlaz $N - 1$og T flip-flopa predstavlja signal časovnika, što znači da do promene dolazi samo ako je signal časovnika prešao sa \(1\) na \(0\), zbog čega se javlja &ldquo;talasasti&rdquo; efekat odnosno kašnjenje je \(O(N)\), za \(N\) - broj T flip-flopova.
@@ -2499,9 +2630,12 @@ Glavni nedostatak je vremenska neefikasnost.
 Sinhroni binarni brojač. Nacrtati šemu i objasniti princip rada.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Implementiramo ga preko nekoliko JK flip-flopova tako što ih povežemo sve sa časovnikom. Odluku da li da menjamo $i$-ti flip-flop donosimo na osnovu konjunkcije izlaza svih prethodnih flip-flopova. Na ovaj način nam se usložnjvaju AND gejtovi, zbog čega je kašnjenje \(O(logN)\), za \(N\) - broj JK flip-flopova.
@@ -2511,9 +2645,12 @@ Implementiramo ga preko nekoliko JK flip-flopova tako što ih povežemo sve sa �
 Dizajn brojača sa proizvoljnim redosledom stanja. Primer.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 U slučaju da nam je potrebno da imamo brojač koji neće ići po <i>&ldquo;default&rdquo;</i> redosledu, već nekim našim, potreban nam je brojač sa proizvoljnim redosledom stanja.
@@ -2528,17 +2665,20 @@ U slučaju da nam je potrebno da imamo brojač koji neće ići po <i>&ldquo;defa
 </div>
 </div>
 
-<div id="outline-container-orge48d754" class="outline-3">
-<h3 id="orge48d754"><span class="section-number-3">5.4</span> Konačni automati i transduktori</h3>
+<div id="outline-container-orgcc61e04" class="outline-3">
+<h3 id="orgcc61e04"><span class="section-number-3">5.4</span> Konačni automati i transduktori</h3>
 <div class="outline-text-3" id="text-5-4">
 <ol class="org-ol">
 <li value="85"><p>
 Konačni automati i transduktori kao model sinhronih sekvencijalnih kola. Dizajn konačnih transduktora. Primer.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
+Fali slika ili nešto slično
 </p>
+
+</div>
 
 <p>
 Brojač sa ulazom kojim kontrolišemo u koje stanje će preći nazivamo <b>konačni automat</b>. Ukoliko to kolo prilikom svake promene stanja generiše novu vrednost na izlazu, onda to kolo nazivamo <b>konačni transduktor</b>.
@@ -2747,8 +2887,8 @@ What the fuck?
 </div>
 </div>
 
-<div id="outline-container-org3d1a0c9" class="outline-2">
-<h2 id="org3d1a0c9"><span class="section-number-2">6</span> Arhitektura i organizacija</h2>
+<div id="outline-container-org3e07115" class="outline-2">
+<h2 id="org3e07115"><span class="section-number-2">6</span> Arhitektura i organizacija</h2>
 <div class="outline-text-2" id="text-6">
 <ol class="org-ol">
 <li value="88">Šta je arhitektura a šta organizacija računara?
@@ -2942,8 +3082,8 @@ Danas procesori najčešće predstavljaju hibride ove dve arhitekture.
 </div>
 </div>
 
-<div id="outline-container-org14257cf" class="outline-2">
-<h2 id="org14257cf"><span class="section-number-2">7</span> Adresiranje</h2>
+<div id="outline-container-org5452d6c" class="outline-2">
+<h2 id="org5452d6c"><span class="section-number-2">7</span> Adresiranje</h2>
 <div class="outline-text-2" id="text-7">
 <ol class="org-ol">
 <li value="101"><p>
@@ -3070,8 +3210,14 @@ Načini adresiranja opisuju kako se određuje operand instrukcije.
 <li><b>Memorijsko</b>:
 <ul class="org-ul">
 <li><p>
-Direktno //FIXME
+Direktno
 </p>
+<div class="error">
+<p>
+Bleji eax, izmeni
+</p>
+
+</div>
 <div class="org-src-container">
 <pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">value</span> <span style="color: #ff2afc; font-weight: bold;">dword</span> <span style="color: #ffd400; font-weight: bold;">42</span>
 ...
@@ -3122,8 +3268,8 @@ Postfiksno sa update-om
 </div>
 </div>
 
-<div id="outline-container-org30557b9" class="outline-2">
-<h2 id="org30557b9"><span class="section-number-2">8</span> Assembler</h2>
+<div id="outline-container-org33fa976" class="outline-2">
+<h2 id="org33fa976"><span class="section-number-2">8</span> Assembler</h2>
 <div class="outline-text-2" id="text-8">
 <ol class="org-ol">
 <li value="107">Instrukcije transfera. Funkcija i primer upotrebe. (<i>x86-64, ARM</i>)
@@ -3207,17 +3353,23 @@ memorija
 Aritmetičko-logičke instrukcije. (<i>x86-64, ARM</i>)
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
-</p></li>
+Fali slika ili nešto slično
+</p>
+
+</div></li>
 
 <li><p>
 Instrukcije bezuslovnog skoka. (<i>x86-64, ARM</i>)
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
-</p></li>
+Fali slika ili nešto slično
+</p>
+
+</div></li>
 
 <li>Flegovi procesora <code>(O, S, Z, C)</code>. Kada se postavljaju i čemu služe?
 <ul class="org-ul">
@@ -3262,17 +3414,23 @@ Kod <code>ARM</code> se to radi tako što se dodaje sufiks <code>s</code> na ope
 Instrukcije poređenja i njihova uloga u realizaciji uslovnih skokova. (<i>x86-64, ARM</i>)
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
-</p></li>
+Fali slika ili nešto slično
+</p>
+
+</div></li>
 
 <li><p>
 Instrukcije uslovnog skoka. (<i>x86-64, ARM</i>)
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
-</p></li>
+Fali slika ili nešto slično
+</p>
+
+</div></li>
 
 <li>Koju kombinaciju flegova testira instrukcija <code>jl</code>, a koju <code>jb</code> na <code>x86-64</code> arhitekturi?
 
@@ -3450,8 +3608,8 @@ Instrukcija <code>bl</code> postavlja adresu sledeće instrukcije u <code>lr</co
 </div>
 </div>
 
-<div id="outline-container-orgb453009" class="outline-2">
-<h2 id="orgb453009"><span class="section-number-2">9</span> Procesor</h2>
+<div id="outline-container-org59dbce1" class="outline-2">
+<h2 id="org59dbce1"><span class="section-number-2">9</span> Procesor</h2>
 <div class="outline-text-2" id="text-9">
 <ol class="org-ol">
 <li value="121">Koje su osnovne komponente procesora? Objasniti ih.
@@ -3583,25 +3741,34 @@ Spada u <b>registre specijalne namene</b>, odnosno <b>nije</b> registar opšte n
 Nacrtati uopštenu shemu putanje podataka sa tri interne magistrale. Primer izvršavanja operacije.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
-</p></li>
+Fali slika ili nešto slično
+</p>
+
+</div></li>
 
 <li><p>
 Nacrtati uopštenu shemu putanje podataka sa dve interne magistrale. Primer izvršavanja operacije.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
-</p></li>
+Fali slika ili nešto slično
+</p>
+
+</div></li>
 
 <li><p>
 Nacrtati uopštenu shemu putanje podataka sa jednom internom magistralom. Primer izvršavanja operacije.
 </p>
 
+<div class="warning">
 <p>
-[WORK IN PROGRESS]
-</p></li>
+Fali slika ili nešto slično
+</p>
+
+</div></li>
 
 <li><p>
 Šta je kontrolna jedinica (<code>CU</code>)? Šta je ulaz, a šta izlaz kontrolne jedinice?
@@ -3729,31 +3896,40 @@ Mikroinstrukcija je najmanja celina mikrokoda koji predstavlja programibilni slo
 Mikroprogram je niz mikroinstrukcija. Ideja mikroprogama je da se mašinske instrukcije mapiraju u ROM ili PLA memoriji u odgovarajuće kontrolne signale.
 </p>
 
+<div class="tip">
 <p>
-[TODO]
-</p></li>
+TODO
+</p>
+
+</div></li>
 
 <li><p>
 Objasniti horizontalni format mikroinstrukcija procesora.
 </p>
 
+<div class="tip">
 <p>
-[TODO]
-</p></li>
+TODO
+</p>
+
+</div></li>
 
 <li><p>
 Objasniti vertikalni format mikroinstrukcija procesora.
 </p>
 
+<div class="tip">
 <p>
-[TODO]
-</p></li>
+TODO
+</p>
+
+</div></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-org3d96874" class="outline-2">
-<h2 id="org3d96874"><span class="section-number-2">10</span> Memorija</h2>
+<div id="outline-container-org49175b8" class="outline-2">
+<h2 id="org49175b8"><span class="section-number-2">10</span> Memorija</h2>
 <div class="outline-text-2" id="text-10">
 <ol class="org-ol">
 <li value="145">Karakteristike memorija.
@@ -3896,8 +4072,13 @@ Najviše utiču:
 Objasniti hijerarhiju memorija
 </p>
 
+<div class="tip">
 <p>
-[TODO]
+TODO
+</p>
+
+</div>
+<p>
 Smara, stvarno treba da se ranim ako ne budem znao ovo.
 </p></li>
 
@@ -3994,8 +4175,13 @@ Koje vrste preslikavanja memorijskih adresa razlikujemo? Objasniti.
 
 <p>
 Preslikavanje adresa je postupak kojim se fizička memorija mapira u adresnom prostoru računara.
-[TODO]
 </p>
+<div class="tip">
+<p>
+TODO
+</p>
+
+</div>
 
 <p>
 Preslikavanje može biti <b>puno</b> i <b>delimično</b>
@@ -4007,8 +4193,13 @@ Objasniti puno preslikavanje memorijskih adresa.
 
 <p>
 Puno preslikavanje memorijskih adresa je <code>1-1</code> preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
-[TODO]
-</p></li>
+</p>
+<div class="tip">
+<p>
+TODO
+</p>
+
+</div></li>
 
 <li><p>
 Objasniti delimično preslikavanje memorijskih adresa
@@ -4016,8 +4207,13 @@ Objasniti delimično preslikavanje memorijskih adresa
 
 <p>
 Puno preslikavanje memorijskih adresa <b>nije</b> <code>1-1</code> preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
-[TODO]
-</p></li>
+</p>
+<div class="tip">
+<p>
+TODO
+</p>
+
+</div></li>
 
 <li><p>
 Objasniti poravnanje podataka (memorija).
@@ -4045,8 +4241,8 @@ smara.
 </div>
 </div>
 
-<div id="outline-container-org307bd35" class="outline-2">
-<h2 id="org307bd35"><span class="section-number-2">11</span> Cache</h2>
+<div id="outline-container-org7196f69" class="outline-2">
+<h2 id="org7196f69"><span class="section-number-2">11</span> Cache</h2>
 <div class="outline-text-2" id="text-11">
 <ol class="org-ol">
 <li value="166"><p>
@@ -4796,8 +4992,8 @@ Povećanjem stepena asocijativnosti se povećava procenat pogotka keša. Potpuno
 </div>
 </div>
 
-<div id="outline-container-org1bbc5b4" class="outline-2">
-<h2 id="org1bbc5b4"><span class="section-number-2">12</span> Magistrale</h2>
+<div id="outline-container-orge5ab0a6" class="outline-2">
+<h2 id="orge5ab0a6"><span class="section-number-2">12</span> Magistrale</h2>
 <div class="outline-text-2" id="text-12">
 <ol class="org-ol">
 <li value="189"><p>
@@ -4812,9 +5008,12 @@ Magistrala je komunikacioni sistem koji prenosi podatke/instrukcije između komp
 Kako se ostvaruje deljenje magistrale? Na koji način se sprečava kolizija signala? Objasniti.
 </p>
 
+<div class="tip">
 <p>
-[TODO]
+TODO
 </p>
+
+</div>
 
 <p>
 Da bismo povezali više uređaja na magistralu, potrebno je sprečiti istovremeno puštanje signala od strane različitih uređaja. Ovo se obično postiže korišćenjem <b>bafera sa tri stanja</b> (<i>tri-state buffer</i>).
@@ -4902,17 +5101,23 @@ Prednosti multipleksiranih magistrala u odnosu na odvojene je u jeftinijoj imple
 Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije čitanja u slučaju sinhrone magistrale.
 </p>
 
+<div class="tip">
 <p>
-[TODO]
-</p></li>
+TODO
+</p>
+
+</div></li>
 
 <li><p>
 Objasniti i predsaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.
 </p>
 
+<div class="tip">
 <p>
-[TODO]
-</p></li>
+TODO
+</p>
+
+</div></li>
 
 <li><p>
 Šta je stanje čekanja? Kada se i kako upotrebljava? Objasniti operaciju čitanja sa stanjem čekanja.
@@ -5082,8 +5287,8 @@ Veoma je jednostavan za implementaciju, ali mu je mana što omogućava samo fiks
 </div>
 </div>
 
-<div id="outline-container-org10dc4b6" class="outline-2">
-<h2 id="org10dc4b6"><span class="section-number-2">13</span> Sistem prekida</h2>
+<div id="outline-container-orgf9eb8cc" class="outline-2">
+<h2 id="orgf9eb8cc"><span class="section-number-2">13</span> Sistem prekida</h2>
 <div class="outline-text-2" id="text-13">
 <ol class="org-ol">
 <li value="214"><p>
@@ -5245,8 +5450,8 @@ Komunicira sa procesorom putem donjih 8 bitova data magistrale putem kojih i ša
 </ol>
 </div>
 </div>
-<div id="outline-container-orge746a3e" class="outline-2">
-<h2 id="orge746a3e"><span class="section-number-2">14</span> I/O</h2>
+<div id="outline-container-orge6efa74" class="outline-2">
+<h2 id="orge6efa74"><span class="section-number-2">14</span> I/O</h2>
 <div class="outline-text-2" id="text-14">
 <ol class="org-ol">
 <li value="222"><p>
@@ -5377,8 +5582,8 @@ Objasniti direktan pristup memoriji (<code>DMA</code>). Kontroler <code>DMA</cod
 </div>
 </div>
 
-<div id="outline-container-org8e0d07a" class="outline-2">
-<h2 id="org8e0d07a"><span class="section-number-2">15</span> Virtuelna memorija</h2>
+<div id="outline-container-org2531953" class="outline-2">
+<h2 id="org2531953"><span class="section-number-2">15</span> Virtuelna memorija</h2>
 <div class="outline-text-2" id="text-15">
 <ol class="org-ol">
 <li value="229"><p>
@@ -5405,27 +5610,372 @@ U instrukcijama se koriste virtuelne adrese koje <code>MMU</code> (<i>Memory Man
 Koristi se jer apstrakuje ručno upravljanje memorije (programer ne mora da razmišlja da li ima dovoljno memorije, gde će se ona nalaziti i da li drugi programi mogu da joj pristupe / da je korumpiraju)
 </p></li>
 
-<li>Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?</li>
-<li>Objasniti preslikavanje adresa virtuelne memorije. Primer.</li>
-<li>Preslikavanje adresa na više nivoa. Zbog čega se koristi? Primer.</li>
-<li>Šta su i kada se koriste politike zamene stranica?</li>
-<li>Navesti i ukratko objasniti najčešće politike zamene stranica</li>
-<li>Objasniti značaj veličine stranice virtuelne memorije i navesti primer.</li>
-<li>Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.</li>
-<li>Šta sadrže stavke u tablici stranica virtuelne memorije? Objasniti.</li>
+<li><p>
+Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?
+</p>
+
+<ul class="org-ul">
+<li>Stranice (<i>pages</i>) predstavljaju <b>virtuelne</b> memorijske blokove fiksne veličine.</li>
+<li>Okviri (<i>frames</i>) predstavljaju <b>fizičke</b> memorijske blokove fiksne veličine.</li>
+</ul>
+
+<p>
+Stranice predstavljaju najmanju jedinicu podataka za upravljanje virtuelnom memorijom. Čuvamo ih i u glavnoj memoriji (<code>RAM</code>) i pomoćnoj memoriji (npr. <code>SSD</code>).
+</p>
+
+<p>
+Mapiranje <i>page</i>-ova u <i>frame</i>-ove i njihova automatska zamena iz pomoćne u glavnu memoriju (i obrnuto) od strane OS se naziva <i>paging</i> (na srpskom straničenje, fuj).
+</p>
+
+<p>
+<i>Paging</i> nam omogućava da imamo naizgled neograničenu memoriju (iz perspektive programa).
+</p></li>
+
+<li><p>
+Objasniti preslikavanje adresa virtuelne memorije. Primer.
+</p>
+
+<p>
+Virtuelnu memoriju možemo posmatrati kao preslikavanje većeg virtuelnog adresnog prostora u manji fizički adresni prostor.
+</p>
+
+<p>
+Koristimo <code>MMU</code> (<i>Memory Management Unit</i>) za preslikavanje virtuelnih u fizičke adrese. <code>MMU</code> se implementira pomoću <b>tablice stranica</b> (<i>page table</i>) koja koristi softverski implementirano asocijativno mapiranje, što znači da svaku <b>stranicu</b> možemo mapirati u svaki <b>okvir</b>.
+</p>
+
+<p>
+Primer: \(32bit \rightarrow 24bit\)
+</p>
+
+<p>
+Slikamo iz 32-bitnog u 24-bitni adresni prostor. Neka je veličina stranice \(4KiB = 2^{2} \cdot 2^{10}B = 2^{12}B\)
+</p>
+
+<ul class="org-ul">
+<li><p>
+Struktura virtuelne adrese:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">broj stranice (20bit)</td>
+<td class="org-left">pomeraj (12bit)</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>
+Struktura fizičke adrese:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">broj okvira (12bit)</td>
+<td class="org-left">pomeraj (12bit)</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><b>Pomerajem</b> određujemo <b>indeks</b> u samoj stranici ili okviru. On se pri preslikavanju ne menja</li>
+<li>Gornjih 20 bitova virtuelne adrese se preslikava u gornjih 12 bitova fizičke adrese pomoću <code>MMU</code>.</li>
+</ul></li>
+
+<li><p>
+Preslikavanje adresa na više nivoa. Zbog čega se koristi? Primer.
+</p>
+
+<p>
+Kada imamo veliki virtuelni adresni prostor imaćemo i veliki broj <b>stranica</b> u <b>tablici</b> što zauzima dosta <b>uzastopnog</b> prostora u memoriji. Preslikavanje na više nivoa koristimo kako bismo izdelili samu tablicu u nekoliko manjih tablica, čime bismo rešili ranijepomenuti problem.
+</p>
+
+<p>
+Primer:
+</p>
+<ul class="org-ul">
+<li>Neka naš sistem koristi 40-bitni adresni prostor sa stranicama koje mogu da smeste 4KiB stavki, gde je svaka stavka 4B
+<ul class="org-ul">
+<li>veličina adresnog prostora: \(A = 40b\)</li>
+<li>broj stavki u jednoj stranici: \(P = 4KiB = 2^{12}B\)</li>
+<li>veličina jedne stavke u stranici: \(s = 4B\)</li>
+<li>broj adresa: \(cnt = 2^{A} = 2^{40}\)</li>
+<li>broj stranica: \(p_{1} = \frac{cnt}{P} = 2^{28}\)</li>
+</ul></li>
+<li>Ukupna memorija koju bi naša tablica zauzimala:
+<ul class="org-ul">
+<li>\(M_{1} = s * p_{1} = 2^{30} = 1GiB\)</li>
+</ul></li>
+<li>Pošto je to previše da bismo alocirali <b>uzastopno</b> u memoriji,  izdelimo stranice u manje tablice na koje povežemo tablicu koju nazivamo <b>direktorijum</b>. Pristupamo manjim tablicama pomoću <b>broja tablice</b> (<code>BT</code>) kojim indeksiramo direktorijum.
+<ul class="org-ul">
+<li>broj stavki u jednoj stranici: \(P = 4KiB = 2^{12}B\) (ostaje isti)</li>
+<li>veličina jedne stavke u stranici: \(s = 4B\) (ostaje ista)</li>
+<li>broj stranica: \(p_{2} = \frac{p_{1}}{P} = \frac{2^{30}}{2^{12}} = 2^{18}\)</li>
+</ul></li>
+<li>Memorija koju bi <b>jedna</b> naša tablica drugog nivoa zauzimala (imamo ih \(2^{10}\) komada):
+<ul class="org-ul">
+<li>\(M_{2} = s * p_{2} = 2^{20} = 1MiB\)</li>
+</ul></li>
+<li>Nakon što pomoću <code>BT</code> pristupimo direktorijumu da bismo dobili tablicu stranica, koristimo <b>broj stranice</b> (<code>BS</code>) da bismo u tablici stranica pristupilii <b>okviru</b> za stranicu koju smo tražili.
+Virtuelna adresa ima oblik:</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">\(BT\) (10 bitova)</td>
+<td class="org-left">\(BS\) (18 bitova)</td>
+<td class="org-left">\(pomeraj\) (12 bitova)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Prednost je u tome što ne moramo čuvati celu tablicu u memoriji već samo njen direktorijum (tablicu stranica drugog nivoa) i po potrebi možemo učitavati sa diska.
+</p>
+
+<p>
+Mana je što se smanjuje efikasnost pri prevođenju adresa.
+</p></li>
+
+<li><p>
+Šta su i kada se koriste politike zamene stranica?
+</p>
+
+<p>
+Politike zamene predstavljaju algoritme koje koristimo za određivanje koju stranicu bi trebalo sačuvati na pomoćnoj memoriji (npr. <code>SSD</code>) kada nam se glavna memorija (<code>RAM</code>) popuni stranicama a potrebno je da učitamo novu stranicu.
+</p></li>
+
+<li>Navesti i ukratko objasniti najčešće politike zamene stranica
+
+<ul class="org-ul">
+<li><code>FIFO = First In First Out</code>
+<ul class="org-ul">
+<li>izbacuje se ona stranica koja je prva ubačena, nevezano da li se koristi često</li>
+<li>jednostavno za implementaciju ali neefikasno</li>
+</ul></li>
+<li><code>Second Chance</code>
+<ul class="org-ul">
+<li>predstavlja blago unapređenu <code>FIFO</code> politiku</li>
+<li>svakoj stranici se pridružuje jedan bit koji govori da li je korišćena od kada u memoriji, i izbacuje se ona stranica koja je najduže a nije nijednom referisana</li>
+<li>jednostavno za implementaciju ali neefikasno (efikasnije od <code>FIFO</code>)</li>
+</ul></li>
+<li><code>NFU = Not Frequently Used</code>
+<ul class="org-ul">
+<li>brojimo koliko puta je neka stranica korišćena (imamo brojač za svaku), i menjamo onu koja je najmanje puta izbrojana</li>
+<li>relativno jednostavno za implementaciju, ali i dalje nedovoljno efikasno</li>
+</ul></li>
+<li><code>pseudo LRU = pseudo Least Recently Used</code>
+<ul class="org-ul">
+<li>predviđanje zasniva na principu <b>vremenske lokalnosti</b>. Zamenjuje onu stranicu koja najduže nije bila korišćena.</li>
+<li>za svaku stranicu čuvamo masku veličine \(1B\) gde su svi bitovi postavljeni na 1 (\(mask = 0x255\))
+<ul class="org-ul">
+<li>ako koristimo trenutnu stranicu, masku shiftujemo ulevo, u suprotnom udesno</li>
+<li>ako nam je maska jednaka \(0\), to znači da je nismo koristili u 8 ciklusa, dok maska \(mask = 0b00111111\) znači da je skoro korišćena stranica</li>
+<li>što nam je veći broj bitova kojim predstavljamo masku to nam je bolja aproksimacija <code>LRU</code>-a</li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>
+Objasniti značaj veličine stranice virtuelne memorije i navesti primer.
+</p>
+
+<ul class="org-ul">
+<li>Male &gt; Velike stranice:
+<ul class="org-ul">
+<li>smanjenje interne fragmentacije odnosno povećanje iskorišćenosti stranica
+<ul class="org-ul">
+<li>veličina podataka, programa i steka nije ceo broj stranica, pa je prosečno pola stranice neupotrebljeno (ovo se naziva <b>interna fragmentacija</b>)</li>
+</ul></li>
+<li>bolje pogađanje
+<ul class="org-ul">
+<li>što je veća stranica, to će pri njenom učitavanju u glavnu memoriju zastupljenost nepotrebnih sadržaja biti veća</li>
+</ul></li>
+</ul></li>
+<li>Velike &gt; Male stranice:
+<ul class="org-ul">
+<li>manje tablice
+<ul class="org-ul">
+<li>što su stranice veće, biće ih manje, pa su i tablice manje</li>
+</ul></li>
+<li>efikasniji pristup disku
+<ul class="org-ul">
+<li>vreme pristupa disku je mnogo veće nego sam transfer, pa je za manje vreme moguće pročitati manju količinu većih podataka nego veću količinu malih podataka (jer se broj pristupa disku redukuje)
+<ul class="org-ul">
+<li>Čitanje 100 stranica od 4KiB traje \(100 \cdot (10ms+ \frac{4}{100}ms) = 10.04s\)</li>
+<li>Čittanje 25 stranica od 16KiB traje \(25 \cdot (10ms + \frac{16}{100}ms) = 2.54s\)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>
+Primer veličine stranice:
+</p>
+<ul class="org-ul">
+<li>Intel x86: stranice su uobičajeno 4KiB, a podržane su i stranice veličine 2/4MiB</li>
+</ul></li>
+
+<li><p>
+Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.
+</p>
+
+<p>
+Tablice stranica predstavljaju asocijativnu strukturu (mapu) pomoću koje prevodimo stranice u okvire.
+</p>
+
+<p>
+Koristimo <b>broj stranice</b> (<code>BS</code>) za indeksni pristup tablici stranica. U tom polju (stavki) između ostalog će nam se nalaziti <b>okvir</b> za stranicu čijim <code>BS</code>-om smo pristupili.
+</p>
+
+<p>
+Direktorijum stranica predstavlja asocijativnu strukturu (mapu) pomoću koje pristupamo tablici stranica.
+</p>
+
+<p>
+Umesto da imamo jednu veliku neprekidnu tablicu, izdelimo stranice u manje tablice i na koje povežemo tablicu koju nazivamo <b>direktorijum</b>. Pristupamo manjoj tablici gde nam se tražena stranica nalazi pomoću <b>broja tablice</b> (<code>BT</code>) kojim indeksiramo direktorijum.
+</p>
+
+<p>
+Možemo imati nekoliko nivoa direktorijuma.
+</p>
+
+<p>
+Čuvanjem početne adrese master (početnog) direktorijuma u posebnom registru praktično dobijamo \(n\) -arno stablo koje nam služi za prevođenje stranica u okvire.
+</p>
+
+<p>
+Što nam je veća dubina stabla, to nam je prevođenje neefikasnije.
+</p>
+
+<p>
+<code>BT</code> i <code>BS</code> &ldquo;izvlačimo&rdquo; kao uzastopne podnizove iz virtuelne adrese. Broj bitova koji je potreban za njih zavisi od veličine stranice i veličine adresnog prostora.
+</p>
+
+<p>
+Redosled &ldquo;izvlačenja&rdquo; iz virtuelne adrese
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">\(BT_{k}\)</td>
+<td class="org-left">\(BT_{k - 1}\)</td>
+<td class="org-left">&#x2026;</td>
+<td class="org-left">\(BT_{0}\)</td>
+<td class="org-left">\(BS\)</td>
+<td class="org-left">\(pomeraj\)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Gde je \(k\) dubina stabla.
+</p></li>
+
+<li><p>
+Šta sadrže stavke u tablici stranica virtuelne memorije? Objasniti.
+</p>
+
+<p>
+Sadržaj:
+</p>
+<ul class="org-ul">
+<li>broj okvira
+<ul class="org-ul">
+<li>lokacija date stranice u glavnoj memoriji</li>
+<li>vodi se za stranice koje postoje u glavnoj memoriji</li>
+</ul></li>
+<li>adresa stranice na disku
+<ul class="org-ul">
+<li>lokacija date stranice na disku</li>
+<li>vodi se za sve stranice</li>
+</ul></li>
+<li><i>valid bit</i>
+<ul class="org-ul">
+<li>označava da li je stranica u memoriji ili ne</li>
+</ul></li>
+<li><i>dirty bit</i>
+<ul class="org-ul">
+<li>označava da li je sadržaj stranice menjan</li>
+<li>ako je menjana, stranica se pri uklanjanju iz glavne memorije zapisuje na disku</li>
+</ul></li>
+<li><i>reference bit</i>
+<ul class="org-ul">
+<li>koristi se za implementaciju <code>pseudo-LRU</code> algoritma</li>
+<li>OS povremeno postavlja sve bitove referisanja na 0</li>
+<li>pri pristupanju stranici bit se postavlja na 1</li>
+</ul></li>
+<li>informacija o vlasniku
+<ul class="org-ul">
+<li>OS mora da zna kom procesu pripada stranica</li>
+</ul></li>
+<li>bitovi zaštite
+<ul class="org-ul">
+<li>označavaju tip pristupa koji vlasnik ostvaruje (<i>read</i>, <i>write</i>, <i>execute</i>)</li>
+</ul></li>
+</ul></li>
+
 <li><p>
 Šta je bafer tablice stranica virtuelne memorije (<code>TLB</code>) i čemu služi?
 </p>
 
 <p>
 <code>TLB</code> = <i>Translation Lookaside Buffer</i>
+</p>
+
+<p>
+<code>TLB</code> je asocijativni keš koji čuva poslednje korišćene <b>stavke</b> iz tabele stranica (između ostalog fizičke adrese).
+</p>
+
+<p>
+Da njega nema, za svako prevođenje bila bi potrebna dva pristupa memoriji, jedan za pronalaženje okvira (koje može biti dosta sporo kada imamo nekoliko slojeva direktorijuma stranica), i drugi za pristupanje samoj vrednosti.
+</p>
+
+<p>
+Korišćenjem <code>TLB</code> dovoljno često eliminišemo potrebu za pronalaženjem okvira čime znatno poboljšavamo performanse.
 </p></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-orgda83746" class="outline-2">
-<h2 id="orgda83746"><span class="section-number-2">16</span> Moderni procesori</h2>
+<div id="outline-container-org27e8d91" class="outline-2">
+<h2 id="org27e8d91"><span class="section-number-2">16</span> Moderni procesori</h2>
 <div class="outline-text-2" id="text-16">
 <ol class="org-ol">
 <li value="239">Objasniti princip preklapanja instrukcija u modernim procesorima</li>
@@ -5437,8 +5987,8 @@ Koristi se jer apstrakuje ručno upravljanje memorije (programer ne mora da razm
 </div>
 </div>
 
-<div id="outline-container-org4b699e8" class="outline-2">
-<h2 id="org4b699e8"><span class="section-number-2">17</span> Verilog</h2>
+<div id="outline-container-orgdab1616" class="outline-2">
+<h2 id="orgdab1616"><span class="section-number-2">17</span> Verilog</h2>
 <div class="outline-text-2" id="text-17">
 <ol class="org-ol">
 <li value="244">Koji su osnovni tipovi podataka u jeziku <i>Verilog</i>?</li>
@@ -5466,7 +6016,7 @@ Koristi se jer apstrakuje ručno upravljanje memorije (programer ne mora da razm
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aleksandar Šmigić</p>
-<p class="date">Created: 2020-06-23 Tue 14:19</p>
+<p class="date">Created: 2020-06-23 Tue 21:48</p>
 </div>
 </body>
 </html>

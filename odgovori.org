@@ -1,4 +1,5 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+HTML_HEAD: <style> div > .org-ol > li { margin-top: 3%; } </style>
 #+TITLE: Odgovori na ispitna pitanja iz UOAR2
 
 * Iskazna logika
@@ -83,18 +84,18 @@
 
 7. Definisati pojmove elementarne konjunkcije i disjunktivne normalne forme (DNF). Šta je savršena elementarna konjunkcija, a šta savršena DNF?
 
-   - Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})
+   - Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y}$)
    - Elementarna konjunkcija je logički izraz koji se sastoji iz konjunkcije literala (eg. $x\bar{y}z\bar{p}$)
      - Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, S = \bar{x} \cdot y \cdot z$)
-   - DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. $x\bar{y}z + \bar{x}yz + xyz)
+   - DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. $x\bar{y}z + \bar{x}yz + xyz)$
      - Savršena DNF se sastoji od disjunkcije savršenih elementarnih konjunkcija
 
 8. Definisati pojmove elementarne disjunkcije i konjunktivne normalne forme (KNF). Šta je savršena elementarna disjunkcija, a šta savršena KNF?
 
-   - Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y})
+   - Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y}$)
    - Elementarna disjunkcija je logički izraz koji se sastoji iz disjunkcije literala (eg. $x + \bar{y} + z\bar{p}$)
-     - Savršena elementarna disjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, \bar{x} + y + z)
-   - KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. $(x + \bar{y} + z) \cdot (\bar{x} + y + z) \cdot (x + y + z)
+     - Savršena elementarna disjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, \bar{x} + y + z$)
+   - KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. $(x + \bar{y} + z) \cdot (\bar{x} + y + z) \cdot (x + y + z)$
      - Savršena KNF se sastoji od konjunkcije savršenih elementarnih disjunkcija
 
 9. Ukratko opisati postupak za svođenje logičkog izraza na DNF
@@ -132,7 +133,7 @@
 
 * Minimizacija logičkih izraza
 
-14. Šta je minimizacija logičkih izraza i zbog čega nam je značajna?
+14. [@14] Šta je minimizacija logičkih izraza i zbog čega nam je značajna?
 
     Minimizovati logički izraz znači pronaći logički ekvivalentan izraz koji sadrži najmanji mogući broj veznika.
 
@@ -161,13 +162,17 @@
 
 16. Objasniti način upotrebe Karnoovih mapa za minimizaciju logičkih izraza. Primer.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Karnoove mape predstavljaju grafički metod za minimizaciju logičkih izraza koji funkcioniše po principu grupisanja. Nakon što nacrtamo tabelu gde se susendna polja (susedstvo se gleda kao da je tabela zapravo površina torusa) razlikuju za jednu vrednost (Grejov kod) popunimo mesta koja u tabeli daju $1$ kao rezultat. Minimizujemo tako što prvo pokušamo da obuhvatimo sve $1$ u pravougaonik od $16$ elemenata, zatim redom $8$, $4$, $2$, $1$. Posmatramo promenljive u okviru jednog pravougaonika koje se nisu promenile i njih stavljamo u finalnu minimizovanu DNF formulu.
 
 17. Objasniti metodu Kvin-Meklaskog za minimizaciju logičkih izraza. Primer.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
     Metoda Kvin-Meklaskog je metoda minimiacije logičkih izraza koja je pogodna za implementaciju na računaru.
 
     1. Na ulazu dobijamo funkciju u SDNF. Sortiramo rastuće savršene konjunkcije po broju neinvertovanih literala i izdelimo ih u klase, gde $i$-ta klasa sadrži SK koji imaju $i$ neinvertovanih literala.
@@ -178,13 +183,17 @@
 
 18. Kako se upotrebljavaju Karnoove mape u prisustvu nebitnih vrednosti? Primer.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Kada imamo nebitne (/don't care/) vrednost, njih možemo da tretiramo onako kako nama odgovara, odnosno ako nam omogućavaju da zaokružimo veću površinu tretiramo ih kao $1$, u suprotnom nema potrebe da ih zaokružimo.
 
 19. Kako se metod Kvin-Meklaskog koristi u prisustvu nebitnih vrednosti? Primer.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     U prvoj fazi algoritma se nebitne vrednosti tretiraju kao $1$, odnosno učestvuju u grupisanju.
 
@@ -192,14 +201,18 @@
 
 20. Šta je Petrikov metod i koja je njegova uloga u okviru metode Kvin-Mekalskog? Primer.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
     Petrikov metod je metod koji se koristi za pronalaženje najmanjeg podskupa preostalih prostih implikanata u slučaju da neka kolona ostane "nepokrivena" u metodi Kvin-Mekalskog.
 
 * Tranzistori i logička kola
 
 21. [@21] Elementarna logička kola (gejtovi) i njihove šematske oznake.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     - Buffer
     - 3-state buffer
@@ -213,7 +226,9 @@
 
 22. Nacrtati simbol i objasniti funkciju NMOS tranzistora.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     NMOS tranzistor ima 3 ulaza:
     1. Source - povezan sa *negativan* napon
@@ -226,7 +241,9 @@
 
 23. Nacrtati simbol i objasniti funkciju PMOS tranzistora.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     PMOS tranzistor ima 3 ulaza:
     1. Source - povezan sa *pozitivan* napon
@@ -239,7 +256,9 @@
 
 24. Implementacija NE kola u CMOS-u
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     - Ako je ulaz 0 samo iz PMOS-a tranzistora će izlaziti struja koja predstavlja 1
     - Ako je ulaz 1 samo iz NMOS-a tranzistora će izlaziti struja koja predstavlja 0
@@ -247,7 +266,9 @@
 
 25. Implementacija NI i I kola u CMOS-u
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Donja mreža se implementira rednim povezivanjem dva NMOS tranzistora čime se postiže da se 0 dobije samo kada su oba ulaza 1
 
@@ -257,7 +278,9 @@
 
 26. Implementacija NILI i ILI kola u CMOS-u
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     NILI se implementira po istom principu kao NI, s tim što su ovde NMOS tranzistori povezani paralelno, dok su PMOS povezani redno.
 
@@ -269,7 +292,9 @@
 
 27. Implementacija EILI kola u CMOS-u
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Donja mreža se implementira pomoću 4 redno-paralelna NMOS tranzistora čiji ulazi su $X$ i $Y$ s leve i $\bar{X}$ i $\bar{Y}$ s desne strane čime se 0 dobija samo akko su $X$ i $Y$ isti
 
@@ -287,7 +312,9 @@
 
 30. Implementacija bafera sa tri stanja u CMOS-u.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Implementacija zavisi od toga šta nam je potrebno, i koje signale imamo na raspolaganju. U slučaju da nam nije potrebno pojačavanje signala neće nam trebati dvostruki inverter. Povezujemo ulazni signal, kontrolni signal i njegovu negaciju sa prenosnom kapijom čime i implementiramo bafer sa tri stanja.
 
@@ -303,7 +330,9 @@
 
 33. Navesti najvažnije vrste osnovnih kombinatornih kola.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     - Multipleksor (Mux)
     - Demultipleksor (DeMux)
@@ -312,7 +341,9 @@
 
 34. Šta je multipleksor i koja mu je osnovna funkcija? Predstaviti grafičkim simbolom i tablicom multipleksor 4-1.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Multipleksor $2^{k}-1$ je kombinatorno kolo koje omogućava selekciju nekog od $k$ ulaza pomoću selekcionih bitova, čime faktički igra istu ulogu kao `if else` konstrukt u višim programskim jezicima.
 
@@ -324,7 +355,9 @@
 
 35. Nacrtati logičko kolo implementacije multipleksora 4-1.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     - Možemo implementirati direktno
 
@@ -336,7 +369,9 @@
 
 37. Šta je demultipleksor i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom demultipleksor 1-4.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Demultipleksor je kombinatorno kolo koje igra obrnutu ulogu u odnosu na multipleksor, odnosno ima $1$ ulaz koji preusmerava na $2^{k}$ izlaza u zavisnosti od vrednosti selekcionih bitova.
 
@@ -350,7 +385,9 @@
 
 38. Nacrtati logičko kolo implementacije demultipleksora 1-4.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     - Možemo implementirati direktno
 
@@ -359,7 +396,9 @@
 ** Koder i dekoder
 39. [@39] Šta je dekoder i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom dekoder 2-4.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Dekoder je kombinarno kolo koje na osnovu vrednosti binarnog broja aktivira odgovarajući signal na izlazu. Najčešće se koristi pri dekodiranju mašinskih instrukcija.
 
@@ -373,13 +412,17 @@
 
 40. Nacrtati logičko kolo implementacije dekodera 2-4.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Praktično isto kao i demultipleksor 1-4 (direktna implementacija) s tim što je ovde binarna konjunkcija i nemamo ulaz već samo kontrolne bitove.
 
 41. Šta je koder i gde se obično koristi? Šta je koder sa prioritetom?
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Koder je kombinatorno kolo koje $2^{k}$ ulaza mapira u $k$-bitni broj (pod pretpostavkom da je najviše jedan ulaz 1). Takođe imamo i kontrolni izlaz koji nas obaveštava u slučaju da nijedan ulaz nije 1.
 
@@ -389,7 +432,9 @@
 
 42. Nacrtati logičko kolo implementacije kodera 4-2.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Implementacija ima smisla kad se pogleda tabela (namerno su naopačke indeksi)
     | $U_{3}$ | $U_{2}$ | $U_{1}$ | $U_{0}$ | $I_{1}$ | $I_{0}$ |
@@ -400,7 +445,9 @@
 
 43. Nacrtati logičko kolo implementacije kodera 4-2 sa prioritetom.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Ne kapiram crtež moraću u nekoj knjizi to da vidim verovatno
 
@@ -416,13 +463,17 @@
 
 45. Nacrtati logičko kolo 4-bitnog komparatora (za poređenje na jednakost)
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Bitovi se redom porede tako što se *XOR*-uju i na kraju povežu sa *NILI* gejtom koje će dati $1$ ako su svi ulazi $0$ i $0$ u suprotnom
 
 46. Nacrtati logičko kolo 4-bitnog komparatora za potpuno poređenje
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Koristimo 4-bitni oduzimač čiji rezultat šaljemo na NILI koje nam govori da li su ulazi jednaki i /carry bit/ koji nam govori da li je $x$ manji od $y$, u suprotnom kad su oba $0$, $x$ je veći od $y$
 
@@ -430,7 +481,9 @@
 
 47. [@47] Nacrtati logičko kolo 8-bitnog pomerača (ulevo)
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Pošto je 8-bitni pomerač, maksimalno je moguće pomeriti ga 7 puta.
 
@@ -440,7 +493,9 @@
 
 48. [@46] Nacrtati istinitosnu tablicu i logičko kolo binarnog polusabirača
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     | $x$ | $y$ | $S$ | $C$ |
     |   1 |   1 |   0 |   1 |
@@ -452,7 +507,9 @@
 
 49. Nacrtati istinitosnu tablicu i logičko kolo binarnog sabirača
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     | $x$ | $y$ | $pc$ | $S$ | $C$ |
     |   1 |   1 |    1 |   1 |   1 |
@@ -472,7 +529,9 @@
 
 51. Nacrtati istinitosnu tablicu i logičko kolo binarnog poluoduzimača
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     | $x$ | $y$ | $S$ | $C$ |
     |   1 |   1 |   0 |   0 |
@@ -482,7 +541,9 @@
 
 52. Nacrtati istinitosnu tablicu i logičko kolo binarnog oduzimača
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     | $x$ | $y$ | $pc$ | $S$ | $C$ |
     |   1 |   1 |    1 |   1 |   1 |
@@ -533,7 +594,9 @@
 
 57. [@57] Navesti primer implementacije ALU jedinice.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Nacrtaj kolo koje prima dva 8-bitna ulaza i 3-bitni $op$ ulaz koji specificira koju operaciju treba izvrsiti. Stavi bilo kojih 8 operacija i povezi rezultate sa /mux/-om koji za selekcione bitove uzima $op$.
 
@@ -561,7 +624,9 @@
 
 59. Kako se pomoću kombinatornih mreža implementira neizmenjiva memorija (ROM)? Primer tablice i odgovarajuće implementacije.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Na ulazu se dobija adresa koja se potom prosleđuje ka dekoderu koji aktivira odgovarajuće izlaze na koje su povezani ulazi disjunkcija. U zavisnosti od povezanosti izlaza dekodera i ulaza disjunkcija određujemo koje podatke ćemo čitati iz ROM memorije.
 
@@ -581,7 +646,9 @@
 
 61. Nacrtati konceptualni dijagram sekvencijalnog kola i objasniti osnovni princip rada.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     - $G$ je kombinatorno kolo koje po principu povratne sprege održava stanje $S$ ($G$ se može posmatrati kao vektorska funkcija $G: X \times S \rightarrow S$, za $X$ skup svih ulaza i $S$ skup svih stanja)
       - $S$ se neće promeniti sve dok se $X ne promeni
@@ -629,7 +696,9 @@
 
 67. [@67] Šta je SR reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     SR reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
 
@@ -644,7 +713,9 @@
 
 68. Šta je D reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     D reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
 
@@ -662,7 +733,9 @@
 
 70. Nacrtati implementaciju master-slave SR flip-flopa i objasniti ponašanje
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
 
@@ -670,7 +743,9 @@
 
 71. Nacrtati implementaciju master-slave D flip-flopa i objasniti ponašanje
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
 
@@ -678,7 +753,9 @@
 
 72. Nacrtati implementaciju master-slave JK flip-flopa i objasniti ponašanje
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
 
@@ -686,7 +763,9 @@
    
 73. Nacrtati implementaciju master-slave T flip-flopa i objasniti ponašanje
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
 
@@ -702,7 +781,9 @@
 
 75. [@75] Šta je registar i kako se implementira? Navesti primer.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Registar dužine $n$ je kolo koje čuva $n$-bitnu vrednost. Najčešće se implementira preko D flip-flopova koji su svi povezani na zajednički signal časovnika i $e$ signal.
 
@@ -734,7 +815,9 @@
       
 77. Na primeru objasniti princip konstrukcije većih memorija pomoću manjih.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
 78. Efikasna realizacija memorijske ćelije kod statičkih memorija.
 
@@ -764,7 +847,9 @@
 
 82. [@82] Asinhroni binarni brojač. Nacrati šemu i objasniti princip rada. Koji je osnovni nedostatak asinhronih brojača?
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Implementiramo ga preko nekoliko T flip-flopova tako što je onaj koji čuva bit najniže vrednosti direktno povezan na signal časovnika. Svi T flip-flopovi za ulaz primaju $1$. Izlaz $N - 1$og T flip-flopa predstavlja signal časovnika, što znači da do promene dolazi samo ako je signal časovnika prešao sa $1$ na $0$, zbog čega se javlja "talasasti" efekat odnosno kašnjenje je $O(N)$, za $N$ - broj T flip-flopova.
 
@@ -772,13 +857,17 @@
 
 83. Sinhroni binarni brojač. Nacrtati šemu i objasniti princip rada.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Implementiramo ga preko nekoliko JK flip-flopova tako što ih povežemo sve sa časovnikom. Odluku da li da menjamo $i$-ti flip-flop donosimo na osnovu konjunkcije izlaza svih prethodnih flip-flopova. Na ovaj način nam se usložnjvaju AND gejtovi, zbog čega je kašnjenje $O(logN)$, za $N$ - broj JK flip-flopova.
 
 84. Dizajn brojača sa proizvoljnim redosledom stanja. Primer.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     U slučaju da nam je potrebno da imamo brojač koji neće ići po /"default"/ redosledu, već nekim našim, potreban nam je brojač sa proizvoljnim redosledom stanja.
 
@@ -790,7 +879,9 @@
 
 85. [@85] Konačni automati i transduktori kao model sinhronih sekvencijalnih kola. Dizajn konačnih transduktora. Primer.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
     Brojač sa ulazom kojim kontrolišemo u koje stanje će preći nazivamo *konačni automat*. Ukoliko to kolo prilikom svake promene stanja generiše novu vrednost na izlazu, onda to kolo nazivamo *konačni transduktor*.
 
@@ -1019,7 +1110,10 @@ mov r0, r0, 42
 mov r0, r1
         #+end_src
      - *Memorijsko*:
-       - Direktno //FIXME
+       - Direktno
+         #+begin_error
+            Bleji eax, izmeni
+         #+end_error
         #+begin_src asm
 value dword 42
 ...
@@ -1099,11 +1193,15 @@ lea dest, src ; kopira adresu od src u dest
 
 108. Aritmetičko-logičke instrukcije. (/x86-64, ARM/)
 
-     [WORK IN PROGRESS]
+     #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
 109. Instrukcije bezuslovnog skoka. (/x86-64, ARM/)
 
-     [WORK IN PROGRESS]
+     #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
 110. Flegovi procesora ~(O, S, Z, C)~. Kada se postavljaju i čemu služe?
      - Postavljaju se nakon određenih operacija
@@ -1128,11 +1226,15 @@ adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
 
 111. Instrukcije poređenja i njihova uloga u realizaciji uslovnih skokova. (/x86-64, ARM/)
 
-     [WORK IN PROGRESS]
+     #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
 112. Instrukcije uslovnog skoka. (/x86-64, ARM/)
 
-     [WORK IN PROGRESS]
+     #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
 113. Koju kombinaciju flegova testira instrukcija ~jl~, a koju ~jb~ na ~x86-64~ arhitekturi?
 
@@ -1294,15 +1396,21 @@ add r4, r0 ; sum += eax
 
 130. Nacrtati uopštenu shemu putanje podataka sa tri interne magistrale. Primer izvršavanja operacije.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
    
 131. Nacrtati uopštenu shemu putanje podataka sa dve interne magistrale. Primer izvršavanja operacije.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
 132. Nacrtati uopštenu shemu putanje podataka sa jednom internom magistralom. Primer izvršavanja operacije.
 
-    [WORK IN PROGRESS]
+    #+begin_warning
+     Fali slika ili nešto slično
+     #+end_warning
 
 133. Šta je kontrolna jedinica (~CU~)? Šta je ulaz, a šta izlaz kontrolne jedinice?
 
@@ -1383,15 +1491,21 @@ mov ir, mdr
 
     Mikroprogram je niz mikroinstrukcija. Ideja mikroprogama je da se mašinske instrukcije mapiraju u ROM ili PLA memoriji u odgovarajuće kontrolne signale.
 
-    [TODO]
+    #+begin_tip
+    TODO
+    #+end_tip
 
 143. Objasniti horizontalni format mikroinstrukcija procesora.
 
-    [TODO]
+    #+begin_tip
+    TODO
+    #+end_tip
 
 144. Objasniti vertikalni format mikroinstrukcija procesora.
 
-    [TODO]
+    #+begin_tip
+    TODO
+    #+end_tip
 
 * Memorija
 
@@ -1473,7 +1587,9 @@ mov ir, mdr
 
 155. Objasniti hijerarhiju memorija
 
-     [TODO]
+     #+begin_tip
+    TODO
+    #+end_tip
      Smara, stvarno treba da se ranim ako ne budem znao ovo.
 
 156. Šta je ~ROM~? Kakve vrste postoje? Gde se koristi?
@@ -1524,19 +1640,25 @@ mov ir, mdr
 161. Koje vrste preslikavanja memorijskih adresa razlikujemo? Objasniti.
 
      Preslikavanje adresa je postupak kojim se fizička memorija mapira u adresnom prostoru računara.
-     [TODO]
+     #+begin_tip
+    TODO
+    #+end_tip
 
      Preslikavanje može biti *puno* i *delimično*
 
 162. Objasniti puno preslikavanje memorijskih adresa.
 
      Puno preslikavanje memorijskih adresa je ~1-1~ preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
-     [TODO]
+     #+begin_tip
+    TODO
+    #+end_tip
 
 163. Objasniti delimično preslikavanje memorijskih adresa
 
      Puno preslikavanje memorijskih adresa *nije* ~1-1~ preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
-     [TODO]
+     #+begin_tip
+    TODO
+    #+end_tip
 
 164. Objasniti poravnanje podataka (memorija).
 
@@ -1865,7 +1987,9 @@ mov ir, mdr
     
 190. Kako se ostvaruje deljenje magistrale? Na koji način se sprečava kolizija signala? Objasniti.
 
-     [TODO]
+     #+begin_tip
+    TODO
+    #+end_tip
 
      Da bismo povezali više uređaja na magistralu, potrebno je sprečiti istovremeno puštanje signala od strane različitih uređaja. Ovo se obično postiže korišćenjem *bafera sa tri stanja* (/tri-state buffer/).
 
@@ -1911,11 +2035,15 @@ mov ir, mdr
 
 195. Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije čitanja u slučaju sinhrone magistrale.
 
-     [TODO]
+     #+begin_tip
+    TODO
+    #+end_tip
 
 196. Objasniti i predsaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.
 
-     [TODO]
+     #+begin_tip
+    TODO
+    #+end_tip
 
 197. Šta je stanje čekanja? Kada se i kako upotrebljava? Objasniti operaciju čitanja sa stanjem čekanja.
 
@@ -2175,16 +2303,158 @@ mov ir, mdr
      Koristi se jer apstrakuje ručno upravljanje memorije (programer ne mora da razmišlja da li ima dovoljno memorije, gde će se ona nalaziti i da li drugi programi mogu da joj pristupe / da je korumpiraju)
 
 230. Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?
+
+     - Stranice (/pages/) predstavljaju *virtuelne* memorijske blokove fiksne veličine.
+     - Okviri (/frames/) predstavljaju *fizičke* memorijske blokove fiksne veličine.
+
+     Stranice predstavljaju najmanju jedinicu podataka za upravljanje virtuelnom memorijom. Čuvamo ih i u glavnoj memoriji (~RAM~) i pomoćnoj memoriji (npr. ~SSD~).
+
+     Mapiranje /page/-ova u /frame/-ove i njihova automatska zamena iz pomoćne u glavnu memoriju (i obrnuto) od strane OS se naziva /paging/ (na srpskom straničenje, fuj).
+
+     /Paging/ nam omogućava da imamo naizgled neograničenu memoriju (iz perspektive programa).
+
 231. Objasniti preslikavanje adresa virtuelne memorije. Primer.
+
+    Virtuelnu memoriju možemo posmatrati kao preslikavanje većeg virtuelnog adresnog prostora u manji fizički adresni prostor.
+
+    Koristimo ~MMU~ (/Memory Management Unit/) za preslikavanje virtuelnih u fizičke adrese. ~MMU~ se implementira pomoću *tablice stranica* (/page table/) koja koristi softverski implementirano asocijativno mapiranje, što znači da svaku *stranicu* možemo mapirati u svaki *okvir*.
+
+    Primer: $32bit \rightarrow 24bit$
+
+    Slikamo iz 32-bitnog u 24-bitni adresni prostor. Neka je veličina stranice $4KiB = 2^{2} \cdot 2^{10}B = 2^{12}B$
+
+     - Struktura virtuelne adrese:
+         | broj stranice (20bit) | pomeraj (12bit) |
+
+     - Struktura fizičke adrese:
+         | broj okvira (12bit) | pomeraj (12bit) |
+
+     - *Pomerajem* određujemo *indeks* u samoj stranici ili okviru. On se pri preslikavanju ne menja
+     - Gornjih 20 bitova virtuelne adrese se preslikava u gornjih 12 bitova fizičke adrese pomoću ~MMU~.
+
 232. Preslikavanje adresa na više nivoa. Zbog čega se koristi? Primer.
+
+     Kada imamo veliki virtuelni adresni prostor imaćemo i veliki broj *stranica* u *tablici* što zauzima dosta *uzastopnog* prostora u memoriji. Preslikavanje na više nivoa koristimo kako bismo izdelili samu tablicu u nekoliko manjih tablica, čime bismo rešili ranijepomenuti problem.
+
+     Primer:
+     - Neka naš sistem koristi 40-bitni adresni prostor sa stranicama koje mogu da smeste 4KiB stavki, gde je svaka stavka 4B
+       - veličina adresnog prostora: $A = 40b$
+       - broj stavki u jednoj stranici: $P = 4KiB = 2^{12}B$
+       - veličina jedne stavke u stranici: $s = 4B$
+       - broj adresa: $cnt = 2^{A} = 2^{40}$
+       - broj stranica: $p_{1} = \frac{cnt}{P} = 2^{28}$
+     - Ukupna memorija koju bi naša tablica zauzimala:
+       - $M_{1} = s * p_{1} = 2^{30} = 1GiB$
+     - Pošto je to previše da bismo alocirali *uzastopno* u memoriji,  izdelimo stranice u manje tablice na koje povežemo tablicu koju nazivamo *direktorijum*. Pristupamo manjim tablicama pomoću *broja tablice* (~BT~) kojim indeksiramo direktorijum.
+       - broj stavki u jednoj stranici: $P = 4KiB = 2^{12}B$ (ostaje isti)
+       - veličina jedne stavke u stranici: $s = 4B$ (ostaje ista)
+       - broj stranica: $p_{2} = \frac{p_{1}}{P} = \frac{2^{30}}{2^{12}} = 2^{18}$
+     - Memorija koju bi *jedna* naša tablica drugog nivoa zauzimala (imamo ih $2^{10}$ komada):
+       - $M_{2} = s * p_{2} = 2^{20} = 1MiB$
+     - Nakon što pomoću ~BT~ pristupimo direktorijumu da bismo dobili tablicu stranica, koristimo *broj stranice* (~BS~) da bismo u tablici stranica pristupilii *okviru* za stranicu koju smo tražili.
+       Virtuelna adresa ima oblik:
+     | $BT$ (10 bitova) | $BS$ (18 bitova) | $pomeraj$ (12 bitova) |
+
+     Prednost je u tome što ne moramo čuvati celu tablicu u memoriji već samo njen direktorijum (tablicu stranica drugog nivoa) i po potrebi možemo učitavati sa diska.
+
+     Mana je što se smanjuje efikasnost pri prevođenju adresa.
+
 233. Šta su i kada se koriste politike zamene stranica?
+
+     Politike zamene predstavljaju algoritme koje koristimo za određivanje koju stranicu bi trebalo sačuvati na pomoćnoj memoriji (npr. ~SSD~) kada nam se glavna memorija (~RAM~) popuni stranicama a potrebno je da učitamo novu stranicu.
+
 234. Navesti i ukratko objasniti najčešće politike zamene stranica
+
+     - ~FIFO = First In First Out~
+       - izbacuje se ona stranica koja je prva ubačena, nevezano da li se koristi često
+       - jednostavno za implementaciju ali neefikasno
+     - ~Second Chance~
+       - predstavlja blago unapređenu ~FIFO~ politiku
+       - svakoj stranici se pridružuje jedan bit koji govori da li je korišćena od kada u memoriji, i izbacuje se ona stranica koja je najduže a nije nijednom referisana
+       - jednostavno za implementaciju ali neefikasno (efikasnije od ~FIFO~)
+     - ~NFU = Not Frequently Used~
+       - brojimo koliko puta je neka stranica korišćena (imamo brojač za svaku), i menjamo onu koja je najmanje puta izbrojana
+       - relativno jednostavno za implementaciju, ali i dalje nedovoljno efikasno
+     - ~pseudo LRU = pseudo Least Recently Used~
+       - predviđanje zasniva na principu *vremenske lokalnosti*. Zamenjuje onu stranicu koja najduže nije bila korišćena.
+       - za svaku stranicu čuvamo masku veličine $1B$ gde su svi bitovi postavljeni na 1 ($mask = 0x255$)
+         - ako koristimo trenutnu stranicu, masku shiftujemo ulevo, u suprotnom udesno
+         - ako nam je maska jednaka $0$, to znači da je nismo koristili u 8 ciklusa, dok maska $mask = 0b00111111$ znači da je skoro korišćena stranica
+         - što nam je veći broj bitova kojim predstavljamo masku to nam je bolja aproksimacija ~LRU~-a
+
 235. Objasniti značaj veličine stranice virtuelne memorije i navesti primer.
+
+     - Male > Velike stranice:
+       - smanjenje interne fragmentacije odnosno povećanje iskorišćenosti stranica
+         - veličina podataka, programa i steka nije ceo broj stranica, pa je prosečno pola stranice neupotrebljeno (ovo se naziva *interna fragmentacija*)
+       - bolje pogađanje
+         - što je veća stranica, to će pri njenom učitavanju u glavnu memoriju zastupljenost nepotrebnih sadržaja biti veća
+     - Velike > Male stranice:
+       - manje tablice
+         - što su stranice veće, biće ih manje, pa su i tablice manje
+       - efikasniji pristup disku
+         - vreme pristupa disku je mnogo veće nego sam transfer, pa je za manje vreme moguće pročitati manju količinu većih podataka nego veću količinu malih podataka (jer se broj pristupa disku redukuje)
+           - Čitanje 100 stranica od 4KiB traje $100 \cdot (10ms+ \frac{4}{100}ms) = 10.04s$
+           - Čittanje 25 stranica od 16KiB traje $25 \cdot (10ms + \frac{16}{100}ms) = 2.54s$
+
+     Primer veličine stranice:
+     - Intel x86: stranice su uobičajeno 4KiB, a podržane su i stranice veličine 2/4MiB
+
 236. Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.
+
+     Tablice stranica predstavljaju asocijativnu strukturu (mapu) pomoću koje prevodimo stranice u okvire.
+
+     Koristimo *broj stranice* (~BS~) za indeksni pristup tablici stranica. U tom polju (stavki) između ostalog će nam se nalaziti *okvir* za stranicu čijim ~BS~-om smo pristupili.
+
+     Direktorijum stranica predstavlja asocijativnu strukturu (mapu) pomoću koje pristupamo tablici stranica.
+
+     Umesto da imamo jednu veliku neprekidnu tablicu, izdelimo stranice u manje tablice i na koje povežemo tablicu koju nazivamo *direktorijum*. Pristupamo manjoj tablici gde nam se tražena stranica nalazi pomoću *broja tablice* (~BT~) kojim indeksiramo direktorijum.
+
+     Možemo imati nekoliko nivoa direktorijuma.
+
+     Čuvanjem početne adrese master (početnog) direktorijuma u posebnom registru praktično dobijamo $n$ -arno stablo koje nam služi za prevođenje stranica u okvire.
+
+     Što nam je veća dubina stabla, to nam je prevođenje neefikasnije.
+
+     ~BT~ i ~BS~ "izvlačimo" kao uzastopne podnizove iz virtuelne adrese. Broj bitova koji je potreban za njih zavisi od veličine stranice i veličine adresnog prostora.
+
+     Redosled "izvlačenja" iz virtuelne adrese
+     | $BT_{k}$ | $BT_{k - 1}$ | ... | $BT_{0}$ | $BS$ | $pomeraj$ |
+
+     Gde je $k$ dubina stabla.
+
 237. Šta sadrže stavke u tablici stranica virtuelne memorije? Objasniti.
+
+    Sadržaj:
+     - broj okvira
+       - lokacija date stranice u glavnoj memoriji
+       - vodi se za stranice koje postoje u glavnoj memoriji
+     - adresa stranice na disku
+       - lokacija date stranice na disku
+       - vodi se za sve stranice
+     - /valid bit/
+       - označava da li je stranica u memoriji ili ne
+     - /dirty bit/
+       - označava da li je sadržaj stranice menjan
+       - ako je menjana, stranica se pri uklanjanju iz glavne memorije zapisuje na disku
+     - /reference bit/
+       - koristi se za implementaciju ~pseudo-LRU~ algoritma
+       - OS povremeno postavlja sve bitove referisanja na 0
+       - pri pristupanju stranici bit se postavlja na 1
+     - informacija o vlasniku
+       - OS mora da zna kom procesu pripada stranica
+     - bitovi zaštite
+       - označavaju tip pristupa koji vlasnik ostvaruje (/read/, /write/, /execute/)
+
 238. Šta je bafer tablice stranica virtuelne memorije (~TLB~) i čemu služi?
 
      ~TLB~ = /Translation Lookaside Buffer/
+
+    ~TLB~ je asocijativni keš koji čuva poslednje korišćene *stavke* iz tabele stranica (između ostalog fizičke adrese).
+
+    Da njega nema, za svako prevođenje bila bi potrebna dva pristupa memoriji, jedan za pronalaženje okvira (koje može biti dosta sporo kada imamo nekoliko slojeva direktorijuma stranica), i drugi za pristupanje samoj vrednosti.
+
+    Korišćenjem ~TLB~ dovoljno često eliminišemo potrebu za pronalaženjem okvira čime znatno poboljšavamo performanse.
 
 * Moderni procesori
 239. [@239] Objasniti princip preklapanja instrukcija u modernim procesorima
