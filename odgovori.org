@@ -1,6 +1,9 @@
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 #+TITLE: Odgovori na ispitna pitanja iz UOAR2
 
-1. Napisati istinitosne tablice osnovnih logičkih veznika (NE, I, ILI)
+* Iskazna logika
+
+1. [@1] Napisati istinitosne tablice osnovnih logičkih veznika (NE, I, ILI)
 
    - NE
      | A | NE(A) |
@@ -127,6 +130,8 @@
 
     Čitajući tablicu logičke funkcije, ako je izlaz za neku valuaciju 1, onda na našu savršenu DNF formulu dodajemo novi konjunkt koji se sastoji iz konjunkcije literala koji za tu valuaciju daju vrednost 1.
 
+* Minimizacija logičkih izraza
+
 14. Šta je minimizacija logičkih izraza i zbog čega nam je značajna?
 
     Minimizovati logički izraz znači pronaći logički ekvivalentan izraz koji sadrži najmanji mogući broj veznika.
@@ -190,7 +195,9 @@
     [WORK IN PROGRESS]
     Petrikov metod je metod koji se koristi za pronalaženje najmanjeg podskupa preostalih prostih implikanata u slučaju da neka kolona ostane "nepokrivena" u metodi Kvin-Mekalskog.
 
-21. Elementarna logička kola (gejtovi) i njihove šematske oznake.
+* Tranzistori i logička kola
+
+21. [@21] Elementarna logička kola (gejtovi) i njihove šematske oznake.
 
     [WORK IN PROGRESS]
 
@@ -288,6 +295,8 @@
 
     Vrednost visoke impendanse odgovara tipu NULL u nekim višim programskim jezicima, odnosno predstavlja odsustvo vrednosti. Označavamo je sa *Z* i koristimo je na primer u slučaju da imamo dva kola koja se povezuju na isti ulaz, kako ne bismo imali vrednosti u konfliktu, jedna od njih ima vrednost visoke impendanse.
 
+* Kombinatorna kola
+
 32. Šta je kombinatorno kolo?
 
     Kombinatorno kolo je logičko kolo čije vrednosti na izlazima se mogu sračunati u bilo kom trenutku u zavisnosti od ulaznih vrednosti odnosno prethodne ulazne vrednosti ne utiču na novu izlaznu vrednost.
@@ -298,6 +307,8 @@
 
     - Multipleksor (Mux)
     - Demultipleksor (DeMux)
+
+** Multipleksor i demultipleksor
 
 34. Šta je multipleksor i koja mu je osnovna funkcija? Predstaviti grafičkim simbolom i tablicom multipleksor 4-1.
 
@@ -345,7 +356,8 @@
 
     - Možemo implementirati pomoću demultipleksora 1-2
 
-39. Šta je dekoder i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom dekoder 2-4.
+** Koder i dekoder
+39. [@39] Šta je dekoder i koja je njegova osnovna funkcija? Predstaviti grafičkim simbolom i tablicom dekoder 2-4.
 
     [WORK IN PROGRESS]
 
@@ -392,7 +404,9 @@
 
     Ne kapiram crtež moraću u nekoj knjizi to da vidim verovatno
 
-44. Šta je komparator? Navesti osnovne vrste komparatora.
+** Komparator
+
+44. [@44] Šta je komparator? Navesti osnovne vrste komparatora.
 
     Komparator je kombinatorno kolo koje služi za upoređivanje dva podatka.
 
@@ -412,7 +426,9 @@
 
     Koristimo 4-bitni oduzimač čiji rezultat šaljemo na NILI koje nam govori da li su ulazi jednaki i /carry bit/ koji nam govori da li je $x$ manji od $y$, u suprotnom kad su oba $0$, $x$ je veći od $y$
 
-47. Nacrtati logičko kolo 8-bitnog pomerača (ulevo)
+** Pomerač
+
+47. [@47] Nacrtati logičko kolo 8-bitnog pomerača (ulevo)
 
     [WORK IN PROGRESS]
 
@@ -420,7 +436,9 @@
 
     Ideja je da se pomoću 8-bitnih 2-1 multipleksora u zavisnosti od kontrolnih bitova prvo proba da se pomeri za 4 pa za 2 pa za 1, čijim kombinacijama je moguće dobiti vrednosti pomeranja između 0 i 7. Pomeranje se vrši tako što se u multipleksorima ručno poveže ulaz pomeren za $2^{i}, i = 0,1,2$ bitova.
 
-48. Nacrtati istinitosnu tablicu i logičko kolo binarnog polusabirača
+** Sabirači i oduzimači
+
+48. [@46] Nacrtati istinitosnu tablicu i logičko kolo binarnog polusabirača
 
     [WORK IN PROGRESS]
 
@@ -511,7 +529,9 @@
     $$ G_{G} = \sum_{i = 0}^{K}G_{i}\prod_{j = i + 1}^{K}P_{j}$$ $K$ - broj bitova
     $$ P_{G} = \sum_{i = 0}^{K}P_{i}$$
 
-57. Navesti primer implementacije ALU jedinice.
+** Implementacija ALU i kombinatornih memorija
+
+57. [@57] Navesti primer implementacije ALU jedinice.
 
     [WORK IN PROGRESS]
 
@@ -527,7 +547,7 @@
     1. Funkcije koje želimo da računamo u PLA-u predstavimo u SDNF
        - neka su te funkcije u SDNF:
          1. $F_{1} = x\bar{y}\bar{z} + x\bar{y}z + xyz$
-         2. $F_{2} = \bar{x}\yz + x\bar{y}z + xyz$
+         2. $F_{2} = \bar{x}yz + x\bar{y}z + xyz$
     2. Minimizujemo ih
        - dobijamo:
          1. $F_{1} = x\bar{y} + xz$
@@ -551,7 +571,9 @@
     |  01 | 1100 |
     |  00 | 0011 |
 
-60. Šta je sekvencijalno kolo? Po čemu se sekvencijalna kola razlikuju od kombinatornih kola?
+* Sekvencijalna kola
+
+60. [@60] Šta je sekvencijalno kolo? Po čemu se sekvencijalna kola razlikuju od kombinatornih kola?
 
     Sekvencijalno kolo je logičko kolo koje daje izlaz na osnovu trenutnog ulaza i *prethodnih izlaza*.
 
@@ -583,8 +605,8 @@
     | 1 | 0 | - |        1 |
     | 1 | 1 | - |        ? |
 
-    - `-` označava bilo koju vrednost
-    - `?` označava nedefinisanu vrednost
+    - ~-~ označava bilo koju vrednost
+    - ~?~ označava nedefinisanu vrednost
      
 64. Objasniti ulogu časovnika. Na koji način časovnik omogućava sinhronizaciju sekvencijalnih kola?
 
@@ -603,7 +625,9 @@
       - Asimetrični = različito traju pozitivan i negativan deo ciklusa
     - Frekvencija časovnika = broj ciklusa u jednoj sekundi
 
-67. Šta je SR reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
+** Reze i flip-flopovi
+
+67. [@67] Šta je SR reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
 
     [WORK IN PROGRESS]
 
@@ -617,7 +641,7 @@
     |   1 |   1 | -   |          ? |
 
     SR reza funkcioniše tako što postavljanjem $(S, R) = (0, 1)$ resetujemo sačuvanu vrednost odnosno čuvamo $0$, analogno za $(S, R) = (1, 0)$ i $1$. Kada imamo $(S, R) = (0, 0)$, tada nam izlaz ostaje zapamćena vrednost. Problem sa SR rezom je što kolo ne može da bude stabilno pri ulazu $(S, R) = (1, 1)$
-   
+
 68. Šta je D reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
 
     [WORK IN PROGRESS]
@@ -674,7 +698,9 @@
 
     Moguće je rešiti problem tako što se SR, JK ili T flip-flop svedu na D flip-flop koji ne pati od istog problema tako što se uvede multipleksor koji u zavisnosti od ulaza polaznog flip-flopa bira šta će se dalje propustiti.
 
-75. Šta je registar i kako se implementira? Navesti primer.
+** Implementacija ~RAM~-a
+
+75. [@75] Šta je registar i kako se implementira? Navesti primer.
 
     [WORK IN PROGRESS]
 
@@ -734,7 +760,9 @@
 
     What the actual fuck
 
-82. Asinhroni binarni brojač. Nacrati šemu i objasniti princip rada. Koji je osnovni nedostatak asinhronih brojača?
+** Binarni brojač
+
+82. [@82] Asinhroni binarni brojač. Nacrati šemu i objasniti princip rada. Koji je osnovni nedostatak asinhronih brojača?
 
     [WORK IN PROGRESS]
 
@@ -758,7 +786,9 @@
     2. Prebacimo to u tablični oblik i odredimo vrednosti $J_{i}$ i $K_{i}$ potrebne za svaki prelazak stanja
     3. Preko Karnoovih mapa minimizujemo za svako $J_{i}$ i $K_{i}$
 
-85. Konačni automati i transduktori kao model sinhronih sekvencijalnih kola. Dizajn konačnih transduktora. Primer.
+** Konačni automati i transduktori
+
+85. [@85] Konačni automati i transduktori kao model sinhronih sekvencijalnih kola. Dizajn konačnih transduktora. Primer.
 
     [WORK IN PROGRESS]
 
@@ -809,7 +839,9 @@
      |   3 |   0 |          1 | 0 |
      |   3 |   1 |          0 | 1 |
 
-88. Šta je arhitektura a šta organizacija računara?
+* Arhitektura i organizacija
+
+88. [@88] Šta je arhitektura a šta organizacija računara?
 
     - Arhitektura računara je apstraktni model koji opisuje računar iz ugla programera kog zanima koje instrukcije postoje, načini adresiranja, kako se predstavljaju podaci i sl.
       - Odgovara na pitanje *Šta radi računar?*
@@ -919,7 +951,9 @@ POP
      2. Memorijski
      3. Neposredni (konstante)
 
-101. Objasniti direktno adresiranje memorijskih operanada.
+* Adresiranje
+
+101. [@101] Objasniti direktno adresiranje memorijskih operanada.
 
      Stvarna adresa se direktno uključuje u instrukciju. Adrese koje se javljaju u ovom načinu adresiranja se još nazivaju i apsolutne adrese. Ovaj način adresiranja je relativno jednostavan jer nema izračunavanja adrese, a prenos operanada zahteva samo jedno referisanje memorije.
     
@@ -1016,7 +1050,9 @@ mov r2, #3
 ldr r0, [r1], #4 ; r0 = *r1; r1 = r1 + 4;
             #+end_src
 
-107. Instrukcije transfera. Funkcija i primer upotrebe. (/x86-64, ARM/)
+* Assembler
+
+107. [@107] Instrukcije transfera. Funkcija i primer upotrebe. (/x86-64, ARM/)
      - ~x86-64~
        - ~mov, movzx, movsx~
          - ~dest~
@@ -1187,7 +1223,9 @@ add r4, r0 ; sum += eax
 
      Instrukcija ~bl~ postavlja adresu sledeće instrukcije u ~lr~ (/link register/) kao adresu povratka.
 
-121. Koje su osnovne komponente procesora? Objasniti ih.
+* Procesor
+
+121. [@121] Koje su osnovne komponente procesora? Objasniti ih.
 
      - ~ALU~ - Aritmetičko logička jedinica
        - zadužena je za aritmetičke i logičke operacije nad podacima
@@ -1305,7 +1343,7 @@ mov ir, mdr
 
      1. Na ulaze se dovode operandi, dok se na upravljačke linije dovodi kod operacije
      2. Kao izlaz dobijamo obrađene podatke
-
+       
 138. Na koje načine se može realizovati kontrolna jedinica? Poređenje.
 
      1. Hardverski
@@ -1355,7 +1393,9 @@ mov ir, mdr
 
     [TODO]
 
-145. Karakteristike memorija.
+* Memorija
+
+145. [@145] Karakteristike memorija.
 
      - kapacitet
      - adresivost
@@ -1511,7 +1551,9 @@ mov ir, mdr
      - optički diskovi (CD, DVD, BlueRay)
      - flash drive, SSD
 
-166. Objasniti namenu i osnovni princip rada keša.
+* Cache
+
+166. [@166] Objasniti namenu i osnovni princip rada keša.
 
      Keš memorija predstavlja malu količinu brze memorije koja u memorijskoj hijerarhiji stoji između procesorskih registara i glavne memorije i služi da ublaži razliku u brzini između procesora i glavne memorije.
 
@@ -1815,7 +1857,9 @@ mov ir, mdr
 
      Povećanjem stepena asocijativnosti se povećava procenat pogotka keša. Potpuno asocijativni keš je u tom smislu najbolji, ali je njegova implementacija teška, pa se dizajneri češće odlučuju za ~skup-asocijativno~ mapiranje, uz izbor većih skupova kad je to moguće.
 
-189. Šta je magistrala i čemu služi?
+* Magistrale
+
+189. [@189] Šta je magistrala i čemu služi?
 
      Magistrala je komunikacioni sistem koji prenosi podatke/instrukcije između komponenti računara ili eksternih uređaja.
     
@@ -1966,7 +2010,9 @@ mov ir, mdr
 212. Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike
 213. Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike
 
-214. Šta je sistem prekida i koja mu je uloga?
+* Sistem prekida
+
+214. [@214] Šta je sistem prekida i koja mu je uloga?
 
      Sistem prekida je mehanizam izmene kontrole toka programa.
 
@@ -2048,8 +2094,8 @@ mov ir, mdr
      Kada neki uređaj želi da izazove prekid, on kontroleru putem svoje ulazne magistrale šalje signal nakon čega na osnovu prioriteta kontroler određuje da li će uslužiti taj uređaj.
 
      Komunicira sa procesorom putem donjih 8 bitova data magistrale putem kojih i šalje indeks za vektor prekida.
-
-222. Šta su ulazno/izlazni uređaji?
+* I/O
+222. [@222] Šta su ulazno/izlazni uređaji?
 
      Ulazno/izlazni uređaji predstavljaju sredstvo pomoću kojeg računar komunicira sa spoljašnjim svetom odnosno sa čovekom i drugim uređajima.
 
@@ -2114,18 +2160,19 @@ mov ir, mdr
         - šalju se kontrolni signali u $id$, nakon čega se obezbeđuje da se podatak prenese preko data magistrale
      4. Šalje se signal za prekid procesoru, kako bi se obavestio da je transfer završen
 
-229. Šta je virtuelna memorija i zbog čega se koristi?
+* Virtuelna memorija
 
-     Virtuelna memorija predstavlja tehniku upravljanja memorijom koja omogućava da svaki program ima /idealan/ pogled na memoriju.
+229. [@229] Šta je virtuelna memorija i zbog čega se koristi?
 
-     Idealan pogled:
-     - programima memorija izgleda *nefragmentisano*, zbog čega individualni programu ne moraju da brinu o upravljanju memorije u kontekstu drugih programa
-     - svaki program ima *sopstveni virtuelni adresni prostor* fiksirane velicine koji je često veći nego količina fizički dostupne memorije
-     - svaki program misli *da je sam* i da je sva vidljiva memorija njegova
+     Virtuelna memorija predstavlja tehniku upravljanja memorijom koja omogućava da svaki program ima /idealizovan/ pogled na memoriju.
 
-         U instrukcijama se koriste virtuelne adrese koje ~MMU~ (/Memory Management Unit/) u procesoru prevodi u fizičke adrese
+     Idealizovan pogled:
+     - programu memorija izgleda *nefragmentisano* i kao da je *sam* u memoriji, zbog čega individualni programi ne moraju da brinu o upravljanju memorije
+     - svaki program ima *sopstveni virtuelni adresni prostor* koji je veći nego količina fizički dostupne memorije pomoću tehnike /paging/-a (delovi memorije koji se najređe koriste se stavljaju na /storage/ odnosno ~SSD/HDD~ i "uvoze" u ~RAM~ po potrebi)
 
-     Koristi se zbog sadasnjih programa koji su memorijski zahtevni i zato sto se uz pomoc nje mogu sacuvati veliki programi i velike kolicine podataka.
+     U instrukcijama se koriste virtuelne adrese koje ~MMU~ (/Memory Management Unit/) u procesoru prevodi u fizičke adrese
+
+     Koristi se jer apstrakuje ručno upravljanje memorije (programer ne mora da razmišlja da li ima dovoljno memorije, gde će se ona nalaziti i da li drugi programi mogu da joj pristupe / da je korumpiraju)
 
 230. Objasniti koncept stranica virtuelne memorije. Šta su stranice, a šta okvir stranica?
 231. Objasniti preslikavanje adresa virtuelne memorije. Primer.
@@ -2139,13 +2186,16 @@ mov ir, mdr
 
      ~TLB~ = /Translation Lookaside Buffer/
 
-239. Objasniti princip preklapanja instrukcija u modernim procesorima
+* Moderni procesori
+239. [@239] Objasniti princip preklapanja instrukcija u modernim procesorima
 240. Koji su osnovni uzroci zaustavljanja "pokretne trake" kod preklapanja instrukcija u savremenim procesorima? Koje se tehnike koriste za rešavanje ovakvih problema?
 241. Objasniti tehniku izvršavanja van redosleda (/out-of-order execution/)
 242. Objasniti tehniku predikcije grananja (/branch prediction/)
 243. Šta su superskalarni procesori?
 
-244. Koji su osnovni tipovi podataka u jeziku /Verilog/?
+* Verilog
+
+244. [@244] Koji su osnovni tipovi podataka u jeziku /Verilog/?
 245. Objasniti razliku između žičanih i registarskih tipova u jeziku /Verilog/
 246. Šta predstavljaju vektorski tipovi, a šta nizovi u jeziku /Verilog/?
 247. Šta predstavlja vrednost $z$ a šta vrednost $x$ u jeziku /Verilog/?
