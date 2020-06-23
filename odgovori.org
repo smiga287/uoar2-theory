@@ -2456,12 +2456,53 @@ mov ir, mdr
 
     Korišćenjem ~TLB~ dovoljno često eliminišemo potrebu za pronalaženjem okvira čime znatno poboljšavamo performanse.
 
-* Moderni procesori
+* Napredne arhitekture
+
 239. [@239] Objasniti princip preklapanja instrukcija u modernim procesorima
+
+     Princip preklapanja instrukcija se bazira na tome što se svaka faza izvršavanja (/fetch/, /decode/, /execute/) odvija u različitim komponentama procesora.
+
+     Ideja je da se sve tri faze odvijaju paralelno za različite instrukcije čime se značajno povećava količina obrađenih instrukcija po jedinici vremena.
+
+     Ovaj mehanizam podseca na pokretnu traku u fabrici.
+
 240. Koji su osnovni uzroci zaustavljanja "pokretne trake" kod preklapanja instrukcija u savremenim procesorima? Koje se tehnike koriste za rešavanje ovakvih problema?
+
+     - resursni problem
+       - događa se kada dve instrukcije na "pokretnoj traci" žele da pristupe istom resursu (npr. ALU), zbog čega može da dođe da do serijalizovanog izvršavanje, čime se gubi na performansama
+     - data problem
+       - događa se kada ulaz jedne instrukcije zavisi od izlaza druge, a obe se nalaze u "pokretnoj traci"
+     - kontrolni problem
+       - događa se kada zbog grananja moramo da odbacimo neke rezultate koje smo računali posle grananja
+
+     Najčešće korišene tehnike za rešavanje su:
+     - tehnika prethodnog dohvatanja (/prefetching/)
+     - tehnika izvršavanja van redosleda (/out-of-order execution/)
+
 241. Objasniti tehniku izvršavanja van redosleda (/out-of-order execution/)
+
+     Izvršavanje van redosleda je tehnika koja se koristi kod procesora visokih performansi da bi se iskoristili instrukcijski ciklusi koji bi inače bili neiskorišćeni zbog određenog kašnjenja.
+
+     Procesor izvršava instrukcije u redosledu koji određuje dostupnost ulaznih podataka, umesto njihovog originalnog redosleda u programu.
+
+     (fun fact ~Spectre~ i ~Meltdown~ greške su exploitovale ovu osobinu modernih procesora)
+
 242. Objasniti tehniku predikcije grananja (/branch prediction/)
+
+     Ideja /branch prediction/-a je da prilikom dohvatanja instrukcije *skoka* predvidi da li će biti skoka ili ne, i u zavisnosti od toga da dohvati odgovarajuće instrukcije.
+
+     Predikcije grananja delimo na:
+     - Fiksno
+       - unapred programiramo da li ćemo *uvek* da kažemo da će doći do skoka ili ne
+     - Statičko
+       - unapred programiramo da li ćemo *uvek* da kažemo da će doći do skoka ili ne, u zavisnosti od toga koja vrsta skoka je u pitanju (da li je skok kod petlje ili vraćanje na kraju funkcije itd.)
+     - Dinamičko
+       - na osnovu istorije poslednjih $n$ grananja radimo ono što je se najviše radilo do sad
+       - ispostavilo se kao najbolja tehnika
+        
 243. Šta su superskalarni procesori?
+
+     Superskalarni procesori su procesori koji implentiraju instrukcioni *paralelizam* tako što se sastoje od većeg broja funkcionalnih jedinica poput ~ALU~-a zbog čega mogu da odrade više instrukcija po jedinici vremena nego skalarni procesori (oni koji mogu najviše jednu instrukciju po ciklusu).
 
 * Verilog
 
