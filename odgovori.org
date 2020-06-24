@@ -779,15 +779,13 @@
 
     Moguće je rešiti problem tako što se SR, JK ili T flip-flop svedu na D flip-flop koji ne pati od istog problema tako što se uvede multipleksor koji u zavisnosti od ulaza polaznog flip-flopa bira šta će se dalje propustiti.
 
-** Implementacija ~RAM~-a
+** Statička i dinamička memorija
 
 75. [@75] Šta je registar i kako se implementira? Navesti primer.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/register.png]]
 
-    Registar dužine $n$ je kolo koje čuva $n$-bitnu vrednost. Najčešće se implementira preko D flip-flopova koji su svi povezani na zajednički signal časovnika i $e$ signal.
+    Registar dužine $n$ je kolo koje čuva $n$ -bitnu vrednost. Najčešće se implementira preko D flip-flopova koji su svi povezani na zajednički signal časovnika i $e$ signal.
 
 76. Statička memorija. Primer realizacije memorije $4\times4$.
 
@@ -797,8 +795,8 @@
 
     I/O:
     - $adr$ - adresa nad kojom treba operisati
-    - $data_in$ - podatke sa kojima treba raditi
-    - $data_out$ - pročitani podaci
+    - $data_{in}$ - podatke sa kojima treba raditi
+    - $data_{out}$ - pročitani podaci
     - $wr$ - flag koji označava dozvoljeno pisanje
     - $rd$ - flaag koji označva dozvoljeno čitanje
     - $clk$ - signal od časovnika
@@ -807,13 +805,13 @@
     1. $adr$ se prosleđuje dekoderu
     2. rezultat se prosleđuje u konjunkciju sa $wr$
     3. to stvara signal $e$ za sve flip-flopove u tom redu
-    4. podaci iz $data_in$ bivaju upisani u adresu $adr$
+    4. podaci iz $data_{in}$ bivaju upisani u adresu $adr$
 
     Čitanje:
     1. $adr$ se prosleđuje dekoderu
     2. rezultat aktivira bafere sa 3 stanja
     3. dodatni baferi sa 3 stanja se aktiviraju u zavisnosti od $rd$
-    4. podaci sa adrese $adr$ bivaju poslati na $data_out$
+    4. podaci sa adrese $adr$ bivaju poslati na $data_{out}$
       
 77. Na primeru objasniti princip konstrukcije većih memorija pomoću manjih.
 
@@ -830,6 +828,8 @@
     Kod sinhronih memorija, gde koristimo flip-flopove u /master-slave/ organizaciji, tada bismo mogli umesto da svaki flip-flop ima svog /master/-a uvedemo jednog /master/-a za jednu kolonu, koji će dalje naći svog /slave/-a pomoću dekodera. Potrebna su i $2$ reza koja će da pamte adresu. Na ovaj način smanjujemo broj potrebnih reza sa $2mn$ na $mn + n + 2$, što je značajna ušteda.
 
 79. Objasniti princip rada memorijske ćelije kod dinamičkih memorija.
+
+    [[./img/dram_bit.png]]
 
     Svaka ćelija za čuvanje jednog bita se sastoji iz jednog tranzistora i kondenzatora. Vrednost bita se čuva naelektrisanjem kondenzatora. Pun kondenzator odgovara $1$, dok prazan odgovara $0$. Kada želimo da upišemo vrednost, na *bitsku liniju* dovodimo odgovarajuću vrednost i aktiviramo *liniju reči* čime se otvara tranzistor i zbog toga se kondenzator puni ili prazni u zavisnosti od vrednosti koju želimo da upišemo. Prilikom čitanja *bitska linija* se naelektriše na neki međupotencijal (npr. 2.5V), pa se aktivira *linija reči* zbog čega će se potencijal na liniji reči blago promeniti u odnosu na vrednost koja je sačuvana, što će pojačavač registrovati i "pojačati" ka 0V ili 5V. Prilikom čitanja uništavamo zapisanu vrednost, tako da je potrebno nakon čitanja da je opet i upišemo. Kondenzator se vremenom sam prazni, tako da je potrebno periodično vršiti osvežavanje kompletne memorije.
 
@@ -851,21 +851,17 @@
 
 82. [@82] Asinhroni binarni brojač. Nacrati šemu i objasniti princip rada. Koji je osnovni nedostatak asinhronih brojača?
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/async_cnt.png]]
 
-    Implementiramo ga preko nekoliko T flip-flopova tako što je onaj koji čuva bit najniže vrednosti direktno povezan na signal časovnika. Svi T flip-flopovi za ulaz primaju $1$. Izlaz $N - 1$og T flip-flopa predstavlja signal časovnika, što znači da do promene dolazi samo ako je signal časovnika prešao sa $1$ na $0$, zbog čega se javlja "talasasti" efekat odnosno kašnjenje je $O(N)$, za $N$ - broj T flip-flopova.
+    Implementiramo ga preko nekoliko T flip-flopova tako što je onaj koji čuva bit najniže vrednosti direktno povezan na signal časovnika. Svi T flip-flopovi za ulaz primaju $1$. Izlaz $N - 1$ -og T flip-flopa predstavlja signal časovnika, što znači da do promene dolazi samo ako je signal časovnika prešao sa $1$ na $0$, zbog čega se javlja "talasasti" efekat odnosno kašnjenje je $O(N)$, za $N$ - broj T flip-flopova.
 
     Glavni nedostatak je vremenska neefikasnost.
 
 83. Sinhroni binarni brojač. Nacrtati šemu i objasniti princip rada.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/sync_cnt.png]]
 
-    Implementiramo ga preko nekoliko JK flip-flopova tako što ih povežemo sve sa časovnikom. Odluku da li da menjamo $i$-ti flip-flop donosimo na osnovu konjunkcije izlaza svih prethodnih flip-flopova. Na ovaj način nam se usložnjvaju AND gejtovi, zbog čega je kašnjenje $O(logN)$, za $N$ - broj JK flip-flopova.
+    Implementiramo ga preko nekoliko JK flip-flopova tako što ih povežemo sve sa časovnikom. Odluku da li da menjamo $i$ -ti flip-flop donosimo na osnovu konjunkcije izlaza svih prethodnih flip-flopova. Na ovaj način nam se usložnjvaju AND gejtovi, zbog čega je kašnjenje $O(logN)$, za $N$ - broj JK flip-flopova.
 
 84. Dizajn brojača sa proizvoljnim redosledom stanja. Primer.
 
@@ -875,7 +871,7 @@
 
     U slučaju da nam je potrebno da imamo brojač koji neće ići po /"default"/ redosledu, već nekim našim, potreban nam je brojač sa proizvoljnim redosledom stanja.
 
-    1. Nacrtamo /state machine/ \/ graf prelaska stanja
+    1. Nacrtamo konačni automat kao graf prelaska stanja
     2. Prebacimo to u tablični oblik i odredimo vrednosti $J_{i}$ i $K_{i}$ potrebne za svaki prelazak stanja
     3. Preko Karnoovih mapa minimizujemo za svako $J_{i}$ i $K_{i}$
 
@@ -887,7 +883,9 @@
      Fali slika ili nešto slično
      #+end_warning
 
-    Brojač sa ulazom kojim kontrolišemo u koje stanje će preći nazivamo *konačni automat*. Ukoliko to kolo prilikom svake promene stanja generiše novu vrednost na izlazu, onda to kolo nazivamo *konačni transduktor*.
+    *Konačni automat* je model ponašanja sinhronih kola koji se sastoji od konačnog skupa stanja i prelaza između stanja i pridruženih akcija.
+
+    Ukoliko to kolo prilikom svake promene stanja generiše novu vrednost na izlazu, onda to kolo nazivamo *konačni transduktor*.
 
     Konačni transduktori predstavljaju opšti model sinhronih sekvencijalnih kola.
 
