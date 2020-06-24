@@ -346,7 +346,7 @@
      Fali slika ili nešto slično
      #+end_warning
 
-    Multipleksor $2^{k}-1$ je kombinatorno kolo koje omogućava selekciju nekog od $k$ ulaza pomoću selekcionih bitova, čime faktički igra istu ulogu kao `if else` konstrukt u višim programskim jezicima.
+    Multipleksor $2^{k}-1$ je kombinatorno kolo koje omogućava selekciju nekog od $k$ ulaza pomoću selekcionih bitova, čime faktički igra istu ulogu kao ~if else~ konstrukt u višim programskim jezicima.
 
     |  S | I       |
     | 00 | $U_{0}$ |
@@ -361,7 +361,8 @@
      #+end_warning
 
     - Možemo implementirati direktno
-
+      - Disjunkcija 4 konjunkcije od po 3 signala
+      - U svakoj konjunkciji su vezani odgovarajući signali u zavisnosti od rednog broja (npr. za $U_{0}$ imamo konjunkciju od $U_{0}, \bar{S_{1}}, \bar{S_{0}}$, za $U_{1}$ imamo konjunkciju od $U_{1}, S_{1}, \bar{S_{0}}$)
     - Možemo implementirati pomoću multipleksora 2-1
 
 36. Kako se multipleksor upotrebljava za implementaciju logičkih funkcija?
@@ -376,7 +377,7 @@
 
     Demultipleksor je kombinatorno kolo koje igra obrnutu ulogu u odnosu na multipleksor, odnosno ima $1$ ulaz koji preusmerava na $2^{k}$ izlaza u zavisnosti od vrednosti selekcionih bitova.
 
-    U nepopunjenim ćelijama tabele može biti 0 ili *Z* u zavisnosti od implementacije.
+    U nepopunjenim ćelijama tabele može biti $0$ ili $Z$ u zavisnosti od implementacije.
 
     |  S | $I_{0}$ | $I_{1}$ | $I_{2}$ | $I_{3}$ |
     | 00 | $U_{0}$ |         |         |         |
@@ -401,7 +402,7 @@
      Fali slika ili nešto slično
      #+end_warning
 
-    Dekoder je kombinarno kolo koje na osnovu vrednosti binarnog broja aktivira odgovarajući signal na izlazu. Najčešće se koristi pri dekodiranju mašinskih instrukcija.
+    Dekoder je kombinatorno kolo koje na osnovu vrednosti binarnog broja aktivira odgovarajući signal na izlazu. Najčešće se koristi pri dekodiranju mašinskih instrukcija.
 
     Eg. Ako pretpostavimo da imamo 16 registara, u samoj instrukciji možemo kodirati koje registre koristimo samo preko 4 bita. Dekoder služi za "prevođenje" koje registre želimo da učestvuju.
 
@@ -425,11 +426,11 @@
      Fali slika ili nešto slično
      #+end_warning
 
-    Koder je kombinatorno kolo koje $2^{k}$ ulaza mapira u $k$-bitni broj (pod pretpostavkom da je najviše jedan ulaz 1). Takođe imamo i kontrolni izlaz koji nas obaveštava u slučaju da nijedan ulaz nije 1.
+    Koder je kombinatorno kolo koje $2^{k}$ ulaza mapira u $k$ -bitni broj (pod pretpostavkom da je najviše jedan ulaz 1). Takođe imamo i kontrolni izlaz koji nas obaveštava u slučaju da nijedan ulaz nije 1.
 
-    Obično se koristi u keš memorijama za određivanje indeksa registra koji sadrži određenu vrednost (prisutnost vrednosti se proverava komparatorima).
+    Običan koder ne može da handle-uje slučaj kada je više od jednog ulaza 1. Iz tog razloga svakom od ulaza se pridodaje težina, što omogućava da na izlazu bude ulaz sa najvišim prioritetom.
 
-    Običan komparator ne može da handle-uje slučaj kada je više od jednog ulaza 1. Iz tog razloga svakom od ulaza se pridodaje težina, što omogućava da na izlazu bude ulaz sa najvišim prioritetom.
+    Možemo koristiti koder se prioritetom pri obradi signala prekida. U slučaju da više uređaja zahteva pažnju procesora, možemo odrediti indeks uređaja koji traži pažnju a najvišeg je prioriteta.
 
 42. Nacrtati logičko kolo implementacije kodera 4-2.
 
@@ -468,7 +469,7 @@
      Fali slika ili nešto slično
      #+end_warning
 
-    Bitovi se redom porede tako što se *XOR*-uju i na kraju povežu sa *NILI* gejtom koje će dati $1$ ako su svi ulazi $0$ i $0$ u suprotnom
+    Bitovi se redom porede tako što se *XOR*-uju i na kraju povežu sa *NILI* gejtom koje će dati $1$ ako su svi ulazi $0$, u suprotnom $0$
 
 46. Nacrtati logičko kolo 4-bitnog komparatora za potpuno poređenje
 
@@ -492,7 +493,7 @@
 
 ** Sabirači i oduzimači
 
-48. [@46] Nacrtati istinitosnu tablicu i logičko kolo binarnog polusabirača
+48. [@48] Nacrtati istinitosnu tablicu i logičko kolo binarnog polusabirača
 
     #+begin_warning
      Fali slika ili nešto slično
@@ -562,19 +563,21 @@
 
 54. Objasniti ukratko princip rada sabirača sa računanjem prenosa unapred.
 
-    CLA sabirači problem računanja zbira dva broja rade tako što efikasno pretprocesiraju u $O(logN)$ vremenu, $N$ - broj bitova, da li će biti prenosa na individualnom bitu i samim tim, sabiranje je moguće izvršiti paralelno nad svim bitovima čime je ukupna vremenska složenost sabiranja svedena na $O(logN)$ za razliku od $O(N)$ kod talasastog sabirača.
+    ~CLA~ = /Carry Lookahead Adder/
+
+    ~CLA~ sabirači problem računanja zbira dva broja rade tako što efikasno pretprocesiraju u $O(logN)$ vremenu, $N$ - broj bitova, da li će biti prenosa na individualnom bitu i samim tim, sabiranje je moguće izvršiti paralelno nad svim bitovima čime je ukupna vremenska složenost sabiranja svedena na $O(logN)$ za razliku od $O(N)$ kod talasastog sabirača.
 
 55. Šta kod sabirača sa računanjem prenosa unapred označavaju vrednosti $P_{i}$ i $G_{i}$ i po kojim se formulama računaju?
 
-    Koristeći činjenicu da prenos na $i$-tom bitu zavisi od toga da li $i$-ti bitovi generišu prenos ili prenose prethodni prenos, dobijamo formulu:
+    Koristeći činjenicu da prenos na $i$ -tom bitu zavisi od toga da li $i$ -ti bitovi generišu prenos ili prenose prethodni prenos, dobijamo formulu:
 
     $$C_{0} = x_{0}y_{0} + x_{0}pc + y_{0}pc = x_{0}y_{0} + (x_{0} + y_{0})pc$$
     što možemo dodatno svesti na
     $$C_{0} = x_{0}y_{0} + (x_{0} \oplus y_{0})pc$$
-    jer ako su $x$ i $y$ jednaki $1$ svakako će zbog prethodne disjunkcije biti validan izraz
+    jer ako su $x$ i $y$ jednaki $1$ svakako će zbog prethodne disjunkcije rezultat biti isti
 
-    - $G_{i}$ = x_{i}y_{i}$ - govori nam da li $i$-ti bit *generiše* prenos
-    - $P_{i}$ = x_{i} \oplus y_{i}$ - govori nam da li $i$-ti bit *propagira* prethodni prenos
+    - $G_{i} = x_{i}y_{i}$ - govori nam da li $i$ -ti bit *generiše* prenos
+    - $P_{i} = x_{i} \oplus y_{i}$ - govori nam da li $i$ -ti bit *propagira* prethodni prenos
 
     Finalno, imamo /rekurentnu jednačinu:
     $$
@@ -588,24 +591,35 @@
     C_{i} = G_{i} + P_{i}C_{i - 1} \\
     C_{0} = G_{0} + P_{0}pc \\
     $$
-    $$ G_{G} = \sum_{i = 0}^{K}G_{i}\prod_{j = i + 1}^{K}P_{j}$$ $K$ - broj bitova
-    $$ P_{G} = \sum_{i = 0}^{K}P_{i}$$
+    $K$ - broj bitova
+    $$ G_{G} = G_{K - 1} + G_{K - 2}P_{k} + G_{K - 3}P_{K - 2}P_{K - 1} + ... + G_{0}P_{1}P_{2}\cdot ... \cdot P_{K - 1}$$
+    $$ G_{G} = \sum_{i = 0}^{K - 1}G_{i}\prod_{j = i + 1}^{K - 1}P_{j}$$
+    $$ P_{G} = P_{0}P_{1} \cdot ... \cdot P_{K - 1}$$
+    $$ P_{G} = \prod_{i = 0}^{K - 1}P_{i}$$
 
-** Implementacija ALU i kombinatornih memorija
+    #+begin_tip
+    Grupne vrednost nam služe da bismo lakše računali pri hijerarhijskom kombinovanju za višebitne ulaze.
+
+    Fiksirajmo $K = 4$
+
+    Četvorobitni sabirač će generisati prenos akko njegova najviša pozicija generiše prenos ($G_{3}$) ili ako $G_{2}$ ali se i prenese preko najvišeg ($P_{3}$) ili ako $G_{1}P_{2}P_{3}$ ili ako $G_{0}P_{1}P_{2}P_{3}$.
+
+    Četvorobitni sabirač će preneti $pc$ akko svi njegovi elementi prenose
+    #+end_tip
+
+** Implementacija ALU i opšta kombinatorna kola
 
 57. [@57] Navesti primer implementacije ALU jedinice.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/alu.png]]
 
-    Nacrtaj kolo koje prima dva 8-bitna ulaza i 3-bitni $op$ ulaz koji specificira koju operaciju treba izvrsiti. Stavi bilo kojih 8 operacija i povezi rezultate sa /mux/-om koji za selekcione bitove uzima $op$.
+    Nacrtaj kolo koje prima dva 8-bitna ulaza i 3-bitni $op$ ulaz koji specificira koju operaciju treba izvršiti. Stavi bilo kojih 8 operacija i poveži rezultate sa ~mux~-om koji za selekcione bitove uzima $op$.
 
 58. Šta je programibilni niz logičkih elemenata (PLA)? Navesti primer
 
-    Programibilni niz logičkih elemenata je programibilni logički uređaj (*PLD*) koje ima programibilne AND zatim i OR gejtove.
+    Programibilni niz logičkih elemenata je programibilni logički uređaj (*PLD*) koji ima programibilne *AND* zatim i *OR* gejtove.
 
-    Koristimo ih u slučaju da imamo fiksan skup "retkih"\/"raštrkanih" (eng. /sparse/) logičkih funkcija i želimo jednostavno i jeftino kolo koje će njih računati.
+    Koristimo ih u slučaju da imamo fiksan skup "retkih" / "raštrkanih" (/sparse/) logičkih funkcija (funkcije sa mnogo 0) i želimo jednostavno i jeftino kolo koje će njih računati.
 
     Primer procesa pravljenja PLA-a:
     1. Funkcije koje želimo da računamo u PLA-u predstavimo u SDNF
@@ -623,19 +637,20 @@
        - Imaćemo 3 *različita* konjunkta ($x\bar{y}, xz, yz$), dakle trebaće nam 3 AND gejta
     5. Programibilno povezujemo ILI gejtove sa AND gejtovima tako da dobijemo željene funkcije
 
-59. Kako se pomoću kombinatornih mreža implementira neizmenjiva memorija (ROM)? Primer tablice i odgovarajuće implementacije.
+    Neki drugi primer:
+    [[./img/pla.png]]
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+59. Kako se pomoću kombinatornih mreža implementira neizmenjiva memorija (ROM)? Primer tablice i odgovarajuće implementacije.
 
     Na ulazu se dobija adresa koja se potom prosleđuje ka dekoderu koji aktivira odgovarajuće izlaze na koje su povezani ulazi disjunkcija. U zavisnosti od povezanosti izlaza dekodera i ulaza disjunkcija određujemo koje podatke ćemo čitati iz ROM memorije.
 
     | adr |  out |
-    |  11 | 0101 |
-    |  10 | 1010 |
-    |  01 | 1100 |
-    |  00 | 0011 |
+    |  11 | 0011 |
+    |  10 | 1100 |
+    |  01 | 1111 |
+    |  00 | 0111 |
+
+    [[./img/rom.png]]
 
 * Sekvencijalna kola
 
