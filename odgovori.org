@@ -841,11 +841,9 @@
      
 81. Šta je pomerački registar i gde se obično koristi?
 
-    #+begin_tip
-     TODO
-    #+end_tip
-   
-    What the actual fuck
+    Pomerački registar je niz flip-flopova (izlaz flip-flopa $i$ je ulaz od $i + 1$) povezanih na isti časovnik koji pomeraju niz bitova ulevo ili udesno sa svakim ciklusom časovnika.
+
+    Najčešće se upotrebljavaju za konvertovanje iz paralelnog u serijski vid komunikacije i obratno.
 
 ** Binarni brojač
 
@@ -1489,31 +1487,47 @@ mov ir, mdr
      - jeftinija izrada
      - danas se praktično uvek koriste
 
-     Mikroprogram, koji se sastoji iz mikroinstrukcija sačuvan je u posebnoj ~ROM~ ili ~PLA~ memoriji ~CU~-a. Izvršavanje mikroinstrukcija generiše skup kontrolnih signala.
+     Mikroprogram, koji se sastoji iz mikroinstrukcija sačuvan je u posebnoj ~ROM~ ili ~PLA~ *memoriji* ~CU~-a. Izvršavanje mikroinstrukcija generiše skup kontrolnih signala.
     
 141. Šta je mikroinstrukcija? Struktura mikroinstrukcije
 
-    Mikroinstrukcija je najmanja celina mikrokoda koji predstavlja programibilni sloj apstrakcije između hardvera i mašinskog koda dostupnog programeru. Struktura mikroinstrukcije može biti *horizontalna* i *vertikalna*
+    Mikroinstrukcija je najmanja celina mikrokoda koji predstavlja programibilni sloj apstrakcije između hardvera i mašinskog koda. Struktura mikroinstrukcije može biti *horizontalna* i *vertikalna*
 
 142. Šta je mikroprogram? Objasniti način izvršavanja mikroprograma.
+    
+    Mikroprogram je niz mikroinstrukcija. Ideja mikroprogama je da se mašinske instrukcije pretvore u mikrorutine (niz mikroinstrukcija koji odgovara jednoj mašinskoj instrukciji) čije mikroinstrukcije se čuvaju u ~ROM~ ili ~PLA~ memoriji, čije izvršavanje generiše odgovarajuće kontrolne signale.
 
-    Mikroprogram je niz mikroinstrukcija. Ideja mikroprogama je da se mašinske instrukcije mapiraju u ROM ili PLA memoriji u odgovarajuće kontrolne signale.
+    Mikroprogram se izvršava od strane mikroprogramskog kontrolera.
+    #+caption: Mikrokontroler
+    [[./img/microcontroller.jpeg]]
 
-    #+begin_tip
-    TODO
-    #+end_tip
+     - /adress generator/ - dobija instrukciju od $IR$ i flegove na osnovu kojih generiše adresu odgovarajuće mikroinstrukcije (adresa u /control store/-u)
+     - $\mu PC$ - slično kao $PC$ (čuva sledeću mikroinstrukciju koju treba izvršiti)
+     - /control store/ - ~ROM~ ili ~PLA~ memorija gde se nalaze same mikroinstrukcije
 
 143. Objasniti horizontalni format mikroinstrukcija procesora.
 
-    #+begin_tip
-    TODO
-    #+end_tip
+     #+caption: Horizontalni format
+     [[./img/horizontal_microinstruction.png]]
+
+     Horizontalni format:
+     - svakom signalu odgovara po jedan bit
+       - samim tim, nije potrebno nikakvo dekodiranje jer možemo direktno pročitati vrednost
+     - Prednosti:
+       - moguće je navođenje velikog broja signala u jednoj instrukciji, zbog čega nam je potrebno manje ciklusa za izvršavanje instrukcija
+     - Mane:
+       - veličina mikroinstrukcije (npr. 90 bitova)
 
 144. Objasniti vertikalni format mikroinstrukcija procesora.
 
-    #+begin_tip
-    TODO
-    #+end_tip
+     #+caption: Vertikalni format
+     [[./img/vertical_microinstruction.png]]
+     Vertikalni format:
+     - Na dužini mikroinstrukcije je moguće uštedeti ako bismo umesto npr. 64 bita za kontrolisanje 32 registra (kontrolni signali za ulaz i izlaz svakog) koje bismo koristili u horizontalnom formatu, koristili 5 za identifikovanje registra i 1 za izbor signala (ulaz ili izlaz)
+     - Prednost
+       - kraće mikroinstrukcije
+     - Mane
+       - u jednom ciklusu je moguće navesti samo jedan registar, zbog čega nam je potrebno više ciklusa za izvršavanje instrukcija
 
 * Memorija
 
