@@ -76,7 +76,7 @@
 
 5. Zbog čega se algebra logike koristi kao osnova savremenih računara?
 
-   Iz razloga što je mnogo jednostavnije, stabilnije i jeftinije napraviti fizički uređaj koji ime dva diskretna stanja nego više njih. Takođe, aritmetičke operacije nad binarnim brojevima je jednostavno opisati pomoću algebre logike i samim tim implementirati pomoću logičkih kola.
+   Iz razloga što je mnogo jednostavnije, stabilnije i jeftinije napraviti fizički uređaj koji ima dva diskretna stanja nego više njih. Takođe, aritmetičke operacije nad binarnim brojevima je jednostavno opisati pomoću algebre logike i samim tim implementirati pomoću logičkih kola.
 
 6. Šta znači da su dva logička izraza ekvivalentna?
 
@@ -86,17 +86,17 @@
 
    - Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y}$)
    - Elementarna konjunkcija je logički izraz koji se sastoji iz konjunkcije literala (eg. $x\bar{y}z\bar{p}$)
-     - Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, S = \bar{x} \cdot y \cdot z$)
-   - DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. $x\bar{y}z + \bar{x}yz + xyz)$
-     - Savršena DNF se sastoji od disjunkcije savršenih elementarnih konjunkcija
+     - Savršena elementarna konjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = \{x, y, z\}, S = \bar{x} \cdot y \cdot z$)
+   - DNF je logički izraz koji se sastoji od disjunkcije elementarnih konjunkcija (eg. $x\bar{y} + \bar{x} + xyz$)
+     - Savršena DNF se sastoji od disjunkcije savršenih elementarnih konjunkcija (eg. $P = \{x, y, z\}, SDNF = x\bar{y}z + \bar{x}yz + xyz$)
 
 8. Definisati pojmove elementarne disjunkcije i konjunktivne normalne forme (KNF). Šta je savršena elementarna disjunkcija, a šta savršena KNF?
 
    - Literal je logički izraz koji je ili logička promenljiva ili negacija logičke promenljive (eg. $x, \bar{y}$)
    - Elementarna disjunkcija je logički izraz koji se sastoji iz disjunkcije literala (eg. $x + \bar{y} + z\bar{p}$)
-     - Savršena elementarna disjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = {x, y, z}, \bar{x} + y + z$)
-   - KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. $(x + \bar{y} + z) \cdot (\bar{x} + y + z) \cdot (x + y + z)$
-     - Savršena KNF se sastoji od konjunkcije savršenih elementarnih disjunkcija
+     - Savršena elementarna disjunkcija sadrži tačno jedan literal za svaku logičku promenljivu (eg. $P = \{x, y, z\}, \bar{x} + y + z$)
+   - KNF je logički izraz koji se sastoji od konjunkcije elementarnih disjunkcija (eg. $(x + \bar{y}) \cdot (\bar{x} + y) \cdot (x + y + z)$)
+     - Savršena KNF se sastoji od konjunkcije savršenih elementarnih disjunkcija (eg. $P = \{x, y, z\}, SKNF = (x + \bar{y} + z) \cdot (\bar{x} + y + z) \cdot (x + y + z)$)
 
 9. Ukratko opisati postupak za svođenje logičkog izraza na DNF
 
@@ -108,12 +108,12 @@
 
 10. Šta je logička funkcija i koliko ima funkcija reda $n$?
 
-    Logička funkcija je svako preslikavanje $f: {0, 1}^{n} \rightarrow {0, 1}$ koja *logičke vrednosti* $(x_{1}, x_{2}, ..., x_{n})$ slika u *logičku vrednost* $y \in {0, 1}$.
+    Logička funkcija je svako preslikavanje $f: \{0, 1\}^{n} \rightarrow \{0, 1\}$ koja *logičke vrednosti* $(x_{1}, x_{2}, ..., x_{n})$ slika u *logičku vrednost* $y \in \{0, 1\}$.
     Kardinalnost domena logičkih funkcija reda $n$ je $2^{n}$, dok je kodomena $2$, dakle, pošto se svaka funkcija iz domena može slikati u dve vrednosti u kodomenu, postoji $2^{2^{n}}$ funkcija reda $n$
 
 11. Šta je potpun sistem veznika? Navesti bar tri primera potpunih sistema logičkih veznika
 
-    Potpun sistem veznika predstavlja skup veznika pomoću kojeg je moguće predsaviti svaku logičku funkciju.
+    Potpun sistem veznika predstavlja skup veznika pomoću kojeg je moguće predstaviti svaku logičku funkciju.
     Primeri:
     1. I, ILI, NE
     2. I, NE
@@ -153,12 +153,16 @@
     2. Udvajanje:
        - U slučaju da imamo konjunkte $K_{1}, K_{2}$ nad kojima bismo mogli da primenimo /grupisanje/ sa $K$, onda dupliramo $K$ da bismo mogli da grupišemo sa oba
 
-    Eg. $F(x, y, z) = x\bar{y}z + \bar{x}\bar{y}z + x\bar{y}\bar{z}$
-    Možemo grupisati prvi i drugi i prvi i treći, tako da ćemo primeniti prvo /udvajanje/ pa tek onda grupisanje
-    $F(x, y, z) = x\bar{y}z + \bar{x}\bar{y}z + x\bar{y}z + x\bar{y}\bar{z}$
-    $F(x, y, z) = \bar{y}z(x + \bar{x}) + x\bar{y}(z + \bar{z})$
-    $F(x, y, z) = \bar{y}z(x + \bar{x}) + x\bar{y}(z + \bar{z})$
-    $F(x, y, z) = \bar{y}z + x\bar{y}$
+    Primer:
+
+    $$F(x, y, z) = x\bar{y}z + \bar{x}\bar{y}z + x\bar{y}\bar{z}$$
+
+    Možemo grupisati prvi i drugi kao i prvi i treći, tako da ćemo primeniti prvo /udvajanje/ pa tek onda grupisanje
+
+    $$F(x, y, z) = x\bar{y}z + \bar{x}\bar{y}z + x\bar{y}z + x\bar{y}\bar{z}$$
+    $$F(x, y, z) = \bar{y}z(x + \bar{x}) + x\bar{y}(z + \bar{z})$$
+    $$F(x, y, z) = \bar{y}z(x + \bar{x}) + x\bar{y}(z + \bar{z})$$
+    $$F(x, y, z) = \bar{y}z + x\bar{y}$$
 
 16. Objasniti način upotrebe Karnoovih mapa za minimizaciju logičkih izraza. Primer.
 
@@ -175,9 +179,9 @@
      #+end_warning
     Metoda Kvin-Meklaskog je metoda minimiacije logičkih izraza koja je pogodna za implementaciju na računaru.
 
-    1. Na ulazu dobijamo funkciju u SDNF. Sortiramo rastuće savršene konjunkcije po broju neinvertovanih literala i izdelimo ih u klase, gde $i$-ta klasa sadrži SK koji imaju $i$ neinvertovanih literala.
+    1. Na ulazu dobijamo funkciju u SDNF. Sortiramo rastuće savršene konjunkcije po broju neinvertovanih literala i izdelimo ih u klase, gde $i$ -ta klasa sadrži SK koji imaju $i$ neinvertovanih literala.
 
-    2. Vršimo grupisanje elemenata iz $i$-te sa elementima iz $i + 1$-ve klase, i rezultat čuvamo za sledeću iteraciju. Grupisanje je moguće ako se elementi koji se porede razlikuju samo na jednom mestu. Ovo radimo sve dok je moguće grupisati.
+    2. Vršimo grupisanje elemenata iz $i$ -te sa elementima iz $i + 1$ -ve klase, i rezultat čuvamo za sledeću iteraciju. Grupisanje je moguće ako se elementi koji se porede razlikuju samo na jednom mestu. Ovo radimo sve dok je moguće grupisati.
 
     3. Formiramo tabelu prostih implikanata (vidi primer). Identifikujemo /bitne proste implikante/.
 
@@ -210,47 +214,39 @@
 
 21. [@21] Elementarna logička kola (gejtovi) i njihove šematske oznake.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
-
-    - Buffer
-    - 3-state buffer
-    - NOT
-    - AND
-    - OR
-    - NAND
-    - NOR
-    - XOR
-    - NXOR
+    [[./img/logic_gates.png]]
 
 22. Nacrtati simbol i objasniti funkciju NMOS tranzistora.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/nmos.png]]
 
     NMOS tranzistor ima 3 ulaza:
     1. Source - povezan sa *negativan* napon
     2. Drain - povezan na *pozitivan* napon
     3. Gate - odredjuje da li će struja proticati
-       - Ako je napon u zoni logičke nule onda je izlaz 0
+       - Ako je napon u zoni logičke nule onda je izlaz vrednost visoke impendanse
        - Ako je napon u zoni logičke jedinice onda je izlaz 1
+
+    | G | S | D   |
+    | 0 | 0 | $Z$ |
+    | 1 | 0 | 0   |
 
     NMOS tranzistor ima ulogu u donjoj mreži (/pulldown network/) prekidača da poveže masu (/ground/) sa izlazom da bi u slučaju *niske* voltaže na izlazu bila *0*
 
 23. Nacrtati simbol i objasniti funkciju PMOS tranzistora.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/pmos.png]]
 
     PMOS tranzistor ima 3 ulaza:
     1. Source - povezan sa *pozitivan* napon
     2. Drain - povezan na *negativan* napon
     3. Gate - odredjuje da li će struja proticati
        - Ako je napon u zoni logičke nule onda je izlaz 1
-       - Ako je napon u zoni logičke jedinice onda je izlaz 0
+       - Ako je napon u zoni logičke jedinice onda je izlaz vrednost visoke impendanse
+
+    | G | S | D   |
+    | 0 | 1 | 1   |
+    | 1 | 1 | $Z$ |
 
     PMOS tranzistor ima ulogu u gornjoj mreži (/pullup network/) prekidača da poveže napajanje (/supply/) sa izlazom da bi u slučaju *visoke* voltaže na izlazu bila *1*
 
@@ -292,6 +288,10 @@
 
 27. Implementacija EILI kola u CMOS-u
 
+    #+begin_tip
+        Za bilo koju logičku funkciju ideja je da se za mesta u tablici gde se dobija 0 na izlazu gleda kako da se napravi donja mreža pomoću NMOS tranzistora (rednim ili paralelnim povezivanjem). Analogno za gornju mrežu i PMOS tranzistore.
+     #+end_tip
+
     #+begin_warning
      Fali slika ili nešto slično
      #+end_warning
@@ -302,13 +302,15 @@
 
 28. Propusni tranzistori i prenosne kapije. Funkcija i uloga.
 
+    [[./img/transmission_gate.png]]
+
     Propusne tranzistore koristimo u slučaju da nam je potrebno uslovno propuštanje nekog signala. Ako koristimo samo NMOS tranzistor imaćemo problem sa propuštanjem signala 1 jer neće postojati velika razliku u naponu između /source/-a i /gate/-a. Analogno za samo PMOS i signal 0.
 
     Da bismo to rešili, koristimo prenosne kapije koje su spoj ova dva propusna tranzistora. Često se koriste i za realizaciju bafera sa 3 stanja.
 
 29. Šta je bafer sa tri stanja i čemu služi?
 
-    Bafer sa 3 stanja je logičko kolo koje služi za pojačavanje stanja i uslovno/kontrolno propuštanje signala.
+    Bafer sa 3 stanja je kombinatorno logičko kolo koje služi za pojačavanje stanja i uslovno/kontrolno propuštanje signala.
 
 30. Implementacija bafera sa tri stanja u CMOS-u.
 
@@ -320,7 +322,7 @@
 
 31. Šta je vrednost visoke impendanse i koja je njena uloga u logičkim kolima?
 
-    Vrednost visoke impendanse odgovara tipu NULL u nekim višim programskim jezicima, odnosno predstavlja odsustvo vrednosti. Označavamo je sa *Z* i koristimo je na primer u slučaju da imamo dva kola koja se povezuju na isti ulaz, kako ne bismo imali vrednosti u konfliktu, jedna od njih ima vrednost visoke impendanse.
+    Vrednost visoke impendanse odgovara tipu ~NULL~ u nekim višim programskim jezicima, odnosno predstavlja odsustvo vrednosti. Označavamo je sa $Z$ i koristimo je na primer u slučaju da imamo dva kola koja se povezuju na isti ulaz, kako ne bismo imali vrednosti u konfliktu, jedna od njih ima vrednost visoke impendanse.
 
 * Kombinatorna kola
 
@@ -330,12 +332,11 @@
 
 33. Navesti najvažnije vrste osnovnih kombinatornih kola.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
-
-    - Multipleksor (Mux)
-    - Demultipleksor (DeMux)
+    - Multipleksori (Mux) i demultipleksori (DeMux)
+    - Koderi i dekoderi
+    - Komparatori
+    - Pomerači
+    - Sabirači i oduzimači
 
 ** Multipleksor i demultipleksor
 
@@ -646,9 +647,7 @@
 
 61. Nacrtati konceptualni dijagram sekvencijalnog kola i objasniti osnovni princip rada.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/seq_concept.png]]
 
     - $G$ je kombinatorno kolo koje po principu povratne sprege održava stanje $S$ ($G$ se može posmatrati kao vektorska funkcija $G: X \times S \rightarrow S$, za $X$ skup svih ulaza i $S$ skup svih stanja)
       - $S$ se neće promeniti sve dok se $X ne promeni
@@ -913,13 +912,13 @@
         
 86. Ukratko objasniti osnovni princip dizajna kontrolne jedinice kao konačnog transduktora.
 
-    Konačni transduktor je model ponašanja kola koji se sastoji od konačnog skupa stanja, prelaza između stanja i pridruženih akcija.
+    Konačni transduktor je model ponašanja sinhronih kola koji se sastoji od konačnog skupa stanja, prelaza između stanja i pridruženih akcija.
 
     Prelaz je opisan uslovom koji neophodno da bude ispunjen da bi došlo do prelaza.
 
     Akcija je opis aktivnosti koja se sprovodi prilikom nekom prelaza.
 
-    Može se predstaviti kao usmereni graf, ali se češće predstavlja putem tablice
+    Može se predstaviti kao usmereni graf, ali se češće predstavlja putem tablice.
 
     Kontrolna jedinica se može modelovati kao konačni transduktor koji na ulazu ima ~IR~ (trenutna instrukcija) i ~PSW~ (trenutni flegovi i sl) registre a na izlazu kontrolne signale. Da ne bismo nagađali logiku u ~CU~ koristimo konačni transduktor kao model koji je moguće fizički implementirati nad ~PLA~, koji je dalje moguće minimizovati, ili u vidu mikrokoda.
 
@@ -2493,7 +2492,7 @@ mov ir, mdr
 240. Koji su osnovni uzroci zaustavljanja "pokretne trake" kod preklapanja instrukcija u savremenim procesorima? Koje se tehnike koriste za rešavanje ovakvih problema?
 
      - resursni problem
-       - događa se kada dve instrukcije na "pokretnoj traci" žele da pristupe istom resursu (npr. ALU), zbog čega može da dođe da do serijalizovanog izvršavanje, čime se gubi na performansama
+       - događa se kada dve instrukcije na "pokretnoj traci" žele da pristupe istom resursu (npr. ALU), zbog čega može da dođe do serijalizovanog izvršavanje, čime se gubi na performansama
      - data problem
        - događa se kada ulaz jedne instrukcije zavisi od izlaza druge, a obe se nalaze u "pokretnoj traci"
      - kontrolni problem
