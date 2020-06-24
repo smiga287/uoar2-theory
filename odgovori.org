@@ -665,8 +665,8 @@
     [[./img/seq_concept.png]]
 
     - $G$ je kombinatorno kolo koje po principu povratne sprege održava stanje $S$ ($G$ se može posmatrati kao vektorska funkcija $G: X \times S \rightarrow S$, za $X$ skup svih ulaza i $S$ skup svih stanja)
-      - $S$ se neće promeniti sve dok se $X ne promeni
-    - $F$ je kombinatorno kolo koje transformiše stanje $S$ u izlaz $Y$ ($F$ se može posmatrati kao vektorska funkcija $F: S \rightarrow Y$ za $X$ skup svih ulaza i $S$ skup svih stanja)
+      - $S$ se neće promeniti sve dok se $X$ ne promeni
+    - $F$ je kombinatorno kolo koje transformiše stanje $S$ u izlaz $Y$ ($F$ se može posmatrati kao vektorska funkcija $F: S \rightarrow Y$ za $S$ skup svih stanja i $Y$ skup svih izlaza)
 
 62. Šta je nestabilnost sekvencijalnog kola, a šta nedeterminističnost? Šta je metastabilnost?
 
@@ -710,9 +710,7 @@
 
 67. [@67] Šta je SR reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/sr_latch.png]]
 
     SR reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
 
@@ -723,13 +721,11 @@
     |   1 |   0 | -   |          1 |
     |   1 |   1 | -   |          ? |
 
-    SR reza funkcioniše tako što postavljanjem $(S, R) = (0, 1)$ resetujemo sačuvanu vrednost odnosno čuvamo $0$, analogno za $(S, R) = (1, 0)$ i $1$. Kada imamo $(S, R) = (0, 0)$, tada nam izlaz ostaje zapamćena vrednost. Problem sa SR rezom je što kolo ne može da bude stabilno pri ulazu $(S, R) = (1, 1)$
+    SR reza funkcioniše tako što postavljanjem $(S, R) = (0, 1)$ *resetujemo* sačuvanu vrednost odnosno čuvamo $0$, analogno za $(S, R) = (1, 0)$ *setujemo* $1$. Kada imamo $(S, R) = (0, 0)$, tada nam izlaz ostaje zapamćena vrednost. Problem sa SR rezom je što kolo ne može da bude stabilno pri ulazu $(S, R) = (1, 1)$
 
 68. Šta je D reza? Nacrtati implementaciju, tablicu prelaska, logički simbol i objasniti ponašanje.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/d_latch.png]]
 
     D reza je asinhrono memorijsko kolo koje ima mogućnost čuvanja jednobitnog stanja.
 
@@ -747,9 +743,7 @@
 
 70. Nacrtati implementaciju master-slave SR flip-flopa i objasniti ponašanje
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/sr_ff_ms.png]]
 
     Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
 
@@ -757,19 +751,15 @@
 
 71. Nacrtati implementaciju master-slave D flip-flopa i objasniti ponašanje
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/d_ff_ms.png]]
 
     Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
 
-    Kao i kod D reze ulaz pre konjunkcija /master/-a biva i negiran da bi se eliminisao slučaj $(S, R) = (1, 1)$. Takođe se dodaje i multipleksor koji u zavisnosti od $e$ bira da li da propusti stari signal ili D.
+    Kao i kod D reze eliminiše se slučaj $(S, R) = (1, 1)$ (negiranjem izlaza multipleksora). Takođe se dodaje i multipleksor koji u zavisnosti od $e$ bira da li da propusti stari signal ili D.
 
 72. Nacrtati implementaciju master-slave JK flip-flopa i objasniti ponašanje
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/jk_ff_ms.png]]
 
     Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
 
@@ -777,9 +767,7 @@
    
 73. Nacrtati implementaciju master-slave T flip-flopa i objasniti ponašanje
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+    [[./img/t_ff_ms.png]]
 
     Imamo dve SR reze, leva je /master/, desna je /slave/. Izlazi /master/-a se prosleđuju i čuvaju u /slave/-u. Ulazi obe reze kontrolisani su konjunkcijama koje su povezane na signal časovnika. Kada je signal časovnika $0$, tada su ulazi /master/-a otvoreni i moguće je menjati vrednost koja se čuva u njemu, dok su ulazi /slave/-a zatvoreni. Pri uzlaznom rubu ulazi /master/-a se zatvaraju dok se ulazi /slave/-a otvaraju i upisuje se ono što je bilo u /master/-u i na kraju to isto i daje na izlazu. Posledica toga je da do promene stanja može doći isključivo u *uzlaznom rubu*.
 
@@ -787,7 +775,7 @@
 
 74. Objasniti problem "hvatanja jedinice" (/1s cathing problem/) kod master-slave SR i JK flip-flopova. Na koji način se ovaj problem može rešiti?
 
-    Kada imamo kratkotrajni šum signala (npr. nagli skok i pad) na jednom od ulaza u fazi časovnika u kojoj se menjaju vrednosti, kod SR, JK i T flip-flopova se zabeleži $1$ iako se u međuvremenu promenilo na $0$. Do toga dolazi jer se $1$ odmah pamti u $master$-u da bi pri promeni na $0$ to samo dalo signal da se ono što je zapamćeno održi.
+    Kada imamo kratkotrajni šum signala (npr. nagli skok i pad) na jednom od ulaza, u fazi časovnika u kojoj se menjaju vrednosti, kod SR, JK i T flip-flopova se zabeleži $1$ iako se u međuvremenu promenilo na $0$. Do toga dolazi jer se $1$ odmah pamti u $master$ -u da bi pri promeni na $0$ to samo dalo signal da se ono što je zapamćeno održi.
 
     Moguće je rešiti problem tako što se SR, JK ili T flip-flop svedu na D flip-flop koji ne pati od istog problema tako što se uvede multipleksor koji u zavisnosti od ulaza polaznog flip-flopa bira šta će se dalje propustiti.
 
