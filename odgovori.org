@@ -912,12 +912,16 @@
        - "Težine" su formata $X/Y$, odnosno ako smo na stanju $Q$ sa ulazom $X$ preći ćemo na $Q^{next}$ i na izlazu ispisati $Y$
         
 86. Ukratko objasniti osnovni princip dizajna kontrolne jedinice kao konačnog transduktora.
-   
-    #+begin_tip
-     TODO
-    #+end_tip
 
-    What the fuck?
+    Konačni transduktor je model ponašanja kola koji se sastoji od konačnog skupa stanja, prelaza između stanja i pridruženih akcija.
+
+    Prelaz je opisan uslovom koji neophodno da bude ispunjen da bi došlo do prelaza.
+
+    Akcija je opis aktivnosti koja se sprovodi prilikom nekom prelaza.
+
+    Može se predstaviti kao usmereni graf, ali se češće predstavlja putem tablice
+
+    Kontrolna jedinica se može modelovati kao konačni transduktor koji na ulazu ima ~IR~ (trenutna instrukcija) i ~PSW~ (trenutni flegovi i sl) registre a na izlazu kontrolne signale. Da ne bismo nagađali logiku u ~CU~ koristimo konačni transduktor kao model koji je moguće fizički implementirati nad ~PLA~, koji je dalje moguće minimizovati, ili u vidu mikrokoda.
 
 87. Navesti primer opisa nekog algoritma u formi konačnog transduktora (samo tablica prelaska, bez realizacije samog transduktora)
 
@@ -1661,26 +1665,17 @@ mov ir, mdr
 
 161. Koje vrste preslikavanja memorijskih adresa razlikujemo? Objasniti.
 
-     Preslikavanje adresa je postupak kojim se fizička memorija mapira u adresnom prostoru računara.
-     #+begin_tip
-    TODO
-    #+end_tip
+     Preslikavanje adresa je postupak kojim mapiramo fizičku memoriju u adresnom prostoru računara.
 
      Preslikavanje može biti *puno* i *delimično*
 
 162. Objasniti puno preslikavanje memorijskih adresa.
 
      Puno preslikavanje memorijskih adresa je ~1-1~ preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
-     #+begin_tip
-    TODO
-    #+end_tip
 
 163. Objasniti delimično preslikavanje memorijskih adresa
 
-     Puno preslikavanje memorijskih adresa *nije* ~1-1~ preslikavanje (za svaku memorijsku lokaciju postoji najviše jedna adresa koja joj odgovara)
-     #+begin_tip
-    TODO
-    #+end_tip
+     Puno preslikavanje memorijskih adresa *nije* ~1-1~ preslikavanje (za svaku memorijsku lokaciju postoji više adresa koje joj odgovaraju)
 
 164. Objasniti poravnanje podataka (memorija).
 
@@ -1688,12 +1683,9 @@ mov ir, mdr
 
 165. Navesti osnovne vrste spoljašnjih memorija i navesti njihove karakteristike
 
-    #+begin_tip
-     TODO
-    #+end_tip
+     Spoljašnja memorija trajno sadrži podatke i programe koji se ne koriste aktivno (nije joj potrebno napajanje za očuvanje sadržaja). Dosta je sporija od unutrašnje memorije, ali ima veći kapacitet.
 
-     smara.
-
+     Primeri:
      - magnetna traka
      - magnetni diskovi (floppy, HDD)
      - optički diskovi (CD, DVD, BlueRay)
@@ -1924,13 +1916,11 @@ mov ir, mdr
       
 179. Objasniti politiku zamenjivanja pseudo-najduže nekorišćene linije keša (~pseudo-LRU~). Dobre i loše strane.
 
-    #+begin_tip
-     TODO
-    #+end_tip
-   
      ~pseudo-LRU = pseudo Least Recently Used~
 
-     Predstavlja aproksimaciju ~LRU~ politike. Keš linije se dele u dve grupe, gde se pomoću jednog bita označava linija keša koja je najskorije korišćena u skupu. Potom se drugoj grupi pristupa koja se dalje deli u podskupove dok ne dođemo do jedne linije keša.
+     Predstavlja aproksimaciju ~LRU~ politike. Keš linije se dele u dve grupe, gde se pomoću jednog bita označava linija keša koja je grupa najskorije korišćena. Delimo dalje u podskupove sve dok ne dođemo do jedne linije keša.
+
+     [[./img/pseudo_lru_tree.png]]
 
     Prednosti:
      - dosta manja memorijska složenost, što se najviše ogleda u situacijama kada imamo više od $4$ keš linije u jednom skupu
@@ -2017,11 +2007,7 @@ mov ir, mdr
     
 190. Kako se ostvaruje deljenje magistrale? Na koji način se sprečava kolizija signala? Objasniti.
 
-     #+begin_tip
-    TODO
-    #+end_tip
-
-     Da bismo povezali više uređaja na magistralu, potrebno je sprečiti istovremeno puštanje signala od strane različitih uređaja. Ovo se obično postiže korišćenjem *bafera sa tri stanja* (/tri-state buffer/).
+     Da bismo povezali više uređaja na magistralu, potrebno je sprečiti istovremeno puštanje signala od strane različitih uređaja. Ovo se obično postiže nadovezivanjem *bafera sa tri stanja* (/tri-state buffer/) na svakom od uređaja čime pomoću kontrolnog signala možemo određivati koji uređaj sme da šalje signal.
 
 191. Šta je transakcija a šta operacija magistrale? Šta je protokol magistrale?
 
@@ -2050,29 +2036,35 @@ mov ir, mdr
 193. Koja je razlika između multipleksiranih i razdvojenih magistrala? Poređenje.
 
      Paralelne magistrale mogu biti:
+     - razdvojene (/dedicated/)
+       - odvojene linije se koriste za adrese i podatke (tzv. /data magistrala/, /adresna magistrala/)
+       - Memorijska magistrala je primer odvojene paralelne magistrale
      - multipleksirane (/multiplexed/)
        - iste linije se koriste i za adrese i za podatke tako što se prenose naizmenično u različitim ciklusima
        - ~PCI~ magistrala je primer multipleksirane paralelne magistrale
-     - razdvojene (/dedicated/)
-       - odvojene linije se koriste za adrese, podatke i kontrolne signale (tzv. /magistrala podataka, adresna magistrala, kontrolna magistrala/)
-       - Memorijska magistrala je primer odvojene paralelne magistrale
 
      Prednosti multipleksiranih magistrala u odnosu na odvojene je u jeftinijoj implementaciji, a mana je u manjoj brzini prenosa (jer je potrebno više ciklusa za obavljanje transakcije)
    
 194. Šta je širina magistrale?
 
-     Širina magistrale određuje veličinu podataka koji se prenose magistralom. Osnovna motivacija za proširivanje je podizanje propustnosti (/throughput/) a time i performansi. Sužavanje se radi u slučajevima da nam je potrebno da smanjimo složenost, samim tim i cenu.
+     Širina magistrale određuje veličinu podataka i adresa koji se prenose magistralom. Osnovna motivacija za proširivanje je podizanje propustnosti (/throughput/) a time i performansi. Sužavanje se radi u slučajevima da nam je potrebno da smanjimo složenost, samim tim i cenu.
+
+     Primer: Širina adresne magistrale nam određuje veličinu adresnog prostora. Sa sistemom sa $n$ linija adresne magistrale možemo adresirati $2^{n}$ bajtova.
 
 195. Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije čitanja u slučaju sinhrone magistrale.
 
+     [[./img/sync_bus_read_time.png]]
+
      #+begin_tip
-    TODO
+    Pročitaj u Dandamudiju da bi razumeo
     #+end_tip
 
-196. Objasniti i predsaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.
+196. Objasniti i predstaviti vremenskim dijagramom izvršavanje operacije pisanja u slučaju sinhrone magistrale.
+
+     [[./img/sync_bus_write_time.png]]
 
      #+begin_tip
-    TODO
+    Pročitaj u Dandamudiju da bi razumeo
     #+end_tip
 
 197. Šta je stanje čekanja? Kada se i kako upotrebljava? Objasniti operaciju čitanja sa stanjem čekanja.
@@ -2089,7 +2081,7 @@ mov ir, mdr
 
      Prenošenje blokova podrazumeva da se jednom *složenom operacijom* prenosi više uzastopnih reči jer se ispostavilo da je efikasnije pri istoj transakciji pročitati više reči nego u više uzastopnih operacija pojedinačno.
 
-     Koristi se često za popunjavanje keš memorije.
+     Koristi se često za popunjavanje keš memorije (zbog čega i često veličina blokovnog prenosa ista kao i veličina keš linija).
 
 199. Šta je "/read-modify-write/" transakcija i za šta se upotrebljava?
 
