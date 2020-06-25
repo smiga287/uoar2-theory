@@ -958,7 +958,7 @@
 
 90. Šta su troadresni procesori? Primer instrukcija i koda. Karakteristike.
 
-    Troadresni procesor je procesor koji u instrukciji može da ima tri adrese. Programi na troadresnom računaru su kompaktni, ali samo instrukcije mogu da budu glomazne zbog zahteva za čuvanjem 3 operanda.
+    Troadresni procesor je procesor koji u instrukciji može da ima tri adrese. Programi na troadresnom računaru su kompaktni, ali same instrukcije mogu da budu glomazne zbog zahteva za čuvanjem 3 operanda.
 
     #+begin_src asm
     ADD C, A, B
@@ -1012,7 +1012,7 @@
 
     Posledice:
     - Iz velikog skupa instrukcija se koristi oko 20%, dok se ostale ređe koriste
-    - Otežano dekodiranja zbog velikog broja instrukcija i načina adresiranja
+    - Otežano dekodiranje zbog velikog broja instrukcija i načina adresiranja
 
 97. Karakteristike ~RISC~ arhitekture.
    
@@ -1064,17 +1064,18 @@
 
 103. Objasniti indeksno adresiranje memorijskih operanada.
 
-     Instrukcija sadrži binarne kodove dva registra čije se vrednosti sabiraju i tako dobijamo adresu memorijskog operanda. Obično je vrednost jednog registra fiksirana, a drugi predstavlja indeks koji se pomera. Korisno je za pristup elementima niza.
-
-     - Skalirano indeksno adresiranje:
-       - Vrednost indeksnog registra se može množiti konstantom (npr. $4$ ili $8$) pre sabiranja sa baznim registrom.
+     - Bazno indeksno adresiranje:
+       - Instrukcija sadrži binarne kodove dva registra čije se vrednosti sabiraju i tako dobijamo adresu memorijskog operanda. Obično je vrednost jednog registra fiksirana, a drugi predstavlja indeks koji se pomera i koji je moguće množiti konstantom (npr. $4$ ili $8$) pre sabiranja sa baznim registrom. Korisno je za pristup elementima niza.
 
      - Apsolutno indeksno adresiranje:
        - Bazna adresa ne mora biti u registru, već može biti zadata kao apsolutna adresa na koju se dodaje vrednost indeksnog registra (uz eventualno prethodno skaliranje)
+         #+begin_src asm
+    add eax, table[4 * esi] ; table je niz koji se nalazi u data segmentu
+        #+end_src
 
 104. Objasniti relativno adresiranje memorijskih operanada.
 
-     U ovom načinu za adresiranje se kao registar koristi brojač instrukcija (~PC~ /program counter/) čiji sadržaj se uzima kao *početna adresa*. U adresni deo instrukcije se upisuje ceo broj koji predstavlja udaljenje od početne adrese. Relativno adresiranje se koristi kada znamo da je ciljana adresa negde u okolini tekuće.
+     U ovom načinu za adresiranje se koristi brojač instrukcija (~PC~ /program counter/) čiji sadržaj se uzima kao *početna adresa*. U adresni deo instrukcije se upisuje ceo broj koji predstavlja udaljenje od početne adrese. Relativno adresiranje se koristi kada znamo da je ciljana adresa negde u okolini tekuće.
 
 105. Objasniti načine adresiranja na /x86-64/ arhitekturi.
 
@@ -1091,10 +1092,11 @@
      - *Memorijsko*:
        - Direktno
         #+begin_src asm
-value dword 42
+.data
+    value dw 42
 ...
 f:
-    add eax, [value]
+    add eax, value
         #+end_src
        - Indirektno
         #+begin_src asm
@@ -1117,23 +1119,14 @@ f:
     mov r0, r0, 42
         #+end_src
      - *Registarsko*:
+       - Direktno
         #+begin_src asm
     mov r0, r1
-        #+end_src
-     - *Memorijsko*:
-       - Direktno
-         #+begin_error
-            Bleji eax, izmeni
-         #+end_error
-        #+begin_src asm
-value dword 42
-...
-add eax, [value]
         #+end_src
        - Indirektno
         #+begin_src asm
     ; r1 je pokazivač na prvi element niza
-    add r0, [r1]
+    ldr r0, [r1]
         #+end_src
        - Indeksno
          - Prefiksno bez update-a
