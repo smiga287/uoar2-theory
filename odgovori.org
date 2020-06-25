@@ -2079,7 +2079,7 @@ f:
 
      Prenošenje blokova podrazumeva da se jednom *složenom operacijom* prenosi više uzastopnih reči jer se ispostavilo da je efikasnije pri istoj transakciji pročitati više reči nego u više uzastopnih operacija pojedinačno.
 
-     Koristi se često za popunjavanje keš memorije (zbog čega i često veličina blokovnog prenosa ista kao i veličina keš linija).
+     Koristi se često za popunjavanje keš memorije (zbog čega je i često veličina blokovnog prenosa ista kao i veličina keš linija).
 
 199. Šta je "/read-modify-write/" transakcija i za šta se upotrebljava?
 
@@ -2143,6 +2143,8 @@ f:
 
 205. Objasniti detaljno mehanizam ulančavanja kod centralizovane arbitraže.
 
+    [[./img/bus_chained.png]]
+
     Signal za zahtev se formira kao disjunkcija zahteva pojedinačnih /master/-a na zajedničkoj magistrali.
 
     Signal za dodelu se prosleđuje redom od jednog do drugog /master/-a. Ako neku uređaj nije tražio pristup magistrali onda on prosleđuje sledećem sve dok ne dođe do prvog po prioritetu koji je zatražio pristup magistrali.
@@ -2150,13 +2152,74 @@ f:
     Veoma je jednostavan za implementaciju, ali mu je mana što omogućava samo fiksni prioritet politike dodele.
 
 206. Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.
+
+    [[./img/bus_independant.png]]
+
+    Svaki /master/ je povezan sa arbitrom preko zasebnih magistrala za *zahtev* (~REQ~) i *dodelu* (~GNT~).
+
+    Omogućava da se implementiraju komplikovanije politike dodele jer postoji odvojena komunikacija sa svakim /master/-om.
+
+    Bolje toleriše u odnosu na ulančavnje slučaj kada se neki od mastera pokvari zato što to ne utiče na ostale.
+
+    Komplikovaniji je za implementaciju.
+
 207. Električne karakteristike serijskih magistrala
+
+     #+begin_tip
+        TODO
+     #+end_tip
+
 208. Navesti najčešće načine kodiranja bitova kod serijskog prenosa
+    
+     - RZ (/return-to-zero/)
+     - NRZ (/non-return-to-zero/)
+     - NRZI (/non-return-to-zero-inverted/)
+
 209. Koja je osnovna prednost, a koja mana ~NRZ~ kodiranja u odnosu na ~RZ~ kodiranje?
+
+     #+begin_tip
+        TODO
+     #+end_tip
+
 210. Objasniti ~NRZI~ kodiranje.
+
+     #+begin_tip
+        TODO
+     #+end_tip
+
 211. Ukratko objasniti ~8b/10b~ kodiranje? Koji je razlog za korišćenje ovog načina kodiranja?
+
+     #+begin_tip
+        TODO
+     #+end_tip
+
 212. Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike
+
+     - PCI
+       - multipleksirana
+       - širina 32/64bit
+       - sinhrona
+       - služi sa povezivanje sa periferijskim uređajima (mrežne kartice, audio kartice i sl.)
+     - Memorijska magistrala
+       - razdvojena
+       - širina 16/32/64bit
+       - služi za komunikaciju glavne memorije i procesora
+     - PATA
+       - širina 16bit
+       - služi za povezivanje sa sekundarnom memorijom (HDD, CD i sl.)
+
 213. Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike
+
+     - PCI Express
+       - naslednik PCI
+       - dosta brži prenos podataka
+     - USB
+       - /plug and play/
+       - služi za povezivanje eksternih uređaja
+     - SATA
+       - naslednik PATA
+       - /hot swapping/
+       - dosta brži prenos podataka
 
 * Sistem prekida
 
@@ -2422,7 +2485,7 @@ f:
      Primer veličine stranice:
      - Intel x86: stranice su uobičajeno 4KiB, a podržane su i stranice veličine 2/4MiB
 
-236. Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.
+236. Šta su tablice, a šta direktorijumi stranica virtuelne memorije? Objasniti.
 
      Tablice stranica predstavljaju asocijativnu strukturu (mapu) pomoću koje prevodimo stranice u okvire.
 

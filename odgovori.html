@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-06-25 Thu 13:54 -->
+<!-- 2020-06-25 Thu 15:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Odgovori na ispitna pitanja iz UOAR2</title>
@@ -254,45 +254,45 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org62a1699">1. Iskazna logika</a></li>
-<li><a href="#orga1d89c5">2. Minimizacija logičkih izraza</a></li>
-<li><a href="#org8026570">3. Tranzistori i logička kola</a></li>
-<li><a href="#org6a90939">4. Kombinatorna kola</a>
+<li><a href="#org691710c">1. Iskazna logika</a></li>
+<li><a href="#orgdd1a7ef">2. Minimizacija logičkih izraza</a></li>
+<li><a href="#org0be1ad2">3. Tranzistori i logička kola</a></li>
+<li><a href="#orgcb132ba">4. Kombinatorna kola</a>
 <ul>
-<li><a href="#orgc4b3a6b">4.1. Multipleksor i demultipleksor</a></li>
-<li><a href="#orgfcdb614">4.2. Koder i dekoder</a></li>
-<li><a href="#orgd622de8">4.3. Komparator</a></li>
-<li><a href="#orga2b0794">4.4. Pomerač</a></li>
-<li><a href="#org9dcbc03">4.5. Sabirači i oduzimači</a></li>
-<li><a href="#orgd34cfbe">4.6. Implementacija ALU i opšta kombinatorna kola</a></li>
+<li><a href="#org91a63ba">4.1. Multipleksor i demultipleksor</a></li>
+<li><a href="#org6959090">4.2. Koder i dekoder</a></li>
+<li><a href="#orgf04ecab">4.3. Komparator</a></li>
+<li><a href="#org2d93e1f">4.4. Pomerač</a></li>
+<li><a href="#org4885f89">4.5. Sabirači i oduzimači</a></li>
+<li><a href="#org4b6098b">4.6. Implementacija ALU i opšta kombinatorna kola</a></li>
 </ul>
 </li>
-<li><a href="#org5f95bbc">5. Sekvencijalna kola</a>
+<li><a href="#orgdb467ca">5. Sekvencijalna kola</a>
 <ul>
-<li><a href="#orgdeaa836">5.1. Reze i flip-flopovi</a></li>
-<li><a href="#orgb744366">5.2. Statička i dinamička memorija</a></li>
-<li><a href="#orge33bc20">5.3. Binarni brojač</a></li>
-<li><a href="#org9f47b79">5.4. Konačni automati i transduktori</a></li>
+<li><a href="#orgef50cbc">5.1. Reze i flip-flopovi</a></li>
+<li><a href="#orgb0b37f6">5.2. Statička i dinamička memorija</a></li>
+<li><a href="#orge748c8f">5.3. Binarni brojač</a></li>
+<li><a href="#org55a6062">5.4. Konačni automati i transduktori</a></li>
 </ul>
 </li>
-<li><a href="#org5f36de8">6. Arhitektura i organizacija</a></li>
-<li><a href="#orgc926693">7. Adresiranje</a></li>
-<li><a href="#org0e46d7b">8. Assembler</a></li>
-<li><a href="#org5ff5ae2">9. Procesor</a></li>
-<li><a href="#orgdd06434">10. Memorija</a></li>
-<li><a href="#org2fafa05">11. Cache</a></li>
-<li><a href="#org58f08e6">12. Magistrale</a></li>
-<li><a href="#orgf9fda52">13. Sistem prekida</a></li>
-<li><a href="#orgd87f450">14. I/O</a></li>
-<li><a href="#org9c235da">15. Virtuelna memorija</a></li>
-<li><a href="#orgd8d2f60">16. Napredne arhitekture</a></li>
-<li><a href="#org1b88a0e">17. Verilog</a></li>
+<li><a href="#org4704c9b">6. Arhitektura i organizacija</a></li>
+<li><a href="#org7b47e04">7. Adresiranje</a></li>
+<li><a href="#org792dfbe">8. Assembler</a></li>
+<li><a href="#org267ab0e">9. Procesor</a></li>
+<li><a href="#org1c71793">10. Memorija</a></li>
+<li><a href="#orgabadeab">11. Cache</a></li>
+<li><a href="#org68cd871">12. Magistrale</a></li>
+<li><a href="#orgc7251c0">13. Sistem prekida</a></li>
+<li><a href="#orgc2d97b0">14. I/O</a></li>
+<li><a href="#orgcb14280">15. Virtuelna memorija</a></li>
+<li><a href="#org1028ac4">16. Napredne arhitekture</a></li>
+<li><a href="#orge40b5df">17. Verilog</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org62a1699" class="outline-2">
-<h2 id="org62a1699"><span class="section-number-2">1</span> Iskazna logika</h2>
+<div id="outline-container-org691710c" class="outline-2">
+<h2 id="org691710c"><span class="section-number-2">1</span> Iskazna logika</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li value="1">Napisati istinitosne tablice osnovnih logičkih veznika (NE, I, ILI)
@@ -712,8 +712,8 @@ Ukratko objasniti kako se proizvoljna logička funkcija može izraziti u obliku 
 </div>
 </div>
 
-<div id="outline-container-orga1d89c5" class="outline-2">
-<h2 id="orga1d89c5"><span class="section-number-2">2</span> Minimizacija logičkih izraza</h2>
+<div id="outline-container-orgdd1a7ef" class="outline-2">
+<h2 id="orgdd1a7ef"><span class="section-number-2">2</span> Minimizacija logičkih izraza</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li value="14"><p>
@@ -857,8 +857,8 @@ Petrikov metod je metod koji se koristi za pronalaženje najmanjeg podskupa preo
 </div>
 </div>
 
-<div id="outline-container-org8026570" class="outline-2">
-<h2 id="org8026570"><span class="section-number-2">3</span> Tranzistori i logička kola</h2>
+<div id="outline-container-org0be1ad2" class="outline-2">
+<h2 id="org0be1ad2"><span class="section-number-2">3</span> Tranzistori i logička kola</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li value="21"><p>
@@ -1132,8 +1132,8 @@ Vrednost visoke impendanse odgovara tipu <code>NULL</code> u nekim višim progra
 </div>
 </div>
 
-<div id="outline-container-org6a90939" class="outline-2">
-<h2 id="org6a90939"><span class="section-number-2">4</span> Kombinatorna kola</h2>
+<div id="outline-container-orgcb132ba" class="outline-2">
+<h2 id="orgcb132ba"><span class="section-number-2">4</span> Kombinatorna kola</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li value="32"><p>
@@ -1156,8 +1156,8 @@ Kombinatorno kolo je logičko kolo čije vrednosti na izlazima se mogu sračunat
 </ol>
 </div>
 
-<div id="outline-container-orgc4b3a6b" class="outline-3">
-<h3 id="orgc4b3a6b"><span class="section-number-3">4.1</span> Multipleksor i demultipleksor</h3>
+<div id="outline-container-org91a63ba" class="outline-3">
+<h3 id="org91a63ba"><span class="section-number-3">4.1</span> Multipleksor i demultipleksor</h3>
 <div class="outline-text-3" id="text-4-1">
 <ol class="org-ol">
 <li value="34"><p>
@@ -1335,8 +1335,8 @@ Fali slika ili nešto slično
 </div>
 </div>
 
-<div id="outline-container-orgfcdb614" class="outline-3">
-<h3 id="orgfcdb614"><span class="section-number-3">4.2</span> Koder i dekoder</h3>
+<div id="outline-container-org6959090" class="outline-3">
+<h3 id="org6959090"><span class="section-number-3">4.2</span> Koder i dekoder</h3>
 <div class="outline-text-3" id="text-4-2">
 <ol class="org-ol">
 <li value="39"><p>
@@ -1549,8 +1549,8 @@ Ne kapiram crtež moraću u nekoj knjizi to da vidim verovatno
 </div>
 </div>
 
-<div id="outline-container-orgd622de8" class="outline-3">
-<h3 id="orgd622de8"><span class="section-number-3">4.3</span> Komparator</h3>
+<div id="outline-container-orgf04ecab" class="outline-3">
+<h3 id="orgf04ecab"><span class="section-number-3">4.3</span> Komparator</h3>
 <div class="outline-text-3" id="text-4-3">
 <ol class="org-ol">
 <li value="44"><p>
@@ -1602,8 +1602,8 @@ Koristimo 4-bitni oduzimač čiji rezultat šaljemo na NILI koje nam govori da l
 </div>
 </div>
 
-<div id="outline-container-orga2b0794" class="outline-3">
-<h3 id="orga2b0794"><span class="section-number-3">4.4</span> Pomerač</h3>
+<div id="outline-container-org2d93e1f" class="outline-3">
+<h3 id="org2d93e1f"><span class="section-number-3">4.4</span> Pomerač</h3>
 <div class="outline-text-3" id="text-4-4">
 <ol class="org-ol">
 <li value="47"><p>
@@ -1628,8 +1628,8 @@ Ideja je da se pomoću 8-bitnih 2-1 multipleksora u zavisnosti od kontrolnih bit
 </div>
 </div>
 
-<div id="outline-container-org9dcbc03" class="outline-3">
-<h3 id="org9dcbc03"><span class="section-number-3">4.5</span> Sabirači i oduzimači</h3>
+<div id="outline-container-org4885f89" class="outline-3">
+<h3 id="org4885f89"><span class="section-number-3">4.5</span> Sabirači i oduzimači</h3>
 <div class="outline-text-3" id="text-4-5">
 <ol class="org-ol">
 <li value="48"><p>
@@ -2056,8 +2056,8 @@ Fiksirajmo \(K = 4\)
 </div>
 </div>
 
-<div id="outline-container-orgd34cfbe" class="outline-3">
-<h3 id="orgd34cfbe"><span class="section-number-3">4.6</span> Implementacija ALU i opšta kombinatorna kola</h3>
+<div id="outline-container-org4b6098b" class="outline-3">
+<h3 id="org4b6098b"><span class="section-number-3">4.6</span> Implementacija ALU i opšta kombinatorna kola</h3>
 <div class="outline-text-3" id="text-4-6">
 <ol class="org-ol">
 <li value="57"><p>
@@ -2175,8 +2175,8 @@ Na ulazu se dobija adresa koja se potom prosleđuje ka dekoderu koji aktivira od
 </div>
 </div>
 
-<div id="outline-container-org5f95bbc" class="outline-2">
-<h2 id="org5f95bbc"><span class="section-number-2">5</span> Sekvencijalna kola</h2>
+<div id="outline-container-orgdb467ca" class="outline-2">
+<h2 id="orgdb467ca"><span class="section-number-2">5</span> Sekvencijalna kola</h2>
 <div class="outline-text-2" id="text-5">
 <ol class="org-ol">
 <li value="60"><p>
@@ -2323,8 +2323,8 @@ Sinhrona sekvencijalna kola zavise od zajedničkog signala odnosno časovnika, k
 </ol>
 </div>
 
-<div id="outline-container-orgdeaa836" class="outline-3">
-<h3 id="orgdeaa836"><span class="section-number-3">5.1</span> Reze i flip-flopovi</h3>
+<div id="outline-container-orgef50cbc" class="outline-3">
+<h3 id="orgef50cbc"><span class="section-number-3">5.1</span> Reze i flip-flopovi</h3>
 <div class="outline-text-3" id="text-5-1">
 <ol class="org-ol">
 <li value="67"><p>
@@ -2565,8 +2565,8 @@ Moguće je rešiti problem tako što se SR, JK ili T flip-flop svedu na D flip-f
 </div>
 </div>
 
-<div id="outline-container-orgb744366" class="outline-3">
-<h3 id="orgb744366"><span class="section-number-3">5.2</span> Statička i dinamička memorija</h3>
+<div id="outline-container-orgb0b37f6" class="outline-3">
+<h3 id="orgb0b37f6"><span class="section-number-3">5.2</span> Statička i dinamička memorija</h3>
 <div class="outline-text-3" id="text-5-2">
 <ol class="org-ol">
 <li value="75"><p>
@@ -2701,8 +2701,8 @@ Najčešće se upotrebljavaju za konvertovanje iz paralelnog u serijski vid komu
 </div>
 </div>
 
-<div id="outline-container-orge33bc20" class="outline-3">
-<h3 id="orge33bc20"><span class="section-number-3">5.3</span> Binarni brojač</h3>
+<div id="outline-container-orge748c8f" class="outline-3">
+<h3 id="orge748c8f"><span class="section-number-3">5.3</span> Binarni brojač</h3>
 <div class="outline-text-3" id="text-5-3">
 <ol class="org-ol">
 <li value="82"><p>
@@ -2761,8 +2761,8 @@ U slučaju da nam je potrebno da imamo brojač koji neće ići po <i>&ldquo;defa
 </div>
 </div>
 
-<div id="outline-container-org9f47b79" class="outline-3">
-<h3 id="org9f47b79"><span class="section-number-3">5.4</span> Konačni automati i transduktori</h3>
+<div id="outline-container-org55a6062" class="outline-3">
+<h3 id="org55a6062"><span class="section-number-3">5.4</span> Konačni automati i transduktori</h3>
 <div class="outline-text-3" id="text-5-4">
 <ol class="org-ol">
 <li value="85"><p>
@@ -3003,8 +3003,8 @@ Kontrolna jedinica se može modelovati kao konačni transduktor koji na ulazu im
 </div>
 </div>
 
-<div id="outline-container-org5f36de8" class="outline-2">
-<h2 id="org5f36de8"><span class="section-number-2">6</span> Arhitektura i organizacija</h2>
+<div id="outline-container-org4704c9b" class="outline-2">
+<h2 id="org4704c9b"><span class="section-number-2">6</span> Arhitektura i organizacija</h2>
 <div class="outline-text-2" id="text-6">
 <ol class="org-ol">
 <li value="88">Šta je arhitektura a šta organizacija računara?
@@ -3198,8 +3198,8 @@ Danas procesori najčešće predstavljaju hibride ove dve arhitekture.
 </div>
 </div>
 
-<div id="outline-container-orgc926693" class="outline-2">
-<h2 id="orgc926693"><span class="section-number-2">7</span> Adresiranje</h2>
+<div id="outline-container-org7b47e04" class="outline-2">
+<h2 id="org7b47e04"><span class="section-number-2">7</span> Adresiranje</h2>
 <div class="outline-text-2" id="text-7">
 <ol class="org-ol">
 <li value="101"><p>
@@ -3371,8 +3371,8 @@ Postfiksno sa update-om
 </div>
 </div>
 
-<div id="outline-container-org0e46d7b" class="outline-2">
-<h2 id="org0e46d7b"><span class="section-number-2">8</span> Assembler</h2>
+<div id="outline-container-org792dfbe" class="outline-2">
+<h2 id="org792dfbe"><span class="section-number-2">8</span> Assembler</h2>
 <div class="outline-text-2" id="text-8">
 <ol class="org-ol">
 <li value="107">Instrukcije transfera. Funkcija i primer upotrebe. (<i>x86-64, ARM</i>)
@@ -3711,8 +3711,8 @@ Instrukcija <code>bl</code> postavlja adresu sledeće instrukcije u <code>lr</co
 </div>
 </div>
 
-<div id="outline-container-org5ff5ae2" class="outline-2">
-<h2 id="org5ff5ae2"><span class="section-number-2">9</span> Procesor</h2>
+<div id="outline-container-org267ab0e" class="outline-2">
+<h2 id="org267ab0e"><span class="section-number-2">9</span> Procesor</h2>
 <div class="outline-text-2" id="text-9">
 <ol class="org-ol">
 <li value="121">Koje su osnovne komponente procesora? Objasniti ih.
@@ -4080,8 +4080,8 @@ Vertikalni format:
 </div>
 </div>
 
-<div id="outline-container-orgdd06434" class="outline-2">
-<h2 id="orgdd06434"><span class="section-number-2">10</span> Memorija</h2>
+<div id="outline-container-org1c71793" class="outline-2">
+<h2 id="org1c71793"><span class="section-number-2">10</span> Memorija</h2>
 <div class="outline-text-2" id="text-10">
 <ol class="org-ol">
 <li value="145">Karakteristike memorija.
@@ -4378,8 +4378,8 @@ Primeri:
 </div>
 </div>
 
-<div id="outline-container-org2fafa05" class="outline-2">
-<h2 id="org2fafa05"><span class="section-number-2">11</span> Cache</h2>
+<div id="outline-container-orgabadeab" class="outline-2">
+<h2 id="orgabadeab"><span class="section-number-2">11</span> Cache</h2>
 <div class="outline-text-2" id="text-11">
 <ol class="org-ol">
 <li value="166"><p>
@@ -5135,8 +5135,8 @@ Povećanjem stepena asocijativnosti se povećava procenat pogotka keša. Potpuno
 </div>
 </div>
 
-<div id="outline-container-org58f08e6" class="outline-2">
-<h2 id="org58f08e6"><span class="section-number-2">12</span> Magistrale</h2>
+<div id="outline-container-org68cd871" class="outline-2">
+<h2 id="org68cd871"><span class="section-number-2">12</span> Magistrale</h2>
 <div class="outline-text-2" id="text-12">
 <ol class="org-ol">
 <li value="189"><p>
@@ -5296,7 +5296,7 @@ Prenošenje blokova podrazumeva da se jednom <b>složenom operacijom</b> prenosi
 </p>
 
 <p>
-Koristi se često za popunjavanje keš memorije (zbog čega i često veličina blokovnog prenosa ista kao i veličina keš linija).
+Koristi se često za popunjavanje keš memorije (zbog čega je i često veličina blokovnog prenosa ista kao i veličina keš linija).
 </p></li>
 
 <li><p>
@@ -5415,6 +5415,12 @@ Kod distribuiranih arbitraža hardver je distribuiran među <i>master</i>-ima ko
 Objasniti detaljno mehanizam ulančavanja kod centralizovane arbitraže.
 </p>
 
+
+<div class="figure">
+<p><img src="./img/bus_chained.png" alt="bus_chained.png" />
+</p>
+</div>
+
 <p>
 Signal za zahtev se formira kao disjunkcija zahteva pojedinačnih <i>master</i>-a na zajedničkoj magistrali.
 </p>
@@ -5427,20 +5433,133 @@ Signal za dodelu se prosleđuje redom od jednog do drugog <i>master</i>-a. Ako n
 Veoma je jednostavan za implementaciju, ali mu je mana što omogućava samo fiksni prioritet politike dodele.
 </p></li>
 
-<li>Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.</li>
-<li>Električne karakteristike serijskih magistrala</li>
-<li>Navesti najčešće načine kodiranja bitova kod serijskog prenosa</li>
-<li>Koja je osnovna prednost, a koja mana <code>NRZ</code> kodiranja u odnosu na <code>RZ</code> kodiranje?</li>
-<li>Objasniti <code>NRZI</code> kodiranje.</li>
-<li>Ukratko objasniti <code>8b/10b</code> kodiranje? Koji je razlog za korišćenje ovog načina kodiranja?</li>
-<li>Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike</li>
-<li>Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike</li>
+<li><p>
+Objasniti detaljno mehanizam nezavisnih zahteva kod centralizovane arbitraže.
+</p>
+
+
+<div class="figure">
+<p><img src="./img/bus_independant.png" alt="bus_independant.png" />
+</p>
+</div>
+
+<p>
+Svaki <i>master</i> je povezan sa arbitrom preko zasebnih magistrala za <b>zahtev</b> (<code>REQ</code>) i <b>dodelu</b> (<code>GNT</code>).
+</p>
+
+<p>
+Omogućava da se implementiraju komplikovanije politike dodele jer postoji odvojena komunikacija sa svakim <i>master</i>-om.
+</p>
+
+<p>
+Bolje toleriše u odnosu na ulančavnje slučaj kada se neki od mastera pokvari zato što to ne utiče na ostale.
+</p>
+
+<p>
+Komplikovaniji je za implementaciju.
+</p></li>
+
+<li><p>
+Električne karakteristike serijskih magistrala
+</p>
+
+<div class="tip">
+<p>
+TODO
+</p>
+
+</div></li>
+
+<li>Navesti najčešće načine kodiranja bitova kod serijskog prenosa
+
+<ul class="org-ul">
+<li>RZ (<i>return-to-zero</i>)</li>
+<li>NRZ (<i>non-return-to-zero</i>)</li>
+<li>NRZI (<i>non-return-to-zero-inverted</i>)</li>
+</ul></li>
+
+<li><p>
+Koja je osnovna prednost, a koja mana <code>NRZ</code> kodiranja u odnosu na <code>RZ</code> kodiranje?
+</p>
+
+<div class="tip">
+<p>
+TODO
+</p>
+
+</div></li>
+
+<li><p>
+Objasniti <code>NRZI</code> kodiranje.
+</p>
+
+<div class="tip">
+<p>
+TODO
+</p>
+
+</div></li>
+
+<li><p>
+Ukratko objasniti <code>8b/10b</code> kodiranje? Koji je razlog za korišćenje ovog načina kodiranja?
+</p>
+
+<div class="tip">
+<p>
+TODO
+</p>
+
+</div></li>
+
+<li>Navesti najčešće korišćene paralelne magistrale i njihove najvažnije karakteristike
+
+<ul class="org-ul">
+<li>PCI
+<ul class="org-ul">
+<li>multipleksirana</li>
+<li>širina 32/64bit</li>
+<li>sinhrona</li>
+<li>služi sa povezivanje sa periferijskim uređajima (mrežne kartice, audio kartice i sl.)</li>
+</ul></li>
+<li>Memorijska magistrala
+<ul class="org-ul">
+<li>razdvojena</li>
+<li>širina 16/32/64bit</li>
+<li>služi za komunikaciju glavne memorije i procesora</li>
+</ul></li>
+<li>PATA
+<ul class="org-ul">
+<li>širina 16bit</li>
+<li>služi za povezivanje sa sekundarnom memorijom (HDD, CD i sl.)</li>
+</ul></li>
+</ul></li>
+
+<li>Navesti najčešće korišćene serijske magistrale i njihove najvažnije karakteristike
+
+<ul class="org-ul">
+<li>PCI Express
+<ul class="org-ul">
+<li>naslednik PCI</li>
+<li>dosta brži prenos podataka</li>
+</ul></li>
+<li>USB
+<ul class="org-ul">
+<li><i>plug and play</i></li>
+<li>služi za povezivanje eksternih uređaja</li>
+</ul></li>
+<li>SATA
+<ul class="org-ul">
+<li>naslednik PATA</li>
+<li><i>hot swapping</i></li>
+<li>dosta brži prenos podataka</li>
+</ul></li>
+</ul></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-orgf9fda52" class="outline-2">
-<h2 id="orgf9fda52"><span class="section-number-2">13</span> Sistem prekida</h2>
+<div id="outline-container-orgc7251c0" class="outline-2">
+<h2 id="orgc7251c0"><span class="section-number-2">13</span> Sistem prekida</h2>
 <div class="outline-text-2" id="text-13">
 <ol class="org-ol">
 <li value="214"><p>
@@ -5603,8 +5722,8 @@ Komunicira sa procesorom putem donjih 8 bitova data magistrale putem kojih i ša
 </div>
 </div>
 
-<div id="outline-container-orgd87f450" class="outline-2">
-<h2 id="orgd87f450"><span class="section-number-2">14</span> I/O</h2>
+<div id="outline-container-orgc2d97b0" class="outline-2">
+<h2 id="orgc2d97b0"><span class="section-number-2">14</span> I/O</h2>
 <div class="outline-text-2" id="text-14">
 <ol class="org-ol">
 <li value="222"><p>
@@ -5735,8 +5854,8 @@ Objasniti direktan pristup memoriji (<code>DMA</code>). Kontroler <code>DMA</cod
 </div>
 </div>
 
-<div id="outline-container-org9c235da" class="outline-2">
-<h2 id="org9c235da"><span class="section-number-2">15</span> Virtuelna memorija</h2>
+<div id="outline-container-orgcb14280" class="outline-2">
+<h2 id="orgcb14280"><span class="section-number-2">15</span> Virtuelna memorija</h2>
 <div class="outline-text-2" id="text-15">
 <ol class="org-ol">
 <li value="229"><p>
@@ -5991,7 +6110,7 @@ Primer veličine stranice:
 </ul></li>
 
 <li><p>
-Šta su tablice, a šta direktorijuma stranica virtuelne memorije? Objasniti.
+Šta su tablice, a šta direktorijumi stranica virtuelne memorije? Objasniti.
 </p>
 
 <p>
@@ -6127,8 +6246,8 @@ Korišćenjem <code>TLB</code> dovoljno često eliminišemo potrebu za pronalaž
 </div>
 </div>
 
-<div id="outline-container-orgd8d2f60" class="outline-2">
-<h2 id="orgd8d2f60"><span class="section-number-2">16</span> Napredne arhitekture</h2>
+<div id="outline-container-org1028ac4" class="outline-2">
+<h2 id="org1028ac4"><span class="section-number-2">16</span> Napredne arhitekture</h2>
 <div class="outline-text-2" id="text-16">
 <ol class="org-ol">
 <li value="239"><p>
@@ -6228,8 +6347,8 @@ Superskalarni procesori su procesori koji implentiraju instrukcioni <b>paraleliz
 </div>
 </div>
 
-<div id="outline-container-org1b88a0e" class="outline-2">
-<h2 id="org1b88a0e"><span class="section-number-2">17</span> Verilog</h2>
+<div id="outline-container-orge40b5df" class="outline-2">
+<h2 id="orge40b5df"><span class="section-number-2">17</span> Verilog</h2>
 <div class="outline-text-2" id="text-17">
 <div class="tip">
 <p>
@@ -6264,7 +6383,7 @@ TODO, dogodine
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aleksandar Šmigić</p>
-<p class="date">Created: 2020-06-25 Thu 13:54</p>
+<p class="date">Created: 2020-06-25 Thu 15:04</p>
 </div>
 </body>
 </html>
