@@ -970,8 +970,8 @@
     Dvoadresni procesori su procesori koji mogu da imaju maksimalno dve adrese u instrukciji. Rezultat operacije se upisuje u neku privremenu lokaciju ili u lokaciju jednog od operanada. Smanjuje se dužina programa, ubrzava izvršavanje, ali se ponekad koristi dodatna memorija.
 
     #+begin_src asm
-    LOAD B, A
-    ADD A, B
+    LOAD T, A ; T = A
+    ADD B, T  ; B += T
     #+end_src
 
 92. Šta su jednoadresni procesori? Primer instrukcija i koda. Karakteristike.
@@ -979,9 +979,9 @@
     Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Operacije koje zahtevaju dva operanda se razrešavaju tako što je druga adresa implicitna. Ovi računari se često obraćaju memoriji za upis i čitanje međurezultata. Programi su dosta dugački i izvršavanje je relativno sporo. Koriste se u situacijama kada je memorija dosta skupa.
 
     #+begin_src asm
-    LOAD X
-    ADD X
-    STORE X
+    LOAD A  ; učitaj A u akumulator
+    ADD B   ; acc += B
+    STORE A ; A = acc
     #+end_src
 
 93. Šta su nuloadresni procesori? Primer instrukcija i koda. Karakteristike.
@@ -1341,7 +1341,15 @@ f:
      - ~CU~ - Kontrolna jedinica
        - zadužena je za kontrolu redosleda izvršavanja operacija u ~ALU~ i kontrolu prenosa podataka i instrukcija iz i u procesor.
        - sekvencijalno kolo
-
+     - Registri
+       - služe za privremeno čuvanje i obradu podataka i adresa
+       - implementiraju se pomoću statičke memorije
+       - delimo ih na:
+         - registre opšte namene
+           - dostupni su programeru da sa njima radi
+         - registre specijalne namene
+           - nisu dostupni programeru jer ih procesor koristi za svog čuvanje stanja itd.
+            
 122. Šta je ~ALU~ i čemu služi?
 
      - ~ALU~ - Aritmetičko logička jedinica
@@ -1400,21 +1408,15 @@ f:
 
 130. Nacrtati uopštenu shemu putanje podataka sa tri interne magistrale. Primer izvršavanja operacije.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
-   
+     [[./img/datapath_3.png]]
+
 131. Nacrtati uopštenu shemu putanje podataka sa dve interne magistrale. Primer izvršavanja operacije.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+     [[./img/datapath_2.png]]
 
 132. Nacrtati uopštenu shemu putanje podataka sa jednom internom magistralom. Primer izvršavanja operacije.
 
-    #+begin_warning
-     Fali slika ili nešto slično
-     #+end_warning
+     [[./img/datapath_1.png]]
 
 133. Šta je kontrolna jedinica (~CU~)? Šta je ulaz, a šta izlaz kontrolne jedinice?
 
@@ -1553,7 +1555,7 @@ f:
 
      Podaci se upisuju po redosledu unošenja, a čitaju po istom ili obrnutom redosledu.
 
-     Da bi se pristupilo $i$-tom slogu potrebno je proći kroz svih prethodnih $i - 1$ slogova, što znači da je ovaj način dosta spor.
+     Da bi se pristupilo $i$ -tom slogu potrebno je proći kroz svih prethodnih $i - 1$ slogova, što znači da je ovaj način dosta spor.
 
      Primer: magnetna traka
 
@@ -1623,7 +1625,7 @@ f:
      - ~PROM: Programmable Read Only Memory~
      - ~EPROM: Erasable Programmable Read Only Memory~
      - ~EEPROM: Electrically Erasable Programmable Read Only Memory~
-     - ~Flash~
+     - ~Flash~ (jako slično ~EEPROM~-u s tim što dozvoljava brisanje više bajtova odjednom)
       
 157. Šta je ~RAM~? Kakve vrste postoje?
 
@@ -1746,16 +1748,18 @@ f:
      - Svaki blok se mapira u tačno jednu liniju keša
        - $M$ - količina glavne memorije
        - $m$ - količina keš memorije
-       - $B$ - veličina jednog bloka memorije
-       - $C = m / B$ - broj keš linija
-       - $c_{i} = i \ mod \ C$ - $i$-ti blok memorije se mapira u $c_{i}$-tu keš liniju
+       - $B$ - veličina jednog bloka memorije (ujedno i veličina jedne linije keša)
+       - $A$ - dužina adrese (npr. 32 ili 64 bita)
+       - $C = m \ / \ B$ - broj keš linija
+       - $c_{i} = i \ mod \ C$ - $i$ -ti blok memorije se mapira u $c_{i}$ -tu keš liniju
      - Lako je za implementaciju, ali je takođe lako dobiti najgori mogući slučaj
 
      Primer:
      - $M = 64$
      - $m = 16$
      - $B = 4$
-     - $C = m / B = 4$
+     - $A = 32$
+     - $C = m \ / \ B = 4$
        |  i | c_{i} |
        |  0 |     0 |
        |  1 |     1 |
@@ -1778,14 +1782,14 @@ f:
      | keš tag | keš linija id | offset |
 
      - /offset/
-       - služi da dopuni do veličine bloka zbog poravnanja memorije
+       - služi da odredi koji bajt iz linije tražimo
        - zauzima $b = log_{2}(B)$ bitova
      - /keš linija id/
        - moduliramo ovaj uzastopni podniz bitova da bismo dobili na koju liniju keša mapiramo dati blok
        - zauzima $c = log_{2}(C)$ bitova
      - /keš tag/
        - služi za čuvanje u kešu kako bi keš znao koji blok memorije je u pitanju (pošto se više blokova memorije mogu mapirati u istu keš liniju)
-       - zauzima $t = B - b - c$ bitova
+       - zauzima $t = A - b - c$ bitova
 
      U liniji keša čuva se:
      | validan bit | keš tag | keš podatak |
@@ -1811,18 +1815,19 @@ f:
        - Ako koristimo ~FIFO~ alokaciju, onda se faktički novi blok upisuje u prvu sledeću slobodnu liniju. Kada se popuni keš izbacujemo ih redom kojim smo ih uneli.
        - $M$ - količina glavne memorije
        - $m$ - količina keš memorije
-       - $B$ - veličina jednog bloka memorije
-       - $C = m / B$ - broj keš linija
+       - $B$ - veličina jednog bloka memorije (ujedno i veličina jedne linije keša)
+       - $A$ - dužina adrese (npr. 32 ili 64 bita)
+       - $C = m \ / \ B$ - broj keš linija
 
      Svaka adresa iz memorije se deli u 2 dela:
      | keš tag | offset |
 
      - /offset/
-       - služi da dopuni do veličine bloka zbog poravnanja memorije
+       - služi da odredi koji bajt iz linije tražimo
        - zauzima $b = log_{2}(B)$ bitova
      - /keš tag/
        - služi za čuvanje u kešu kako bi keš znao koji blok memorije je u pitanju (pošto se više blokova memorije mogu mapirati u istu keš liniju)
-       - zauzima $t = B - b$ bitova
+       - zauzima $t = A - b$ bitova
 
      U liniji keša čuva se:
      | validan bit | keš tag | keš podatak |
@@ -1839,17 +1844,18 @@ f:
        2. porede se keš tagovi i trenutni tag, ako se ne nađu onda imamo promašaj
        3. u suprotnom nađen je
 
-     - Problem nije veća količina memorije odvojena za keš tag, već činjenica da jedan blok može da bude u bilo kojoj keš liniji, zbog čega nam je potreban $2^{C}$ komparatora što ga čini dosta skupim.
+     - Problem nije veća količina memorije odvojena za keš tag, već činjenica da jedan blok može da bude u bilo kojoj keš liniji, zbog čega nam je potreban $C$ komparatora što ga čini dosta skupim (komparator za svaku keš liniju).
 
 176. Objasniti skup-asocijativno preslikavanje adresa keša i dati primer.
 
      Skup-asocijativno preslikavanje prestavlja kompromis između ~neposrednog~ i ~asocijativnog~ preslikavanja i kombinaciju tih ideja.
      - $M$ - količina glavne memorije
      - $m$ - količina keš memorije
-     - $B$ - veličina jednog bloka memorije
-     - $C = m / B$ - broj keš linija
+     - $B$ - veličina jednog bloka memorije (ujedno i veličina jedne linije keša)
+     - $A$ - dužina adrese (npr. 32 ili 64 bita)
+     - $C = m \ / \ B$ - broj keš linija
      - $S \in \{ 2, 4, 8 \}$ - broj disjunktnih skupova
-     - $s_{i} = i \ mod \ S$ - $i$-ti blok memorije se mapira u $s_{i}$-ti skup keš linija
+     - $s_{i} = i \ mod \ S$ - $i$ -ti blok memorije se mapira u $s_{i}$ -ti skup keš linija
 
      - Izdelimo keš linije u *disjunktne skupove*, kojima pristupamo metodom sličnom kao kod ~neposrednog~ preslikavanja.
        - Unutar samih skupova unosimo na proizvoljne keš linije kao kod ~asocijativnog~ preslikavanja
@@ -1858,14 +1864,14 @@ f:
        | keš tag | skup id | offset |
 
      - /offset/
-       - služi da dopuni do veličine bloka zbog poravnanja memorije
+       - služi da odredi koji bajt iz linije tražimo
        - zauzima $b = log_{2}(B)$ bitova
      - /skup id/
        - moduliramo ovaj uzastopni podniz bitova da bismo dobili na u koji skup mapiramo dati blok
        - zauzima $s = log_{2}(S)$ bitova
      - /keš tag/
        - služi za čuvanje u kešu kako bi keš znao koji blok memorije je u pitanju (pošto se više blokova memorije mogu mapirati u istu keš liniju)
-       - zauzima $t = B - b - s$ bitova
+       - zauzima $t = A - b - s$ bitova
 
      U liniji keša čuva se:
      | validan bit | keš tag | keš podatak |
@@ -1969,8 +1975,6 @@ f:
      Prednost inkluzivnog pristupa je u tome što veće keš memorije mogu imati veće linije, dok kod ekskluzivnog sve keš memorije moraju da imaju linije iste veličine
 
       Podaci se prvo traže u najbližem kešu, pa ako ih tu nema onda u sledećem itd. dok se ne nađe ili ode do memorije.
-       - kod inkluzivnog se podaci upisuju sve bliže nivoe [CHECK]
-       - kod ekskluzivnog se podaci brišu iz prethodnih nivoa
 
        Danas se najčešće organizuje u 3 nivoa:
        - ~L1~ - nalazi se na samom čipu procesora, najbliže samom procesoru
