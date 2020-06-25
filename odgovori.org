@@ -961,8 +961,8 @@
     Troadresni procesor je procesor koji u instrukciji može da ima tri adrese. Programi na troadresnom računaru su kompaktni, ali samo instrukcije mogu da budu glomazne zbog zahteva za čuvanjem 3 operanda.
 
     #+begin_src asm
-ADD C, A, B
-MUL C, A, B
+    ADD C, A, B
+    MUL C, A, B
     #+end_src
    
 91. Šta su dvoadresni procesori? Primer instrukcija i koda. Karakteristike.
@@ -970,8 +970,8 @@ MUL C, A, B
     Dvoadresni procesori su procesori koji mogu da imaju maksimalno dve adrese u instrukciji. Rezultat operacije se upisuje u neku privremenu lokaciju ili u lokaciju jednog od operanada. Smanjuje se dužina programa, ubrzava izvršavanje, ali se ponekad koristi dodatna memorija.
 
     #+begin_src asm
-LOAD B, A
-ADD A, B
+    LOAD B, A
+    ADD A, B
     #+end_src
 
 92. Šta su jednoadresni procesori? Primer instrukcija i koda. Karakteristike.
@@ -979,9 +979,9 @@ ADD A, B
     Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Operacije koje zahtevaju dva operanda se razrešavaju tako što je druga adresa implicitna. Ovi računari se često obraćaju memoriji za upis i čitanje međurezultata. Programi su dosta dugački i izvršavanje je relativno sporo. Koriste se u situacijama kada je memorija dosta skupa.
 
     #+begin_src asm
-LOAD X
-ADD X
-STORE X
+    LOAD X
+    ADD X
+    STORE X
     #+end_src
 
 93. Šta su nuloadresni procesori? Primer instrukcija i koda. Karakteristike.
@@ -989,10 +989,10 @@ STORE X
     Nuloadresni procesori su procesori gde je maksimalan broj adresa u instrukciji $0$ osim kod instrukcija ~PUSH~ i ~POP~. Takvi procesori implicitno adresiraju svoje operande (često stavljajući ih na stek), što predstavlja veliko ograničenje, pa se koriste samo u specijalnim slučajevima.
 
     #+begin_src asm
-PUSH A
-PUSH B
-ADD
-POP
+    PUSH A
+    PUSH B
+    ADD
+    POP
     #+end_src
 
 94. Objasniti odnos performansi i broja adresa.
@@ -1082,29 +1082,30 @@ POP
 
      - *Neposredno* za konstante:
         #+begin_src asm
-mov rax, 42
+    mov rax, 42
         #+end_src
      - *Registarsko*:
         #+begin_src asm
-mov rax, rdi
+    mov rax, rdi
         #+end_src
      - *Memorijsko*:
        - Direktno
         #+begin_src asm
 value dword 42
 ...
-add eax, [value]
+f:
+    add eax, [value]
         #+end_src
        - Indirektno
         #+begin_src asm
-; rdi je pokazivač na prvi element niza
-add eax, [rdi]
+    ; rdi je pokazivač na prvi element niza
+    add eax, [rdi]
         #+end_src
        - Indeksno
         #+begin_src asm
-; rdi je pokazivač na prvi element niza
-mov rsi, 3
-add eax, [rdi + 4 * rsi]
+    ; rdi je pokazivač na prvi element niza
+    mov rsi, 3
+    add eax, [rdi + 4 * rsi]
         #+end_src
        
 106. Objasniti načine adresiranja na /ARM/ arhitekturi.
@@ -1113,11 +1114,11 @@ add eax, [rdi + 4 * rsi]
 
      - *Neposredno* za konstante:
         #+begin_src asm
-mov r0, r0, 42
+    mov r0, r0, 42
         #+end_src
      - *Registarsko*:
         #+begin_src asm
-mov r0, r1
+    mov r0, r1
         #+end_src
      - *Memorijsko*:
        - Direktno
@@ -1131,27 +1132,27 @@ add eax, [value]
         #+end_src
        - Indirektno
         #+begin_src asm
-; r1 je pokazivač na prvi element niza
-add r0, [r1]
+    ; r1 je pokazivač na prvi element niza
+    add r0, [r1]
         #+end_src
        - Indeksno
          - Prefiksno bez update-a
             #+begin_src asm
-; r1 je pokazivač na prvi element niza
-mov r2, #3
-ldr r0, [r1, r2, lsl #2] ; r0 = *(r1 + 4 * r2)
+    ; r1 je pokazivač na prvi element niza
+    mov r2, #3
+    ldr r0, [r1, r2, lsl #2] ; r0 = *(r1 + 4 * r2)
             #+end_src
          - Prefiksno sa update-om
             #+begin_src asm
-; r1 je pokazivač na prvi element niza
-mov r2, #3
-ldr r0, [r1, r2, lsl #2]! ; r1 = r1 + 4 * r2; r0 = *r1;
+    ; r1 je pokazivač na prvi element niza
+    mov r2, #3
+    ldr r0, [r1, r2, lsl #2]! ; r1 = r1 + 4 * r2; r0 = *r1;
             #+end_src
          - Postfiksno sa update-om
             #+begin_src asm
-; r1 je pokazivač na prvi element niza
-mov r2, #3
-ldr r0, [r1], #4 ; r0 = *r1; r1 = r1 + 4;
+    ; r1 je pokazivač na prvi element niza
+    mov r2, #3
+    ldr r0, [r1], #4 ; r0 = *r1; r1 = r1 + 4;
             #+end_src
 
 * Assembler
@@ -1168,11 +1169,11 @@ ldr r0, [r1], #4 ; r0 = *r1; r1 = r1 + 4;
            - memorija
 
                       #+begin_src asm
-mov dest, src ; kopira iz src u dest
+    mov dest, src ; kopira iz src u dest
 
-movzx dest, src ; kopira iz src u dest i proširuje 0
+    movzx dest, src ; kopira iz src u dest i proširuje 0
 
-movsx dest, src ; kopira iz src u dest i proširaje znakom
+    movsx dest, src ; kopira iz src u dest i proširaje znakom
                       #+end_src
        - ~lea~
          - ~dest~
@@ -1183,7 +1184,7 @@ movsx dest, src ; kopira iz src u dest i proširaje znakom
            - memorija
 
                       #+begin_src asm
-lea dest, src ; kopira adresu od src u dest
+    lea dest, src ; kopira adresu od src u dest
                       #+end_src
      - ~ARM~
        - ~ldr/str~
@@ -1217,13 +1218,13 @@ lea dest, src ; kopira adresu od src u dest
      - Postavljaju se nakon određenih operacija
        - Kod ~x86-64~ se to radi automatski, npr.
                       #+begin_src asm
-cmp eax, edi ; biće updateovani O, S i Z flegovi
-add eax, esi ; biće updateovani O, Z, C flegovi PROVERI
+    cmp eax, edi ; biće updateovani O, S i Z flegovi
+    add eax, esi ; biće updateovani O, Z, C flegovi PROVERI
                       #+end_src
        - Kod ~ARM~ se to radi tako što se dodaje sufiks ~s~ na operacije kojima to po /default/-u nije tako
                       #+begin_src asm
-cmp r0, r1 ; biće updateovani O, S i Z flegovi
-adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
+    cmp r0, r1 ; biće updateovani O, S i Z flegovi
+    adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
                       #+end_src
      - ~O~ (overflow) - prekoračenje kod označenih operatora
        - govori da li je došlo do prekoračenja
@@ -1327,10 +1328,10 @@ adds r0, r2 ; biće updateovani O, Z, C flegovi PROVERI
       Povratna vrednost se čuva u registru ~r0~.
 
                 #+begin_src asm
-mov r0, 42
-mov r1, 7
-bl f
-add r4, r0 ; sum += eax
+    mov r0, 42
+    mov r1, 7
+    bl f
+    add r4, r0 ; sum += eax
                 #+end_src
 
      Instrukcija ~bl~ postavlja adresu sledeće instrukcije u ~lr~ (/link register/) kao adresu povratka.
@@ -1446,10 +1447,10 @@ add r4, r0 ; sum += eax
 
          Pseudo-asembler kod
          #+begin_src asm
-mov mar, pc
-inc pc
-mov mdr, [mar]
-mov ir, mdr
+    mov mar, pc
+    inc pc
+    mov mdr, [mar]
+    mov ir, mdr
          #+end_src
        
 136. Objasniti fazu dekodiranja instrukcije

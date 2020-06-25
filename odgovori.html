@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-06-24 Wed 23:37 -->
+<!-- 2020-06-25 Thu 11:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Odgovori na ispitna pitanja iz UOAR2</title>
@@ -254,45 +254,45 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org751b909">1. Iskazna logika</a></li>
-<li><a href="#org3856c60">2. Minimizacija logičkih izraza</a></li>
-<li><a href="#orgc245527">3. Tranzistori i logička kola</a></li>
-<li><a href="#orgd862ebb">4. Kombinatorna kola</a>
+<li><a href="#orgc61f6e2">1. Iskazna logika</a></li>
+<li><a href="#org2a15505">2. Minimizacija logičkih izraza</a></li>
+<li><a href="#org772c81c">3. Tranzistori i logička kola</a></li>
+<li><a href="#org2b3bf2c">4. Kombinatorna kola</a>
 <ul>
-<li><a href="#org54cf481">4.1. Multipleksor i demultipleksor</a></li>
-<li><a href="#orga0d558c">4.2. Koder i dekoder</a></li>
-<li><a href="#org286a84a">4.3. Komparator</a></li>
-<li><a href="#orgdff2a63">4.4. Pomerač</a></li>
-<li><a href="#org0df795d">4.5. Sabirači i oduzimači</a></li>
-<li><a href="#org05f2839">4.6. Implementacija ALU i opšta kombinatorna kola</a></li>
+<li><a href="#orgbe442dc">4.1. Multipleksor i demultipleksor</a></li>
+<li><a href="#org9e1e7e4">4.2. Koder i dekoder</a></li>
+<li><a href="#orgc8bc9d4">4.3. Komparator</a></li>
+<li><a href="#orgde15e73">4.4. Pomerač</a></li>
+<li><a href="#org077f282">4.5. Sabirači i oduzimači</a></li>
+<li><a href="#orgdf9d54d">4.6. Implementacija ALU i opšta kombinatorna kola</a></li>
 </ul>
 </li>
-<li><a href="#orgf9920d8">5. Sekvencijalna kola</a>
+<li><a href="#org408d1ce">5. Sekvencijalna kola</a>
 <ul>
-<li><a href="#org00a22ce">5.1. Reze i flip-flopovi</a></li>
-<li><a href="#orgff2ca6a">5.2. Statička i dinamička memorija</a></li>
-<li><a href="#org0df627d">5.3. Binarni brojač</a></li>
-<li><a href="#org86de497">5.4. Konačni automati i transduktori</a></li>
+<li><a href="#orgb174c22">5.1. Reze i flip-flopovi</a></li>
+<li><a href="#org5687883">5.2. Statička i dinamička memorija</a></li>
+<li><a href="#org1208685">5.3. Binarni brojač</a></li>
+<li><a href="#orgf3b5652">5.4. Konačni automati i transduktori</a></li>
 </ul>
 </li>
-<li><a href="#org4204bae">6. Arhitektura i organizacija</a></li>
-<li><a href="#org07f08a4">7. Adresiranje</a></li>
-<li><a href="#org2ba848a">8. Assembler</a></li>
-<li><a href="#org54fff1a">9. Procesor</a></li>
-<li><a href="#orgbc780d1">10. Memorija</a></li>
-<li><a href="#org4304f7a">11. Cache</a></li>
-<li><a href="#org29ba4da">12. Magistrale</a></li>
-<li><a href="#orgd14a82c">13. Sistem prekida</a></li>
-<li><a href="#orga17278b">14. I/O</a></li>
-<li><a href="#org9a82a8c">15. Virtuelna memorija</a></li>
-<li><a href="#org42f9de2">16. Napredne arhitekture</a></li>
-<li><a href="#org6e147b5">17. Verilog</a></li>
+<li><a href="#orgf472da0">6. Arhitektura i organizacija</a></li>
+<li><a href="#org43cb0e9">7. Adresiranje</a></li>
+<li><a href="#org7e34f32">8. Assembler</a></li>
+<li><a href="#org4daee00">9. Procesor</a></li>
+<li><a href="#org6ebe761">10. Memorija</a></li>
+<li><a href="#orgdeb8b40">11. Cache</a></li>
+<li><a href="#orgf8a4f2c">12. Magistrale</a></li>
+<li><a href="#org14cf584">13. Sistem prekida</a></li>
+<li><a href="#org7ef919c">14. I/O</a></li>
+<li><a href="#org03a610c">15. Virtuelna memorija</a></li>
+<li><a href="#org9d2518e">16. Napredne arhitekture</a></li>
+<li><a href="#org11e80b2">17. Verilog</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org751b909" class="outline-2">
-<h2 id="org751b909"><span class="section-number-2">1</span> Iskazna logika</h2>
+<div id="outline-container-orgc61f6e2" class="outline-2">
+<h2 id="orgc61f6e2"><span class="section-number-2">1</span> Iskazna logika</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li value="1">Napisati istinitosne tablice osnovnih logičkih veznika (NE, I, ILI)
@@ -712,8 +712,8 @@ Ukratko objasniti kako se proizvoljna logička funkcija može izraziti u obliku 
 </div>
 </div>
 
-<div id="outline-container-org3856c60" class="outline-2">
-<h2 id="org3856c60"><span class="section-number-2">2</span> Minimizacija logičkih izraza</h2>
+<div id="outline-container-org2a15505" class="outline-2">
+<h2 id="org2a15505"><span class="section-number-2">2</span> Minimizacija logičkih izraza</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li value="14"><p>
@@ -857,8 +857,8 @@ Petrikov metod je metod koji se koristi za pronalaženje najmanjeg podskupa preo
 </div>
 </div>
 
-<div id="outline-container-orgc245527" class="outline-2">
-<h2 id="orgc245527"><span class="section-number-2">3</span> Tranzistori i logička kola</h2>
+<div id="outline-container-org772c81c" class="outline-2">
+<h2 id="org772c81c"><span class="section-number-2">3</span> Tranzistori i logička kola</h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li value="21"><p>
@@ -1132,8 +1132,8 @@ Vrednost visoke impendanse odgovara tipu <code>NULL</code> u nekim višim progra
 </div>
 </div>
 
-<div id="outline-container-orgd862ebb" class="outline-2">
-<h2 id="orgd862ebb"><span class="section-number-2">4</span> Kombinatorna kola</h2>
+<div id="outline-container-org2b3bf2c" class="outline-2">
+<h2 id="org2b3bf2c"><span class="section-number-2">4</span> Kombinatorna kola</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li value="32"><p>
@@ -1156,8 +1156,8 @@ Kombinatorno kolo je logičko kolo čije vrednosti na izlazima se mogu sračunat
 </ol>
 </div>
 
-<div id="outline-container-org54cf481" class="outline-3">
-<h3 id="org54cf481"><span class="section-number-3">4.1</span> Multipleksor i demultipleksor</h3>
+<div id="outline-container-orgbe442dc" class="outline-3">
+<h3 id="orgbe442dc"><span class="section-number-3">4.1</span> Multipleksor i demultipleksor</h3>
 <div class="outline-text-3" id="text-4-1">
 <ol class="org-ol">
 <li value="34"><p>
@@ -1335,8 +1335,8 @@ Fali slika ili nešto slično
 </div>
 </div>
 
-<div id="outline-container-orga0d558c" class="outline-3">
-<h3 id="orga0d558c"><span class="section-number-3">4.2</span> Koder i dekoder</h3>
+<div id="outline-container-org9e1e7e4" class="outline-3">
+<h3 id="org9e1e7e4"><span class="section-number-3">4.2</span> Koder i dekoder</h3>
 <div class="outline-text-3" id="text-4-2">
 <ol class="org-ol">
 <li value="39"><p>
@@ -1549,8 +1549,8 @@ Ne kapiram crtež moraću u nekoj knjizi to da vidim verovatno
 </div>
 </div>
 
-<div id="outline-container-org286a84a" class="outline-3">
-<h3 id="org286a84a"><span class="section-number-3">4.3</span> Komparator</h3>
+<div id="outline-container-orgc8bc9d4" class="outline-3">
+<h3 id="orgc8bc9d4"><span class="section-number-3">4.3</span> Komparator</h3>
 <div class="outline-text-3" id="text-4-3">
 <ol class="org-ol">
 <li value="44"><p>
@@ -1602,8 +1602,8 @@ Koristimo 4-bitni oduzimač čiji rezultat šaljemo na NILI koje nam govori da l
 </div>
 </div>
 
-<div id="outline-container-orgdff2a63" class="outline-3">
-<h3 id="orgdff2a63"><span class="section-number-3">4.4</span> Pomerač</h3>
+<div id="outline-container-orgde15e73" class="outline-3">
+<h3 id="orgde15e73"><span class="section-number-3">4.4</span> Pomerač</h3>
 <div class="outline-text-3" id="text-4-4">
 <ol class="org-ol">
 <li value="47"><p>
@@ -1628,8 +1628,8 @@ Ideja je da se pomoću 8-bitnih 2-1 multipleksora u zavisnosti od kontrolnih bit
 </div>
 </div>
 
-<div id="outline-container-org0df795d" class="outline-3">
-<h3 id="org0df795d"><span class="section-number-3">4.5</span> Sabirači i oduzimači</h3>
+<div id="outline-container-org077f282" class="outline-3">
+<h3 id="org077f282"><span class="section-number-3">4.5</span> Sabirači i oduzimači</h3>
 <div class="outline-text-3" id="text-4-5">
 <ol class="org-ol">
 <li value="48"><p>
@@ -2056,8 +2056,8 @@ Fiksirajmo \(K = 4\)
 </div>
 </div>
 
-<div id="outline-container-org05f2839" class="outline-3">
-<h3 id="org05f2839"><span class="section-number-3">4.6</span> Implementacija ALU i opšta kombinatorna kola</h3>
+<div id="outline-container-orgdf9d54d" class="outline-3">
+<h3 id="orgdf9d54d"><span class="section-number-3">4.6</span> Implementacija ALU i opšta kombinatorna kola</h3>
 <div class="outline-text-3" id="text-4-6">
 <ol class="org-ol">
 <li value="57"><p>
@@ -2175,8 +2175,8 @@ Na ulazu se dobija adresa koja se potom prosleđuje ka dekoderu koji aktivira od
 </div>
 </div>
 
-<div id="outline-container-orgf9920d8" class="outline-2">
-<h2 id="orgf9920d8"><span class="section-number-2">5</span> Sekvencijalna kola</h2>
+<div id="outline-container-org408d1ce" class="outline-2">
+<h2 id="org408d1ce"><span class="section-number-2">5</span> Sekvencijalna kola</h2>
 <div class="outline-text-2" id="text-5">
 <ol class="org-ol">
 <li value="60"><p>
@@ -2323,8 +2323,8 @@ Sinhrona sekvencijalna kola zavise od zajedničkog signala odnosno časovnika, k
 </ol>
 </div>
 
-<div id="outline-container-org00a22ce" class="outline-3">
-<h3 id="org00a22ce"><span class="section-number-3">5.1</span> Reze i flip-flopovi</h3>
+<div id="outline-container-orgb174c22" class="outline-3">
+<h3 id="orgb174c22"><span class="section-number-3">5.1</span> Reze i flip-flopovi</h3>
 <div class="outline-text-3" id="text-5-1">
 <ol class="org-ol">
 <li value="67"><p>
@@ -2565,8 +2565,8 @@ Moguće je rešiti problem tako što se SR, JK ili T flip-flop svedu na D flip-f
 </div>
 </div>
 
-<div id="outline-container-orgff2ca6a" class="outline-3">
-<h3 id="orgff2ca6a"><span class="section-number-3">5.2</span> Statička i dinamička memorija</h3>
+<div id="outline-container-org5687883" class="outline-3">
+<h3 id="org5687883"><span class="section-number-3">5.2</span> Statička i dinamička memorija</h3>
 <div class="outline-text-3" id="text-5-2">
 <ol class="org-ol">
 <li value="75"><p>
@@ -2701,8 +2701,8 @@ Najčešće se upotrebljavaju za konvertovanje iz paralelnog u serijski vid komu
 </div>
 </div>
 
-<div id="outline-container-org0df627d" class="outline-3">
-<h3 id="org0df627d"><span class="section-number-3">5.3</span> Binarni brojač</h3>
+<div id="outline-container-org1208685" class="outline-3">
+<h3 id="org1208685"><span class="section-number-3">5.3</span> Binarni brojač</h3>
 <div class="outline-text-3" id="text-5-3">
 <ol class="org-ol">
 <li value="82"><p>
@@ -2761,8 +2761,8 @@ U slučaju da nam je potrebno da imamo brojač koji neće ići po <i>&ldquo;defa
 </div>
 </div>
 
-<div id="outline-container-org86de497" class="outline-3">
-<h3 id="org86de497"><span class="section-number-3">5.4</span> Konačni automati i transduktori</h3>
+<div id="outline-container-orgf3b5652" class="outline-3">
+<h3 id="orgf3b5652"><span class="section-number-3">5.4</span> Konačni automati i transduktori</h3>
 <div class="outline-text-3" id="text-5-4">
 <ol class="org-ol">
 <li value="85"><p>
@@ -3003,8 +3003,8 @@ Kontrolna jedinica se može modelovati kao konačni transduktor koji na ulazu im
 </div>
 </div>
 
-<div id="outline-container-org4204bae" class="outline-2">
-<h2 id="org4204bae"><span class="section-number-2">6</span> Arhitektura i organizacija</h2>
+<div id="outline-container-orgf472da0" class="outline-2">
+<h2 id="orgf472da0"><span class="section-number-2">6</span> Arhitektura i organizacija</h2>
 <div class="outline-text-2" id="text-6">
 <ol class="org-ol">
 <li value="88">Šta je arhitektura a šta organizacija računara?
@@ -3042,8 +3042,8 @@ Troadresni procesor je procesor koji u instrukciji može da ima tri adrese. Prog
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">ADD</span> <span style="color: #ff2afc; font-weight: bold;">C</span>, A, B
-<span style="color: #42c6ff; font-weight: bold;">MUL</span> <span style="color: #ff2afc; font-weight: bold;">C</span>, A, B
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">ADD</span> C, A, B
+    <span style="color: #ff2afc; font-weight: bold;">MUL</span> C, A, B
 </pre>
 </div></li>
 
@@ -3056,8 +3056,8 @@ Dvoadresni procesori su procesori koji mogu da imaju maksimalno dve adrese u ins
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">LOAD</span> <span style="color: #ff2afc; font-weight: bold;">B</span>, A
-<span style="color: #42c6ff; font-weight: bold;">ADD</span> <span style="color: #ff2afc; font-weight: bold;">A</span>, B
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">LOAD</span> B, A
+    <span style="color: #ff2afc; font-weight: bold;">ADD</span> A, B
 </pre>
 </div></li>
 
@@ -3070,9 +3070,9 @@ Jednoadresni procesori su procesori koji imaju jednu adresu u instrukciji. Opera
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">LOAD</span> <span style="color: #ff2afc; font-weight: bold;">X</span>
-<span style="color: #42c6ff; font-weight: bold;">ADD</span> <span style="color: #ff2afc; font-weight: bold;">X</span>
-<span style="color: #42c6ff; font-weight: bold;">STORE</span> <span style="color: #ff2afc; font-weight: bold;">X</span>
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">LOAD</span> X
+    <span style="color: #ff2afc; font-weight: bold;">ADD</span> X
+    <span style="color: #ff2afc; font-weight: bold;">STORE</span> X
 </pre>
 </div></li>
 
@@ -3085,10 +3085,10 @@ Nuloadresni procesori su procesori gde je maksimalan broj adresa u instrukciji \
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">PUSH</span> <span style="color: #ff2afc; font-weight: bold;">A</span>
-<span style="color: #42c6ff; font-weight: bold;">PUSH</span> <span style="color: #ff2afc; font-weight: bold;">B</span>
-<span style="color: #42c6ff; font-weight: bold;">ADD</span>
-<span style="color: #42c6ff; font-weight: bold;">POP</span>
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">PUSH</span> A
+    <span style="color: #ff2afc; font-weight: bold;">PUSH</span> B
+    <span style="color: #ff2afc; font-weight: bold;">ADD</span>
+    <span style="color: #ff2afc; font-weight: bold;">POP</span>
 </pre>
 </div></li>
 
@@ -3198,8 +3198,8 @@ Danas procesori najčešće predstavljaju hibride ove dve arhitekture.
 </div>
 </div>
 
-<div id="outline-container-org07f08a4" class="outline-2">
-<h2 id="org07f08a4"><span class="section-number-2">7</span> Adresiranje</h2>
+<div id="outline-container-org43cb0e9" class="outline-2">
+<h2 id="org43cb0e9"><span class="section-number-2">7</span> Adresiranje</h2>
 <div class="outline-text-2" id="text-7">
 <ol class="org-ol">
 <li value="101"><p>
@@ -3259,14 +3259,14 @@ Načini adresiranja opisuju kako se određuje operand instrukcije.
 <b>Neposredno</b> za konstante:
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">rax</span>, <span style="color: #ffd400; font-weight: bold;">42</span>
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">mov</span> rax, <span style="color: #ffd400; font-weight: bold;">42</span>
 </pre>
 </div></li>
 <li><p>
 <b>Registarsko</b>:
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">rax</span>, rdi
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">mov</span> rax, rdi
 </pre>
 </div></li>
 <li><b>Memorijsko</b>:
@@ -3277,24 +3277,25 @@ Direktno
 <div class="org-src-container">
 <pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">value</span> <span style="color: #ff2afc; font-weight: bold;">dword</span> <span style="color: #ffd400; font-weight: bold;">42</span>
 ...
-<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, [value]
+<span style="color: #42c6ff; font-weight: bold;">f</span>:
+    <span style="color: #ff2afc; font-weight: bold;">add</span> eax, [value]
 </pre>
 </div></li>
 <li><p>
 Indirektno
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">rdi je pokaziva&#269; na prvi element niza</span>
-<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, [rdi]
+<pre class="src src-asm">    <span style="color: #546A90;">; </span><span style="color: #546A90;">rdi je pokaziva&#269; na prvi element niza</span>
+    <span style="color: #ff2afc; font-weight: bold;">add</span> eax, [rdi]
 </pre>
 </div></li>
 <li><p>
 Indeksno
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">rdi je pokaziva&#269; na prvi element niza</span>
-<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">rsi</span>, <span style="color: #ffd400; font-weight: bold;">3</span>
-<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, [rdi + <span style="color: #ffd400; font-weight: bold;">4</span> * rsi]
+<pre class="src src-asm">    <span style="color: #546A90;">; </span><span style="color: #546A90;">rdi je pokaziva&#269; na prvi element niza</span>
+    <span style="color: #ff2afc; font-weight: bold;">mov</span> rsi, <span style="color: #ffd400; font-weight: bold;">3</span>
+    <span style="color: #ff2afc; font-weight: bold;">add</span> eax, [rdi + <span style="color: #ffd400; font-weight: bold;">4</span> * rsi]
 </pre>
 </div></li>
 </ul></li>
@@ -3313,14 +3314,14 @@ Načini adresiranja opisuju kako se određuje operand instrukcije.
 <b>Neposredno</b> za konstante:
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, r0, <span style="color: #ffd400; font-weight: bold;">42</span>
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">mov</span> r0, r0, <span style="color: #ffd400; font-weight: bold;">42</span>
 </pre>
 </div></li>
 <li><p>
 <b>Registarsko</b>:
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, r1
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">mov</span> r0, r1
 </pre>
 </div></li>
 <li><b>Memorijsko</b>:
@@ -3344,8 +3345,8 @@ Bleji eax, izmeni
 Indirektno
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
-<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, [r1]
+<pre class="src src-asm">    <span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
+    <span style="color: #ff2afc; font-weight: bold;">add</span> r0, [r1]
 </pre>
 </div></li>
 <li>Indeksno
@@ -3354,27 +3355,27 @@ Indirektno
 Prefiksno bez update-a
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
-<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r2</span>, #<span style="color: #ffd400; font-weight: bold;">3</span>
-<span style="color: #42c6ff; font-weight: bold;">ldr</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, [r1, r2, lsl #<span style="color: #ffd400; font-weight: bold;">2</span>] <span style="color: #546A90;">; </span><span style="color: #546A90;">r0 = *(r1 + 4 * r2)</span>
+<pre class="src src-asm">    <span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
+    <span style="color: #ff2afc; font-weight: bold;">mov</span> r2, #<span style="color: #ffd400; font-weight: bold;">3</span>
+    <span style="color: #ff2afc; font-weight: bold;">ldr</span> r0, [r1, r2, lsl #<span style="color: #ffd400; font-weight: bold;">2</span>] <span style="color: #546A90;">; </span><span style="color: #546A90;">r0 = *(r1 + 4 * r2)</span>
 </pre>
 </div></li>
 <li><p>
 Prefiksno sa update-om
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
-<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r2</span>, #<span style="color: #ffd400; font-weight: bold;">3</span>
-<span style="color: #42c6ff; font-weight: bold;">ldr</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, [r1, r2, lsl #<span style="color: #ffd400; font-weight: bold;">2</span>]! <span style="color: #546A90;">; </span><span style="color: #546A90;">r1 = r1 + 4 * r2; r0 = *r1;</span>
+<pre class="src src-asm">    <span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
+    <span style="color: #ff2afc; font-weight: bold;">mov</span> r2, #<span style="color: #ffd400; font-weight: bold;">3</span>
+    <span style="color: #ff2afc; font-weight: bold;">ldr</span> r0, [r1, r2, lsl #<span style="color: #ffd400; font-weight: bold;">2</span>]! <span style="color: #546A90;">; </span><span style="color: #546A90;">r1 = r1 + 4 * r2; r0 = *r1;</span>
 </pre>
 </div></li>
 <li><p>
 Postfiksno sa update-om
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
-<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r2</span>, #<span style="color: #ffd400; font-weight: bold;">3</span>
-<span style="color: #42c6ff; font-weight: bold;">ldr</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, [r1], #<span style="color: #ffd400; font-weight: bold;">4</span> <span style="color: #546A90;">; </span><span style="color: #546A90;">r0 = *r1; r1 = r1 + 4;</span>
+<pre class="src src-asm">    <span style="color: #546A90;">; </span><span style="color: #546A90;">r1 je pokaziva&#269; na prvi element niza</span>
+    <span style="color: #ff2afc; font-weight: bold;">mov</span> r2, #<span style="color: #ffd400; font-weight: bold;">3</span>
+    <span style="color: #ff2afc; font-weight: bold;">ldr</span> r0, [r1], #<span style="color: #ffd400; font-weight: bold;">4</span> <span style="color: #546A90;">; </span><span style="color: #546A90;">r0 = *r1; r1 = r1 + 4;</span>
 </pre>
 </div></li>
 </ul></li>
@@ -3384,8 +3385,8 @@ Postfiksno sa update-om
 </div>
 </div>
 
-<div id="outline-container-org2ba848a" class="outline-2">
-<h2 id="org2ba848a"><span class="section-number-2">8</span> Assembler</h2>
+<div id="outline-container-org7e34f32" class="outline-2">
+<h2 id="org7e34f32"><span class="section-number-2">8</span> Assembler</h2>
 <div class="outline-text-2" id="text-8">
 <ol class="org-ol">
 <li value="107">Instrukcije transfera. Funkcija i primer upotrebe. (<i>x86-64, ARM</i>)
@@ -3408,11 +3409,11 @@ memorija
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">dest</span>, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest</span>
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">mov</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest</span>
 
-<span style="color: #42c6ff; font-weight: bold;">movzx</span> <span style="color: #ff2afc; font-weight: bold;">dest</span>, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iruje 0</span>
+    <span style="color: #ff2afc; font-weight: bold;">movzx</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iruje 0</span>
 
-<span style="color: #42c6ff; font-weight: bold;">movsx</span> <span style="color: #ff2afc; font-weight: bold;">dest</span>, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iraje znakom</span>
+    <span style="color: #ff2afc; font-weight: bold;">movsx</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira iz src u dest i pro&#353;iraje znakom</span>
 </pre>
 </div></li>
 </ul></li>
@@ -3432,7 +3433,7 @@ memorija
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">lea</span> <span style="color: #ff2afc; font-weight: bold;">dest</span>, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira adresu od src u dest</span>
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">lea</span> dest, src <span style="color: #546A90;">; </span><span style="color: #546A90;">kopira adresu od src u dest</span>
 </pre>
 </div></li>
 </ul></li>
@@ -3495,16 +3496,16 @@ TODO
 Kod <code>x86-64</code> se to radi automatski, npr.
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">cmp</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, edi <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, S i Z flegovi</span>
-<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">eax</span>, esi <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, Z, C flegovi PROVERI</span>
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">cmp</span> eax, edi <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, S i Z flegovi</span>
+    <span style="color: #ff2afc; font-weight: bold;">add</span> eax, esi <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, Z, C flegovi PROVERI</span>
 </pre>
 </div></li>
 <li><p>
 Kod <code>ARM</code> se to radi tako što se dodaje sufiks <code>s</code> na operacije kojima to po <i>default</i>-u nije tako
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">cmp</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, r1 <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, S i Z flegovi</span>
-<span style="color: #42c6ff; font-weight: bold;">adds</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, r2 <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, Z, C flegovi PROVERI</span>
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">cmp</span> r0, r1 <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, S i Z flegovi</span>
+    <span style="color: #ff2afc; font-weight: bold;">adds</span> r0, r2 <span style="color: #546A90;">; </span><span style="color: #546A90;">bi&#263;e updateovani O, Z, C flegovi PROVERI</span>
 </pre>
 </div></li>
 </ul></li>
@@ -3709,10 +3710,10 @@ Povratna vrednost se čuva u registru <code>r0</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r0</span>, <span style="color: #ffd400; font-weight: bold;">42</span>
-<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">r1</span>, <span style="color: #ffd400; font-weight: bold;">7</span>
-<span style="color: #42c6ff; font-weight: bold;">bl</span> <span style="color: #ff2afc; font-weight: bold;">f</span>
-<span style="color: #42c6ff; font-weight: bold;">add</span> <span style="color: #ff2afc; font-weight: bold;">r4</span>, r0 <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">mov</span> r0, <span style="color: #ffd400; font-weight: bold;">42</span>
+    <span style="color: #ff2afc; font-weight: bold;">mov</span> r1, <span style="color: #ffd400; font-weight: bold;">7</span>
+    <span style="color: #ff2afc; font-weight: bold;">bl</span> f
+    <span style="color: #ff2afc; font-weight: bold;">add</span> r4, r0 <span style="color: #546A90;">; </span><span style="color: #546A90;">sum += eax</span>
 </pre>
 </div></li>
 </ol>
@@ -3724,8 +3725,8 @@ Instrukcija <code>bl</code> postavlja adresu sledeće instrukcije u <code>lr</co
 </div>
 </div>
 
-<div id="outline-container-org54fff1a" class="outline-2">
-<h2 id="org54fff1a"><span class="section-number-2">9</span> Procesor</h2>
+<div id="outline-container-org4daee00" class="outline-2">
+<h2 id="org4daee00"><span class="section-number-2">9</span> Procesor</h2>
 <div class="outline-text-2" id="text-9">
 <ol class="org-ol">
 <li value="121">Koje su osnovne komponente procesora? Objasniti ih.
@@ -3929,10 +3930,10 @@ Eventualno, vrednost iz <code>MDR</code> se kopira u <code>IR</code> nakon čega
 Pseudo-asembler kod
 </p>
 <div class="org-src-container">
-<pre class="src src-asm"><span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">mar</span>, pc
-<span style="color: #42c6ff; font-weight: bold;">inc</span> <span style="color: #ff2afc; font-weight: bold;">pc</span>
-<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">mdr</span>, [mar]
-<span style="color: #42c6ff; font-weight: bold;">mov</span> <span style="color: #ff2afc; font-weight: bold;">ir</span>, mdr
+<pre class="src src-asm">    <span style="color: #ff2afc; font-weight: bold;">mov</span> mar, pc
+    <span style="color: #ff2afc; font-weight: bold;">inc</span> pc
+    <span style="color: #ff2afc; font-weight: bold;">mov</span> mdr, [mar]
+    <span style="color: #ff2afc; font-weight: bold;">mov</span> ir, mdr
 </pre>
 </div></li>
 </ol></li>
@@ -4080,8 +4081,8 @@ Vertikalni format:
 </div>
 </div>
 
-<div id="outline-container-orgbc780d1" class="outline-2">
-<h2 id="orgbc780d1"><span class="section-number-2">10</span> Memorija</h2>
+<div id="outline-container-org6ebe761" class="outline-2">
+<h2 id="org6ebe761"><span class="section-number-2">10</span> Memorija</h2>
 <div class="outline-text-2" id="text-10">
 <ol class="org-ol">
 <li value="145">Karakteristike memorija.
@@ -4378,8 +4379,8 @@ Primeri:
 </div>
 </div>
 
-<div id="outline-container-org4304f7a" class="outline-2">
-<h2 id="org4304f7a"><span class="section-number-2">11</span> Cache</h2>
+<div id="outline-container-orgdeb8b40" class="outline-2">
+<h2 id="orgdeb8b40"><span class="section-number-2">11</span> Cache</h2>
 <div class="outline-text-2" id="text-11">
 <ol class="org-ol">
 <li value="166"><p>
@@ -5135,8 +5136,8 @@ Povećanjem stepena asocijativnosti se povećava procenat pogotka keša. Potpuno
 </div>
 </div>
 
-<div id="outline-container-org29ba4da" class="outline-2">
-<h2 id="org29ba4da"><span class="section-number-2">12</span> Magistrale</h2>
+<div id="outline-container-orgf8a4f2c" class="outline-2">
+<h2 id="orgf8a4f2c"><span class="section-number-2">12</span> Magistrale</h2>
 <div class="outline-text-2" id="text-12">
 <ol class="org-ol">
 <li value="189"><p>
@@ -5439,8 +5440,8 @@ Veoma je jednostavan za implementaciju, ali mu je mana što omogućava samo fiks
 </div>
 </div>
 
-<div id="outline-container-orgd14a82c" class="outline-2">
-<h2 id="orgd14a82c"><span class="section-number-2">13</span> Sistem prekida</h2>
+<div id="outline-container-org14cf584" class="outline-2">
+<h2 id="org14cf584"><span class="section-number-2">13</span> Sistem prekida</h2>
 <div class="outline-text-2" id="text-13">
 <ol class="org-ol">
 <li value="214"><p>
@@ -5603,8 +5604,8 @@ Komunicira sa procesorom putem donjih 8 bitova data magistrale putem kojih i ša
 </div>
 </div>
 
-<div id="outline-container-orga17278b" class="outline-2">
-<h2 id="orga17278b"><span class="section-number-2">14</span> I/O</h2>
+<div id="outline-container-org7ef919c" class="outline-2">
+<h2 id="org7ef919c"><span class="section-number-2">14</span> I/O</h2>
 <div class="outline-text-2" id="text-14">
 <ol class="org-ol">
 <li value="222"><p>
@@ -5735,8 +5736,8 @@ Objasniti direktan pristup memoriji (<code>DMA</code>). Kontroler <code>DMA</cod
 </div>
 </div>
 
-<div id="outline-container-org9a82a8c" class="outline-2">
-<h2 id="org9a82a8c"><span class="section-number-2">15</span> Virtuelna memorija</h2>
+<div id="outline-container-org03a610c" class="outline-2">
+<h2 id="org03a610c"><span class="section-number-2">15</span> Virtuelna memorija</h2>
 <div class="outline-text-2" id="text-15">
 <ol class="org-ol">
 <li value="229"><p>
@@ -6127,8 +6128,8 @@ Korišćenjem <code>TLB</code> dovoljno često eliminišemo potrebu za pronalaž
 </div>
 </div>
 
-<div id="outline-container-org42f9de2" class="outline-2">
-<h2 id="org42f9de2"><span class="section-number-2">16</span> Napredne arhitekture</h2>
+<div id="outline-container-org9d2518e" class="outline-2">
+<h2 id="org9d2518e"><span class="section-number-2">16</span> Napredne arhitekture</h2>
 <div class="outline-text-2" id="text-16">
 <ol class="org-ol">
 <li value="239"><p>
@@ -6228,8 +6229,8 @@ Superskalarni procesori su procesori koji implentiraju instrukcioni <b>paraleliz
 </div>
 </div>
 
-<div id="outline-container-org6e147b5" class="outline-2">
-<h2 id="org6e147b5"><span class="section-number-2">17</span> Verilog</h2>
+<div id="outline-container-org11e80b2" class="outline-2">
+<h2 id="org11e80b2"><span class="section-number-2">17</span> Verilog</h2>
 <div class="outline-text-2" id="text-17">
 <div class="tip">
 <p>
@@ -6264,7 +6265,7 @@ TODO, dogodine
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Aleksandar Šmigić</p>
-<p class="date">Created: 2020-06-24 Wed 23:37</p>
+<p class="date">Created: 2020-06-25 Thu 11:23</p>
 </div>
 </body>
 </html>
